@@ -75,11 +75,14 @@ bool DXFW::CreateDXWindow (const char *Title, int x, int y, int width, int heigh
 		return false;
 	}
 
-	int screenWidth	 = GetSystemMetrics (SM_CXSCREEN);
-	int screenHeight = GetSystemMetrics (SM_CYSCREEN);
+	int screenWidth	 = -1;
+	int screenHeight = -1;
 
 	if (FULL_SCREEN)
 	{
+		screenWidth  = GetSystemMetrics (SM_CXSCREEN);
+		screenHeight = GetSystemMetrics (SM_CYSCREEN);
+
 		DEVMODE dmScreenSettings = {0};
 		ZeroMemory (&dmScreenSettings, sizeof (dmScreenSettings));
 		dmScreenSettings.dmSize			= sizeof (dmScreenSettings);
@@ -92,13 +95,13 @@ bool DXFW::CreateDXWindow (const char *Title, int x, int y, int width, int heigh
 	}
 	else
 	{
-		screenWidth = width;
+		screenWidth  = width;
 		screenHeight = height;
 	}
 
 	int nStyle = WS_OVERLAPPED | WS_SYSMENU | WS_VISIBLE | WS_CAPTION | WS_MINIMIZEBOX;	
-	hWnd = CreateWindowEx (WS_EX_APPWINDOW, Title, Title, nStyle, 
-							x, y, screenWidth, screenHeight, nullptr, nullptr, m_hInstance, nullptr);
+	hWnd = CreateWindowEx (WS_EX_APPWINDOW, Title, Title, nStyle,
+						   x, y, screenWidth, screenHeight, nullptr, nullptr, m_hInstance, nullptr);
 
 	if (hWnd == nullptr)
 	{

@@ -1,7 +1,10 @@
 #include "DXFW.h"
+#include "DXMAnager.h"
 
 int main () {
 	DXFW *framework = new DXFW ();
+	DXManager *DXMgr = new DXManager ();
+
 
 	if (framework->Initialize ())
 	{
@@ -9,5 +12,6 @@ int main () {
 	}
 
 	delete framework;
+
 	return 0;
 }

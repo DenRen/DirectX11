@@ -10,6 +10,7 @@ public:
 
 	bool Initialize ();
 	void Run ();
+
 private:
 	bool CreateDXWindow (const char *Title, int x, int y, int width, int height);
 
