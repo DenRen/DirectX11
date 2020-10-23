@@ -28,7 +28,7 @@ private:
 	bool InitializeStencilView ();
 	bool InitializeRasterizerState ();
 	void InitializeViewport (int screenWidth, int screenHeight);
-	bool InitializeAlphaBlendig ();
+	bool InitializeAlphaBlending ();
 	bool InitializeZBuffer ();
 
 	bool m_vsync_enabled;
