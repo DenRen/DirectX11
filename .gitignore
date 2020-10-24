@@ -76,3 +76,10 @@ DirectX11/Debug/main.obj
 DirectX11/Debug/vc142.idb
 DirectX11/Debug/vc142.pdb
 DirectX11/DirectX11.vcxproj.filters
+DirectX11/DirectX11.vcxproj.filters
+.vs/DirectX11/v16/ipch/AutoPCH/8db844c5a94bc9c3/ENGINE.ipch
+.vs/DirectX11/v16/ipch/AutoPCH/ca0040e64d9c2190/GRAPHICS.ipch
+DirectX11/DirectX11.vcxproj.filters
+DirectX11/DirectX11.vcxproj.filters
+*.filters
+*.filters

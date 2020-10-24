@@ -142,11 +142,16 @@
   <ItemGroup>
     <ClCompile Include="DXFW.cpp" />
     <ClCompile Include="DXManager.cpp" />
+    <ClCompile Include="Engine.cpp" />
+    <ClCompile Include="Graphics.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AddFunc.h" />
     <ClInclude Include="DXFW.h" />
     <ClInclude Include="DXManager.h" />
+    <ClInclude Include="Engine.h" />
+    <ClInclude Include="Graphics.h" />
     <ClInclude Include="SystemDefs.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

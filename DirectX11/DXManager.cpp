@@ -1,5 +1,7 @@
-#include "DXManager.h"
 #include <cstdio>
+
+#include "DXManager.h"
+#include "AddFunc.h"
 
 #define RELEASE(dev)        \
     if (dev != nullptr)     \
@@ -11,8 +13,10 @@
 #define CHECK_FAILED(hr)    \
     if (FAILED (hr))        \
     {                       \
-        return false;       \
+        perror ("");        \
+        RETURN_FALSE;       \
     }
+
 DXManager::DXManager () :
 	m_vsync_enabled             (false),
     m_videoCardMemory           (0),
@@ -103,14 +107,14 @@ bool DXManager::Initilize (int screenWidth, int screenHeight, bool vsync, HWND h
                 numerator = displayModeList[i].RefreshRate.Numerator;
                 denominator = displayModeList[i].RefreshRate.Denominator;
 
-                return false;
+                break;
             }
         }
     }
     
     if (numerator == 0 && denominator == 0)
     {
-        return false;
+        RETURN_FALSE;
     }
 
     // Get the adapter description
@@ -137,7 +141,7 @@ bool DXManager::Initilize (int screenWidth, int screenHeight, bool vsync, HWND h
 
     if (!InitializeSwapChain (hWnd, fullScreen, screenWidth, screenHeight, numerator, denominator))
     {
-        return false;
+        RETURN_FALSE;
     }
 
     // Get the pointer to the back buffer
@@ -154,17 +158,17 @@ bool DXManager::Initilize (int screenWidth, int screenHeight, bool vsync, HWND h
 
     if (!InitializeDepthBuffer (screenWidth, screenHeight))
     {
-        return false;
+        RETURN_FALSE;
     }
 
     if (!InitializeDepthStencilBuffer ())
     {
-        return false;
+        RETURN_FALSE;
     }
 
     if (!InitializeStencilView ())
     {
-        return false;
+        RETURN_FALSE;
     }
 
     // Bind the render target view and depth stencil buffer to the output render pipeline 
@@ -172,19 +176,19 @@ bool DXManager::Initilize (int screenWidth, int screenHeight, bool vsync, HWND h
 
     if (!InitializeRasterizerState ())
     {
-        return false;
+        RETURN_FALSE;
     }
 
     InitializeViewport (screenWidth, screenHeight);
 
     if (!InitializeAlphaBlending ())
     {
-        return false;
+        RETURN_FALSE;
     }
 
     if (!InitializeZBuffer ())
     {
-        return false;
+        RETURN_FALSE;
     }
 
     return true;
@@ -198,12 +202,25 @@ void DXManager::BeginScene (float r, float g, float b, float a)
     color[2] = b;
     color[3] = a;
 
+    // Clear the back buffer
+    m_deviceContext->ClearRenderTargetView (m_renderTargetView, color);
 
+    // Clear the depth buffer
+    m_deviceContext->ClearDepthStencilView (m_depthStencilView, D3D11_CLEAR_DEPTH, 1.0f, 0);
 }
 
 void DXManager::EndScene ()
 {
-
+    if (m_vsync_enabled)
+    {
+        // Lock to screen refresh rate
+        m_swapChain->Present (1, 0);
+    }
+    else
+    {
+        // Present as fast as possible
+        m_swapChain->Present (0, 0);
+    }
 }
 
 void DXManager::EnableAplhaBlending (bool enable)
@@ -304,7 +321,7 @@ bool DXManager::InitializeSwapChain (HWND hWnd, bool fullScreen, int screenWidth
                                             &m_device, NULL, &m_deviceContext);
     CHECK_FAILED (result);
 
-    return false;
+    return true;
 }
 
 bool DXManager::InitializeDepthBuffer (int screenWidth, int screenHeight)
@@ -371,7 +388,7 @@ bool DXManager::InitializeDepthStencilBuffer ()
     // Set depth stencil state
     m_deviceContext->OMSetDepthStencilState (m_depthStencilState, 1);
 
-    return false;
+    return true;
 }
 
 bool DXManager::InitializeStencilView ()
@@ -392,7 +409,7 @@ bool DXManager::InitializeStencilView ()
                                                &m_depthStencilView);
     CHECK_FAILED (result);
     
-    return false;
+    return true;
 }
 
 bool DXManager::InitializeRasterizerState ()
@@ -418,7 +435,7 @@ bool DXManager::InitializeRasterizerState ()
     // Set the rasterizes
     m_deviceContext->RSSetState (m_rasterState);
 
-    return false;
+    return true;
 }
 
 void DXManager::InitializeViewport (int screenWidth, int screenHeight)
@@ -442,6 +459,9 @@ bool DXManager::InitializeAlphaBlending ()
     D3D11_BLEND_DESC blendStateDesc;
     HRESULT result = S_OK;
 
+    // Clear the blend state description
+    ZeroMemory (&blendStateDesc, sizeof (blendStateDesc));
+
     // Initialize / clear description
     blendStateDesc.RenderTarget[0].BlendEnable = TRUE;
     blendStateDesc.RenderTarget[0].SrcBlend = D3D11_BLEND_SRC_ALPHA;
@@ -457,13 +477,13 @@ bool DXManager::InitializeAlphaBlending ()
     CHECK_FAILED (result);
 
     // Modify to create disable alpha blend state
-    blendStateDesc.RenderTarget[0].BlendEnable = false;
+    blendStateDesc.RenderTarget[0].BlendEnable = FALSE;
 
     // create the disabled state
-    result = m_device->CreateBlendState (&blendStateDesc, &m_alphaEnableBlendingState);
+    result = m_device->CreateBlendState (&blendStateDesc, &m_alphaDisableBlendingState);
     CHECK_FAILED (result);
 
-    return false;
+    return true;
 }
 
 bool DXManager::InitializeZBuffer ()
@@ -499,7 +519,5 @@ bool DXManager::InitializeZBuffer ()
     result = m_device->CreateDepthStencilState (&depthStencilDesc, &m_depthDisabledStencilState);
     CHECK_FAILED (result);
 
-
-
-    return false;
+    return true;
 }

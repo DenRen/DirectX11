@@ -2,7 +2,7 @@
 
 #include "DXFW.h"
 #include "SystemDefs.h"
-
+#include "AddFunc.h"
 
 LRESULT CALLBACK WndProc (HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam);
 
@@ -17,14 +17,24 @@ DXFW::~DXFW ()
 	{
 		ChangeDisplaySettings (nullptr, 0);
 	}
+
+	Engine::GetEngine ()->Release ();
+
 	UnregisterClass (m_applicationName, m_hInstance);
 	m_hInstance = nullptr;
 }
 
-bool DXFW::Initialize () 
+bool DXFW::Initialize ()
 {
 	if (!CreateDXWindow ("DirectX11 - force", WINDOW_POSX, WINDOW_POSY, SCREEN_WIDTH, SCREEN_HEIGHT))
-		return false;
+	{
+		RETURN_FALSE;
+	}
+
+	if (!Engine::GetEngine ()->Initialize (m_hInstance, Engine::GetEngine ()->GetGraphics ()->GethWnd ()))
+	{
+		RETURN_FALSE;
+	}
 
 	return true;
 }
@@ -43,7 +53,7 @@ void DXFW::Run ()
 		}
 		else
 		{
-			// update & render
+			Engine::GetEngine ()->Run ();
 		}
 	}
 }
@@ -72,7 +82,7 @@ bool DXFW::CreateDXWindow (const char *Title, int x, int y, int width, int heigh
 	if (!RegisterClassEx (&wc))
 	{
 		MessageBox (nullptr, "RegisterClassEx () failed", "Error", MB_OK);
-		return false;
+		RETURN_FALSE;
 	}
 
 	int screenWidth	 = -1;
@@ -106,10 +116,26 @@ bool DXFW::CreateDXWindow (const char *Title, int x, int y, int width, int heigh
 	if (hWnd == nullptr)
 	{
 		MessageBox (nullptr, "CreateWindowEx () failed", "Error", MB_OK);
+		Engine::GetEngine ()->Release ();
 		PostQuitMessage (0);
 
-		return false;
+		RETURN_FALSE;
 	}
+
+	if (!Engine::GetEngine ()->InitializeGraphics (hWnd))
+	{
+		MessageBox (hWnd, "Could't initialize DirectX 11", "Error", MB_OK);
+		Engine::GetEngine ()->Release ();
+		PostQuitMessage (0);
+
+		UnregisterClass (m_applicationName, m_hInstance);
+		m_hInstance = nullptr;
+		DestroyWindow (hWnd);
+
+		RETURN_FALSE;
+	}
+
+	Engine::GetEngine ()->GetGraphics ()->SethWnd (hWnd);
 
 	ShowWindow (hWnd, SW_SHOW);
 	SetForegroundWindow (hWnd);
@@ -125,6 +151,14 @@ LRESULT CALLBACK WndProc (HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam)
 
 	switch (Msg)
 	{
+		case WM_KEYDOWN:
+			{
+				if (wParam == VK_ESCAPE)
+				{
+					PostQuitMessage (0);
+					DestroyWindow (hWnd);
+				}
+			} break;
 		case WM_PAINT:
 			{
 				hdc = BeginPaint (hWnd, &ps);
