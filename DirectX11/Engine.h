@@ -4,6 +4,7 @@
 #include "TextureShader.h"
 #include "Texture.h"
 #include "VertexBuffer.h"
+#include "Sprite.h"
 
 class Engine
 {
@@ -30,7 +31,9 @@ private:
 
 	// Temporary
 	VertexBuffer *vertexBuffer;
-	TextureShader *textureShader;
+	TextureShader *shader;
 	Texture *texture;
+
+	Sprite *m_sprite;
 };
 

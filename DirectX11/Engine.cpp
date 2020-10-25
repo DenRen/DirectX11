@@ -6,7 +6,7 @@ Engine *Engine::m_Instance = nullptr;
 Engine::Engine () :
     m_graphics (nullptr),
     vertexBuffer (nullptr),
-    textureShader (nullptr),
+    shader (nullptr),
     texture (nullptr)
 {}
 
@@ -18,8 +18,14 @@ Engine::~Engine ()
         m_graphics = nullptr;
     }
 
+    if (m_sprite != nullptr)
+    {
+        delete m_sprite;
+        m_sprite = nullptr;
+    }
+
     delete vertexBuffer;
-    delete textureShader;
+    delete shader;
     delete texture;
 }
 
@@ -34,28 +40,40 @@ bool Engine::Initialize (HINSTANCE hInstance, HWND hWnd)
 {
     m_graphics->Initialize ();
 
-    textureShader = new TextureShader (m_graphics->GetDevice (), hWnd, "Shader\\texture",
-                                       "TextureVertexShader", "TexturePixelShader");
+    shader = new TextureShader (m_graphics->GetDevice (), hWnd, "Shader\\texture",
+                                "TextureVertexShader", "TexturePixelShader");
+    if (!shader->IsInitialized ())
+    {
+        RETURN_FALSE;
+    }
 
-    if (!textureShader->IsInitialized ())
+
+
+    m_sprite = new Sprite (3200.0f);
+    m_sprite->Initialize (m_graphics->GetDevice (), shader, "Texture\\sonic.png");
+
+    /*
+    shader = new TextureShader (m_graphics->GetDevice (), hWnd, "Shader\\texture",
+                                       "TextureVertexShader", "TexturePixelShader");
+    if (!shader->IsInitialized ())
     {
         RETURN_FALSE;
     }
 
     texture = new Texture ();
-    bool result = texture->Initialize (m_graphics->GetDevice (), "Texture\\boy.jpg");
+    bool result = texture->Initialize (m_graphics->GetDevice (), "Texture\\sonic.png");
     if (!result)
     {
         RETURN_FALSE;
     }
 
     vertexBuffer = new VertexBuffer ();
-    result = vertexBuffer->Initialize (m_graphics->GetDevice (), textureShader, 320.0f, false);
+    result = vertexBuffer->Initialize (m_graphics->GetDevice (), shader, 3200.0f, false);
     if (!result)
     {
         RETURN_FALSE;
     }
-
+    */
     return true;
 }
 
@@ -78,7 +96,7 @@ void Engine::Render ()
     D3DXMATRIX projectionMatrix;
     D3DXMATRIX worldMatrix;
 
-    D3DXVECTOR3 position (0, 0, -100.0f);
+    D3DXVECTOR3 position (0, 0, -200.0f);
     D3DXVECTOR3 up (0, 1.0f, 0.0f);
     D3DXVECTOR3 lookAt (0.0f, 0.0f, 1.0f);
 
@@ -86,11 +104,18 @@ void Engine::Render ()
     D3DXMatrixOrthoLH (&projectionMatrix, SCREEN_WIDTH, SCREEN_HEIGHT, 0.1f, 1000.0f);
     D3DXMatrixIdentity (&worldMatrix);
 
-    textureShader->SetShaderParameters (m_graphics->GetDeviceContext (), texture->GetTexture ());
-    textureShader->SetShaderParameters (m_graphics->GetDeviceContext (), worldMatrix, viewMatrix, projectionMatrix);
+    m_sprite->Render (m_graphics->GetDeviceContext (), worldMatrix, viewMatrix, projectionMatrix);
+
+    m_graphics->EnableAlphaBlending (true);
+
+    /*
+    m_graphics->EnableAlphaBlending (true);
+
+    shader->SetShaderParameters (m_graphics->GetDeviceContext (), texture->GetTexture ());
+    shader->SetShaderParameters (m_graphics->GetDeviceContext (), worldMatrix, viewMatrix, projectionMatrix);
 
     vertexBuffer->Render (m_graphics->GetDeviceContext ());
-
+    */
     m_graphics->EndScene ();
 }
 
