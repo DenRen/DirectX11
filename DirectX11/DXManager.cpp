@@ -237,12 +237,12 @@ void DXManager::EnableZBuffer (bool enable)
 
 ID3D11Device *DXManager::GetDevice ()
 {
-    return nullptr;
+    return m_device;
 }
 
 ID3D11DeviceContext *DXManager::GetDeviceContext ()
 {
-    return nullptr;
+    return m_deviceContext;
 }
 
 bool DXManager::InitializeSwapChain (HWND hWnd, bool fullScreen, int screenWidth, int screenHeight, unsigned int numerator, unsigned int denominator)
@@ -287,7 +287,7 @@ bool DXManager::InitializeSwapChain (HWND hWnd, bool fullScreen, int screenWidth
     swapChainDesc.SampleDesc.Quality = 0;
 
     // Set to full screen or windowed mode
-    swapChainDesc.Windowed = fullScreen;
+    swapChainDesc.Windowed = !fullScreen;
 
     // Set the scan line ordering and scailing to unspecified
     swapChainDesc.BufferDesc.ScanlineOrdering = DXGI_MODE_SCANLINE_ORDER_UNSPECIFIED;

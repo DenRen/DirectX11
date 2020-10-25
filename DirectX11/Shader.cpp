@@ -2,12 +2,10 @@
 #include "AddFunc.h"
 
 Shader::Shader (ID3D11Device *device, HWND hWnd, LPCSTR shaderFileName, LPCSTR vertexFuncName, LPCSTR pixelFuncName) :
-	m_vertexShader (nullptr),
-	m_pixelShader  (nullptr),
-	m_layout	   (nullptr),
-	m_matrixBuffer (nullptr),
 	m_initialized  (Initialize (device, hWnd, shaderFileName, vertexFuncName, pixelFuncName))
-{}
+{
+	return;
+}
 
 Shader::~Shader ()
 {
@@ -42,7 +40,6 @@ void Shader::End (ID3D11DeviceContext *deviceContext)
 	deviceContext->IASetInputLayout (nullptr);
 	deviceContext->VSSetShader (nullptr, nullptr, 0);
 	deviceContext->PSSetShader (nullptr, nullptr, 0);
-
 }
 
 bool Shader::SetShaderParameters (ID3D11DeviceContext *deviceContext, ID3D11ShaderResourceView *texture)
@@ -154,13 +151,13 @@ bool Shader::InitializeShader (ID3D11Device *device, HWND hWnd, LPCSTR vsFileNam
 	result = device->CreateVertexShader (vertexShaderBuffer->GetBufferPointer (),
 										 vertexShaderBuffer->GetBufferSize (), nullptr,
 										 &m_vertexShader);
-	RETURN_FALSE (result);
+	CHECK_FAILED (result);
 
 	// Create pixel shader buffer
 	result = device->CreatePixelShader (pixelShaderBuffer->GetBufferPointer (),
 										pixelShaderBuffer->GetBufferSize (), nullptr,
 										&m_pixelShader);
-	RETURN_FALSE (result);
+	CHECK_FAILED (result);
 
 	// Setup the layout of the data that goes into the shader
 	polygonLayout[0].SemanticName = "POSITION";
@@ -182,7 +179,7 @@ bool Shader::InitializeShader (ID3D11Device *device, HWND hWnd, LPCSTR vsFileNam
 	numElements = sizeof (polygonLayout) / sizeof (polygonLayout[0]);
 
 	// Create the vertex input layout
-	result = device->CreateInputLayout (polygonLayout, numElements, vertexShaderBuffer->GetBufferPointer (),
+	result = device->CreateInputLayout (polygonLayout, numElements, vertexShaderBuffer->GetBufferPointer (), // 
 										vertexShaderBuffer->GetBufferSize (), &m_layout);
 	CHECK_FAILED (result);
 
@@ -192,7 +189,7 @@ bool Shader::InitializeShader (ID3D11Device *device, HWND hWnd, LPCSTR vsFileNam
 
 	// Setup the matrix biffer description
 	matrixBufferDesc.Usage = D3D11_USAGE_DYNAMIC;
-	matrixBufferDesc.ByteWidth = sizeof (matrixBufferDesc);
+	matrixBufferDesc.ByteWidth = sizeof (MatrixBufferType);
 	matrixBufferDesc.BindFlags = D3D11_BIND_CONSTANT_BUFFER;
 	matrixBufferDesc.CPUAccessFlags = D3D11_CPU_ACCESS_WRITE;
 	matrixBufferDesc.MiscFlags = 0;

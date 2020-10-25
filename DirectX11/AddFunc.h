@@ -13,11 +13,11 @@
 		return false
 #endif
 	
-#define RELEASE(dev)        \
-    if (dev != nullptr)     \
+#define RELEASE(res)        \
+    if (res != nullptr)     \
     {                       \
-        dev->Release ();    \
-        dev = nullptr;      \
+        res->Release ();    \
+        res = nullptr;      \
     }
 
 #define CHECK_FAILED(hr)    \

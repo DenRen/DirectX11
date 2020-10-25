@@ -6,10 +6,10 @@
 
 LRESULT CALLBACK WndProc (HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam);
 
-DXFW::DXFW ()
-{
-
-}
+DXFW::DXFW () :
+	m_applicationName (nullptr),
+	m_hInstance (nullptr)
+{}
 
 DXFW::~DXFW ()
 {

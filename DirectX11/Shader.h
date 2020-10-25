@@ -34,6 +34,8 @@ public:
 protected:
 	virtual bool Initialize (ID3D11Device *device, HWND hWnd, LPCSTR shaderFileName, 
 							 LPCSTR vertexFuncName, LPCSTR pixelFuncName);
+	bool m_initialized;
+
 private:
 	bool InitializeShader (ID3D11Device *device, HWND hWnd, LPCSTR vsFileName, LPCSTR psFileName,
 						   LPCSTR vertexFuncName, LPCSTR pixelDuncName);
@@ -44,5 +46,4 @@ private:
 	ID3D11InputLayout *m_layout;
 	ID3D11Buffer *m_matrixBuffer;
 	char *m_name;
-	bool m_initialized;
 };

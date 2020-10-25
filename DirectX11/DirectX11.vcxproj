@@ -148,7 +148,9 @@
     <ClCompile Include="Graphics.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Shader.cpp" />
+    <ClCompile Include="Texture.cpp" />
     <ClCompile Include="TextureShader.cpp" />
+    <ClCompile Include="VertexBuffer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AddFunc.h" />
@@ -158,11 +160,16 @@
     <ClInclude Include="Graphics.h" />
     <ClInclude Include="Shader.h" />
     <ClInclude Include="SystemDefs.h" />
+    <ClInclude Include="Texture.h" />
     <ClInclude Include="TextureShader.h" />
+    <ClInclude Include="VertexBuffer.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Shader\texture.ps" />
     <None Include="Shader\texture.vs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Texture\boy.jpg" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
