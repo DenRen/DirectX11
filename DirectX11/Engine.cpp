@@ -47,8 +47,6 @@ bool Engine::Initialize (HINSTANCE hInstance, HWND hWnd)
         RETURN_FALSE;
     }
 
-
-
     m_sprite = new Sprite (3200.0f);
     m_sprite->Initialize (m_graphics->GetDevice (), shader, "Texture\\sonic.png");
 
@@ -107,7 +105,6 @@ void Engine::Render ()
     m_sprite->Render (m_graphics->GetDeviceContext (), worldMatrix, viewMatrix, projectionMatrix);
 
     m_graphics->EnableAlphaBlending (true);
-
     /*
     m_graphics->EnableAlphaBlending (true);
 

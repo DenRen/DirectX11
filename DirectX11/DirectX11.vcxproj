@@ -142,6 +142,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AnimatedSprite.cpp" />
     <ClCompile Include="DXFW.cpp" />
     <ClCompile Include="DXManager.cpp" />
     <ClCompile Include="Engine.cpp" />
@@ -151,10 +152,12 @@
     <ClCompile Include="Sprite.cpp" />
     <ClCompile Include="Texture.cpp" />
     <ClCompile Include="TextureShader.cpp" />
+    <ClCompile Include="Timer.cpp" />
     <ClCompile Include="VertexBuffer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AddFunc.h" />
+    <ClInclude Include="AnimatedSprite.h" />
     <ClInclude Include="DXFW.h" />
     <ClInclude Include="DXManager.h" />
     <ClInclude Include="Engine.h" />
@@ -164,6 +167,7 @@
     <ClInclude Include="SystemDefs.h" />
     <ClInclude Include="Texture.h" />
     <ClInclude Include="TextureShader.h" />
+    <ClInclude Include="Timer.h" />
     <ClInclude Include="VertexBuffer.h" />
   </ItemGroup>
   <ItemGroup>

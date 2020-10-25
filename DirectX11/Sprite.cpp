@@ -18,14 +18,15 @@ Sprite::~Sprite ()
 	}
 }
 
-bool Sprite::Initialize (ID3D11Device *device, Shader *shader, LPCTSTR textureFileName)
+bool Sprite::Initialize (ID3D11Device *device, Shader *shader, LPCTSTR textureFileName,
+						 bool isWriteAble)
 {
 	assert (textureFileName != nullptr);
 
 	m_shader = shader;
 
 	m_vertexBuffer = new VertexBuffer ();
-	m_vertexBuffer->Initialize (device, shader, m_size);
+	m_vertexBuffer->Initialize (device, shader, m_size, isWriteAble);
 
 	if (textureFileName != nullptr)
 	{
