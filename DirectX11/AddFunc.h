@@ -13,3 +13,16 @@
 		return false
 #endif
 	
+#define RELEASE(dev)        \
+    if (dev != nullptr)     \
+    {                       \
+        dev->Release ();    \
+        dev = nullptr;      \
+    }
+
+#define CHECK_FAILED(hr)    \
+    if (FAILED (hr))        \
+    {                       \
+        perror ("");        \
+        RETURN_FALSE;       \
+    }

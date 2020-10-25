@@ -3,20 +3,6 @@
 #include "DXManager.h"
 #include "AddFunc.h"
 
-#define RELEASE(dev)        \
-    if (dev != nullptr)     \
-    {                       \
-        dev->Release ();    \
-        dev = nullptr;      \
-    }
-
-#define CHECK_FAILED(hr)    \
-    if (FAILED (hr))        \
-    {                       \
-        perror ("");        \
-        RETURN_FALSE;       \
-    }
-
 DXManager::DXManager () :
 	m_vsync_enabled             (false),
     m_videoCardMemory           (0),
