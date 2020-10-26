@@ -5,6 +5,7 @@ std::chrono::duration <double> Timer::m_prevTime (0);
 
 double Timer::GetDeltaTime ()
 {
+
 	auto currTime = std::chrono::steady_clock::now ().time_since_epoch ();
 	
 	if (m_flagActivated)

@@ -3,8 +3,10 @@
 #include "DXMAnager.h"
 #include "Timer.h"
 #include <Windows.h>
+#include <iostream>
 
 int main () {
+
 	DXFW *framework = new DXFW ();
 	//DXManager *DXMgr = new DXManager ();
 

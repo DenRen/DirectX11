@@ -10,9 +10,7 @@ AnimatedSprite::AnimatedSprite (float size, float framesPerSecond, float animati
 	m_isLooping (isLooping),
 	m_currentFrame (0),
 	m_currentSpeed (0)
-{
-
-}
+{}
 
 AnimatedSprite::~AnimatedSprite ()
 {
@@ -45,9 +43,11 @@ void AnimatedSprite::Update ()
 
 	if (m_currentFrame < m_maxFrames)
 	{
-		double dt = Timer::GetDeltaTime ();
+		//float dt = Timer::GetDeltaTime ();
+		double dt = Engine::getDeltaTime ();
 
 		m_currentSpeed += m_animationSpeed * dt;
+		//printf ("%f\n", m_currentSpeed);
 
 		if (m_currentSpeed >= m_framesPerSecond)
 		{

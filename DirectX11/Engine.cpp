@@ -2,6 +2,7 @@
 #include "AddFunc.h"
 
 Engine *Engine::m_Instance = nullptr;
+deTimer *Engine::m_timer = new deTimer ();
 
 Engine::Engine () :
     m_graphics (nullptr),
@@ -13,24 +14,15 @@ Engine::Engine () :
 
 Engine::~Engine ()
 {
-    if (m_graphics != nullptr)
-    {
-        delete m_graphics;
-    }
+    delete m_entity;
 
-    if (m_sprite != nullptr)
-    {
-        delete m_sprite;
-    }
-
-    if (m_resourceManager == nullptr)
-    {
-        delete m_resourceManager;
-    }
+    delete m_graphics;
+    delete m_sprite;
+    delete m_resourceManager;
 
     delete vertexBuffer;
-    delete shader;
-    delete texture;
+    //delete shader;
+    //delete texture;
 }
 
 bool Engine::InitializeGraphics (HWND hWnd)
@@ -46,8 +38,8 @@ bool Engine::Initialize (HINSTANCE hInstance, HWND hWnd)
 
     m_resourceManager = ResourceManager::GetInstance ();
     m_resourceManager->LoadTextureResource (m_graphics->GetDevice (), "Texture\\ninja.png");
-    m_resourceManager->LoadShaderResource (m_graphics->GetDevice (), hWnd, "Shader\\texture",
-                                           "TextureVertexShader", "TexturePixelShader");
+    m_resourceManager->LoadShaderResource  (m_graphics->GetDevice (), hWnd, "Shader\\texture",
+                                            "TextureVertexShader", "TexturePixelShader");
 
     shader = (TextureShader *) m_resourceManager->GetShaderByName ("Shader\\texture");
 
@@ -58,10 +50,14 @@ bool Engine::Initialize (HINSTANCE hInstance, HWND hWnd)
         RETURN_FALSE;
     }*/
 
-    m_animSprite = new AnimatedSprite (320.0f, 25.0f);
+    m_entity = new Entity ();
+    m_entity->InitializeAnimatedSprite (m_graphics->GetDevice (), m_graphics->GetDeviceContext (),
+                                        shader, shader->GetName ().c_str (), 320.0f, 25.0f);
+
+    /*m_animSprite = new AnimatedSprite (320.0f, 25.0f);
     m_animSprite->Initialize (m_graphics->GetDevice (), m_graphics->GetDeviceContext (), 
                               shader, shader->GetName ().c_str ());
-
+                              */
     /*
     m_sprite = new Sprite (3200.0f);
     m_sprite->Initialize (m_graphics->GetDevice (), shader, "Texture\\sonic.png");
@@ -88,6 +84,7 @@ bool Engine::Initialize (HINSTANCE hInstance, HWND hWnd)
         RETURN_FALSE;
     }
     */
+
     return true;
 }
 
@@ -99,7 +96,8 @@ void Engine::Run ()
 
 void Engine::Update ()
 {
-    m_animSprite->Update ();
+    m_timer->updateTimer ();
+    m_entity->Update ();
 }
 
 void Engine::Render ()
@@ -120,7 +118,7 @@ void Engine::Render ()
     D3DXMatrixOrthoLH (&projectionMatrix, SCREEN_WIDTH, SCREEN_HEIGHT, 0.1f, 1000.0f);
     D3DXMatrixIdentity (&worldMatrix);
     
-    m_animSprite->Render (m_graphics->GetDeviceContext (), worldMatrix, viewMatrix, projectionMatrix);
+    m_entity->Render (m_graphics->GetDeviceContext (), viewMatrix, projectionMatrix);
     
     /*
     m_sprite->Render (m_graphics->GetDeviceContext (), worldMatrix, viewMatrix, projectionMatrix);
@@ -153,6 +151,11 @@ Engine *Engine::GetEngine ()
     }
 
     return m_Instance;
+}
+
+double Engine::getDeltaTime ()
+{
+    return m_timer->getTimeInterval ();
 }
 
 void Engine::Release ()

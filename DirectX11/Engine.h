@@ -7,6 +7,8 @@
 #include "Sprite.h"
 #include "AnimatedSprite.h"
 #include "ResourceManager.h"
+#include "Entity.h"
+#include "de_timer.h"
 
 class Engine
 {
@@ -21,6 +23,7 @@ public:
 
 	Graphics *GetGraphics ();
 	static Engine *GetEngine ();
+	static double getDeltaTime ();
 
 private:
 	Engine ();
@@ -30,6 +33,8 @@ private:
 
 	Graphics *m_graphics;
 	static Engine *m_Instance;
+	
+	static deTimer *m_timer;
 
 	// Temporary
 	VertexBuffer *vertexBuffer;
@@ -40,8 +45,13 @@ private:
 	AnimatedSprite *m_animSprite;
 
 	// Temporary 3
-	ResourceManager *m_resourceManager;
-
+	//ResourceManager *m_resourceManager;
+	
 	Sprite *m_sprite;
+
+	// Temporary 4
+	ResourceManager *m_resourceManager;
+	Entity *m_entity;
+
 };
 

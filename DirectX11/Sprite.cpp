@@ -1,7 +1,7 @@
 #include <cassert>
 #include "Sprite.h"
 #include "AddFunc.h"
-#include "ResourceMAnager.h"
+#include "ResourceManager.h"
 
 Sprite::Sprite (float size) :
 	m_size (size),

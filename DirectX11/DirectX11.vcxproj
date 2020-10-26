@@ -143,9 +143,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="AnimatedSprite.cpp" />
+    <ClCompile Include="de_timer.cpp" />
     <ClCompile Include="DXFW.cpp" />
     <ClCompile Include="DXManager.cpp" />
     <ClCompile Include="Engine.cpp" />
+    <ClCompile Include="Entity.cpp" />
     <ClCompile Include="Graphics.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="ResourceManager.cpp" />
@@ -161,9 +163,11 @@
   <ItemGroup>
     <ClInclude Include="AddFunc.h" />
     <ClInclude Include="AnimatedSprite.h" />
+    <ClInclude Include="de_timer.h" />
     <ClInclude Include="DXFW.h" />
     <ClInclude Include="DXManager.h" />
     <ClInclude Include="Engine.h" />
+    <ClInclude Include="Entity.h" />
     <ClInclude Include="Graphics.h" />
     <ClInclude Include="ResourceManager.h" />
     <ClInclude Include="ResourceShader.h" />
