@@ -37,6 +37,8 @@ bool Sprite::Initialize (ID3D11Device *device, Shader *shader, LPCTSTR textureFi
 	{
 		RETURN_FALSE;
 	}
+
+	return true;
 }
 
 void Sprite::Render (ID3D11DeviceContext *deviceContext, D3DXMATRIX worldMatrix, D3DXMATRIX viewMatrix, D3DXMATRIX projectionMatrix)

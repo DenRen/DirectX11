@@ -11,6 +11,7 @@
 #include "de_timer.h"
 #include "EntityManager.h"
 #include "Input.h"
+#include "GameComponent.h"
 
 class Engine
 {
@@ -22,6 +23,8 @@ public:
 	void Run ();
 	
 	void Release ();
+
+	void SetGameComponent (GameComponent * gameComponent);
 
 	Graphics *GetGraphics ();
 	Input *GetInput ();
@@ -62,6 +65,8 @@ private:
 	EntityManager *m_entityManager;
 
 	Input *m_input;
+
+	GameComponent *m_gameComponent;
 
 };
 

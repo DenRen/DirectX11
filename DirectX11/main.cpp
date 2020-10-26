@@ -1,21 +1,15 @@
-#include <chrono>
 #include "DXFW.h"
-#include "DXMAnager.h"
-#include "Timer.h"
-#include <Windows.h>
-#include <iostream>
+#include "GameScene.h"
 
 int main () {
 
 	DXFW *framework = new DXFW ();
-	//DXManager *DXMgr = new DXManager ();
 
-	if (framework->Initialize ())
+	if (framework->Initialize (new GameScene ()))
 	{
 		framework->Run ();
 	}
 
-	//delete DXMgr;
 	delete framework;
 
 	return 0;

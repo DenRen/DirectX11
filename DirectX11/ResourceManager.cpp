@@ -93,7 +93,7 @@ Texture *ResourceManager::GetTextureByName (const char *textureName)
 	const int quantityTextures = m_texture.size ();
 	for (int i = 0; i < quantityTextures; i++)
 	{
-		std::string resourceTextureName = m_shader[i]->GetName ();
+		std::string resourceTextureName = m_texture[i]->GetName ();
 		if (!strcmp (resourceTextureName.c_str (), textureName))
 		{
 			return m_texture[i]->GetTexture ();

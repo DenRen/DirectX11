@@ -24,12 +24,14 @@ DXFW::~DXFW ()
 	m_hInstance = nullptr;
 }
 
-bool DXFW::Initialize ()
+bool DXFW::Initialize (GameComponent *gameComponent)
 {
 	if (!CreateDXWindow ("DirectX11 - force", WINDOW_POSX, WINDOW_POSY, SCREEN_WIDTH, SCREEN_HEIGHT))
 	{
 		RETURN_FALSE;
 	}
+
+	Engine::GetEngine ()->SetGameComponent (gameComponent);
 
 	if (!Engine::GetEngine ()->Initialize (m_hInstance, Engine::GetEngine ()->GetGraphics ()->GethWnd ()))
 	{
@@ -154,7 +156,6 @@ LRESULT CALLBACK WndProc (HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam)
 	Input *input = Engine::GetEngine ()->GetInput ();
 	if (input != nullptr)
 	{
-		printf ("Hmm %d\n", _iter++);
 		if (input->IsKeyDown (DIK_ESCAPE))
 		{
 			PostQuitMessage (0);

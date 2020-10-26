@@ -11,7 +11,8 @@ Engine::Engine () :
     texture (nullptr),
     m_resourceManager (nullptr),
     m_entityManager (nullptr),
-    m_input (nullptr)
+    m_input (nullptr),
+    m_gameComponent (nullptr)
 {}
 
 Engine::~Engine ()
@@ -26,6 +27,8 @@ Engine::~Engine ()
     //delete shader;
     //delete texture;
     delete m_entityManager;
+
+    delete m_gameComponent;
 }
 
 bool Engine::InitializeGraphics (HWND hWnd)
@@ -53,19 +56,31 @@ bool Engine::Initialize (HINSTANCE hInstance, HWND hWnd)
     if (!shader->IsInitialized ())
     {
         RETURN_FALSE;
-    }*/
+    }
 
     m_entity = m_entityManager->AddEntity ();
     m_entity->InitializeAnimatedSprite (m_graphics->GetDevice (), m_graphics->GetDeviceContext (),
-                                        shader, shader->GetName ().c_str (), 320.0f, 25.0f);
+                                        shader, shader->GetName ().c_str (), 320.0f, 25.0f);*/
 
     m_input = new Input ();
     if (!m_input->Initialize (hInstance, hWnd, SCREEN_WIDTH, SCREEN_HEIGHT))
     {
         RETURN_FALSE;
     }
+
     m_input->Update ();
 
+    if (m_gameComponent != nullptr)
+    {
+        if (!m_gameComponent->Initialize ())
+        {
+            RETURN_FALSE;
+        }
+    }
+    else
+    {
+        fprintf (stderr, "No game component!\n");
+    }
     // m_entity->InitializeSprite (m_graphics->GetDevice (), shader, "Texture\\ninja.png", 320.0f);
 
     /*m_animSprite = new AnimatedSprite (320.0f, 25.0f);
@@ -110,6 +125,10 @@ void Engine::Run ()
 
 void Engine::Update ()
 {
+    if (m_gameComponent != nullptr)
+    {
+        m_gameComponent->Update ();
+    }
     m_timer->updateTimer ();
     m_input->Update ();
     m_entityManager->Update ();
@@ -133,6 +152,11 @@ void Engine::Render ()
     D3DXMatrixOrthoLH (&projectionMatrix, SCREEN_WIDTH, SCREEN_HEIGHT, 0.1f, 1000.0f);
     D3DXMatrixIdentity (&worldMatrix);
     
+    if (m_gameComponent != nullptr)
+    {
+        m_gameComponent->Render (m_graphics->GetDeviceContext (), viewMatrix, projectionMatrix);
+    }
+
     m_entityManager->Render (m_graphics->GetDeviceContext (), viewMatrix, projectionMatrix);
     
     /*
@@ -190,4 +214,9 @@ void Engine::Release ()
         delete m_Instance;
         m_Instance = nullptr;
     }
+}
+
+void Engine::SetGameComponent (GameComponent *gameComponent)
+{
+    m_gameComponent = gameComponent;
 }

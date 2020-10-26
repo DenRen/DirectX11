@@ -26,7 +26,6 @@ void Entity::InitializeAnimatedSprite (ID3D11Device *device, ID3D11DeviceContext
 {
 	m_sprite = new AnimatedSprite (spriteSize, framesPerSecond, animationSpeed, isLooping);
 	((AnimatedSprite *) m_sprite)->Initialize (device, deviceContext, shader, textureFileName);
-	
 }
 
 void Entity::Update ()

@@ -8,7 +8,7 @@ public:
 	DXFW ();
 	~DXFW ();
 
-	bool Initialize ();
+	bool Initialize (GameComponent *gameComponent);
 	void Run ();
 
 private:
