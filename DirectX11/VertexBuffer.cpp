@@ -124,6 +124,11 @@ ID3D11Buffer *VertexBuffer::GetVertexBuffer ()
 	return m_vertexBuffer;
 }
 
+int VertexBuffer::GetVertexCount ()
+{
+	return m_vertexCount;
+}
+
 int VertexBuffer::GetIndexCount ()
 {
 	return m_indexCount;

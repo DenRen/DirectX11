@@ -5,14 +5,6 @@
 #include <Windows.h>
 
 int main () {
-
-	printf ("%g\n", Timer::GetDeltaTime ());
-	Sleep (2000);
-	printf ("%g\n", Timer::GetDeltaTime ());
-	Sleep (2000);
-	printf ("%g\n", Timer::GetDeltaTime ());
-
-
 	DXFW *framework = new DXFW ();
 	//DXManager *DXMgr = new DXManager ();
 

@@ -12,7 +12,7 @@ double Timer::GetDeltaTime ()
 		auto dt = currTime - m_prevTime;
 		m_prevTime = currTime;
 		
-		return dt.count () * 0.000001;
+		return dt.count () * 0.000000001;
 	}
 	else
 	{

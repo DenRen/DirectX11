@@ -47,9 +47,14 @@ bool Engine::Initialize (HINSTANCE hInstance, HWND hWnd)
         RETURN_FALSE;
     }
 
+    m_animSprite = new AnimatedSprite (320.0f, 25.0f);
+    m_animSprite->Initialize (m_graphics->GetDevice (), m_graphics->GetDeviceContext (), 
+                              shader, "Texture\\ninja.png");
+
+    /*
     m_sprite = new Sprite (3200.0f);
     m_sprite->Initialize (m_graphics->GetDevice (), shader, "Texture\\sonic.png");
-
+    */
     /*
     shader = new TextureShader (m_graphics->GetDevice (), hWnd, "Shader\\texture",
                                        "TextureVertexShader", "TexturePixelShader");
@@ -82,7 +87,9 @@ void Engine::Run ()
 }
 
 void Engine::Update ()
-{}
+{
+    m_animSprite->Update ();
+}
 
 void Engine::Render ()
 {
@@ -101,10 +108,13 @@ void Engine::Render ()
     D3DXMatrixLookAtLH (&viewMatrix, &position, &lookAt, &up);
     D3DXMatrixOrthoLH (&projectionMatrix, SCREEN_WIDTH, SCREEN_HEIGHT, 0.1f, 1000.0f);
     D3DXMatrixIdentity (&worldMatrix);
-
+    
+    m_animSprite->Render (m_graphics->GetDeviceContext (), worldMatrix, viewMatrix, projectionMatrix);
+    
+    /*
     m_sprite->Render (m_graphics->GetDeviceContext (), worldMatrix, viewMatrix, projectionMatrix);
 
-    m_graphics->EnableAlphaBlending (true);
+    m_graphics->EnableAlphaBlending (true);*/
     /*
     m_graphics->EnableAlphaBlending (true);
 
@@ -113,6 +123,9 @@ void Engine::Render ()
 
     vertexBuffer->Render (m_graphics->GetDeviceContext ());
     */
+    /*
+    m_graphics->EndScene ();*/
+
     m_graphics->EndScene ();
 }
 

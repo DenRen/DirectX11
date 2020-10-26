@@ -10,7 +10,7 @@ public:
 
 	bool Initialize (ID3D11Device *device, ID3D11DeviceContext *deviceContext, 
 					 Shader *shader, LPCTSTR textureFileName);
-	void Update () {}
+	void Update ();
 	void Render (ID3D11DeviceContext *deviceContext, D3DXMATRIX worldMatrix,
 						 D3DXMATRIX viewMatrix, D3DXMATRIX projectionMatrix);
 

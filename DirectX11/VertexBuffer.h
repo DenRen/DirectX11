@@ -22,6 +22,7 @@ public:
 
 	VertexType *GetVertices ();
 	ID3D11Buffer *GetVertexBuffer ();
+	int GetVertexCount ();
 	int GetIndexCount ();
 
 private:
