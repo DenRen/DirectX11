@@ -13,6 +13,15 @@
 		return false
 #endif
 	
+#ifdef _MY_DEBUG											
+#define RETURN_VOID_FALSE									\
+		printf ("FILE: %s, LINE: %d\n", __FILE__, __LINE__);\
+		return
+#else
+#define RETURN_VOID_FALSE									\
+		return
+#endif
+
 #define RELEASE(res)        \
     if (res != nullptr)     \
     {                       \

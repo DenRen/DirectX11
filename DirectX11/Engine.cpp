@@ -7,7 +7,8 @@ Engine::Engine () :
     m_graphics (nullptr),
     vertexBuffer (nullptr),
     shader (nullptr),
-    texture (nullptr)
+    texture (nullptr),
+    m_resourceManager (nullptr)
 {}
 
 Engine::~Engine ()
@@ -15,13 +16,16 @@ Engine::~Engine ()
     if (m_graphics != nullptr)
     {
         delete m_graphics;
-        m_graphics = nullptr;
     }
 
     if (m_sprite != nullptr)
     {
         delete m_sprite;
-        m_sprite = nullptr;
+    }
+
+    if (m_resourceManager == nullptr)
+    {
+        delete m_resourceManager;
     }
 
     delete vertexBuffer;
@@ -40,16 +44,23 @@ bool Engine::Initialize (HINSTANCE hInstance, HWND hWnd)
 {
     m_graphics->Initialize ();
 
-    shader = new TextureShader (m_graphics->GetDevice (), hWnd, "Shader\\texture",
+    m_resourceManager = ResourceManager::GetInstance ();
+    m_resourceManager->LoadTextureResource (m_graphics->GetDevice (), "Texture\\ninja.png");
+    m_resourceManager->LoadShaderResource (m_graphics->GetDevice (), hWnd, "Shader\\texture",
+                                           "TextureVertexShader", "TexturePixelShader");
+
+    shader = (TextureShader *) m_resourceManager->GetShaderByName ("Shader\\texture");
+
+    /*shader = new TextureShader (m_graphics->GetDevice (), hWnd, "Shader\\texture",
                                 "TextureVertexShader", "TexturePixelShader");
     if (!shader->IsInitialized ())
     {
         RETURN_FALSE;
-    }
+    }*/
 
     m_animSprite = new AnimatedSprite (320.0f, 25.0f);
     m_animSprite->Initialize (m_graphics->GetDevice (), m_graphics->GetDeviceContext (), 
-                              shader, "Texture\\ninja.png");
+                              shader, shader->GetName ().c_str ());
 
     /*
     m_sprite = new Sprite (3200.0f);

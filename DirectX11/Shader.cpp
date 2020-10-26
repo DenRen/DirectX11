@@ -1,8 +1,11 @@
+#include <iostream>
+
 #include "Shader.h"
 #include "AddFunc.h"
 
 Shader::Shader (ID3D11Device *device, HWND hWnd, LPCSTR shaderFileName, LPCSTR vertexFuncName, LPCSTR pixelFuncName) :
-	m_initialized  (Initialize (device, hWnd, shaderFileName, vertexFuncName, pixelFuncName))
+	m_initialized  (Initialize (device, hWnd, shaderFileName, vertexFuncName, pixelFuncName)),
+	m_name (std::string (shaderFileName))
 {
 	return;
 }
@@ -13,12 +16,6 @@ Shader::~Shader ()
 	RELEASE (m_layout);
 	RELEASE (m_pixelShader);
 	RELEASE (m_vertexShader);
-
-	if (m_name != nullptr)
-	{
-		delete [] m_name;
-		m_name = nullptr;
-	}
 }
 
 void Shader::Begin (ID3D11DeviceContext *deviceContext, int indexContext)
@@ -78,7 +75,7 @@ bool Shader::SetShaderParameters (ID3D11DeviceContext *deviceContext, D3DXMATRIX
 	return true;
 }
 
-char *Shader::GetName ()
+std::string Shader::GetName ()
 {
 	return m_name;
 }
@@ -90,17 +87,13 @@ bool Shader::IsInitialized ()
 
 bool Shader::Initialize (ID3D11Device *device, HWND hWnd, LPCSTR shaderFileName, LPCSTR vertexFuncName, LPCSTR pixelFuncName)
 {
-	m_name = new char[strlen (shaderFileName) + 1];
-	memcpy (m_name, shaderFileName, sizeof (shaderFileName) + 1);
+	m_name = std::string (shaderFileName);
 
-	char psFileName[128] = "";
-	sprintf_s (psFileName, "%s.ps", shaderFileName);
-
-	char vsFileName[128] = "";
-	sprintf_s (vsFileName, "%s.vs", shaderFileName);
+	std::string psFileName = m_name + ".ps";
+	std::string vsFileName = m_name + ".vs";
 
 	// Initialize the vertex and pixel shaders
-	return InitializeShader (device, hWnd, vsFileName, psFileName, vertexFuncName, pixelFuncName);
+	return InitializeShader (device, hWnd, vsFileName.c_str (), psFileName.c_str (), vertexFuncName, pixelFuncName);
 }
 
 bool Shader::InitializeShader (ID3D11Device *device, HWND hWnd, LPCSTR vsFileName, LPCSTR psFileName, LPCSTR vertexFuncName, LPCSTR pixelFuncName)

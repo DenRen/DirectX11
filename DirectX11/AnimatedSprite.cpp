@@ -77,7 +77,7 @@ void AnimatedSprite::Update ()
 	D3D11_MAPPED_SUBRESOURCE mappedResource;
 	VertexBuffer::VertexType *vertices = m_vertexBuffer->GetVertices ();
 
-	const int _frame = 1;
+	const int _frame = 0;
 
 	vertices[0].uv.x = m_currentFrame / m_maxFrames;
 	vertices[0].uv.y = _frame * 0.5 + 0.5f;

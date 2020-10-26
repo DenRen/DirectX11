@@ -6,6 +6,7 @@
 #include "VertexBuffer.h"
 #include "Sprite.h"
 #include "AnimatedSprite.h"
+#include "ResourceManager.h"
 
 class Engine
 {
@@ -37,6 +38,9 @@ private:
 
 	// Temporary 2
 	AnimatedSprite *m_animSprite;
+
+	// Temporary 3
+	ResourceManager *m_resourceManager;
 
 	Sprite *m_sprite;
 };

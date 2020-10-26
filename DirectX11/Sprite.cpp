@@ -1,6 +1,7 @@
 #include <cassert>
 #include "Sprite.h"
 #include "AddFunc.h"
+#include "ResourceMAnager.h"
 
 Sprite::Sprite (float size) :
 	m_size (size),
@@ -30,12 +31,7 @@ bool Sprite::Initialize (ID3D11Device *device, Shader *shader, LPCTSTR textureFi
 
 	if (textureFileName != nullptr)
 	{
-		m_texture = new Texture ();
-		bool result = m_texture->Initialize (device, textureFileName);
-		if (!result)
-		{
-			RETURN_FALSE;
-		}
+		m_texture = ResourceManager::GetInstance ()->GetTextureByName (textureFileName);
 	}
 	else
 	{

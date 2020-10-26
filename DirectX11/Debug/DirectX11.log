@@ -1,4 +1,4 @@
-﻿  AnimatedSprite.cpp
+﻿  Shader.cpp
 C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\dxgitype.h(12,1): warning C4005: DXGI_STATUS_OCCLUDED: изменение макроопределения
 C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\winerror.h(55840): message : см. предыдущее определение "DXGI_STATUS_OCCLUDED"
 C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\dxgitype.h(13,1): warning C4005: DXGI_STATUS_CLIPPED: изменение макроопределения
@@ -55,5 +55,4 @@ C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\d3d10.h(608,1):
 C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\winerror.h(56279): message : см. предыдущее определение "D3D10_ERROR_TOO_MANY_UNIQUE_STATE_OBJECTS"
 C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\d3d10.h(609,1): warning C4005: D3D10_ERROR_FILE_NOT_FOUND: изменение макроопределения
 C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\winerror.h(56288): message : см. предыдущее определение "D3D10_ERROR_FILE_NOT_FOUND"
-C:\Users\denre\source\repos\DirectX11\DirectX11\AnimatedSprite.cpp(50,42): warning C4244: +=: преобразование "double" в "float", возможна потеря данных
   DirectX11.vcxproj -> C:\Users\denre\source\repos\DirectX11\Debug\DirectX11.exe

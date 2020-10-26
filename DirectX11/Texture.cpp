@@ -1,3 +1,4 @@
+#include <string>
 #include "Texture.h"
 #include "AddFunc.h"
 
@@ -14,6 +15,8 @@ Texture::~Texture ()
 
 bool Texture::Initialize (ID3D11Device *device, LPCSTR fileName)
 {
+	m_name = std::string (fileName);
+
 	HRESULT result = S_OK;
 
 	// Load the texture

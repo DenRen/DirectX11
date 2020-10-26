@@ -4,6 +4,7 @@
 #include <D3DX10math.h>
 #include <D3DX11async.h>
 #include <fstream>
+#include <string>
 
 class Shader
 {
@@ -28,7 +29,7 @@ public:
 	bool SetShaderParameters (ID3D11DeviceContext *deviceContext, D3DXMATRIX worldMatrix, 
 							  D3DXMATRIX viewMatrix, D3DXMATRIX projectionMatrix);
 
-	char *GetName ();
+	std::string GetName ();
 	bool IsInitialized ();
 
 protected:
@@ -45,5 +46,5 @@ private:
 	ID3D11PixelShader *m_pixelShader;
 	ID3D11InputLayout *m_layout;
 	ID3D11Buffer *m_matrixBuffer;
-	char *m_name;
+	std::string m_name;
 };
