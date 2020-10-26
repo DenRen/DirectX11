@@ -9,6 +9,8 @@
 #include "ResourceManager.h"
 #include "Entity.h"
 #include "de_timer.h"
+#include "EntityManager.h"
+#include "Input.h"
 
 class Engine
 {
@@ -22,6 +24,8 @@ public:
 	void Release ();
 
 	Graphics *GetGraphics ();
+	Input *GetInput ();
+
 	static Engine *GetEngine ();
 	static double getDeltaTime ();
 
@@ -52,6 +56,12 @@ private:
 	// Temporary 4
 	ResourceManager *m_resourceManager;
 	Entity *m_entity;
+
+	// Temporary 5
+
+	EntityManager *m_entityManager;
+
+	Input *m_input;
 
 };
 

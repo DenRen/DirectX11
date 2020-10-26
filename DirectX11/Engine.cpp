@@ -9,20 +9,23 @@ Engine::Engine () :
     vertexBuffer (nullptr),
     shader (nullptr),
     texture (nullptr),
-    m_resourceManager (nullptr)
+    m_resourceManager (nullptr),
+    m_entityManager (nullptr),
+    m_input (nullptr)
 {}
 
 Engine::~Engine ()
 {
-    delete m_entity;
+    //delete m_entity;
 
     delete m_graphics;
-    delete m_sprite;
+    //delete m_sprite;
     delete m_resourceManager;
 
     delete vertexBuffer;
     //delete shader;
     //delete texture;
+    delete m_entityManager;
 }
 
 bool Engine::InitializeGraphics (HWND hWnd)
@@ -34,6 +37,8 @@ bool Engine::InitializeGraphics (HWND hWnd)
 
 bool Engine::Initialize (HINSTANCE hInstance, HWND hWnd)
 {
+    m_entityManager = EntityManager::GetInstance ();
+
     m_graphics->Initialize ();
 
     m_resourceManager = ResourceManager::GetInstance ();
@@ -50,9 +55,18 @@ bool Engine::Initialize (HINSTANCE hInstance, HWND hWnd)
         RETURN_FALSE;
     }*/
 
-    m_entity = new Entity ();
+    m_entity = m_entityManager->AddEntity ();
     m_entity->InitializeAnimatedSprite (m_graphics->GetDevice (), m_graphics->GetDeviceContext (),
                                         shader, shader->GetName ().c_str (), 320.0f, 25.0f);
+
+    m_input = new Input ();
+    if (!m_input->Initialize (hInstance, hWnd, SCREEN_WIDTH, SCREEN_HEIGHT))
+    {
+        RETURN_FALSE;
+    }
+    m_input->Update ();
+
+    // m_entity->InitializeSprite (m_graphics->GetDevice (), shader, "Texture\\ninja.png", 320.0f);
 
     /*m_animSprite = new AnimatedSprite (320.0f, 25.0f);
     m_animSprite->Initialize (m_graphics->GetDevice (), m_graphics->GetDeviceContext (), 
@@ -97,7 +111,8 @@ void Engine::Run ()
 void Engine::Update ()
 {
     m_timer->updateTimer ();
-    m_entity->Update ();
+    m_input->Update ();
+    m_entityManager->Update ();
 }
 
 void Engine::Render ()
@@ -118,7 +133,7 @@ void Engine::Render ()
     D3DXMatrixOrthoLH (&projectionMatrix, SCREEN_WIDTH, SCREEN_HEIGHT, 0.1f, 1000.0f);
     D3DXMatrixIdentity (&worldMatrix);
     
-    m_entity->Render (m_graphics->GetDeviceContext (), viewMatrix, projectionMatrix);
+    m_entityManager->Render (m_graphics->GetDeviceContext (), viewMatrix, projectionMatrix);
     
     /*
     m_sprite->Render (m_graphics->GetDeviceContext (), worldMatrix, viewMatrix, projectionMatrix);
@@ -141,6 +156,16 @@ void Engine::Render ()
 Graphics *Engine::GetGraphics ()
 {
     return m_graphics;
+}
+
+Input *Engine::GetInput ()
+{
+    if (m_input == nullptr)
+    {
+        m_input = new Input ();
+    }
+
+    return m_input;
 }
 
 Engine *Engine::GetEngine ()

@@ -146,18 +146,33 @@ bool DXFW::CreateDXWindow (const char *Title, int x, int y, int width, int heigh
 
 LRESULT CALLBACK WndProc (HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam)
 {
+	static int _iter = 0;
+
 	PAINTSTRUCT ps = {0};
 	HDC hdc = {0};
+
+	Input *input = Engine::GetEngine ()->GetInput ();
+	if (input != nullptr)
+	{
+		printf ("Hmm %d\n", _iter++);
+		if (input->IsKeyDown (DIK_ESCAPE))
+		{
+			PostQuitMessage (0);
+			DestroyWindow (hWnd);
+
+			return EXIT_SUCCESS;
+		}
+	}
 
 	switch (Msg)
 	{
 		case WM_KEYDOWN:
 			{
-				if (wParam == VK_ESCAPE)
+				/*if (wParam == VK_ESCAPE)
 				{
 					PostQuitMessage (0);
 					DestroyWindow (hWnd);
-				}
+				}*/
 			} break;
 		case WM_PAINT:
 			{

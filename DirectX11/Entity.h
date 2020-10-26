@@ -5,7 +5,7 @@
 class Entity
 {
 public:
-	Entity ();
+	friend class EntityManager;
 	~Entity ();
 
 	void InitializeSprite (ID3D11Device *device, Shader* shader, LPCSTR textureFileName, float spriteSize);
@@ -22,6 +22,8 @@ public:
 	void SetVelocity (float Vx = 0.0f, float Vy = 0.0f);
 
 private:
+	Entity ();
+
 	D3DXMATRIX m_worldMatrix;
 	D3DXVECTOR2 m_position;
 	D3DXVECTOR2 m_velocity;
