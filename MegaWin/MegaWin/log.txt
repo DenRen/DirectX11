@@ -1,0 +1,9 @@
+/////////////////////____________DUMP ERROR____________\\\\\\\\\\\\\\\\\\\\\
+
+FILE: C:\Users\denre\source\repos\DirectX11\MegaWin\MegaWin\main.cpp
+LINE: 9
+
+error:
+File exists
+
+\\\\\\\\\\\\\\\\\\\\\_______________END________________/////////////////////
