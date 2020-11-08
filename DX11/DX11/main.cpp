@@ -22,7 +22,7 @@ struct ConstantBuffer
 	XMMATRIX mView;
 	XMMATRIX mProjection;
 
-	XMFLOAT4 vLightDor[2];
+	XMFLOAT4 vLightDir[2];
 	XMFLOAT4 vLightColor[2];
 	XMFLOAT4 vOutputColor;
 };
@@ -61,8 +61,10 @@ HRESULT InitDevice ();
 HRESULT InitGeometry ();
 HRESULT InitMatrixes ();
 
+void UpdateTime ();
+
 void UpdateLight ();
-void UpdateMatrixWorld (UINT nLightIndex);
+void UpdateMatrix (UINT nLightIndex);
 void SetMatrixes (float fAngle);
 void CleanupDevice ();
 void Render ();
@@ -112,6 +114,7 @@ int WINAPI wWinMain (HINSTANCE hInstance, HINSTANCE hPrevInstance, LPWSTR lpCmdL
 		}
 		else
 		{
+			UpdateTime ();
 			Render ();
 		}
 	}
@@ -322,12 +325,22 @@ void Render ()
 	g_deviceContext->ClearRenderTargetView (g_pRenderTargetView, ClearColor);
 	g_deviceContext->ClearDepthStencilView (g_pDepthStencilView, D3D11_CLEAR_DEPTH, 1.0f, 0);
 
-	SetMatrixes (0);
+	UpdateLight ();
+
+	UpdateMatrix (MX_SETWORLD);
 	g_deviceContext->VSSetShader (g_pVertexShader, nullptr, 0);
 	g_deviceContext->VSSetConstantBuffers (0, 1, &g_pConstantBuffer);
-	g_deviceContext->PSSetShader (g_pPixelShader,  nullptr, 0);
+	g_deviceContext->PSSetShader (g_pPixelShader, nullptr, 0);
+	g_deviceContext->PSSetConstantBuffers (0, 1, &g_pConstantBuffer);
 
-	g_deviceContext->DrawIndexed (18, 0, 0);
+	g_deviceContext->DrawIndexed (36, 0, 0);
+
+	g_deviceContext->PSSetShader (g_pPixelShaderSolid, nullptr, 0);
+	for (int i = 0; i < 2; i++)
+	{
+		UpdateMatrix (i);
+		g_deviceContext->DrawIndexed (36, 0, 0);
+	}
 
 	g_pSwapChain->Present (0, 0);
 }
@@ -390,8 +403,10 @@ HRESULT InitGeometry ()
 	
 	D3D11_INPUT_ELEMENT_DESC layout[] =
 	{
-		{"POSITION", 0, DXGI_FORMAT_R32G32B32_FLOAT,	0, 0,						   D3D11_INPUT_PER_VERTEX_DATA, 0},
-		{"COLOR",	 0, DXGI_FORMAT_R32G32B32A32_FLOAT, 0, sizeof (SimpleVertex::pos), D3D11_INPUT_PER_VERTEX_DATA, 0}
+		{"POSITION", 0, DXGI_FORMAT_R32G32B32_FLOAT,	0, 0,							D3D11_INPUT_PER_VERTEX_DATA, 0},
+		{"NORMAL",	 0, DXGI_FORMAT_R32G32B32_FLOAT,	0, sizeof (SimpleVertex::pos),	D3D11_INPUT_PER_VERTEX_DATA, 0},
+		{"COLOR",	 0, DXGI_FORMAT_R32G32B32A32_FLOAT, 0, sizeof (SimpleVertex::norm) + sizeof (SimpleVertex::pos),	
+																						D3D11_INPUT_PER_VERTEX_DATA, 0}
 	};
 
 	UINT numElements = ARRAYSIZE (layout);
@@ -425,14 +440,55 @@ HRESULT InitGeometry ()
 	}
 
 	// ------------------------------------------------------------------------------------------
-	
-	SimpleVertex vert[] = {
-		{XMFLOAT3 (-0.0f,  1.0f, +0.0f), XMFLOAT4 (1.0f, 0.0f, 0.0f, 1.0f)},
 
-		{XMFLOAT3 (-0.5f,  0.0f, +0.5f), XMFLOAT4 (0.0f, 1.0f, 0.0f, 1.0f)},
-		{XMFLOAT3 (-0.5f,  0.0f, -0.5f), XMFLOAT4 (0.0f, 0.0f, 1.0f, 1.0f)},
-		{XMFLOAT3 (+0.5f,  0.0f, -0.5f), XMFLOAT4 (1.0f, 0.0f, 1.0f, 1.0f)},
-		{XMFLOAT3 (+0.5f,  0.0f, +0.5f), XMFLOAT4 (1.0f, 1.0f, 0.0f, 1.0f)},
+	pPSBlob = nullptr;
+	hr = CompileShaderFromFile (fileName, "PSSolid", "ps_4_0", &pPSBlob);
+	if (FAILED (hr))
+	{
+		MessageBox (nullptr, "Failed to create FX (PSSolid) file.", "Error", MB_OK);
+		return hr;
+	}
+
+	hr = g_device->CreatePixelShader (pPSBlob->GetBufferPointer (), pPSBlob->GetBufferSize (),
+									  nullptr, &g_pPixelShaderSolid);
+	if (FAILED (hr))
+	{
+		return hr;
+	}
+
+	// ------------------------------------------------------------------------------------------
+	
+	SimpleVertex vert[] =
+	{  /* координаты  X,	Y,	   Z	    нормаль    X,	 Y,	   Z		цвет	   R,	 G,	   B,	 A	*/
+		{ XMFLOAT3 (-1.0f, 1.0f, -1.0f),    XMFLOAT3 (0.0f, 1.0f, 0.0f),	XMFLOAT4 (1.0f, 0.0f, 0.0f, 1.0f)},
+		{ XMFLOAT3 ( 1.0f, 1.0f, -1.0f),	XMFLOAT3 (0.0f, 1.0f, 0.0f),	XMFLOAT4 (0.0f, 1.0f, 1.0f, 1.0f)},
+		{ XMFLOAT3 ( 1.0f, 1.0f,  1.0f),	XMFLOAT3 (0.0f, 1.0f, 0.0f),	XMFLOAT4 (1.0f, 0.0f, 1.0f, 1.0f)},
+		{ XMFLOAT3 (-1.0f, 1.0f,  1.0f),	XMFLOAT3 (0.0f, 1.0f, 0.0f),	XMFLOAT4 (0.0f, 1.0f, 1.0f, 1.0f)},
+																				   			
+		{ XMFLOAT3 (-1.0f, -1.0f, -1.0f),   XMFLOAT3 (0.0f, -1.0f, 0.0f),	XMFLOAT4 (1.0f, 0.0f, 0.0f, 1.0f)},
+		{ XMFLOAT3 ( 1.0f, -1.0f, -1.0f),   XMFLOAT3 (0.0f, -1.0f, 0.0f),	XMFLOAT4 (0.0f, 1.0f, 0.0f, 1.0f)},
+		{ XMFLOAT3 ( 1.0f, -1.0f,  1.0f),	XMFLOAT3 (0.0f, -1.0f, 0.0f),	XMFLOAT4 (0.0f, 1.0f, 0.0f, 1.0f)},
+		{ XMFLOAT3 (-1.0f, -1.0f,  1.0f),	XMFLOAT3 (0.0f, -1.0f, 0.0f),	XMFLOAT4 (1.0f, 0.0f, 0.0f, 1.0f)},
+																				   
+		{ XMFLOAT3 (-1.0f, -1.0f,  1.0f),   XMFLOAT3 (-1.0f, 0.0f, 0.0f),	XMFLOAT4 (1.0f, 0.0f, 0.0f, 1.0f)},
+		{ XMFLOAT3 (-1.0f, -1.0f, -1.0f),   XMFLOAT3 (-1.0f, 0.0f, 0.0f),	XMFLOAT4 (0.0f, 0.0f, 1.0f, 1.0f)},
+		{ XMFLOAT3 (-1.0f,  1.0f, -1.0f),   XMFLOAT3 (-1.0f, 0.0f, 0.0f),	XMFLOAT4 (1.0f, 0.0f, 0.0f, 1.0f)},
+		{ XMFLOAT3 (-1.0f,  1.0f,  1.0f),	XMFLOAT3 (-1.0f, 0.0f, 0.0f),	XMFLOAT4 (0.0f, 0.0f, 1.0f, 1.0f)},
+																				   	  
+		{ XMFLOAT3 ( 1.0f, -1.0f,  1.0f),	XMFLOAT3 (1.0f, 0.0f, 0.0f),	XMFLOAT4 (0.0f, 0.4f, 1.0f, 1.0f)},
+		{ XMFLOAT3 ( 1.0f, -1.0f, -1.0f),   XMFLOAT3 (1.0f, 0.0f, 0.0f),	XMFLOAT4 (0.0f, 0.4f, 0.5f, 1.0f)},
+		{ XMFLOAT3 ( 1.0f,  1.0f, -1.0f),	XMFLOAT3 (1.0f, 0.0f, 0.0f),	XMFLOAT4 (1.0f, 0.4f, 0.0f, 1.0f)},
+		{ XMFLOAT3 ( 1.0f,  1.0f,  1.0f),	XMFLOAT3 (1.0f, 0.0f, 0.0f),	XMFLOAT4 (0.0f, 0.4f, 1.0f, 1.0f)},
+																							
+		{ XMFLOAT3 (-1.0f, -1.0f, -1.0f),   XMFLOAT3 (0.0f, 0.0f, -1.0f),	XMFLOAT4 (0.0f, 0.4f, 0.0f, 1.0f)},
+		{ XMFLOAT3 ( 1.0f, -1.0f, -1.0f),   XMFLOAT3 (0.0f, 0.0f, -1.0f),	XMFLOAT4 (0.0f, 0.4f, 0.0f, 1.0f)},
+		{ XMFLOAT3 ( 1.0f,  1.0f, -1.0f),	XMFLOAT3 (0.0f, 0.0f, -1.0f),	XMFLOAT4 (0.0f, 0.4f, 1.0f, 1.0f)},
+		{ XMFLOAT3 (-1.0f,  1.0f, -1.0f),   XMFLOAT3 (0.0f, 0.0f, -1.0f),	XMFLOAT4 (0.0f, 0.4f, 1.0f, 1.0f)},
+																				   			 
+		{ XMFLOAT3 (-1.0f, -1.0f, 1.0f),    XMFLOAT3 (0.0f, 0.0f, 1.0f),	XMFLOAT4 (1.0f, 0.4f, 1.0f, 1.0f)},
+		{ XMFLOAT3 ( 1.0f, -1.0f, 1.0f),	XMFLOAT3 (0.0f, 0.0f, 1.0f),	XMFLOAT4 (1.0f, 0.4f, 0.0f, 1.0f)},
+		{ XMFLOAT3 ( 1.0f,  1.0f, 1.0f),	XMFLOAT3 (0.0f, 0.0f, 1.0f),	XMFLOAT4 (0.0f, 0.4f, 1.0f, 1.0f)},
+		{ XMFLOAT3 (-1.0f,  1.0f, 1.0f),	XMFLOAT3 (0.0f, 0.0f, 1.0f),	XMFLOAT4 (0.0f, 0.4f, 0.0f, 1.0f)},
 	};
 
 	const UINT numVertex = ARRAYSIZE (vert);
@@ -456,13 +512,23 @@ HRESULT InitGeometry ()
 	
 	WORD indices[] =
 	{
-		0, 4, 1,
-		0, 1, 2,
-		0, 2, 3,
-		0, 3, 4,
+		3,1,0,
+		2,1,3,
 
-		2, 4, 1,
-		2, 4, 3
+		6,4,5,
+		7,4,6,
+
+		11,9,8,
+		10,9,11,
+
+		14,12,13,
+		15,12,14,
+
+		19,17,16,
+		18,17,19,
+
+		22,20,21,
+		23,20,22
 	};
 
 	ZeroMemory (&bd, sizeof (bd));
@@ -484,7 +550,7 @@ HRESULT InitGeometry ()
 
 	g_deviceContext->IASetVertexBuffers (0, 1, &g_pVertexBuffer, &stride, &offset);
 	g_deviceContext->IASetIndexBuffer (g_pIndexBuffer, DXGI_FORMAT_R16_UINT, 0);
-	g_deviceContext->IASetPrimitiveTopology (D3D11_PRIMITIVE_TOPOLOGY_TRIANGLESTRIP);
+	g_deviceContext->IASetPrimitiveTopology (D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
 	
 	// ---------------------------------------------------------------------------------------
 
@@ -533,7 +599,7 @@ HRESULT InitMatrixes ()
 
 	g_World = XMMatrixIdentity ();
 
-	XMVECTOR Eye = XMVectorSet (-1.0f, 0.0f, -5.0f, 5.0f);
+	XMVECTOR Eye = XMVectorSet (0.0f, 4.0f, -10.0f, 0.0f);
 	XMVECTOR At  = XMVectorSet (1.5f, 1.0f,  0.0f, 0.0f);
 	XMVECTOR Up  = XMVectorSet (0.0f, 1.0f,  0.0f, 0.0f);
 	g_View = XMMatrixLookAtLH (Eye, At, Up);
@@ -543,37 +609,80 @@ HRESULT InitMatrixes ()
 	return S_OK;
 }
 
-void SetMatrixes (float fAngle)
+void UpdateTime ()
 {
-	static float time = 0.0f;
-
 	if (g_driverType == D3D_DRIVER_TYPE_REFERENCE)
 	{
-		time += (float) XM_PI * 0.0125f;
+		myTime += (float) XM_PI * 0.0125f;
 	}
 	else
 	{
-		static DWORD dwTimeStart= 0;
-		ULONGLONG dwTimeCur = GetTickCount64 ();
+		static DWORD dwTimeStart = 0;
+		DWORD dwTimeCur = GetTickCount ();
 		if (dwTimeStart == 0)
 		{
 			dwTimeStart = dwTimeCur;
 		}
 
-		time = (dwTimeCur - dwTimeStart) / 1000.0f;
+		myTime = (dwTimeCur - dwTimeStart) / 1000.0f;
+	}
+}
+
+void UpdateLight ()
+{
+	vLightDirs[0] = XMFLOAT4 (-0.577f, 0.577f, -0.577f, 1.0f);
+	vLightDirs[1] = XMFLOAT4 (0.0f, 0.0f, -1.0f, 1.0f);
+
+	vLightColors[0] = XMFLOAT4 (1.0f, 1.0f, 1.0f, 0.1f);
+	vLightColors[1] = XMFLOAT4 (1.0f, 1.0f, 0.0f, 1.0f);
+
+	XMMATRIX mRotate = XMMatrixRotationY (-2.5f * myTime); // 201
+	XMVECTOR vLightDir = XMLoadFloat4 (&vLightDirs[0]);
+	vLightDir = XMVector3Transform (vLightDir, mRotate);
+	XMStoreFloat4 (&vLightDirs[0], vLightDir);
+
+	mRotate = XMMatrixRotationY (1.0f * myTime);
+	vLightDir = XMLoadFloat4 (&vLightDirs[1]);
+	vLightDir = XMVector4Transform (vLightDir, mRotate);
+	XMStoreFloat4 (&vLightDirs[1], vLightDir);
+}
+
+void UpdateMatrix (UINT nLightIndex)
+{
+	switch (nLightIndex)
+	{
+		case MX_SETWORLD:
+			{
+				g_World = XMMatrixRotationAxis (XMVectorSet (0.0f, 1.0f, 0.0f, 0.0f), myTime);
+				nLightIndex = 0;
+			}
+			break;
+		default:
+			{
+				XMMATRIX mLightScale = XMMatrixScaling (0.2f, 0.2f, 0.2f);
+				g_World = mLightScale;
+				g_World *= XMMatrixTranslationFromVector (4.0f * XMLoadFloat4 (&vLightDirs[nLightIndex]));
+				
+				nLightIndex = 0;
+			}
 	}
 
-	const float _speed = 2.0f;
-	time *= _speed;
+	ConstantBuffer constBuf;
+	constBuf.mWorld			= XMMatrixTranspose (g_World);
+	constBuf.mView			= XMMatrixTranspose (g_View);
+	constBuf.mProjection	= XMMatrixTranspose (g_Projection);
+	constBuf.vLightColor[0] = vLightColors[0];
+	//constBuf.vLightColor[0] = XMFLOAT4 (0.0f, 0.0f, 0.0f, 1.0f);
+	constBuf.vLightColor[1] = vLightColors[1];
+	constBuf.vLightDir[0]	= vLightDirs[0];
+	constBuf.vLightDir[1]	= vLightDirs[1];
+	constBuf.vOutputColor	= XMFLOAT4 (1.0f, 1.0f, 1.0f, 1.0f);
 
-	g_World  = XMMatrixScaling (sin (time) * sin (time) + 0.2, 0.4 + cos (time) * cos (time), 1);
-	g_World *= XMMatrixRotationZ (3 * cos (time) * sin (time));
-	g_World *= XMMatrixTranslation (2.0, 0, 0);
-	g_World *= XMMatrixRotationY (cos (time) * cos (time) * sin (time));
-	g_World *= XMMatrixTranslation (cos (time),
-									0.3 + cos (-2 * (double) time ) / 2.5,
-									1 * sin (-(double) time));
-									
+	g_deviceContext->UpdateSubresource (g_pConstantBuffer, 0, nullptr, &constBuf, 0, 0);
+}
+
+void SetMatrixes (float fAngle)
+{
 	ConstantBuffer cb;
 	cb.mWorld		= XMMatrixTranspose (g_World);
 	cb.mView		= XMMatrixTranspose (g_View);
