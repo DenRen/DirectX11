@@ -117,8 +117,9 @@ C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\xnamathvector.i
 C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\xnamathmisc.inl(518,43): warning C4838: Преобразование из "unsigned int" в "INT" требует сужающего преобразования.
 C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\xnamathmisc.inl(519,40): warning C4838: Преобразование из "unsigned int" в "INT" требует сужающего преобразования.
 C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\xnamathmisc.inl(519,51): warning C4838: Преобразование из "unsigned int" в "INT" требует сужающего преобразования.
-C:\Users\denre\source\repos\DirectX11\DX11\DX11\main.cpp(152,26): warning C4838: Преобразование из "float" в "LONG" требует сужающего преобразования.
-C:\Users\denre\source\repos\DirectX11\DX11\DX11\main.cpp(152,26): warning C4244: инициализация: преобразование "float" в "LONG", возможна потеря данных
-C:\Users\denre\source\repos\DirectX11\DX11\DX11\main.cpp(152,40): warning C4838: Преобразование из "float" в "LONG" требует сужающего преобразования.
-C:\Users\denre\source\repos\DirectX11\DX11\DX11\main.cpp(152,40): warning C4244: инициализация: преобразование "float" в "LONG", возможна потеря данных
+C:\Users\denre\source\repos\DirectX11\DX11\DX11\main.cpp(159,26): warning C4838: Преобразование из "float" в "LONG" требует сужающего преобразования.
+C:\Users\denre\source\repos\DirectX11\DX11\DX11\main.cpp(159,26): warning C4244: инициализация: преобразование "float" в "LONG", возможна потеря данных
+C:\Users\denre\source\repos\DirectX11\DX11\DX11\main.cpp(159,40): warning C4838: Преобразование из "float" в "LONG" требует сужающего преобразования.
+C:\Users\denre\source\repos\DirectX11\DX11\DX11\main.cpp(159,40): warning C4244: инициализация: преобразование "float" в "LONG", возможна потеря данных
+C:\Users\denre\source\repos\DirectX11\DX11\DX11\main.cpp(710,80): warning C4244: аргумент: преобразование "double" в "FLOAT", возможна потеря данных
   DX11.vcxproj -> C:\Users\denre\source\repos\DirectX11\DX11\Debug\DX11.exe

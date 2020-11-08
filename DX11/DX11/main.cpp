@@ -12,16 +12,19 @@ const int MX_SETWORLD = 0x101;
 struct SimpleVertex
 {
 	XMFLOAT3 pos;
+	XMFLOAT2 tex;
 	XMFLOAT3 norm;
-	XMFLOAT4 color;
 };
 
-struct ConstantBuffer
+struct ConstantBufferMatrixes
 {
 	XMMATRIX mWorld;
 	XMMATRIX mView;
 	XMMATRIX mProjection;
+};
 
+struct ConstantBufferLights
+{
 	XMFLOAT4 vLightDir[2];
 	XMFLOAT4 vLightColor[2];
 	XMFLOAT4 vOutputColor;
@@ -46,7 +49,8 @@ ID3D11PixelShader*		g_pPixelShaderSolid = nullptr;
 ID3D11InputLayout*		g_pVertexLayout		= nullptr;
 ID3D11Buffer*			g_pVertexBuffer		= nullptr;
 ID3D11Buffer*			g_pIndexBuffer		= nullptr;
-ID3D11Buffer*			g_pConstantBuffer	= nullptr;
+ID3D11Buffer*			g_pCBMatrixes		= nullptr;
+ID3D11Buffer*			g_pCBLight			= nullptr;
 
 XMMATRIX g_World;
 XMMATRIX g_View;
@@ -55,6 +59,9 @@ float myTime = 0.0f;
 
 XMFLOAT4 vLightDirs[2];
 XMFLOAT4 vLightColors[2];
+
+ID3D11ShaderResourceView* g_pTextureRV	   = nullptr;
+ID3D11SamplerState*		  g_pSamplerLinear = nullptr;
 
 HRESULT InitWindow (HINSTANCE hInstance, int nCmdShow);
 HRESULT InitDevice ();
@@ -327,13 +334,14 @@ void Render ()
 
 	UpdateLight ();
 
-	UpdateMatrix (MX_SETWORLD);
 	g_deviceContext->VSSetShader (g_pVertexShader, nullptr, 0);
-	g_deviceContext->VSSetConstantBuffers (0, 1, &g_pConstantBuffer);
-	g_deviceContext->PSSetShader (g_pPixelShader, nullptr, 0);
-	g_deviceContext->PSSetConstantBuffers (0, 1, &g_pConstantBuffer);
+	g_deviceContext->VSSetConstantBuffers (0, 1, &g_pCBMatrixes);
+	g_deviceContext->VSSetConstantBuffers (1, 1, &g_pCBLight);
 
-	g_deviceContext->DrawIndexed (36, 0, 0);
+	g_deviceContext->PSSetConstantBuffers (0, 1, &g_pCBMatrixes);
+	g_deviceContext->PSSetConstantBuffers (1, 1, &g_pCBLight);
+	g_deviceContext->PSSetShaderResources (0, 1, &g_pTextureRV);
+	g_deviceContext->PSSetSamplers (0, 1, &g_pSamplerLinear);
 
 	g_deviceContext->PSSetShader (g_pPixelShaderSolid, nullptr, 0);
 	for (int i = 0; i < 2; i++)
@@ -341,6 +349,10 @@ void Render ()
 		UpdateMatrix (i);
 		g_deviceContext->DrawIndexed (36, 0, 0);
 	}
+
+	UpdateMatrix (MX_SETWORLD);
+	g_deviceContext->PSSetShader (g_pPixelShader, nullptr, 0);
+	g_deviceContext->DrawIndexed (36, 0, 0);
 
 	g_pSwapChain->Present (0, 0);
 }
@@ -401,12 +413,13 @@ HRESULT InitGeometry ()
 
 	// ---------------------------------------------------------------------------------------
 	
+	UINT size = 0;
+
 	D3D11_INPUT_ELEMENT_DESC layout[] =
 	{
-		{"POSITION", 0, DXGI_FORMAT_R32G32B32_FLOAT,	0, 0,							D3D11_INPUT_PER_VERTEX_DATA, 0},
-		{"NORMAL",	 0, DXGI_FORMAT_R32G32B32_FLOAT,	0, sizeof (SimpleVertex::pos),	D3D11_INPUT_PER_VERTEX_DATA, 0},
-		{"COLOR",	 0, DXGI_FORMAT_R32G32B32A32_FLOAT, 0, sizeof (SimpleVertex::norm) + sizeof (SimpleVertex::pos),	
-																						D3D11_INPUT_PER_VERTEX_DATA, 0}
+		{"POSITION", 0, DXGI_FORMAT_R32G32B32_FLOAT, 0, size += 0,							D3D11_INPUT_PER_VERTEX_DATA, 0},
+		{"TEXCOORD", 0, DXGI_FORMAT_R32G32_FLOAT,	 0, size += sizeof (SimpleVertex::pos),	D3D11_INPUT_PER_VERTEX_DATA, 0},
+		{"NORMAL",	 0, DXGI_FORMAT_R32G32B32_FLOAT, 0, size += sizeof (SimpleVertex::tex),	D3D11_INPUT_PER_VERTEX_DATA, 0},
 	};
 
 	UINT numElements = ARRAYSIZE (layout);
@@ -459,36 +472,36 @@ HRESULT InitGeometry ()
 	// ------------------------------------------------------------------------------------------
 	
 	SimpleVertex vert[] =
-	{  /* координаты  X,	Y,	   Z	    нормаль    X,	 Y,	   Z		цвет	   R,	 G,	   B,	 A	*/
-		{ XMFLOAT3 (-1.0f, 1.0f, -1.0f),    XMFLOAT3 (0.0f, 1.0f, 0.0f),	XMFLOAT4 (1.0f, 0.0f, 0.0f, 1.0f)},
-		{ XMFLOAT3 ( 1.0f, 1.0f, -1.0f),	XMFLOAT3 (0.0f, 1.0f, 0.0f),	XMFLOAT4 (0.0f, 1.0f, 1.0f, 1.0f)},
-		{ XMFLOAT3 ( 1.0f, 1.0f,  1.0f),	XMFLOAT3 (0.0f, 1.0f, 0.0f),	XMFLOAT4 (1.0f, 0.0f, 1.0f, 1.0f)},
-		{ XMFLOAT3 (-1.0f, 1.0f,  1.0f),	XMFLOAT3 (0.0f, 1.0f, 0.0f),	XMFLOAT4 (0.0f, 1.0f, 1.0f, 1.0f)},
-																				   			
-		{ XMFLOAT3 (-1.0f, -1.0f, -1.0f),   XMFLOAT3 (0.0f, -1.0f, 0.0f),	XMFLOAT4 (1.0f, 0.0f, 0.0f, 1.0f)},
-		{ XMFLOAT3 ( 1.0f, -1.0f, -1.0f),   XMFLOAT3 (0.0f, -1.0f, 0.0f),	XMFLOAT4 (0.0f, 1.0f, 0.0f, 1.0f)},
-		{ XMFLOAT3 ( 1.0f, -1.0f,  1.0f),	XMFLOAT3 (0.0f, -1.0f, 0.0f),	XMFLOAT4 (0.0f, 1.0f, 0.0f, 1.0f)},
-		{ XMFLOAT3 (-1.0f, -1.0f,  1.0f),	XMFLOAT3 (0.0f, -1.0f, 0.0f),	XMFLOAT4 (1.0f, 0.0f, 0.0f, 1.0f)},
-																				   
-		{ XMFLOAT3 (-1.0f, -1.0f,  1.0f),   XMFLOAT3 (-1.0f, 0.0f, 0.0f),	XMFLOAT4 (1.0f, 0.0f, 0.0f, 1.0f)},
-		{ XMFLOAT3 (-1.0f, -1.0f, -1.0f),   XMFLOAT3 (-1.0f, 0.0f, 0.0f),	XMFLOAT4 (0.0f, 0.0f, 1.0f, 1.0f)},
-		{ XMFLOAT3 (-1.0f,  1.0f, -1.0f),   XMFLOAT3 (-1.0f, 0.0f, 0.0f),	XMFLOAT4 (1.0f, 0.0f, 0.0f, 1.0f)},
-		{ XMFLOAT3 (-1.0f,  1.0f,  1.0f),	XMFLOAT3 (-1.0f, 0.0f, 0.0f),	XMFLOAT4 (0.0f, 0.0f, 1.0f, 1.0f)},
-																				   	  
-		{ XMFLOAT3 ( 1.0f, -1.0f,  1.0f),	XMFLOAT3 (1.0f, 0.0f, 0.0f),	XMFLOAT4 (0.0f, 0.4f, 1.0f, 1.0f)},
-		{ XMFLOAT3 ( 1.0f, -1.0f, -1.0f),   XMFLOAT3 (1.0f, 0.0f, 0.0f),	XMFLOAT4 (0.0f, 0.4f, 0.5f, 1.0f)},
-		{ XMFLOAT3 ( 1.0f,  1.0f, -1.0f),	XMFLOAT3 (1.0f, 0.0f, 0.0f),	XMFLOAT4 (1.0f, 0.4f, 0.0f, 1.0f)},
-		{ XMFLOAT3 ( 1.0f,  1.0f,  1.0f),	XMFLOAT3 (1.0f, 0.0f, 0.0f),	XMFLOAT4 (0.0f, 0.4f, 1.0f, 1.0f)},
-																							
-		{ XMFLOAT3 (-1.0f, -1.0f, -1.0f),   XMFLOAT3 (0.0f, 0.0f, -1.0f),	XMFLOAT4 (0.0f, 0.4f, 0.0f, 1.0f)},
-		{ XMFLOAT3 ( 1.0f, -1.0f, -1.0f),   XMFLOAT3 (0.0f, 0.0f, -1.0f),	XMFLOAT4 (0.0f, 0.4f, 0.0f, 1.0f)},
-		{ XMFLOAT3 ( 1.0f,  1.0f, -1.0f),	XMFLOAT3 (0.0f, 0.0f, -1.0f),	XMFLOAT4 (0.0f, 0.4f, 1.0f, 1.0f)},
-		{ XMFLOAT3 (-1.0f,  1.0f, -1.0f),   XMFLOAT3 (0.0f, 0.0f, -1.0f),	XMFLOAT4 (0.0f, 0.4f, 1.0f, 1.0f)},
-																				   			 
-		{ XMFLOAT3 (-1.0f, -1.0f, 1.0f),    XMFLOAT3 (0.0f, 0.0f, 1.0f),	XMFLOAT4 (1.0f, 0.4f, 1.0f, 1.0f)},
-		{ XMFLOAT3 ( 1.0f, -1.0f, 1.0f),	XMFLOAT3 (0.0f, 0.0f, 1.0f),	XMFLOAT4 (1.0f, 0.4f, 0.0f, 1.0f)},
-		{ XMFLOAT3 ( 1.0f,  1.0f, 1.0f),	XMFLOAT3 (0.0f, 0.0f, 1.0f),	XMFLOAT4 (0.0f, 0.4f, 1.0f, 1.0f)},
-		{ XMFLOAT3 (-1.0f,  1.0f, 1.0f),	XMFLOAT3 (0.0f, 0.0f, 1.0f),	XMFLOAT4 (0.0f, 0.4f, 0.0f, 1.0f)},
+	{ /* координаты X, Y, Z              координаты текстры tu, tv   нормаль X, Y, Z        */
+		{XMFLOAT3 (-1.0f,  1.0f, -1.0f), XMFLOAT2 (0.0f, 0.0f), XMFLOAT3 ( 0.0f,  1.0f,  0.0f)},
+		{XMFLOAT3 ( 1.0f,  1.0f, -1.0f), XMFLOAT2 (0.3f, 0.0f), XMFLOAT3 ( 0.0f,  1.0f,  0.0f)},
+		{XMFLOAT3 ( 1.0f,  1.0f,  1.0f), XMFLOAT2 (0.3f, 1.0f), XMFLOAT3 ( 0.0f,  1.0f,  0.0f)},
+		{XMFLOAT3 (-1.0f,  1.0f,  1.0f), XMFLOAT2 (0.0f, 1.0f), XMFLOAT3 ( 0.0f,  1.0f,  0.0f)},
+
+		{XMFLOAT3 (-1.0f, -1.0f, -1.0f), XMFLOAT2 (0.0f, 0.0f), XMFLOAT3 ( 0.0f, -1.0f,  0.0f)},
+		{XMFLOAT3 ( 1.0f, -1.0f, -1.0f), XMFLOAT2 (0.3f, 0.0f), XMFLOAT3 ( 0.0f, -1.0f,  0.0f)},
+		{XMFLOAT3 ( 1.0f, -1.0f,  1.0f), XMFLOAT2 (0.3f, 1.0f), XMFLOAT3 ( 0.0f, -1.0f,  0.0f)},
+		{XMFLOAT3 (-1.0f, -1.0f,  1.0f), XMFLOAT2 (0.0f, 1.0f), XMFLOAT3 ( 0.0f, -1.0f,  0.0f)},
+
+		{XMFLOAT3 (-1.0f, -1.0f,  1.0f), XMFLOAT2 (0.0f, 0.0f), XMFLOAT3 (-1.0f,  0.0f,  0.0f)},
+		{XMFLOAT3 (-1.0f, -1.0f, -1.0f), XMFLOAT2 (0.3f, 0.0f), XMFLOAT3 (-1.0f,  0.0f,  0.0f)},
+		{XMFLOAT3 (-1.0f,  1.0f, -1.0f), XMFLOAT2 (0.3f, 1.0f), XMFLOAT3 (-1.0f,  0.0f,  0.0f)},
+		{XMFLOAT3 (-1.0f,  1.0f,  1.0f), XMFLOAT2 (0.0f, 1.0f), XMFLOAT3 (-1.0f,  0.0f,  0.0f)},
+
+		{XMFLOAT3 ( 1.0f, -1.0f,  1.0f), XMFLOAT2 (0.0f, 0.0f), XMFLOAT3 ( 1.0f,  0.0f,  0.0f)},
+		{XMFLOAT3 ( 1.0f, -1.0f, -1.0f), XMFLOAT2 (0.3f, 0.0f), XMFLOAT3 ( 1.0f,  0.0f,  0.0f)},
+		{XMFLOAT3 ( 1.0f,  1.0f, -1.0f), XMFLOAT2 (0.3f, 1.0f), XMFLOAT3 ( 1.0f,  0.0f,  0.0f)},
+		{XMFLOAT3 ( 1.0f,  1.0f,  1.0f), XMFLOAT2 (0.0f, 1.0f), XMFLOAT3 ( 1.0f,  0.0f,  0.0f)},
+
+		{XMFLOAT3 (-1.0f, -1.0f, -1.0f), XMFLOAT2 (0.0f, 0.0f), XMFLOAT3 ( 0.0f,  0.0f, -1.0f)},
+		{XMFLOAT3 ( 1.0f, -1.0f, -1.0f), XMFLOAT2 (0.3f, 0.0f), XMFLOAT3 ( 0.0f,  0.0f, -1.0f)},
+		{XMFLOAT3 ( 1.0f,  1.0f, -1.0f), XMFLOAT2 (0.3f, 1.0f), XMFLOAT3 ( 0.0f,  0.0f, -1.0f)},
+		{XMFLOAT3 (-1.0f,  1.0f, -1.0f), XMFLOAT2 (0.0f, 1.0f), XMFLOAT3 ( 0.0f,  0.0f, -1.0f)},
+
+		{XMFLOAT3 (-1.0f, -1.0f,  1.0f), XMFLOAT2 (0.0f, 0.0f), XMFLOAT3 ( 0.0f,  0.0f,  1.0f)},
+		{XMFLOAT3 ( 1.0f, -1.0f,  1.0f), XMFLOAT2 (0.3f, 0.0f), XMFLOAT3 ( 0.0f,  0.0f,  1.0f)},
+		{XMFLOAT3 ( 1.0f,  1.0f,  1.0f), XMFLOAT2 (0.3f, 1.0f), XMFLOAT3 ( 0.0f,  0.0f,  1.0f)},
+		{XMFLOAT3 (-1.0f,  1.0f,  1.0f), XMFLOAT2 (0.0f, 1.0f), XMFLOAT3 ( 0.0f,  0.0f,  1.0f)},
 	};
 
 	const UINT numVertex = ARRAYSIZE (vert);
@@ -556,10 +569,47 @@ HRESULT InitGeometry ()
 
 	ZeroMemory (&bd, sizeof (bd));
 	bd.Usage = D3D11_USAGE_DEFAULT;
-	bd.ByteWidth = sizeof (ConstantBuffer);
+	bd.ByteWidth = sizeof (ConstantBufferMatrixes);
 	bd.BindFlags = D3D11_BIND_CONSTANT_BUFFER;
 	bd.CPUAccessFlags = 0;
-	hr = g_device->CreateBuffer (&bd, nullptr, &g_pConstantBuffer);
+	hr = g_device->CreateBuffer (&bd, nullptr, &g_pCBMatrixes);
+	if (FAILED (hr))
+	{
+		return hr;
+	}
+
+	ZeroMemory (&bd, sizeof (bd));
+	bd.Usage = D3D11_USAGE_DEFAULT;
+	bd.ByteWidth = sizeof (ConstantBufferLights);
+	bd.BindFlags = D3D11_BIND_CONSTANT_BUFFER;
+	bd.CPUAccessFlags = 0;
+	hr = g_device->CreateBuffer (&bd, nullptr, &g_pCBLight);
+	if (FAILED (hr))
+	{
+		return hr;
+	}
+
+	// ------------------------------------------------------------------------------------------
+
+	LPCSTR texFileName = "Resources\\metall.dds";
+	hr = D3DX11CreateShaderResourceViewFromFile (g_device, texFileName, nullptr, nullptr,
+												 &g_pTextureRV, nullptr);
+	if (FAILED (hr))
+	{
+		MessageBox (nullptr, "Failed to load metall.dds", "Error", MB_OK);
+		return hr;
+	}
+
+	D3D11_SAMPLER_DESC sampDesc;
+	ZeroMemory (&sampDesc, sizeof (sampDesc));
+	sampDesc.Filter = D3D11_FILTER_MIN_MAG_MIP_LINEAR;
+	sampDesc.AddressU = D3D11_TEXTURE_ADDRESS_WRAP;
+	sampDesc.AddressV = D3D11_TEXTURE_ADDRESS_WRAP;
+	sampDesc.AddressW = D3D11_TEXTURE_ADDRESS_WRAP;
+	sampDesc.ComparisonFunc = D3D11_COMPARISON_NEVER;
+	sampDesc.MinLOD = 0;
+	sampDesc.MaxLOD = D3D11_FLOAT32_MAX;
+	hr = g_device->CreateSamplerState (&sampDesc, &g_pSamplerLinear);
 	if (FAILED (hr))
 	{
 		return hr;
@@ -575,7 +625,11 @@ void CleanupDevice ()
 		g_deviceContext->ClearState ();
 	}
 
-	RELEASE (g_pConstantBuffer);
+	RELEASE (g_pSamplerLinear);
+	RELEASE (g_pTextureRV);
+	RELEASE (g_pCBMatrixes);
+	RELEASE (g_pCBLight);
+
 	RELEASE (g_pVertexBuffer);
 	RELEASE (g_pIndexBuffer);
 	RELEASE (g_pPixelShader);
@@ -633,18 +687,18 @@ void UpdateLight ()
 	vLightDirs[0] = XMFLOAT4 (-0.577f, 0.577f, -0.577f, 1.0f);
 	vLightDirs[1] = XMFLOAT4 (0.0f, 0.0f, -1.0f, 1.0f);
 
-	vLightColors[0] = XMFLOAT4 (1.0f, 1.0f, 1.0f, 0.1f);
-	vLightColors[1] = XMFLOAT4 (1.0f, 1.0f, 0.0f, 1.0f);
+	vLightColors[0] = XMFLOAT4 (1.0f, 0.0f, 0.0f, 1.0f);
+	vLightColors[1] = XMFLOAT4 (0.0f, 0.0f, 1.0f, 1.0f);
 
-	XMMATRIX mRotate = XMMatrixRotationY (-2.5f * myTime); // 201
-	XMVECTOR vLightDir = XMLoadFloat4 (&vLightDirs[0]);
+	XMMATRIX mRotate = XMMatrixRotationY (-3.0f * myTime); // 201
+	XMVECTOR vLightDir = XMLoadFloat4 (&vLightDirs[1]);
+	vLightDir = XMVector3Transform (vLightDir, mRotate);
+	XMStoreFloat4 (&vLightDirs[1], vLightDir);
+
+	mRotate = XMMatrixRotationY (0.5f * myTime);
+	vLightDir = XMLoadFloat4 (&vLightDirs[0]);
 	vLightDir = XMVector3Transform (vLightDir, mRotate);
 	XMStoreFloat4 (&vLightDirs[0], vLightDir);
-
-	mRotate = XMMatrixRotationY (1.0f * myTime);
-	vLightDir = XMLoadFloat4 (&vLightDirs[1]);
-	vLightDir = XMVector4Transform (vLightDir, mRotate);
-	XMStoreFloat4 (&vLightDirs[1], vLightDir);
 }
 
 void UpdateMatrix (UINT nLightIndex)
@@ -653,7 +707,7 @@ void UpdateMatrix (UINT nLightIndex)
 	{
 		case MX_SETWORLD:
 			{
-				g_World = XMMatrixRotationAxis (XMVectorSet (0.0f, 1.0f, 0.0f, 0.0f), myTime);
+				g_World = XMMatrixRotationAxis (XMVectorSet (0.0f, 1.0f, 0.0f, 0.0f), 0.25 * myTime);
 				nLightIndex = 0;
 			}
 			break;
@@ -667,26 +721,28 @@ void UpdateMatrix (UINT nLightIndex)
 			}
 	}
 
-	ConstantBuffer constBuf;
-	constBuf.mWorld			= XMMatrixTranspose (g_World);
-	constBuf.mView			= XMMatrixTranspose (g_View);
-	constBuf.mProjection	= XMMatrixTranspose (g_Projection);
-	constBuf.vLightColor[0] = vLightColors[0];
-	//constBuf.vLightColor[0] = XMFLOAT4 (0.0f, 0.0f, 0.0f, 1.0f);
-	constBuf.vLightColor[1] = vLightColors[1];
-	constBuf.vLightDir[0]	= vLightDirs[0];
-	constBuf.vLightDir[1]	= vLightDirs[1];
-	constBuf.vOutputColor	= XMFLOAT4 (1.0f, 1.0f, 1.0f, 1.0f);
+	ConstantBufferMatrixes constBufMatrix;
+	ConstantBufferLights constBufLight;
+	constBufMatrix.mWorld		= XMMatrixTranspose (g_World);
+	constBufMatrix.mView		= XMMatrixTranspose (g_View);
+	constBufMatrix.mProjection	= XMMatrixTranspose (g_Projection);
 
-	g_deviceContext->UpdateSubresource (g_pConstantBuffer, 0, nullptr, &constBuf, 0, 0);
+	constBufLight.vLightColor[0] = vLightColors[0];
+	constBufLight.vLightColor[1] = vLightColors[1];
+	constBufLight.vLightDir[0]	 = vLightDirs[0];
+	constBufLight.vLightDir[1]	 = vLightDirs[1];
+	constBufLight.vOutputColor	 = XMFLOAT4 (1.0f, 1.0f, 1.0f, 1.0f);
+
+	g_deviceContext->UpdateSubresource (g_pCBMatrixes, 0, nullptr, &constBufMatrix, 0, 0);
+	g_deviceContext->UpdateSubresource (g_pCBLight, 0, nullptr, &constBufLight, 0, 0);
 }
 
 void SetMatrixes (float fAngle)
 {
-	ConstantBuffer cb;
+	ConstantBufferMatrixes cb;
 	cb.mWorld		= XMMatrixTranspose (g_World);
 	cb.mView		= XMMatrixTranspose (g_View);
 	cb.mProjection	= XMMatrixTranspose (g_Projection);
 
-	g_deviceContext->UpdateSubresource (g_pConstantBuffer, 0, nullptr, &cb, 0, 0);
+	g_deviceContext->UpdateSubresource (g_pCBMatrixes, 0, nullptr, &cb, 0, 0);
 }
