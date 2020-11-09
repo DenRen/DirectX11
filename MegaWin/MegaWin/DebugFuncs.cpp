@@ -8,24 +8,44 @@
 void NOP ()
 	{}
 
-void PrintLogInfo (const char file[], int line, bool inFile)
+void PrintLogInfo (const char file[], int line, bool inFile, bool end)
 {
+	static bool AlreadyPrinted = false;
+
 	const int sizeLog = 512;
 	char log[sizeLog] = "";
-	snprintf (log, sizeLog, R"(/////////////////////____________DUMP ERROR____________\\\\\\\\\\\\\\\\\\\\\)");
-	snprintf (log, sizeLog, "%s\n\n"
-							"FILE: %s\n"
-							"LINE: %d\n", log, file, line);
 
-	snprintf (log, sizeLog, "%s\nerror:\n%s\n\n", log, std::strerror (errno));
-	snprintf (log, sizeLog, R"(%s\\\\\\\\\\\\\\\\\\\\\_______________END________________/////////////////////)", log);
+	if (!end)
+	{
+		if (!AlreadyPrinted)
+		{
+			sprintf (log, R"(/////////////////////____________DUMP ERROR____________\\\\\\\\\\\\\\\\\\\\\)");
+		}
+		sprintf (log, "%s\n\n"
+					  "FILE: %s\n"
+					  "LINE: %d\n", log, file, line);
+
+		if (AlreadyPrinted)
+		{
+			sprintf (log, "%s\n", log);
+		}
+		else
+		{
+			AlreadyPrinted = true;
+			sprintf (log, "%s\nerror:\n%s\n\n", log, std::strerror (errno));
+		}
+	}
+	else
+	{
+		sprintf (log, R"(\\\\\\\\\\\\\\\\\\\\\_______________END________________/////////////////////)");
+	}
 
 	FILE *outputStream = nullptr;
 
 	if (inFile)
 	{
 		const char logFileName[] = "log.txt";
-		outputStream = fopen (logFileName, "w");
+		outputStream = fopen (logFileName, "a");
 		if (outputStream == nullptr)
 		{
 			snprintf (log, sizeLog, "Failed to create log file!\n%s", log);
@@ -40,7 +60,7 @@ void PrintLogInfo (const char file[], int line, bool inFile)
 	}
 
 	fprintf (outputStream, "%s", log);
-
+	fflush (outputStream);
 
 	if (inFile)
 	{
@@ -48,5 +68,9 @@ void PrintLogInfo (const char file[], int line, bool inFile)
 	}
 }
 
+void DebugEndMain ()
+{
+	END_DUMP_DEBUG_INFO;
+}
 
 #undef _CRT_SECURE_NO_WARNINGS

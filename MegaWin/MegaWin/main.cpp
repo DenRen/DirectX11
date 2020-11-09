@@ -1,8 +1,14 @@
 #include <cstdio>
-#include "Config.h"
+#include "AppMgr.h"
 #include "DebugFuncs.h"
 
 int main ()
 {
+	AppMgr app;
 
+	app.Initialize ();
+	
+	app.Run ();
+
+	DebugEndMain ();
 }

@@ -1,20 +1,33 @@
 #pragma once
 
-//#define TURN_DEBUG
+#include <string>
+
+#define TURN_DEBUG
 
 namespace AppCnf
 {
-	const int scale  = 1;		// Scale is 1:scale, f.e. scale = 2 => 1:2 (1280; 720) -> (640; 360) 
-	const int WIDTH	 = 1920;
-	const int HEIGHT = 1080;
-	const int MAXFPS = 120;
-	const bool VSYNC = false;
+	const int scale  = 1;		// Scale is 1:scale, f.e. scale = 2 => 1:2 (1280; 720) -> (640; 360)
 }
 
 namespace WndCnf
 {
-	const int WIDTH  = AppCnf::WIDTH  / AppCnf::scale;
-	const int HEIGHT = AppCnf::HEIGHT / AppCnf::scale;
-	const int MAXFPS = AppCnf::MAXFPS;
-	const bool VSYNC = AppCnf::VSYNC;
+	const int WIDTH  = 1920 / AppCnf::scale;
+	const int HEIGHT = 1080 / AppCnf::scale;
+	const int MAXFPS = 120;
+	const bool VSYNC	  = false;
+	const bool FULLSCREEN = false;
+	const char TITLE[] = "MegaWindow";
+
+	struct WindowDesc
+	{
+		const char *title;
+		unsigned width;
+		unsigned height;
+		int locateX;
+		int locateY;
+		bool fullScreen;
+		bool vSync;
+
+		WindowDesc (int coordX = 0, int coordY = 0);
+	};
 }

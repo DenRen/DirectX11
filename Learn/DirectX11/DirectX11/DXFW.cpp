@@ -154,10 +154,12 @@ LRESULT CALLBACK WndProc (HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam)
 	PAINTSTRUCT ps = {0};
 	HDC hdc = {0};
 
+	printf ("%d\n", _iter++);
+
 	Input *input = Engine::GetEngine ()->GetInput ();
 	if (input != nullptr)
 	{
-		if (input->IsKeyDown (DIK_ESCAPE))
+		if (input->IsKeyDown (DIK_SPACE))
 		{
 			PostQuitMessage (0);
 			DestroyWindow (hWnd);
