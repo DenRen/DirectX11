@@ -6,9 +6,10 @@ int main ()
 {
 	AppMgr app;
 
-	app.Initialize ();
-	
-	app.Run ();
+	if (app.Initialize ())
+	{
+		app.Run ();
+	}
 
 	DebugEndMain ();
 }

@@ -4,7 +4,9 @@
 #include "DebugFuncs.h"
 
 Graphics::Graphics () :
-	m_dxManager (nullptr)
+	m_dxManager (nullptr),
+	m_hWnd (nullptr)
+
 {}
 Graphics::~Graphics ()
 {

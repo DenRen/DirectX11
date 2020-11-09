@@ -1,5 +1,5 @@
 #include "TextureShader.h"
-#include "AddFunc.h"
+#include "DebugFuncs.h"
 
 TextureShader::TextureShader (ID3D11Device *device, HWND hWnd, LPCSTR shaderFileName, LPCSTR vertexFuncName, LPCSTR pixelFuncName) :
 	Shader (device, hWnd, shaderFileName, vertexFuncName, pixelFuncName)

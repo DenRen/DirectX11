@@ -1,5 +1,5 @@
 #include "ResourceShader.h"
-#include "AddFunc.h"
+#include "DebugFuncs.h"
 
 ResourceShader::ResourceShader () :
 	m_shader (nullptr)

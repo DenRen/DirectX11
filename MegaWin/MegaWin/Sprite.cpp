@@ -1,6 +1,6 @@
 #include <cassert>
 #include "Sprite.h"
-#include "AddFunc.h"
+#include "DebugFuncs.h"
 #include "ResourceManager.h"
 
 Sprite::Sprite (float size) :

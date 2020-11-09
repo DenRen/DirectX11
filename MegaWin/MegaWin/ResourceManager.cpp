@@ -1,5 +1,5 @@
 #include "ResourceManager.h"
-#include "AddFunc.h"
+#include "DebugFuncs.h"
 
 ResourceManager *ResourceManager::m_instance = nullptr;
 
@@ -24,12 +24,13 @@ void ResourceManager::LoadShaderResource (ID3D11Device *device, HWND hWnd, const
 	{
 		delete resourceShader;
 
-		RETURN_VOID_FALSE;
+		DUMP_DEBUG_INFO;
+		return;
 	}
 	
 	m_shader.push_back (resourceShader);
 
-#ifdef _MY_DEBUG
+#ifdef TURN_DEBUG
 	printf ("Shader %s loaded\n", shaderFileName);
 #endif
 }
@@ -38,7 +39,8 @@ void ResourceManager::LoadShaderResource (Shader *shader)
 {
 	if (shader == nullptr)
 	{
-		RETURN_VOID_FALSE;
+		DUMP_DEBUG_INFO;
+		return;
 	}
 
 	ResourceShader *resourceShader = new ResourceShader ();
@@ -46,13 +48,14 @@ void ResourceManager::LoadShaderResource (Shader *shader)
 	{
 		delete resourceShader;
 
-		RETURN_VOID_FALSE;
+		DUMP_DEBUG_INFO;
+		return;
 	}
 
 	m_shader.push_back (resourceShader);
 
-#ifdef _MY_DEBUG
-	printf ("Shader %s loaded\n", shader->GetName ());
+#ifdef TURN_DEBUG
+	printf ("Shader %s loaded\n", shader->GetName ().c_str ());
 #endif
 }
 
@@ -63,12 +66,13 @@ void ResourceManager::LoadTextureResource (ID3D11Device * device, const char *te
 	{
 		delete resourceTexture;
 
-		RETURN_VOID_FALSE;
+		DUMP_DEBUG_INFO;
+		return;
 	}
 
 	m_texture.push_back (resourceTexture);
 
-#ifdef _MY_DEBUG
+#ifdef TURN_DEBUG
 	printf ("Texture %s loaded\n", textureFileName);
 #endif
 }

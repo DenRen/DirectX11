@@ -71,6 +71,13 @@ bool WinManager::Initialize (WndCnf::WindowDesc &winDesc)
 	SetFocus (m_hWnd);
 }
 
+void WinManager::Show ()
+{
+	ShowWindow (m_hWnd, SW_SHOW);
+	SetForegroundWindow (m_hWnd);
+	SetFocus (m_hWnd);
+}
+
 HWND WinManager::GetHWnd ()
 {
 	return m_hWnd;

@@ -1,5 +1,5 @@
 #include "VertexBuffer.h"
-#include "AddFunc.h"
+#include "DebugFuncs.h"
 
 VertexBuffer::VertexBuffer () :
 	m_vertices (nullptr),

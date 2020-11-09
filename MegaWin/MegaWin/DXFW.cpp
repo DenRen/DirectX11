@@ -2,9 +2,7 @@
 
 #include "DXFW.h"
 #include "SystemDefs.h"
-#include "AddFunc.h"
-
-LRESULT CALLBACK WndProc (HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam);
+#include "DebugFuncs.h"
 
 DXFW::DXFW () :
 	m_applicationName (nullptr),
@@ -69,7 +67,7 @@ bool DXFW::CreateDXWindow (const char *Title, int x, int y, int width, int heigh
 	m_hInstance = GetModuleHandle (nullptr);
 
 	wc.style		 = CS_HREDRAW | CS_VREDRAW | CS_OWNDC;
-	wc.lpfnWndProc	 = WndProc;
+	//wc.lpfnWndProc	 = WndProc;
 	wc.cbClsExtra	 = 0;
 	wc.cbWndExtra	 = 0;
 	wc.hInstance	 = m_hInstance;
@@ -145,54 +143,4 @@ bool DXFW::CreateDXWindow (const char *Title, int x, int y, int width, int heigh
 	SetFocus (hWnd);
 
 	return true;
-}
-
-LRESULT CALLBACK WndProc (HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam)
-{
-	static int _iter = 0;
-
-	PAINTSTRUCT ps = {0};
-	HDC hdc = {0};
-
-	printf ("%d\n", _iter++);
-
-	Input *input = Engine::GetEngine ()->GetInput ();
-	if (input != nullptr)
-	{
-		if (input->IsKeyDown (DIK_SPACE))
-		{
-			PostQuitMessage (0);
-			DestroyWindow (hWnd);
-
-			return EXIT_SUCCESS;
-		}
-	}
-
-	switch (Msg)
-	{
-		case WM_KEYDOWN:
-			{
-				/*if (wParam == VK_ESCAPE)
-				{
-					PostQuitMessage (0);
-					DestroyWindow (hWnd);
-				}*/
-			} break;
-		case WM_PAINT:
-			{
-				hdc = BeginPaint (hWnd, &ps);
-				EndPaint (hWnd, &ps);
-			} break;
-		case WM_CLOSE:
-			{
-				PostQuitMessage (0);
-				DestroyWindow (hWnd);
-			} break;
-		default:
-			{
-				return DefWindowProc (hWnd, Msg, wParam, lParam);
-			}
-	}
-	
-	return 0;
 }

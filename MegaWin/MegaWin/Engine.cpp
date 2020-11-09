@@ -39,7 +39,7 @@ bool Engine::InitializeGraphics (HWND hWnd)
     {
         RETURN_FALSE;
     }
-
+    
     m_graphics->SethWnd (hWnd);
 
     return true;

@@ -1,5 +1,5 @@
 #include "AnimatedSprite.h"
-#include "AddFunc.h"
+#include "DebugFuncs.h"
 #include "Timer.h"
 #include "Engine.h"
 

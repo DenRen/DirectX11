@@ -37,7 +37,10 @@ void PrintLogInfo (const char file[], int line, bool inFile, bool end)
 	}
 	else
 	{
-		sprintf (log, R"(\\\\\\\\\\\\\\\\\\\\\_______________END________________/////////////////////)");
+		if (AlreadyPrinted)
+		{
+			sprintf (log, R"(\\\\\\\\\\\\\\\\\\\\\_______________END________________/////////////////////)");
+		}
 	}
 
 	FILE *outputStream = nullptr;

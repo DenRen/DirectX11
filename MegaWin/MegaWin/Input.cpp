@@ -1,5 +1,5 @@
 #include "Input.h"
-#include "AddFunc.h"
+#include "DebugFuncs.h"
 
 Input::Input () :
 	m_directInput (nullptr),

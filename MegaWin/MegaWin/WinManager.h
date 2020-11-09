@@ -11,7 +11,10 @@ class WinManager
 public:
 	WinManager ();
 	~WinManager ();
+	
 	bool Initialize (WndCnf::WindowDesc &winDesc);
+	void  Show ();
+	
 	HWND GetHWnd ();
 	HINSTANCE GetHInstance ();
 

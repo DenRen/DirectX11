@@ -1,7 +1,7 @@
 #include <iostream>
 
 #include "Shader.h"
-#include "AddFunc.h"
+#include "DebugFuncs.h"
 
 Shader::Shader (ID3D11Device *device, HWND hWnd, LPCSTR shaderFileName, LPCSTR vertexFuncName, LPCSTR pixelFuncName) :
 	m_initialized  (Initialize (device, hWnd, shaderFileName, vertexFuncName, pixelFuncName)),

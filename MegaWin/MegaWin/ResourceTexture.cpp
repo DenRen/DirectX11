@@ -1,4 +1,5 @@
 #include "ResourceTexture.h"
+#include "DebugFuncs.h"
 
 ResourceTexture::ResourceTexture () :
 	m_texture (nullptr)

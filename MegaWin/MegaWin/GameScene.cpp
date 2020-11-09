@@ -1,6 +1,6 @@
 #include "GameScene.h"
 #include "TextureShader.h"
-#include "AddFunc.h"
+#include "DebugFuncs.h"
 
 GameScene::GameScene () :
     m_player (nullptr)
@@ -20,6 +20,7 @@ bool GameScene::Initialize ()
     }
 
     m_player = new Player ();
+    auto temp = Engine::GetEngine ()->GetGraphics ();
     m_player->Initialize (Engine::GetEngine ()->GetGraphics()->GetDevice (),
                           Engine::GetEngine ()->GetGraphics()->GetDeviceContext (), shader);
 

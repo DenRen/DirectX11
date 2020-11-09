@@ -1,6 +1,6 @@
 #include <string>
 #include "Texture.h"
-#include "AddFunc.h"
+#include "DebugFuncs.h"
 
 Texture::Texture () :
 	m_texture (nullptr),
