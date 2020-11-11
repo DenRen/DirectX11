@@ -15,10 +15,8 @@ public:
 	int GetWidth ();
 	int GetHeight ();
 
-
 private:
 	ID3D11ShaderResourceView *m_texture;
-	std::string m_name;
 
 	int m_width;
 	int m_height;

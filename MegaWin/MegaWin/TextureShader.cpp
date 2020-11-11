@@ -52,11 +52,6 @@ bool TextureShader::Initialize (ID3D11Device *device, HWND hWnd, LPCSTR shaderFi
 bool TextureShader::InitializeSamplerState (ID3D11Device *device)
 {
 	D3D11_SAMPLER_DESC samplerDesc = {};
-	HRESULT result = S_OK;
-
-	ZeroMemory (&samplerDesc, sizeof (samplerDesc));
-
-	// Create texture sampler description
 	samplerDesc.Filter = D3D11_FILTER_MIN_MAG_MIP_LINEAR;
 	samplerDesc.AddressU = D3D11_TEXTURE_ADDRESS_WRAP;
 	samplerDesc.AddressV = D3D11_TEXTURE_ADDRESS_WRAP;
@@ -71,7 +66,7 @@ bool TextureShader::InitializeSamplerState (ID3D11Device *device)
 	samplerDesc.MinLOD = 0;
 	samplerDesc.MaxLOD = D3D11_FLOAT32_MAX;
 
-	// Create sampler state
+	HRESULT result = S_OK;
 	result = device->CreateSamplerState (&samplerDesc, &m_samplerState);
 	CHECK_FAILED (result);
 

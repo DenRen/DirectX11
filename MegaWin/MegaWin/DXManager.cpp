@@ -179,6 +179,11 @@ bool DXManager::Initilize (HWND hWnd, int Width, int Height, bool fullScreen, bo
         RETURN_FALSE;
     }
 
+    if (!InitializeSamplerState ())
+    {
+        RETURN_FALSE;
+    }
+
     return true;
 }
 
@@ -478,6 +483,30 @@ bool DXManager::InitializeZBuffer ()
 
     HRESULT result = S_OK;
     result = m_device->CreateDepthStencilState (&depthStencilDesc, &m_depthDisabledStencilState);
+    CHECK_FAILED (result);
+
+    return true;
+}
+
+bool DXManager::InitializeSamplerState ()
+{
+    D3D11_SAMPLER_DESC samplerDesc = {};
+    samplerDesc.Filter = D3D11_FILTER_MIN_MAG_MIP_LINEAR;
+    samplerDesc.AddressU = D3D11_TEXTURE_ADDRESS_WRAP;
+    samplerDesc.AddressV = D3D11_TEXTURE_ADDRESS_WRAP;
+    samplerDesc.AddressW = D3D11_TEXTURE_ADDRESS_WRAP;
+    samplerDesc.MipLODBias = 0.0f;
+    samplerDesc.MaxAnisotropy = 1;
+    samplerDesc.ComparisonFunc = D3D11_COMPARISON_ALWAYS;
+    samplerDesc.BorderColor[0] = 0;
+    samplerDesc.BorderColor[1] = 0;
+    samplerDesc.BorderColor[2] = 0;
+    samplerDesc.BorderColor[3] = 0;
+    samplerDesc.MinLOD = 0;
+    samplerDesc.MaxLOD = D3D11_FLOAT32_MAX;
+
+    HRESULT result = S_OK;
+    result = m_device->CreateSamplerState (&samplerDesc, &m_samplerState);
     CHECK_FAILED (result);
 
     return true;

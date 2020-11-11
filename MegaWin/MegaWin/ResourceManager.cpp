@@ -1,3 +1,5 @@
+#include <cassert>
+
 #include "ResourceManager.h"
 #include "DebugFuncs.h"
 
@@ -10,109 +12,164 @@ ResourceManager::~ResourceManager ()
 		if (m_texture[i] != nullptr)
 			delete m_texture[i];
 		
-	const int quantityShaders = m_shader.size ();
-	for (int i = 0; i < quantityShaders; i++)
-		if (m_shader[i] != nullptr)
-			delete m_shader[i];
+	const int quantityPixelShaders = m_pixelShader.size ();
+	for (int i = 0; i < quantityPixelShaders; i++)
+		if (m_pixelShader[i] != nullptr)
+			delete m_pixelShader[i];
+
+	const int quantityVertexShaders = m_vertexShader.size ();
+	for (int i = 0; i < quantityVertexShaders; i++)
+		if (m_vertexShader[i] != nullptr)
+			delete m_vertexShader[i];
 }
 
-void ResourceManager::LoadShaderResource (ID3D11Device *device, HWND hWnd, const char *shaderFileName, const char *vertexFuncName, const char *pixelFuncName)
+bool ResourceManager::AddVertexShader (ID3D11Device *device, HWND hWnd, LPCSTR fileName, LPCSTR funcName,
+									   VertexShader **vertexShader)
 {
-
-	ResourceShader *resourceShader = new ResourceShader ();
-	if (!resourceShader->Load (device, hWnd, shaderFileName, vertexFuncName, pixelFuncName))
+	CHECK_NULLPTR (vertexShader);
+	*vertexShader = new VertexShader ();
+	if (!(*vertexShader)->Initialize (device, hWnd, fileName, funcName))
 	{
-		delete resourceShader;
+		delete vertexShader;
 
-		DUMP_DEBUG_INFO;
-		return;
+		RETURN_FALSE;
 	}
-	
-	m_shader.push_back (resourceShader);
+
+	m_vertexShader.push_back (*vertexShader);
 
 #ifdef TURN_DEBUG
-	printf ("Shader %s loaded\n", shaderFileName);
+	printf ("Vertex shader %s loaded\n", fileName);
 #endif
+
+	return true;
 }
 
-void ResourceManager::LoadShaderResource (Shader *shader)
+bool ResourceManager::AddVertexShader (VertexShader *vertexShader)
 {
-	if (shader == nullptr)
+	if (vertexShader == nullptr)
 	{
-		DUMP_DEBUG_INFO;
-		return;
+		RETURN_FALSE;
 	}
 
-	ResourceShader *resourceShader = new ResourceShader ();
-	if (resourceShader->Load (shader))
-	{
-		delete resourceShader;
+	m_vertexShader.push_back (vertexShader);
 
-		DUMP_DEBUG_INFO;
-		return;
+	return true;
+}
+
+bool ResourceManager::AddPixelShader (ID3D11Device *device, HWND hWnd, LPCSTR fileName, LPCSTR funcName,
+									  PixelShader **pixelShader)
+{
+	CHECK_NULLPTR (pixelShader);
+	*pixelShader = new PixelShader ();
+	if (!(*pixelShader)->Initialize (device, hWnd, fileName, funcName))
+	{
+		delete pixelShader;
+
+		RETURN_FALSE;
 	}
 
-	m_shader.push_back (resourceShader);
+	m_pixelShader.push_back (*pixelShader);
 
 #ifdef TURN_DEBUG
-	printf ("Shader %s loaded\n", shader->GetName ().c_str ());
+	printf ("Pixel shader %s loaded\n", fileName);
 #endif
+
+	return true;
 }
 
-void ResourceManager::LoadTextureResource (ID3D11Device * device, const char *textureFileName)
+bool ResourceManager::AddPixelShader (PixelShader *pixelShader)
 {
-	ResourceTexture *resourceTexture = new ResourceTexture ();
-	if (!resourceTexture->Load (device, textureFileName))
+	if (pixelShader == nullptr)
 	{
-		delete resourceTexture;
-
-		DUMP_DEBUG_INFO;
-		return;
+		RETURN_FALSE;
 	}
 
-	m_texture.push_back (resourceTexture);
+	m_pixelShader.push_back (pixelShader);
+
+	return true;
+}
+
+bool ResourceManager::AddTexture (ID3D11Device *device, LPCSTR textureFileName, Texture **texture)
+{
+	CHECK_NULLPTR (texture);
+
+	*texture = new Texture ();
+	if (!(*texture)->Initialize (device, textureFileName))
+	{
+		delete texture;
+
+		RETURN_FALSE;
+	}
+
+	m_texture.push_back (*texture);
+	m_textureFileName.push_back (textureFileName);
 
 #ifdef TURN_DEBUG
 	printf ("Texture %s loaded\n", textureFileName);
 #endif
+
+	return true;
 }
 
-Shader *ResourceManager::GetShaderByName (const char *shaderName)
+bool ResourceManager::AddTexture (Texture *texture, LPCSTR textureFileName)
 {
-	const int quantityShaders = m_shader.size ();
-	for (int i = 0; i < quantityShaders; i++)
+	if (texture == nullptr)
 	{
-		std::string resourceShaderName = m_shader[i]->GetName ();
-		if (!strcmp (resourceShaderName.c_str (), shaderName))
-		{
-			return m_shader[i]->GetShader ();
-		}
+		RETURN_FALSE;
 	}
 
-	return nullptr;
+	m_texture.push_back (texture);
+	m_textureFileName.push_back (textureFileName);
+
+	return true;
 }
 
-Texture *ResourceManager::GetTextureByName (const char *textureName)
+PixelShader *ResourceManager::GetPixelShader (int number)
 {
-	const int quantityTextures = m_texture.size ();
+	return m_pixelShader[number];
+}
+
+VertexShader *ResourceManager::GetVertexShader (int number)
+{
+	return m_vertexShader[number];
+}
+
+Texture *ResourceManager::GetTexture (int number)
+{
+	return m_texture[number];
+}
+
+
+Texture *ResourceManager::GetTextureByName (LPCSTR textureFileName)
+{
+	if (textureFileName == nullptr)
+	{
+		return nullptr;
+	}
+
+	const int quantityTextures = m_textureFileName.size ();
 	for (int i = 0; i < quantityTextures; i++)
 	{
-		std::string resourceTextureName = m_texture[i]->GetName ();
-		if (!strcmp (resourceTextureName.c_str (), textureName))
+		if (strcmp (textureFileName, m_textureFileName[i]) == 0)
 		{
-			return m_texture[i]->GetTexture ();
+			return m_texture[i];
 		}
 	}
 
 	return nullptr;
 }
 
-ResourceManager *ResourceManager::GetInstance ()
+void ResourceManager::Init ()
 {
 	if (m_instance == nullptr)
 	{
 		m_instance = new ResourceManager ();
 	}
+}
+
+ResourceManager *ResourceManager::GetInstance ()
+{
+	assert (m_instance);
 
 	return m_instance;
 }

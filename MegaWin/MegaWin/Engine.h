@@ -30,6 +30,7 @@ public:
 	Graphics *GetGraphics ();
 	Input *GetInput ();
 
+	static void Init ();
 	static Engine *GetEngine ();
 	static double getDeltaTime ();
 

@@ -610,7 +610,7 @@ HRESULT InitGeometry ()
 
 	D3D11_SAMPLER_DESC sampDesc;
 	ZeroMemory (&sampDesc, sizeof (sampDesc));
-	sampDesc.Filter = D3D11_FILTER_MIN_MAG_MIP_LINEAR;
+	sampDesc.Filter	  = D3D11_FILTER_MIN_MAG_MIP_LINEAR;
 	sampDesc.AddressU = D3D11_TEXTURE_ADDRESS_WRAP;
 	sampDesc.AddressV = D3D11_TEXTURE_ADDRESS_WRAP;
 	sampDesc.AddressW = D3D11_TEXTURE_ADDRESS_WRAP;
@@ -742,7 +742,7 @@ void UpdateMatrix (UINT nLightIndex)
 	constBufLight.vOutputColor	 = XMFLOAT4 (1.0f, 1.0f, 1.0f, 1.0f);
 
 	g_deviceContext->UpdateSubresource (g_pCBMatrixes, 0, nullptr, &constBufMatrix, 0, 0);
-	g_deviceContext->UpdateSubresource (g_pCBLight, 0, nullptr, &constBufLight, 0, 0);
+	g_deviceContext->UpdateSubresource (g_pCBLight,    0, nullptr, &constBufLight,  0, 0);
 }
 
 void SetMatrixes (float fAngle)

@@ -20,9 +20,8 @@ bool GameScene::Initialize ()
     }
 
     m_player = new Player ();
-    auto temp = Engine::GetEngine ()->GetGraphics ();
-    m_player->Initialize (Engine::GetEngine ()->GetGraphics()->GetDevice (),
-                          Engine::GetEngine ()->GetGraphics()->GetDeviceContext (), shader);
+    auto graphic = Engine::GetEngine ()->GetGraphics ();
+    m_player->Initialize (graphic->GetDevice (), graphic->GetDeviceContext (), shader);
 
     return true;
 }

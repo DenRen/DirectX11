@@ -1,3 +1,5 @@
+#include <cassert>
+
 #include "Engine.h"
 #include "DebugFuncs.h"
 
@@ -50,11 +52,14 @@ bool Engine::Initialize (HINSTANCE hInstance, HWND hWnd)
     m_entityManager = EntityManager::GetInstance ();
 
     m_graphics->Initialize ();
+    
+    auto device = m_graphics->GetDevice ();
 
+    ResourceManager::Init ();
     m_resourceManager = ResourceManager::GetInstance ();
-    m_resourceManager->LoadTextureResource (m_graphics->GetDevice (), "Texture\\ninja.png");
-    m_resourceManager->LoadShaderResource  (m_graphics->GetDevice (), hWnd, "Shader\\texture",
-                                            "TextureVertexShader", "TexturePixelShader");
+    m_resourceManager->AddTexture (device, "Texture\\ninja.png");
+    m_resourceManager->AddPixelShader  (device, hWnd, "Shader\\texture.ps", "TexturePixelShader");
+    m_resourceManager->AddVertexShader (device, hWnd, "Shader\\texture.vs", "TextureVertexShader");
 
     //shader = (TextureShader *) m_resourceManager->GetShaderByName ("Shader\\texture");
 
@@ -199,12 +204,17 @@ Input *Engine::GetInput ()
     return m_input;
 }
 
-Engine *Engine::GetEngine ()
+void Engine::Init ()
 {
     if (m_Instance == nullptr)
     {
         m_Instance = new Engine ();
     }
+}
+
+Engine *Engine::GetEngine ()
+{
+    assert (m_Instance);
 
     return m_Instance;
 }

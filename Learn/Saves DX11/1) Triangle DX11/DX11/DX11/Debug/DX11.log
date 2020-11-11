@@ -1,4 +1,5 @@
-﻿  main.cpp
+﻿  AddFunc.cpp
+  main.cpp
 C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\dxgitype.h(12,1): warning C4005: DXGI_STATUS_OCCLUDED: изменение макроопределения
 C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\winerror.h(55840): message : см. предыдущее определение "DXGI_STATUS_OCCLUDED"
 C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\dxgitype.h(13,1): warning C4005: DXGI_STATUS_CLIPPED: изменение макроопределения
@@ -117,12 +118,13 @@ C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\xnamathvector.i
 C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\xnamathmisc.inl(518,43): warning C4838: Преобразование из "unsigned int" в "INT" требует сужающего преобразования.
 C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\xnamathmisc.inl(519,40): warning C4838: Преобразование из "unsigned int" в "INT" требует сужающего преобразования.
 C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\xnamathmisc.inl(519,51): warning C4838: Преобразование из "unsigned int" в "INT" требует сужающего преобразования.
-C:\Users\denre\source\repos\DX11\DX11\main.cpp(134,26): warning C4838: Преобразование из "float" в "LONG" требует сужающего преобразования.
-C:\Users\denre\source\repos\DX11\DX11\main.cpp(134,26): warning C4244: инициализация: преобразование "float" в "LONG", возможна потеря данных
-C:\Users\denre\source\repos\DX11\DX11\main.cpp(134,40): warning C4838: Преобразование из "float" в "LONG" требует сужающего преобразования.
-C:\Users\denre\source\repos\DX11\DX11\main.cpp(134,40): warning C4244: инициализация: преобразование "float" в "LONG", возможна потеря данных
-C:\Users\denre\source\repos\DX11\DX11\main.cpp(509,18): warning C4244: =: преобразование "ULONGLONG" в "DWORD", возможна потеря данных
-C:\Users\denre\source\repos\DX11\DX11\main.cpp(518,65): warning C4244: аргумент: преобразование "double" в "FLOAT", возможна потеря данных
-C:\Users\denre\source\repos\DX11\DX11\main.cpp(518,54): warning C4244: аргумент: преобразование "double" в "FLOAT", возможна потеря данных
-C:\Users\denre\source\repos\DX11\DX11\main.cpp(520,32): warning C4244: аргумент: преобразование "double" в "FLOAT", возможна потеря данных
-  DX11.vcxproj -> C:\Users\denre\source\repos\DX11\Debug\DX11.exe
+C:\Users\denre\source\repos\DirectX11\Learn\Saves DX11\1) Triangle DX11\DX11\DX11\main.cpp(134,26): warning C4838: Преобразование из "float" в "LONG" требует сужающего преобразования.
+C:\Users\denre\source\repos\DirectX11\Learn\Saves DX11\1) Triangle DX11\DX11\DX11\main.cpp(134,26): warning C4244: инициализация: преобразование "float" в "LONG", возможна потеря данных
+C:\Users\denre\source\repos\DirectX11\Learn\Saves DX11\1) Triangle DX11\DX11\DX11\main.cpp(134,40): warning C4838: Преобразование из "float" в "LONG" требует сужающего преобразования.
+C:\Users\denre\source\repos\DirectX11\Learn\Saves DX11\1) Triangle DX11\DX11\DX11\main.cpp(134,40): warning C4244: инициализация: преобразование "float" в "LONG", возможна потеря данных
+C:\Users\denre\source\repos\DirectX11\Learn\Saves DX11\1) Triangle DX11\DX11\DX11\main.cpp(509,18): warning C4244: =: преобразование "ULONGLONG" в "DWORD", возможна потеря данных
+C:\Users\denre\source\repos\DirectX11\Learn\Saves DX11\1) Triangle DX11\DX11\DX11\main.cpp(518,65): warning C4244: аргумент: преобразование "double" в "FLOAT", возможна потеря данных
+C:\Users\denre\source\repos\DirectX11\Learn\Saves DX11\1) Triangle DX11\DX11\DX11\main.cpp(518,54): warning C4244: аргумент: преобразование "double" в "FLOAT", возможна потеря данных
+C:\Users\denre\source\repos\DirectX11\Learn\Saves DX11\1) Triangle DX11\DX11\DX11\main.cpp(520,32): warning C4244: аргумент: преобразование "double" в "FLOAT", возможна потеря данных
+  Создание кода...
+  DX11.vcxproj -> C:\Users\denre\source\repos\DirectX11\Learn\Saves DX11\1) Triangle DX11\DX11\Debug\DX11.exe

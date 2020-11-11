@@ -94,7 +94,7 @@ void AnimatedSprite::Update ()
 	// Lock the vertexbuffer so it written to
 	HRESULT result = m_deviceContext->Map (m_vertexBuffer->GetVertexBuffer (), 0, 
 										   D3D11_MAP_WRITE_DISCARD, 0, &mappedResource);
-	if (result)
+	if (FAILED (result))
 	{
 		return;
 	}

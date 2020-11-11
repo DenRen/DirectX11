@@ -33,6 +33,7 @@ private:
 	void InitializeViewport (int Width, int Height);
 	bool InitializeAlphaBlending ();
 	bool InitializeZBuffer ();
+	bool InitializeSamplerState ();
 
 	bool GetNumDenum (int Width, int Height, unsigned *numerator, unsigned *denominator,
 					  bool saveAdapterDesc = true);
@@ -49,5 +50,6 @@ private:
 	ID3D11BlendState *m_alphaEnableBlendingState;
 	ID3D11BlendState *m_alphaDisableBlendingState;
 	ID3D11DepthStencilState *m_depthDisabledStencilState;
+	ID3D11SamplerState *m_samplerState;
 };
 

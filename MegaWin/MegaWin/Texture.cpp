@@ -4,7 +4,7 @@
 
 Texture::Texture () :
 	m_texture (nullptr),
-	m_width (0),
+	m_width  (0),
 	m_height (0)
 {}
 
@@ -15,11 +15,8 @@ Texture::~Texture ()
 
 bool Texture::Initialize (ID3D11Device *device, LPCSTR fileName)
 {
-	m_name = std::string (fileName);
-
 	HRESULT result = S_OK;
 
-	// Load the texture
 	result = D3DX11CreateShaderResourceViewFromFile (device, fileName, nullptr, nullptr,
 													 &m_texture, nullptr);
 	CHECK_FAILED (result);
@@ -36,7 +33,7 @@ bool Texture::Initialize (ID3D11Device *device, LPCSTR fileName)
 		D3D11_TEXTURE2D_DESC desc;
 		texture2D->GetDesc (&desc);
 
-		m_width = desc.Width;
+		m_width  = desc.Width;
 		m_height = desc.Height;
 
 		resource->Release ();
@@ -61,7 +58,6 @@ int Texture::GetWidth ()
 {
 	return m_width;
 }
-
 int Texture::GetHeight ()
 {
 	return m_height;

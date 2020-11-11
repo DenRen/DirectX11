@@ -12,4 +12,7 @@ int main ()
 	}
 
 	DebugEndMain ();
+	
+
+	//Rectangle rect (0, 0, 200, 100, RGBA::YELLOW);
 }
