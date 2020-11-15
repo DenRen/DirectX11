@@ -54,10 +54,19 @@ void OutputShaderErrorMessage (ID3D10Blob *errorMessage, HWND hWnd, LPCSTR shade
 // ---------------------------------------------------------------------------------------
 
 VertexShader::VertexShader () :
-	m_vertexShader (nullptr)
+	m_vertexShader (nullptr),
+	m_inputLayout  (nullptr)
 {}
 
-bool VertexShader::Initialize (ID3D11Device *device, HWND hWnd, LPCSTR fileName, LPCSTR funcName)
+VertexShader::~VertexShader ()
+{
+	RELEASE (m_vertexShader);
+	RELEASE (m_inputLayout);
+}
+
+bool VertexShader::Initialize (ID3D11Device *device, HWND hWnd,
+							   LPCSTR fileName, LPCSTR funcName,
+							   D3D11_INPUT_ELEMENT_DESC *layout, int numElementes)
 {
 	HRESULT result = S_OK;
 	ID3DBlob *errorMessage = nullptr;
@@ -80,14 +89,26 @@ bool VertexShader::Initialize (ID3D11Device *device, HWND hWnd, LPCSTR fileName,
 										 &m_vertexShader);
 	CHECK_FAILED (result);
 
-	RELEASE (vertexShaderBuffer);
+	// Initialize input layout
+	result = device->CreateInputLayout (layout, numElementes, 
+										vertexShaderBuffer->GetBufferPointer (),
+										vertexShaderBuffer->GetBufferSize (),
+										&m_inputLayout);
+	CHECK_FAILED (result);
 
+	RELEASE (vertexShaderBuffer); 
+	
 	return true;
 }
 
 ID3D11VertexShader *VertexShader::GetVertexShader ()
 {
 	return m_vertexShader;
+}
+
+ID3D11InputLayout *VertexShader::GetInputLayout ()
+{
+	return m_inputLayout;
 }
 
 // ---------------------------------------------------------------------------------------

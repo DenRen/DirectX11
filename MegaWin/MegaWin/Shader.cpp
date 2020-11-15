@@ -10,14 +10,16 @@ Shader::Shader (VertexShader *vertexShader, PixelShader *pixelShader) :
 	m_pixelShader (pixelShader)
 {}
 
-void Shader::SetShader (ID3D11DeviceContext *deviceContext)
+void Shader::Render (ID3D11DeviceContext *deviceContext)
 {
+	deviceContext->IASetInputLayout (m_vertexShader->m_inputLayout);
 	deviceContext->VSSetShader (m_vertexShader->m_vertexShader, nullptr, 0);
 	deviceContext->PSSetShader (m_pixelShader->m_pixelShader,   nullptr, 0);
 }
 
 void Shader::RemShader (ID3D11DeviceContext *deviceContext)
 {
+	deviceContext->IASetInputLayout (nullptr);
 	deviceContext->VSSetShader (nullptr, nullptr, 0);
 	deviceContext->PSSetShader (nullptr, nullptr, 0);
 }

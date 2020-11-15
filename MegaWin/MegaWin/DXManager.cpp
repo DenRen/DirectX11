@@ -129,60 +129,23 @@ bool DXManager::Initilize (HWND hWnd, int Width, int Height, bool fullScreen, bo
 
     m_vsync_enabled = vsync;
 
-    if (!GetNumDenum (Width, Height, &numerator, &denominator, true))
-    {
-        RETURN_FALSE;
-    }
-
-    if (!InitializeSwapChain (hWnd, fullScreen, Width, Height, numerator, denominator))
-    {
-        RETURN_FALSE;
-    }
-
-    if (!InitializeRenderTargetView ())
-    {
-        RETURN_FALSE;
-    }
-
-    if (!InitializeDepthBuffer (Width, Height))
-    {
-        RETURN_FALSE;
-    }
-
-    if (!InitializeDepthStencilBuffer ())
-    {
-        RETURN_FALSE;
-    }
-
-    if (!InitializeStencilView ())
-    {
-        RETURN_FALSE;
-    }
+    if (!GetNumDenum (Width, Height, &numerator, &denominator, true))   RETURN_FALSE;
+    if (!InitializeSwapChain (hWnd, fullScreen, Width, Height,
+                              numerator, denominator))                  RETURN_FALSE;
+    
+    if (!InitializeRenderTargetView ())         RETURN_FALSE;
+    if (!InitializeDepthBuffer (Width, Height)) RETURN_FALSE;
+    if (!InitializeDepthStencilBuffer ())       RETURN_FALSE;
+    if (!InitializeStencilView ())              RETURN_FALSE;
 
     // Bind the render target view and depth stencil buffer to the output render pipeline 
-    m_deviceContext->OMSetRenderTargets (1, &m_renderTargetView, m_depthStencilView);
+    m_deviceContext->OMSetRenderTargets (1, &m_renderTargetView,
+                                             m_depthStencilView);
 
-    if (!InitializeRasterizerState ())
-    {
-        RETURN_FALSE;
-    }
-
+    if (!InitializeRasterizerState ())  RETURN_FALSE;
     InitializeViewport (Width, Height);
-
-    if (!InitializeAlphaBlending ())
-    {
-        RETURN_FALSE;
-    }
-
-    if (!InitializeZBuffer ())
-    {
-        RETURN_FALSE;
-    }
-
-    if (!InitializeSamplerState ())
-    {
-        RETURN_FALSE;
-    }
+    if (!InitializeAlphaBlending ())    RETURN_FALSE;
+    if (!InitializeZBuffer ())          RETURN_FALSE;
 
     return true;
 }
@@ -483,30 +446,6 @@ bool DXManager::InitializeZBuffer ()
 
     HRESULT result = S_OK;
     result = m_device->CreateDepthStencilState (&depthStencilDesc, &m_depthDisabledStencilState);
-    CHECK_FAILED (result);
-
-    return true;
-}
-
-bool DXManager::InitializeSamplerState ()
-{
-    D3D11_SAMPLER_DESC samplerDesc = {};
-    samplerDesc.Filter = D3D11_FILTER_MIN_MAG_MIP_LINEAR;
-    samplerDesc.AddressU = D3D11_TEXTURE_ADDRESS_WRAP;
-    samplerDesc.AddressV = D3D11_TEXTURE_ADDRESS_WRAP;
-    samplerDesc.AddressW = D3D11_TEXTURE_ADDRESS_WRAP;
-    samplerDesc.MipLODBias = 0.0f;
-    samplerDesc.MaxAnisotropy = 1;
-    samplerDesc.ComparisonFunc = D3D11_COMPARISON_ALWAYS;
-    samplerDesc.BorderColor[0] = 0;
-    samplerDesc.BorderColor[1] = 0;
-    samplerDesc.BorderColor[2] = 0;
-    samplerDesc.BorderColor[3] = 0;
-    samplerDesc.MinLOD = 0;
-    samplerDesc.MaxLOD = D3D11_FLOAT32_MAX;
-
-    HRESULT result = S_OK;
-    result = m_device->CreateSamplerState (&samplerDesc, &m_samplerState);
     CHECK_FAILED (result);
 
     return true;

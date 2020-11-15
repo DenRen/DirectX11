@@ -1,7 +1,6 @@
 #include "AppMgr.h"
 #include "DebugFuncs.h"
 #include "AddFunc.h"
-#include "GameScene.h"
 
 AppMgr::AppMgr () :
 	m_hWnd		 (nullptr),
@@ -13,7 +12,6 @@ AppMgr::AppMgr () :
 AppMgr::~AppMgr ()
 {
 	delete m_winManager;
-	delete m_engine;
 }
 
 bool AppMgr::Initialize ()
@@ -32,8 +30,6 @@ bool AppMgr::Initialize ()
 	{
 		RETURN_FALSE;
 	}
-
-	m_engine->SetGameComponent (new GameScene ());
 
 	if (!m_engine->Initialize (m_hInstance, m_hWnd))
 	{

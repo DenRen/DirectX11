@@ -29,7 +29,6 @@ void Shader::Begin (ID3D11DeviceContext *deviceContext, int indexContext)
 
 	// Render
 	deviceContext->DrawIndexed (indexContext, 0, 0);
-
 }
 
 void Shader::End (ID3D11DeviceContext *deviceContext)

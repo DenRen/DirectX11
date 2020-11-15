@@ -45,7 +45,7 @@ bool Engine::Initialize (HINSTANCE hInstance, HWND hWnd)
     m_graphics->Initialize ();
 
     m_resourceManager = ResourceManager::GetInstance ();
-    m_resourceManager->LoadTextureResource (m_graphics->GetDevice (), "Texture\\ninja.png");
+    m_resourceManager->LoadTextureResource (m_graphics->GetDevice (),       "Texture\\ninja.png");
     m_resourceManager->LoadShaderResource  (m_graphics->GetDevice (), hWnd, "Shader\\texture",
                                             "TextureVertexShader", "TexturePixelShader");
 
@@ -127,7 +127,7 @@ void Engine::Update ()
 {
     if (m_gameComponent != nullptr)
     {
-        m_gameComponent->Update ();
+        m_gameComponent->Update (); // Input
     }
     m_timer->updateTimer ();
     m_input->Update ();
@@ -144,9 +144,9 @@ void Engine::Render ()
     D3DXMATRIX projectionMatrix;
     D3DXMATRIX worldMatrix;
 
-    D3DXVECTOR3 position (0.0f, 0.0f, -200.0f);
-    D3DXVECTOR3 up       (0.0f, 1.0f,    0.0f);
+    D3DXVECTOR3 position (1000.0f, 0.0f, -200.0f);
     D3DXVECTOR3 lookAt   (0.0f, 0.0f,    1.0f);
+    D3DXVECTOR3 up       (0.0f, 1.0f,    0.0f);
 
     D3DXMatrixLookAtLH (&viewMatrix, &position, &lookAt, &up);
     D3DXMatrixOrthoLH (&projectionMatrix, SCREEN_WIDTH, SCREEN_HEIGHT, 0.1f, 1000.0f);

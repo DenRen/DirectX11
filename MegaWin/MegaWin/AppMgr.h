@@ -10,9 +10,9 @@
 class AppMgr
 {
 public:
-
 	AppMgr ();
 	~AppMgr ();
+
 	bool Initialize ();
 	bool Run ();
 
@@ -24,4 +24,3 @@ private:
 	WinManager *m_winManager;
 	Engine *m_engine;
 };
-

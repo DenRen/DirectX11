@@ -69,7 +69,6 @@ HRESULT InitGeometry ();
 HRESULT InitMatrixes ();
 
 void UpdateTime ();
-
 void UpdateLight ();
 void UpdateMatrix (UINT nLightIndex);
 void SetMatrixes (float fAngle);
@@ -304,7 +303,7 @@ HRESULT InitDevice ()
 	{
 		return hr;
 	}
-
+	//
 	D3D11_DEPTH_STENCIL_VIEW_DESC descDSV;
 	ZeroMemory (&descDSV, sizeof (descDSV));
 	descDSV.Format = descDepth.Format;
@@ -398,7 +397,6 @@ HRESULT CompileShaderFromFile (LPCSTR szFileName, LPCSTR szEntryPoint, LPCSTR sz
 
 HRESULT InitGeometry ()
 {
-
 	HRESULT hr = S_OK;
 
 	LPCSTR fileName = "Textures\\texture.fx";
@@ -480,7 +478,7 @@ HRESULT InitGeometry ()
 	// ------------------------------------------------------------------------------------------
 	
 	SimpleVertex vert[] =
-	{ /* координаты X, Y, Z              координаты текстры tu, tv   нормаль X, Y, Z        */
+	{ /* координаты  X,		Y,	   Z	 координаты текстры tu, tv   нормаль X, Y, Z        */
 		{XMFLOAT3 (-1.0f,  1.0f, -1.0f), XMFLOAT2 (0.0f, 0.0f), XMFLOAT3 ( 0.0f,  1.0f,  0.0f)},
 		{XMFLOAT3 ( 1.0f,  1.0f, -1.0f), XMFLOAT2 (0.3f, 0.0f), XMFLOAT3 ( 0.0f,  1.0f,  0.0f)},
 		{XMFLOAT3 ( 1.0f,  1.0f,  1.0f), XMFLOAT2 (0.3f, 1.0f), XMFLOAT3 ( 0.0f,  1.0f,  0.0f)},
@@ -531,7 +529,7 @@ HRESULT InitGeometry ()
 		return hr;
 	}
 	
-	WORD indices[] =
+	char indices[] =
 	{
 		3,1,0,
 		2,1,3,
@@ -570,7 +568,7 @@ HRESULT InitGeometry ()
 	UINT offset = 0;
 
 	g_deviceContext->IASetVertexBuffers (0, 1, &g_pVertexBuffer, &stride, &offset);
-	g_deviceContext->IASetIndexBuffer (g_pIndexBuffer, DXGI_FORMAT_R16_UINT, 0);
+	g_deviceContext->IASetIndexBuffer (g_pIndexBuffer, DXGI_FORMAT_R8_UINT, 0);
 	g_deviceContext->IASetPrimitiveTopology (D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
 	
 	// ---------------------------------------------------------------------------------------
@@ -656,13 +654,13 @@ HRESULT InitMatrixes ()
 {
 	RECT rect;
 	GetClientRect (g_hWnd, &rect);
-	UINT width = rect.right - rect.left;
+	UINT width  = rect.right  - rect.left;
 	UINT height = rect.bottom - rect.top;
 
 	g_World = XMMatrixIdentity ();
 
 	XMVECTOR Eye = XMVectorSet (0.0f, 4.0f, -10.0f, 0.0f);
-	XMVECTOR At  = XMVectorSet (1.5f, 1.0f,  0.0f, 0.0f);
+	XMVECTOR At  = XMVectorSet (0.0f, 0.0f,  0.0f, 0.0f);
 	XMVECTOR Up  = XMVectorSet (0.0f, 1.0f,  0.0f, 0.0f);
 	g_View = XMMatrixLookAtLH (Eye, At, Up);
 
@@ -715,14 +713,13 @@ void UpdateMatrix (UINT nLightIndex)
 	{
 		case MX_SETWORLD:
 			{
-				g_World = XMMatrixRotationAxis (XMVectorSet (1.0f, 1.0f, 1.0f, 0.0f), 0.25 * myTime);
+				g_World = XMMatrixRotationAxis (XMVectorSet (1.0f, 1.0f, 1.0f, 0.0f), myTime);
 				nLightIndex = 0;
 			}
 			break;
 		default:
 			{
-				XMMATRIX mLightScale = XMMatrixScaling (0.2f, 0.2f, 0.2f);
-				g_World = mLightScale;
+				g_World = XMMatrixScaling (0.2f, 0.2f, 0.2f);
 				g_World *= XMMatrixTranslationFromVector (4.0f * XMLoadFloat4 (&vLightDirs[nLightIndex]));
 				
 				nLightIndex = 0;

@@ -6,31 +6,45 @@
 #include "Shader.h"
 #include "DebugFuncs.h"
 #include "AddFunc.h"
+#include "InputLayout.h"
 
 struct VertexPosTex
 {
 	XMFLOAT3 pos;
-	XMFLOAT2 uv;
+	XMFLOAT2 tex;
+
+	static D3D11_INPUT_ELEMENT_DESC *GetLayout ()
+	{
+		int size = 0;
+		static D3D11_INPUT_ELEMENT_DESC layout[] =
+		{
+			{"POSITION", 0, DXGI_FORMAT_R32G32B32_FLOAT, 0, size += 0,							D3D11_INPUT_PER_VERTEX_DATA, 0},
+			{"TEXCOORD", 0, DXGI_FORMAT_R32G32_FLOAT,	 0, size += sizeof (VertexPosTex::pos),	D3D11_INPUT_PER_VERTEX_DATA, 0}
+		};
+
+		return layout;
+	}
+
+	static int GetNumElements ()
+	{
+		return 2;
+	};
 };
 
-template <typename VertexT>
-class VertexBuffer				// Base class
+template <typename VertexT, typename IndexT>
+class VertexBuffer
 {
 public:
 
 	VertexBuffer ();
 	~VertexBuffer ();
 
-	template <typename IndexT>
 	bool Initialize (ID3D11Device *device,
 					 VertexT *vertices, int numberVertex,
-					 IndexT  *indices,  int numberInidex,
-					 ID3D11InputLayout *inputLayout);
+					 IndexT  *indices,  int numberInidex);
 
-	void Render (ID3D11DeviceContext *deviceContext, bool draw = true);
-	void UpdateVertex (ID3D11DeviceContext *deviceContext);
-
-	VertexT *GetVertices ();
+	void Render (ID3D11DeviceContext *deviceContext);
+	void UpdateVertex (ID3D11DeviceContext *deviceContext, VertexT *vertices);
 
 	ID3D11Buffer *GetVertexBuffer ();
 	ID3D11Buffer *GetIndexBuffer ();
@@ -39,10 +53,6 @@ public:
 	int GetIndexCount ();
 
 private:
-	ID3D11InputLayout *m_inputLayout;
-
-	VertexT *m_vertices;
-
 	ID3D11Buffer *m_vertexBuffer;
 	ID3D11Buffer *m_indexBuffer;
 
@@ -50,24 +60,18 @@ private:
 	int m_indexCount;
 };
 
-template <typename VertexT>
-VertexBuffer <VertexT>::VertexBuffer () :
-	m_vertices		(nullptr),
-	m_vertexBuffer	(nullptr),
+template <typename VertexT, typename IndexT>
+VertexBuffer <VertexT, IndexT>::VertexBuffer () :
 	m_indexBuffer	(nullptr),
 	m_vertexCount	(0),
 	m_indexCount	(0)
 {}
 
-template <typename VertexT>
-template <typename IndexT>
-bool VertexBuffer<VertexT>::Initialize (ID3D11Device *device,
-										VertexT *vertices, int numberVertex,
-										IndexT  *indices,  int numberIndex,
-										ID3D11InputLayout *inputLayout)
+template <typename VertexT, typename IndexT>
+bool VertexBuffer<VertexT, IndexT>::Initialize (ID3D11Device *device,
+												VertexT *vertices, int numberVertex,
+												IndexT  *indices,  int numberIndex)
 {
-	m_inputLayout = inputLayout;
-
 	m_vertexCount = numberVertex;
 	m_indexCount  = numberIndex;
 
@@ -78,7 +82,6 @@ bool VertexBuffer<VertexT>::Initialize (ID3D11Device *device,
 	bufDesc.CPUAccessFlags = 0;
 
 	D3D11_SUBRESOURCE_DATA InitData = {0};
-	ZeroMemory (&InitData, sizeof (InitData));
 	InitData.pSysMem = vertices;
 
 	HRESULT result = device->CreateBuffer (&bufDesc, &InitData, &m_vertexBuffer);
@@ -106,26 +109,23 @@ bool VertexBuffer<VertexT>::Initialize (ID3D11Device *device,
 	return true;
 }
 
-template <typename VertexT>
-void VertexBuffer <VertexT>::Render (ID3D11DeviceContext *deviceContext, bool draw)
+template <typename VertexT, typename IndexT>
+void VertexBuffer <VertexT, IndexT>::Render (ID3D11DeviceContext *deviceContext)
 {
 	unsigned int offset = 0;
 	unsigned int stride = sizeof (VertexT);
 
 	deviceContext->IASetVertexBuffers (0, 1, &m_vertexBuffer, &stride, &offset);
-	deviceContext->IASetIndexBuffer (m_indexBuffer, DXGI_FORMAT_R32_UINT, 0);
+	deviceContext->IASetIndexBuffer (m_indexBuffer, DXGI_FORMAT_R8_UINT, 0);
 	deviceContext->IASetPrimitiveTopology (D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
 
-	deviceContext->IASetInputLayout (m_inputLayout);
-
-	if (draw)
-	{
-		deviceContext->DrawIndexed (m_indexCount, 0, 0);
-	}
+	//deviceContext->DrawIndexed (m_indexCount, 0, 0);
+	deviceContext->DrawIndexed (18, 0, 0);
 }
 
-template <typename VertexT>
-inline void VertexBuffer <VertexT>::UpdateVertex (ID3D11DeviceContext *deviceContext)
+template <typename VertexT, typename IndexT>
+inline void VertexBuffer <VertexT, IndexT>::UpdateVertex (ID3D11DeviceContext *deviceContext,
+														  VertexT *vertices)
 {
 	D3D11_MAPPED_SUBRESOURCE mappedResource = {};
 	HRESULT result = deviceContext->Map (m_vertexBuffer, 0, D3D11_MAP_WRITE_DISCARD,
@@ -136,43 +136,37 @@ inline void VertexBuffer <VertexT>::UpdateVertex (ID3D11DeviceContext *deviceCon
 	}
 
 	VertexT *buffer = (VertexT *) mappedResource.pData;
-	memcpy (buffer, m_vertices, sizeof (VertexT) * m_vertexCount);
+	memcpy (buffer, vertices, sizeof (VertexT) * m_vertexCount);
 
 	deviceContext->Unmap (m_vertexBuffer);
 }
 
-template<typename VertexT>
-inline VertexT *VertexBuffer<VertexT>::GetVertices ()
-{
-	return m_vertices;
-}
-
-template <typename VertexT>
-ID3D11Buffer *VertexBuffer <VertexT>::GetVertexBuffer ()
+template <typename VertexT, typename IndexT>
+ID3D11Buffer *VertexBuffer <VertexT, IndexT>::GetVertexBuffer ()
 {
 	return m_vertexBuffer;
 }
 
-template<typename VertexT>
-inline ID3D11Buffer *VertexBuffer<VertexT>::GetIndexBuffer ()
+template<typename VertexT, typename IndexT>
+inline ID3D11Buffer *VertexBuffer<VertexT, IndexT>::GetIndexBuffer ()
 {
 	return m_indexBuffer;
 }
 
-template <typename VertexT>
-int VertexBuffer <VertexT>::GetVertexCount ()
+template <typename VertexT, typename IndexT>
+int VertexBuffer <VertexT, IndexT>::GetVertexCount ()
 {
 	return m_vertexCount;
 }
 
-template <typename VertexT>
-int VertexBuffer <VertexT>::GetIndexCount ()
+template <typename VertexT, typename IndexT>
+int VertexBuffer <VertexT, IndexT>::GetIndexCount ()
 {
 	return m_indexCount;
 }
 
-template <typename VertexT>
-VertexBuffer <VertexT>::~VertexBuffer ()
+template <typename VertexT, typename IndexT>
+VertexBuffer <VertexT, IndexT>::~VertexBuffer ()
 {
 	RELEASE (m_vertexBuffer);
 	RELEASE (m_indexBuffer);

@@ -1,18 +1,18 @@
 #include <cstdio>
 #include "AppMgr.h"
 #include "DebugFuncs.h"
+#include "Rectangle.h"
 
 int main ()
 {
 	AppMgr app;
 
-	if (app.Initialize ())
+	if (!app.Initialize ())
 	{
-		app.Run ();
+		RETURN_FALSE;
 	}
 
-	DebugEndMain ();
-	
+	app.Run ();
 
-	//Rectangle rect (0, 0, 200, 100, RGBA::YELLOW);
+	DebugEndMain ();
 }

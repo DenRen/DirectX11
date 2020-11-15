@@ -3,34 +3,20 @@
 #include "Engine.h"
 #include "DebugFuncs.h"
 
-Engine *Engine::m_Instance = nullptr;
 deTimer *Engine::m_timer = new deTimer ();
 
 Engine::Engine () :
     m_graphics          (nullptr),
-    vertexBuffer        (nullptr),
-    shader              (nullptr),
-    texture             (nullptr),
-    m_resourceManager   (nullptr),
-    m_entityManager     (nullptr),
-    m_input             (nullptr),
-    m_gameComponent     (nullptr)
+    m_shader            (nullptr),
+    m_texture           (nullptr),
+    m_camera            (nullptr)
 {}
 
 Engine::~Engine ()
 {
-    //delete m_entity;
-
     delete m_graphics;
-    //delete m_sprite;
-    delete m_resourceManager;
-
-    delete vertexBuffer;
-    //delete shader;
-    //delete texture;
-    delete m_entityManager;
-
-    delete m_gameComponent;
+    delete m_shader;
+    delete m_texture;
 }
 
 bool Engine::InitializeGraphics (HWND hWnd)
@@ -49,144 +35,106 @@ bool Engine::InitializeGraphics (HWND hWnd)
 
 bool Engine::Initialize (HINSTANCE hInstance, HWND hWnd)
 {
-    m_entityManager = EntityManager::GetInstance ();
-
     m_graphics->Initialize ();
-    
+
     auto device = m_graphics->GetDevice ();
+    auto deviceContext = m_graphics->GetDeviceContext ();
 
-    ResourceManager::Init ();
-    m_resourceManager = ResourceManager::GetInstance ();
-    m_resourceManager->AddTexture (device, "Texture\\ninja.png");
-    m_resourceManager->AddPixelShader  (device, hWnd, "Shader\\texture.ps", "TexturePixelShader");
-    m_resourceManager->AddVertexShader (device, hWnd, "Shader\\texture.vs", "TextureVertexShader");
+    // Init camera ---------------------------------------------------------------------------
+    
+    XMMATRIX mWorld = XMMatrixIdentity ();
 
-    //shader = (TextureShader *) m_resourceManager->GetShaderByName ("Shader\\texture");
+    XMVECTOR Eye = XMVectorSet (0.0f, 0.0f, -5.0f, 5.0f);
+    XMVECTOR At  = XMVectorSet (0.0f, 1.0f, 0.0f, 0.0f);
+    XMVECTOR Up  = XMVectorSet (0.0f, 1.0f, 0.0f, 0.0f);
+    XMMATRIX mView = XMMatrixLookAtLH (Eye, At, Up);
 
-    /*shader = new TextureShader (m_graphics->GetDevice (), hWnd, "Shader\\texture",
-                                "TextureVertexShader", "TexturePixelShader");
-    if (!shader->IsInitialized ())
+    XMMATRIX mProjection = XMMatrixPerspectiveFovLH (XM_PIDIV4, 16.0f / 9.0f, 0.01f, 100.0f);
+
+    m_camera = new Camera (device, mWorld, mView, mProjection);
+    
+    // Init shaders and texture --------------------------------------------------------------
+
+    auto vertexShader = new VertexShader ();
+    if (!vertexShader->Initialize (device, hWnd, "Shader\\texture.fx", "VS",
+                                   VertexPosTex::GetLayout (), VertexPosTex::GetNumElements ()))
     {
         RETURN_FALSE;
     }
 
-    m_entity = m_entityManager->AddEntity ();
-    m_entity->InitializeAnimatedSprite (m_graphics->GetDevice (), m_graphics->GetDeviceContext (),
-                                        shader, shader->GetName ().c_str (), 320.0f, 25.0f);*/
-
-    m_input = new Input ();
-    if (!m_input->Initialize (hInstance, hWnd, SCREEN_WIDTH, SCREEN_HEIGHT))
+    auto pixelShader = new PixelShader ();
+    if (!pixelShader->Initialize (device, hWnd, "Shader\\texture.fx", "PS"))
     {
         RETURN_FALSE;
     }
 
-    m_input->Update ();
+    auto shader = new Shader (vertexShader, pixelShader);
 
-    if (m_gameComponent != nullptr)
-    {
-        if (!m_gameComponent->Initialize ())
-        {
-            RETURN_FALSE;
-        }
-    }
-    else
-    {
-        fprintf (stderr, "No game component!\n");
-    }
-    // m_entity->InitializeSprite (m_graphics->GetDevice (), shader, "Texture\\ninja.png", 320.0f);
-
-    /*m_animSprite = new AnimatedSprite (320.0f, 25.0f);
-    m_animSprite->Initialize (m_graphics->GetDevice (), m_graphics->GetDeviceContext (), 
-                              shader, shader->GetName ().c_str ());
-                              */
-    /*
-    m_sprite = new Sprite (3200.0f);
-    m_sprite->Initialize (m_graphics->GetDevice (), shader, "Texture\\sonic.png");
-    */
-    /*
-    shader = new TextureShader (m_graphics->GetDevice (), hWnd, "Shader\\texture",
-                                       "TextureVertexShader", "TexturePixelShader");
-    if (!shader->IsInitialized ())
+    auto texture = new Texture ();
+    if (!texture->Initialize (device, "Texture\\Plazma.jpg"))
     {
         RETURN_FALSE;
     }
 
-    texture = new Texture ();
-    bool result = texture->Initialize (m_graphics->GetDevice (), "Texture\\sonic.png");
-    if (!result)
-    {
-        RETURN_FALSE;
-    }
+    // Init rectangle ------------------------------------------------------------------------
 
-    vertexBuffer = new VertexBuffer ();
-    result = vertexBuffer->Initialize (m_graphics->GetDevice (), shader, 3200.0f, false);
-    if (!result)
-    {
-        RETURN_FALSE;
-    }
-    */
+    m_rect = new RectTex (device, deviceContext, -1.0f, 0.0f, 1, 1, shader, texture);
 
     return true;
 }
 
 void Engine::Run ()
 {
-    Update ();
+    Update ();  // timer
     Render ();
 }
 
 void Engine::Update ()
 {
-    if (m_gameComponent != nullptr)
-    {
-        m_gameComponent->Update ();
-    }
     m_timer->updateTimer ();
-    m_input->Update ();
-    m_entityManager->Update ();
 }
 
 void Engine::Render ()
 {
     m_graphics->BeginScene (0, 0, 0, 1);
-
-    // Render stuff goes here
-
-    D3DXMATRIX viewMatrix;
-    D3DXMATRIX projectionMatrix;
-    D3DXMATRIX worldMatrix;
-
-    D3DXVECTOR3 position (0.0f, 0.0f, -200.0f);
-    D3DXVECTOR3 up       (0.0f, 1.0f,    0.0f);
-    D3DXVECTOR3 lookAt   (0.0f, 0.0f,    1.0f);
-
-    D3DXMatrixLookAtLH (&viewMatrix, &position, &lookAt, &up);
-    D3DXMatrixOrthoLH (&projectionMatrix, SCREEN_WIDTH, SCREEN_HEIGHT, 0.1f, 1000.0f);
-    D3DXMatrixIdentity (&worldMatrix);
     
-    if (m_gameComponent != nullptr)
-    {
-        m_gameComponent->Render (m_graphics->GetDeviceContext (), viewMatrix, projectionMatrix);
-    }
+    auto deviceContext = m_graphics->GetDeviceContext ();
 
-    m_entityManager->Render (m_graphics->GetDeviceContext (), viewMatrix, projectionMatrix);
+    //m_camera->Render (deviceContext);
+
+    deviceContext->VSSetConstantBuffers (0, 1, &(m_camera->m_CBMatrixes));
+
+    XMMATRIX mWorld = XMMatrixTranslation (0.5, 0, 0);
+    mWorld *= XMMatrixRotationY (m_timer->getTimeInterval () / 100);
+
+    XMVECTOR Eye = XMVectorSet (0.0f, 4.0f, -10.0f, 0.0f);
+    XMVECTOR At  = XMVectorSet (0.0f, 1.0f, 0.0f, 0.0f);
+    XMVECTOR Up  = XMVectorSet (0.0f, 1.0f, 0.0f, 0.0f);
+    XMMATRIX mView = XMMatrixLookAtLH (Eye, At, Up);
+
+    XMMATRIX mProjection = XMMatrixPerspectiveFovLH (XM_PIDIV4, 16.0f / 9.0f, 0.01f, 100.0f);
+
+    ConstantBufferMatrixes cb (mWorld, mView, mProjection);
+    deviceContext->UpdateSubresource (m_camera->m_CBMatrixes, 0, nullptr, 
+                                      &cb, 0, 0);
+
+    m_rect->Draw ();
     
+    m_graphics->EndScene ();
+
     /*
     m_sprite->Render (m_graphics->GetDeviceContext (), worldMatrix, viewMatrix, projectionMatrix);
 
-    m_graphics->EnableAlphaBlending (true);*/
-    /*
+    m_graphics->EnableAlphaBlending (true);
+
     m_graphics->EnableAlphaBlending (true);
 
     shader->SetShaderParameters (m_graphics->GetDeviceContext (), texture->GetTexture ());
     shader->SetShaderParameters (m_graphics->GetDeviceContext (), worldMatrix, viewMatrix, projectionMatrix);
 
     vertexBuffer->Render (m_graphics->GetDeviceContext ());
-    */
-    /*
-    m_graphics->EndScene ();*/
 
-    m_graphics->EndScene ();
+    m_graphics->EndScene ();*/
 }
 
 Graphics *Engine::GetGraphics ()
@@ -194,46 +142,13 @@ Graphics *Engine::GetGraphics ()
     return m_graphics;
 }
 
-Input *Engine::GetInput ()
-{
-    if (m_input == nullptr)
-    {
-        m_input = new Input ();
-    }
-
-    return m_input;
-}
-
-void Engine::Init ()
-{
-    if (m_Instance == nullptr)
-    {
-        m_Instance = new Engine ();
-    }
-}
-
 Engine *Engine::GetEngine ()
 {
-    assert (m_Instance);
-
-    return m_Instance;
+    static Engine engine;
+    return &engine;
 }
 
 double Engine::getDeltaTime ()
 {
     return m_timer->getTimeInterval ();
-}
-
-void Engine::Release ()
-{
-    if (m_Instance != nullptr)
-    {
-        delete m_Instance;
-        m_Instance = nullptr;
-    }
-}
-
-void Engine::SetGameComponent (GameComponent *gameComponent)
-{
-    m_gameComponent = gameComponent;
 }

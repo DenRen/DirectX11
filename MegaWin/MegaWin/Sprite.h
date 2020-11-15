@@ -4,63 +4,57 @@
 #include "Texture.h"
 #include "DebugFuncs.h"
 
-template <typename VertexT>
+template <typename VertexT, typename IndexT>
 class Sprite
 {
 public:
 	Sprite ();
-	Sprite (VertexBuffer <VertexT> *vertexBuffer, Shader *shader, Texture *texture);
+	Sprite (Shader *shader, Texture *texture);
 	virtual ~Sprite ();
 
-	virtual bool Initialize (VertexBuffer <VertexT> *vertexBuffer,
-							 Shader *shader, Texture *texture);
+	virtual bool Initialize (Shader *shader, Texture *texture);
 
-	virtual void Render (ID3D11DeviceContext *deviceContext);
+	virtual void Render (ID3D11DeviceContext *deviceContext);	// Automaticly draw
 
 protected:
-	VertexBuffer <VertexT> *m_vertexBuffer;
+	VertexBuffer <VertexT, IndexT> m_vertexBuffer;
 	Texture *m_texture;
 	Shader *m_shader;
 };
 
-template <typename VertexT>
-Sprite <VertexT>::Sprite () :
-	Sprite (nullptr, nullptr, nullptr)
+template <typename VertexT, typename IndexT>
+Sprite <VertexT, IndexT>::Sprite () :
+	Sprite (nullptr, nullptr)
 {}
 
-template <typename VertexT>
-Sprite <VertexT>::Sprite (VertexBuffer <VertexT> *vertexBuffer, Shader *shader, Texture *texture) :
-	m_vertexBuffer (vertexBuffer),
-	m_shader (shader),
-	m_texture (texture)
+template <typename VertexT, typename IndexT>
+Sprite <VertexT, IndexT>::Sprite (Shader *shader, Texture *texture) :
+	m_shader	   (shader),
+	m_texture	   (texture)
 {}
 
-template <typename VertexT>
-Sprite <VertexT>::~Sprite ()
+template <typename VertexT, typename IndexT>
+Sprite <VertexT, IndexT>::~Sprite ()
 {
-	if (m_vertexBuffer != nullptr)
-	{
-		delete m_vertexBuffer;
-	}
+
 }
 
-template <typename VertexT>
-bool Sprite <VertexT>::Initialize (VertexBuffer <VertexT> *vertexBuffer, Shader *shader, Texture *texture)
+template <typename VertexT, typename IndexT>
+bool Sprite <VertexT, IndexT>::Initialize (Shader *shader, Texture *texture)
 {
-	CHECK_NULLPTR (vertexBuffer);
 	CHECK_NULLPTR (shader);
 	CHECK_NULLPTR (texture);
 
-	m_vertexBuffer = vertexBuffer;
 	m_shader = shader;
 	m_texture = texture;
 
 	return true;
 }
 
-template <typename VertexT>
-void Sprite <VertexT>::Render (ID3D11DeviceContext *deviceContext)
+template <typename VertexT, typename IndexT>
+void Sprite <VertexT, IndexT>::Render (ID3D11DeviceContext *deviceContext)
 {
-	m_shader->SetShader (deviceContext);
-	m_vertexBuffer->Render (deviceContext);
+	m_texture->Render	  (deviceContext);
+	m_shader->Render	  (deviceContext);
+	m_vertexBuffer.Render (deviceContext);
 }

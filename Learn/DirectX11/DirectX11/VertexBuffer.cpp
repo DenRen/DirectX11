@@ -36,7 +36,7 @@ bool VertexBuffer::Initialize (ID3D11Device *device, Shader *shader, float size,
 	indices = new unsigned long[m_indexCount];
 
 	float halfSize = size / 2.0;
-
+	
 	// Load vertex array
 	m_vertices[0].position = D3DXVECTOR3 (-halfSize, -halfSize, 0.0f);
 	m_vertices[0].uv	   = D3DXVECTOR2 (0.0f, 1.0f);

@@ -69,6 +69,8 @@ bool WinManager::Initialize (WndCnf::WindowDesc &winDesc)
 	ShowWindow (m_hWnd, SW_SHOW);
 	SetForegroundWindow (m_hWnd);
 	SetFocus (m_hWnd);
+
+	return true;
 }
 
 void WinManager::Show ()
@@ -94,19 +96,7 @@ LRESULT CALLBACK WndProc (HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam)
 
 	PAINTSTRUCT ps = {0};
 	HDC hdc = {0};
-	/*
-	Input *input = Engine::GetEngine ()->GetInput ();
-	if (input != nullptr)
-	{
-		if (input->IsKeyDown (DIK_ESCAPE))	// Only with escape is normal work
-		{
-			PostQuitMessage (0);
-			DestroyWindow (hWnd);
 
-			return EXIT_SUCCESS;
-		}
-	}
-	*/
 	switch (Msg)
 	{
 		case WM_KEYDOWN:
