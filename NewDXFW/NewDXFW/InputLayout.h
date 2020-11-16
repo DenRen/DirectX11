@@ -10,7 +10,7 @@ public:
 		return nullptr;
 	};
 
-	int GetNumElements ()
+	virtual int GetNumElements ()
 	{
 		return -1;
 	}

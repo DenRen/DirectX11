@@ -6,6 +6,21 @@
 #include "Texture.h"
 #include "Rectangle.h"
 
+struct ConstantBuffer
+{
+	XMMATRIX mWorld;        // Матрица мира
+	XMMATRIX mView;         // Матрица вида
+	XMMATRIX mProjection;   // Матрица проекции
+
+	ConstantBuffer () = default;
+
+	ConstantBuffer (XMMATRIX mWorld, XMMATRIX mView, XMMATRIX mProjection) :
+		mWorld (mWorld),
+		mView (mView),
+		mProjection (mProjection)
+	{}
+};
+
 struct SimpleVertex
 {
 	XMFLOAT3 pos;
@@ -72,8 +87,5 @@ private:
 	ID3D11Buffer *m_CBMatrixes;
 	//Camera *m_camera;
 
-	ID3D11VertexShader *g_pVertexShader = nullptr;
-	ID3D11PixelShader *g_pPixelShader	= nullptr;
-	ID3D11InputLayout *g_pVertexLayout	= nullptr;
-	ID3D11Buffer *g_pVertexBuffer		= nullptr;
+	ConstantBuffer m_matrix;
 };

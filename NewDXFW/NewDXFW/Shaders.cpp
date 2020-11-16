@@ -63,36 +63,8 @@ VertexShader::~VertexShader ()
 
 bool VertexShader::Initialize (ID3D11Device *device, HWND hWnd,
 							   LPCSTR fileName, LPCSTR funcName,
-							   D3D11_INPUT_ELEMENT_DESC *_layout, int _numElements)
+							   D3D11_INPUT_ELEMENT_DESC *layout, int numElements)
 {
-	/*
-	ID3DBlob *pVSBlob = NULL;
-
-	HRESULT hr = CompileShaderFromFile ("Shader\\texture.fx", "VS", "vs_4_0", &pVSBlob);
-	CHECK_FAILED (hr);
-
-	hr = device->CreateVertexShader (pVSBlob->GetBufferPointer (),
-									 pVSBlob->GetBufferSize (), NULL, &m_vertexShader);
-	if (FAILED (hr))
-	{
-		pVSBlob->Release ();
-		RETURN_FALSE;
-	}
-
-	D3D11_INPUT_ELEMENT_DESC layout[] =
-	{
-		{ "POSITION", 0, DXGI_FORMAT_R32G32B32_FLOAT, 0, 0, D3D11_INPUT_PER_VERTEX_DATA, 0 },
-	};
-	UINT numElements = ARRAYSIZE (layout);
-
-	hr = device->CreateInputLayout (layout, numElements, pVSBlob->GetBufferPointer (),
-									pVSBlob->GetBufferSize (), &m_inputLayout);
-	pVSBlob->Release ();
-	CHECK_FAILED (hr);
-
-	deviceContext->IASetInputLayout (g_pVertexLayout);
-	ID3DBlob *pPSBlob = NULL;
-	*/
 	HRESULT result = S_OK;
 	ID3DBlob *errorMessage = nullptr;
 	ID3DBlob *vertexShaderBuffer = nullptr;
@@ -113,7 +85,7 @@ bool VertexShader::Initialize (ID3D11Device *device, HWND hWnd,
 										 &m_vertexShader);
 	CHECK_FAILED (result);
 
-	result = device->CreateInputLayout (_layout, _numElements,
+	result = device->CreateInputLayout (layout, numElements,
 										vertexShaderBuffer->GetBufferPointer (),
 										vertexShaderBuffer->GetBufferSize (),
 										&m_inputLayout);

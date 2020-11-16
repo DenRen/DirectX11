@@ -40,7 +40,7 @@ bool AppMgr::Run ()
 		else
 		{
 			m_engine->Run ();
-			Sleep (100);
+			//Sleep (100);
 		}
 	}
 

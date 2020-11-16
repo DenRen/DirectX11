@@ -3,18 +3,6 @@
 #include "Engine.h"
 #include "DebugFunc.h"
 
-struct ConstantBuffer
-{
-    XMMATRIX mWorld;        // Матрица мира
-    XMMATRIX mView;         // Матрица вида
-    XMMATRIX mProjection;   // Матрица проекции
-
-    ConstantBuffer (XMMATRIX mWorld, XMMATRIX mView, XMMATRIX mProjection) :
-        mWorld (mWorld),
-        mView (mView),
-        mProjection (mProjection)
-    {}
-};
 
 deTimer *Engine::m_timer = new deTimer ();
 
@@ -73,48 +61,36 @@ bool Engine::Initialize (HINSTANCE hInstance, HWND hWnd)
                             {XMFLOAT3 ( 0.5f, -0.5f, 0.5f), XMFLOAT2 (1.0f, 1.0f)},
                             {XMFLOAT3 (-0.5f, -0.5f, 0.5f), XMFLOAT2 (0.0f, 1.0f)}};
     
-    printf ("size: %d\n", sizeof (VertexPosTex));
-    fflush (stdout);
-
-    /*
-    SimpleVertex vert[4] = {{XMFLOAT3 (-0.5f,  0.5f, 0.5f)},
-                            {XMFLOAT3 ( 0.5f,  0.5f, 0.5f)},
-                            {XMFLOAT3 ( 0.5f, -0.5f, 0.5f)},
-                            {XMFLOAT3 (-0.5f, -0.5f, 0.5f)}};
-    */
     char indeces[6] = {0, 1, 2,
                        0, 2, 3};
 
     m_vertexBuffer = new VertexBuffer <VertexPosTex, char> ();
     m_vertexBuffer->Initialize (m_device, vert, 4, indeces, 6);
-    /*
-    D3D11_BUFFER_DESC bufDesc = {};
-    bufDesc.Usage = D3D11_USAGE_DEFAULT;
-    bufDesc.ByteWidth = sizeof (ConstantBuffer);    // размер буфера = размеру структуры
-    bufDesc.BindFlags = D3D11_BIND_CONSTANT_BUFFER; // тип - константный буфер
-    bufDesc.CPUAccessFlags = 0;
-    result = m_device->CreateBuffer (&bufDesc, NULL, &m_CBMatrixes);
-    CHECK_FAILED (result);
-
-    XMMATRIX g_World = XMMatrixIdentity ();
+   
+    // -----------
+    
+    XMMATRIX mWorld = XMMatrixIdentity ();
 
     XMVECTOR Eye = XMVectorSet (0.0f, 1.0f, -5.0f, 0.0f);
-    XMVECTOR At = XMVectorSet (0.0f, 1.0f, 0.0f, 0.0f);
-    XMVECTOR Up = XMVectorSet (0.0f, 1.0f, 0.0f, 0.0f);
-    XMMATRIX g_View = XMMatrixLookAtLH (Eye, At, Up);
+    XMVECTOR At  = XMVectorSet (0.0f, 1.0f,  0.0f,  0.0f);
+    XMVECTOR Up  = XMVectorSet (0.0f, 1.0f,  0.0f,  0.0f);
+    XMMATRIX mView = XMMatrixLookAtLH (Eye, At, Up);
 
-    XMMATRIX g_Projection = XMMatrixPerspectiveFovLH (XM_PIDIV4, 16.0f / 9.0f, 0.01f, 100.0f);
+    XMMATRIX mProjection = XMMatrixPerspectiveFovLH (XM_PIDIV4, 16.0f / 9.0f, 0.01f, 100.0f);
 
-    ConstantBuffer cb (g_World, g_View, g_Projection);
+    m_matrix = ConstantBuffer (mWorld, mView, mProjection);
 
-    m_deviceContext->UpdateSubresource (m_CBMatrixes, 0, nullptr, &cb, 0, 0);
-    m_deviceContext->VSSetConstantBuffers (0, 1, &m_CBMatrixes);
+    D3D11_BUFFER_DESC bd = {};
+    bd.Usage = D3D11_USAGE_DEFAULT;
+    bd.ByteWidth = sizeof (ConstantBuffer);
+    bd.BindFlags = D3D11_BIND_CONSTANT_BUFFER;
+    bd.CPUAccessFlags = 0;
+    bd.MiscFlags = 0;
+    bd.StructureByteStride = 0;
 
-    m_texture = new Texture ();
-    if (!m_texture->Initialize (m_device, "Texture\\Plazma.jpg"))     RETURN_FALSE;
+    result = m_device->CreateBuffer (&bd, nullptr, &m_CBMatrixes);
+    CHECK_FAILED (result);
 
-    m_rect = new RectTex (0, 0, 0, 0, m_shader, m_texture, m_CBMatrixes);
-    */
     /*
     D3D11_BUFFER_DESC bd = {};
     bd.Usage = D3D11_USAGE_DEFAULT;
@@ -132,7 +108,6 @@ bool Engine::Initialize (HINSTANCE hInstance, HWND hWnd)
     m_deviceContext->IASetVertexBuffers (0, 1, &g_pVertexBuffer, &stride, &offset);
     m_deviceContext->IASetPrimitiveTopology (D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
     */
-
     /*
     auto device = DXManager::GetDevice ();
     auto deviceContext = DXManager::GetDeviceContext ();
@@ -255,9 +230,20 @@ void Engine::Update ()
 
 void Engine::Render ()
 {
+    float dt = m_timer->getTimeInterval ();
+    m_matrix.mWorld *= XMMatrixRotationY (10 * dt);
+
+    ConstantBuffer cb = {};
+    cb.mWorld      = XMMatrixTranspose (m_matrix.mWorld);
+    cb.mView       = XMMatrixTranspose (m_matrix.mView);
+    cb.mProjection = XMMatrixTranspose (m_matrix.mProjection);
+    m_deviceContext->UpdateSubresource (m_CBMatrixes, 0, nullptr, &cb, 0, 0);
+
     m_graphics->BeginScene (0, 0, 0, 1);
 
     m_shader->Render (m_deviceContext);
+    m_deviceContext->VSSetConstantBuffers (0, 1, &m_CBMatrixes);
+    m_texture->Render (m_deviceContext);
     m_vertexBuffer->Render (m_deviceContext);
 
     /*
