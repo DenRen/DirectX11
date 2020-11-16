@@ -23,7 +23,7 @@ bool Texture::Initialize (ID3D11Device *device, LPCSTR fileName, int startSlot)
 	HRESULT result = S_OK;
 
 	result = D3DX11CreateShaderResourceViewFromFile (device, fileName, nullptr, nullptr,
-		&m_texture, nullptr);
+													 &m_texture, nullptr);
 	CHECK_FAILED (result);
 
 	// Get width and height

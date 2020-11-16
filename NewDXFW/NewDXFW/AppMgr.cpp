@@ -23,15 +23,12 @@ bool AppMgr::Initialize ()
 	
 	if (!m_engine->Initialize (m_hInstance, m_hWnd))	RETURN_FALSE;
 
-	m_winManager->Show ();
-
 	return true;
 }
 
 bool AppMgr::Run ()
 {
-	MSG msg = { 0 };
-	SET_IN_ZERO (msg);
+	MSG msg = {};
 
 	while (msg.message != WM_QUIT)
 	{
@@ -43,6 +40,7 @@ bool AppMgr::Run ()
 		else
 		{
 			m_engine->Run ();
+			Sleep (100);
 		}
 	}
 

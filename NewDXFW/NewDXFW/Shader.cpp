@@ -6,7 +6,7 @@
 
 Shader::Shader (VertexShader *vertexShader, PixelShader *pixelShader) :
 	m_vertexShader (vertexShader),
-	m_pixelShader (pixelShader)
+	m_pixelShader  (pixelShader)
 {}
 
 void Shader::Render (ID3D11DeviceContext *deviceContext)

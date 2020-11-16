@@ -4,7 +4,7 @@
 #include "DebugFunc.h"
 
 HRESULT CompileShaderFromFile (LPCSTR szFileName, LPCSTR szEntryPoint, LPCSTR szShaderModel,
-							   ID3DBlob **ppBlobOut, ID3DBlob **errorMessage)
+							   ID3DBlob **ppBlobOut)
 {
 	HRESULT hr = S_OK;
 	DWORD dwShaderFlags = D3DCOMPILE_ENABLE_STRICTNESS;
@@ -16,7 +16,7 @@ HRESULT CompileShaderFromFile (LPCSTR szFileName, LPCSTR szEntryPoint, LPCSTR sz
 	{
 		if (pErrorBlob != nullptr)
 		{
-			OutputDebugStringA ((char *)pErrorBlob->GetBufferPointer ());
+			OutputDebugStringA ((char *) pErrorBlob->GetBufferPointer ());
 		}
 		else
 		{
@@ -26,17 +26,14 @@ HRESULT CompileShaderFromFile (LPCSTR szFileName, LPCSTR szEntryPoint, LPCSTR sz
 		return hr;
 	}
 
-	if (pErrorBlob != nullptr)
-	{
-		pErrorBlob->Release ();
-	}
+	RELEASE (pErrorBlob);
 
 	return S_OK;
 }
 
 void OutputShaderErrorMessage (ID3D10Blob *errorMessage, HWND hWnd, LPCSTR shaderFileName)
 {
-	char *compileErrors = (char *)errorMessage->GetBufferPointer ();
+	char *compileErrors = (char *) errorMessage->GetBufferPointer ();
 	unsigned long bufferSize = errorMessage->GetBufferSize ();
 
 	std::ofstream fout;
@@ -55,7 +52,7 @@ void OutputShaderErrorMessage (ID3D10Blob *errorMessage, HWND hWnd, LPCSTR shade
 
 VertexShader::VertexShader () :
 	m_vertexShader (nullptr),
-	m_inputLayout (nullptr)
+	m_inputLayout  (nullptr)
 {}
 
 VertexShader::~VertexShader ()
@@ -66,14 +63,41 @@ VertexShader::~VertexShader ()
 
 bool VertexShader::Initialize (ID3D11Device *device, HWND hWnd,
 							   LPCSTR fileName, LPCSTR funcName,
-							   D3D11_INPUT_ELEMENT_DESC *layout, int numElementes)
+							   D3D11_INPUT_ELEMENT_DESC *_layout, int _numElements)
 {
+	/*
+	ID3DBlob *pVSBlob = NULL;
+
+	HRESULT hr = CompileShaderFromFile ("Shader\\texture.fx", "VS", "vs_4_0", &pVSBlob);
+	CHECK_FAILED (hr);
+
+	hr = device->CreateVertexShader (pVSBlob->GetBufferPointer (),
+									 pVSBlob->GetBufferSize (), NULL, &m_vertexShader);
+	if (FAILED (hr))
+	{
+		pVSBlob->Release ();
+		RETURN_FALSE;
+	}
+
+	D3D11_INPUT_ELEMENT_DESC layout[] =
+	{
+		{ "POSITION", 0, DXGI_FORMAT_R32G32B32_FLOAT, 0, 0, D3D11_INPUT_PER_VERTEX_DATA, 0 },
+	};
+	UINT numElements = ARRAYSIZE (layout);
+
+	hr = device->CreateInputLayout (layout, numElements, pVSBlob->GetBufferPointer (),
+									pVSBlob->GetBufferSize (), &m_inputLayout);
+	pVSBlob->Release ();
+	CHECK_FAILED (hr);
+
+	deviceContext->IASetInputLayout (g_pVertexLayout);
+	ID3DBlob *pPSBlob = NULL;
+	*/
 	HRESULT result = S_OK;
 	ID3DBlob *errorMessage = nullptr;
 	ID3DBlob *vertexShaderBuffer = nullptr;
 
-	result = CompileShaderFromFile (fileName, funcName, "vs_5_0",
-									&vertexShaderBuffer, &errorMessage);
+	result = CompileShaderFromFile (fileName, funcName, "vs_5_0", &vertexShaderBuffer);
 	if (FAILED (result))
 	{
 		if (errorMessage != nullptr)
@@ -83,21 +107,19 @@ bool VertexShader::Initialize (ID3D11Device *device, HWND hWnd,
 
 		RETURN_FALSE;
 	}
-
+	
 	result = device->CreateVertexShader (vertexShaderBuffer->GetBufferPointer (),
-										 vertexShaderBuffer->GetBufferSize (), nullptr,
+										 vertexShaderBuffer->GetBufferSize (), NULL,
 										 &m_vertexShader);
 	CHECK_FAILED (result);
 
-	// Initialize input layout
-	result = device->CreateInputLayout (layout, numElementes,
+	result = device->CreateInputLayout (_layout, _numElements,
 										vertexShaderBuffer->GetBufferPointer (),
 										vertexShaderBuffer->GetBufferSize (),
 										&m_inputLayout);
+	vertexShaderBuffer->Release ();
 	CHECK_FAILED (result);
-
-	RELEASE (vertexShaderBuffer);
-
+	
 	return true;
 }
 
@@ -124,8 +146,7 @@ bool PixelShader::Initialize (ID3D11Device *device, HWND hWnd,
 	ID3DBlob *errorMessage = nullptr;
 	ID3DBlob *pixelShaderBuffer = nullptr;
 
-	result = CompileShaderFromFile (fileName, funcName, "ps_5_0",
-									&pixelShaderBuffer, &errorMessage);
+	result = CompileShaderFromFile (fileName, funcName, "ps_5_0", &pixelShaderBuffer);
 	if (FAILED (result))
 	{
 		if (errorMessage != nullptr)
@@ -137,7 +158,7 @@ bool PixelShader::Initialize (ID3D11Device *device, HWND hWnd,
 	}
 
 	result = device->CreatePixelShader (pixelShaderBuffer->GetBufferPointer (),
-										pixelShaderBuffer->GetBufferSize (), nullptr,
+										pixelShaderBuffer->GetBufferSize (), NULL,
 										&m_pixelShader);
 	CHECK_FAILED (result);
 

@@ -9,8 +9,8 @@ namespace AppCnf
 
 namespace WndCnf
 {
-	const int WIDTH = 1920 / AppCnf::scale;
-	const int HEIGHT = 1080 / AppCnf::scale;
+	const int WIDTH = 1280 / AppCnf::scale;
+	const int HEIGHT = 720 / AppCnf::scale;
 	const int MAXFPS = 120;
 	const bool VSYNC = false;
 	const bool FULLSCREEN = false;

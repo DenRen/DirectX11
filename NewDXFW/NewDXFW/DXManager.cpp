@@ -58,7 +58,7 @@ bool DXManager::GetNumDenum (int Width, int Height, unsigned *numerator, unsigne
     unsigned int numModes = 0, stringLength = 0;
 
     HRESULT result = S_OK;
-    result = CreateDXGIFactory (__uuidof (IDXGIFactory), (void **)&factory);
+    result = CreateDXGIFactory (__uuidof (IDXGIFactory), (void **) &factory);
     CHECK_FAILED (result);
 
     result = factory->EnumAdapters (0, &adapter);
@@ -68,13 +68,13 @@ bool DXManager::GetNumDenum (int Width, int Height, unsigned *numerator, unsigne
     CHECK_FAILED (result);
 
     result = adapterOutput->GetDisplayModeList (DXGI_FORMAT_R8G8B8A8_UNORM,
-        DXGI_ENUM_MODES_INTERLACED, &numModes, nullptr);
+                                                DXGI_ENUM_MODES_INTERLACED, &numModes, nullptr);
     CHECK_FAILED (result);
 
     auto displayModeList = new DXGI_MODE_DESC[numModes];
     result = adapterOutput->GetDisplayModeList (DXGI_FORMAT_R8G8B8A8_UNORM,
-        DXGI_ENUM_MODES_INTERLACED, &numModes,
-        displayModeList);
+                                                DXGI_ENUM_MODES_INTERLACED, &numModes,
+                                                displayModeList);
     CHECK_FAILED (result);
 
     for (int i = 0; i < numModes; i++)
@@ -99,7 +99,7 @@ bool DXManager::GetNumDenum (int Width, int Height, unsigned *numerator, unsigne
         RETURN_FALSE;
     }
 
-    DXGI_ADAPTER_DESC adapterDesc = { 0 };
+    DXGI_ADAPTER_DESC adapterDesc = {};
     if (saveAdapterDesc)
     {
         result = adapter->GetDesc (&adapterDesc);
@@ -108,7 +108,7 @@ bool DXManager::GetNumDenum (int Width, int Height, unsigned *numerator, unsigne
         m_videoCardMemory = (int)(adapterDesc.DedicatedVideoMemory / 1024 / 1024);
 
         int error = wcstombs_s (&stringLength, m_videoCardDescription, 128,
-            adapterDesc.Description, 128);
+                                adapterDesc.Description, 128);
         if (error != 0)
         {
             RETURN_FALSE;
@@ -134,13 +134,10 @@ bool DXManager::Initilize (HWND hWnd, int Width, int Height, bool fullScreen, bo
                               numerator, denominator))                  RETURN_FALSE;
 
     if (!InitializeRenderTargetView ())         RETURN_FALSE;
-    if (!InitializeDepthBuffer (Width, Height)) RETURN_FALSE;
+    //if (!InitializeDepthBuffer (Width, Height)) RETURN_FALSE;
     //if (!InitializeDepthStencilBuffer ())       RETURN_FALSE;
-    if (!InitializeStencilView ())              RETURN_FALSE;
-
-    // Bind the render target view and depth stencil buffer to the output render pipeline 
-    m_deviceContext->OMSetRenderTargets (1, &m_renderTargetView, m_depthStencilView);
-
+    //if (!InitializeStencilView ())              RETURN_FALSE;
+    m_deviceContext->OMSetRenderTargets (1, &m_renderTargetView, NULL);
     //if (!InitializeRasterizerState ())  RETURN_FALSE;
     InitializeViewport (Width, Height);
     //if (!InitializeAlphaBlending ())    RETURN_FALSE;
@@ -151,14 +148,14 @@ bool DXManager::Initilize (HWND hWnd, int Width, int Height, bool fullScreen, bo
 
 void DXManager::BeginScene (float r, float g, float b, float a)
 {
-    float color[4] = { 0.0f };
+    float color[4] = {0.0f};
     color[0] = r;
     color[1] = g;
     color[2] = b;
     color[3] = a;
 
     m_deviceContext->ClearRenderTargetView (m_renderTargetView, color);
-    m_deviceContext->ClearDepthStencilView (m_depthStencilView, D3D11_CLEAR_DEPTH, 1.0f, 0);
+    //m_deviceContext->ClearDepthStencilView (m_depthStencilView, D3D11_CLEAR_DEPTH, 1.0f, 0);
 }
 
 void DXManager::EndScene ()
@@ -201,6 +198,12 @@ void DXManager::EnableZBuffer (bool enable)
     }
 }
 
+DXManager *DXManager::GetDXManager ()
+{
+    static DXManager DXMgr;
+    return &DXMgr;
+}
+
 ID3D11Device *DXManager::GetDevice ()
 {
     return m_device;
@@ -215,22 +218,21 @@ bool DXManager::InitializeSwapChain (HWND hWnd, bool fullScreen,
                                      int screenWidth, int screenHeight,
                                      unsigned numerator, unsigned denominator)
 {
-    DXGI_SWAP_CHAIN_DESC swapChainDesc = { 0 };
-    SET_IN_ZERO (swapChainDesc);
+    DXGI_SWAP_CHAIN_DESC swapChainDesc = {};
 
     swapChainDesc.BufferCount = 1;
-    swapChainDesc.BufferDesc.Width = screenWidth;
+    swapChainDesc.BufferDesc.Width  = screenWidth;
     swapChainDesc.BufferDesc.Height = screenHeight;
     swapChainDesc.BufferDesc.Format = DXGI_FORMAT_R8G8B8A8_UNORM;
 
     if (m_vsync_enabled)
     {
-        swapChainDesc.BufferDesc.RefreshRate.Numerator = numerator;
+        swapChainDesc.BufferDesc.RefreshRate.Numerator   = numerator;
         swapChainDesc.BufferDesc.RefreshRate.Denominator = denominator;
     }
     else
     {
-        swapChainDesc.BufferDesc.RefreshRate.Numerator = 0;
+        swapChainDesc.BufferDesc.RefreshRate.Numerator   = 75;
         swapChainDesc.BufferDesc.RefreshRate.Denominator = 1;
     }
 
@@ -239,21 +241,23 @@ bool DXManager::InitializeSwapChain (HWND hWnd, bool fullScreen,
     swapChainDesc.SampleDesc.Count = 1; // Turn multisampling off
     swapChainDesc.SampleDesc.Quality = 0; //
     swapChainDesc.Windowed = !fullScreen;
-
+    
+    /*
     // Set the scan line ordering and scailing to unspecified
     swapChainDesc.BufferDesc.ScanlineOrdering = DXGI_MODE_SCANLINE_ORDER_UNSPECIFIED;
     swapChainDesc.BufferDesc.Scaling = DXGI_MODE_SCALING_UNSPECIFIED;
 
     swapChainDesc.SwapEffect = DXGI_SWAP_EFFECT_DISCARD;
     swapChainDesc.Flags = 0;
+    */
 
     // Set the feature level to DirectX11
     auto featureLevel = D3D_FEATURE_LEVEL_11_0;
 
     HRESULT result = S_OK;
     result = D3D11CreateDeviceAndSwapChain (NULL, D3D_DRIVER_TYPE_HARDWARE, NULL, 0, &featureLevel,
-        1, D3D11_SDK_VERSION, &swapChainDesc, &m_swapChain,
-        &m_device, NULL, &m_deviceContext);
+                                            1, D3D11_SDK_VERSION, &swapChainDesc, &m_swapChain,
+                                            &m_device, NULL, &m_deviceContext);
     CHECK_FAILED (result);
 
     return true;
@@ -268,9 +272,9 @@ bool DXManager::InitializeRenderTargetView ()
     CHECK_FAILED (result);
 
     result = m_device->CreateRenderTargetView (pBackBuf, NULL, &m_renderTargetView);
-    CHECK_FAILED (result);
-
     RELEASE (pBackBuf);
+
+    CHECK_FAILED (result);
 
     return true;
 }
@@ -378,11 +382,10 @@ bool DXManager::InitializeRasterizerState ()
 
 void DXManager::InitializeViewport (int Width, int Height)
 {
-    D3D11_VIEWPORT viewport = { 0 };
-    SET_IN_ZERO (viewport);
+    D3D11_VIEWPORT viewport = {};
 
-    viewport.Width = (float)Width;
-    viewport.Height = (float)Height;
+    viewport.Width  = (float) Width;
+    viewport.Height = (float) Height;
     viewport.MinDepth = 0.0f;
     viewport.MaxDepth = 1.0f;
     viewport.TopLeftX = 0.0f;

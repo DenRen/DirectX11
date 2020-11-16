@@ -84,7 +84,7 @@ void Sprite <VertexT, IndexT>::Render (ID3D11DeviceContext *deviceContext)
 	m_shader->Render (deviceContext);
 	m_vertexBuffer.Render (deviceContext);
 
-	SetCBMatrix ();
+	//SetCBMatrix ();
 }
 
 template <typename VertexT, typename IndexT>

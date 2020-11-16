@@ -12,18 +12,19 @@ Graphics::~Graphics ()
 {
 	if (m_dxManager != nullptr)
 	{
-		delete m_dxManager;
 		m_dxManager = nullptr;
 	}
 }
 
 bool Graphics::InitializeDX (HWND hWnd)
 {
-	m_dxManager = new DXManager ();
+	m_dxManager = DXManager::GetDXManager ();
 
 	WndCnf::WindowDesc winDesc (0, 0);
 
-	if (!m_dxManager->Initilize (hWnd, winDesc.width, winDesc.height, winDesc.fullScreen, winDesc.vSync))
+	if (!m_dxManager->Initilize (hWnd,
+								 winDesc.width, winDesc.height, 
+								 winDesc.fullScreen, winDesc.vSync))
 	{
 		RETURN_FALSE;
 	}

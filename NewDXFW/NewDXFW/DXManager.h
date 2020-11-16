@@ -17,14 +17,15 @@ public:
 	void EnableAplhaBlending (bool enable);
 	void EnableZBuffer (bool enable);
 
+	static DXManager *GetDXManager ();
 	static ID3D11Device *GetDevice ();
 	static ID3D11DeviceContext *GetDeviceContext ();
 
-	int m_videoCardMemory;
+
 private:
 	bool InitializeSwapChain (HWND hWnd, bool fullScreen,
-		int screenWidth, int screenHeight,
-		unsigned numerator, unsigned denominator);
+							  int screenWidth, int screenHeight,
+							  unsigned numerator, unsigned denominator);
 	bool InitializeRenderTargetView ();
 	bool InitializeDepthBuffer (int Width, int Height);
 	bool InitializeDepthStencilBuffer ();
@@ -35,8 +36,9 @@ private:
 	bool InitializeZBuffer ();
 
 	bool GetNumDenum (int Width, int Height, unsigned *numerator, unsigned *denominator,
-		bool saveAdapterDesc = true);
+					  bool saveAdapterDesc = true);
 	bool m_vsync_enabled;
+	int m_videoCardMemory;
 	char m_videoCardDescription[128];
 	IDXGISwapChain *m_swapChain;
 	ID3D11RenderTargetView *m_renderTargetView;

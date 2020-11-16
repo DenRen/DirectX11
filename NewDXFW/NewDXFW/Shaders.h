@@ -5,6 +5,8 @@
 
 #include "InputLayout.h"
 
+HRESULT CompileShaderFromFile (LPCSTR szFileName, LPCSTR szEntryPoint, LPCSTR szShaderModel,
+							   ID3DBlob **ppBlobOut);
 class VertexShader
 {
 	friend class Shader;

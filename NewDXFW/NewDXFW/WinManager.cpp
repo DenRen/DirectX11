@@ -6,25 +6,25 @@
 bool WinManager::Initialize (const char *title, unsigned width, unsigned height,
 							 int locateX, int locateY, bool fullScreen, bool vSync)
 {
-	WNDCLASSEX wc = { 0 };
-	SET_IN_ZERO (wc);
+	WNDCLASSEX wcex = {};
+	SET_IN_ZERO (wcex);
 
 	m_hInstance = GetModuleHandle (nullptr);
 
-	wc.style = CS_HREDRAW | CS_VREDRAW | CS_OWNDC;
-	wc.lpfnWndProc = WndProc;
-	wc.cbClsExtra = 0;
-	wc.cbWndExtra = 0;
-	wc.hInstance = m_hInstance;
-	wc.hIcon = LoadIcon (nullptr, IDI_WINLOGO);
-	wc.hIconSm = wc.hIcon;
-	wc.hCursor = LoadCursor (nullptr, IDC_ARROW);
-	wc.hbrBackground = (HBRUSH)GetStockObject (BLACK_BRUSH);
-	wc.lpszMenuName = nullptr;
-	wc.lpszClassName = title;
-	wc.cbSize = sizeof (WNDCLASSEX);
+	wcex.style = CS_HREDRAW | CS_VREDRAW | CS_OWNDC;
+	wcex.lpfnWndProc = WndProc;
+	wcex.cbClsExtra = 0;
+	wcex.cbWndExtra = 0;
+	wcex.hInstance = m_hInstance;
+	wcex.hIcon = nullptr;
+	wcex.hIconSm = wcex.hIcon;
+	wcex.hCursor = LoadCursor (nullptr, IDC_ARROW);
+	wcex.hbrBackground = (HBRUSH) GetStockObject (BLACK_BRUSH);
+	wcex.lpszMenuName = nullptr;
+	wcex.lpszClassName = title;
+	wcex.cbSize = sizeof (WNDCLASSEX);
 
-	if (!RegisterClassEx (&wc))
+	if (!RegisterClassEx (&wcex))
 	{
 		RETURN_FALSE;
 	}
@@ -58,18 +58,16 @@ bool WinManager::Initialize (const char *title, unsigned width, unsigned height,
 
 	int nStyle = WS_OVERLAPPED | WS_SYSMENU | WS_VISIBLE | WS_CAPTION | WS_MINIMIZEBOX;
 	m_hWnd = CreateWindowEx (WS_EX_APPWINDOW, title, title,
-		nStyle,
-		locateX, locateY, screenWidth, screenHeight,
-		nullptr, nullptr, m_hInstance, nullptr);
+							 nStyle,
+							 locateX, locateY, screenWidth, screenHeight,
+							 nullptr, nullptr, m_hInstance, nullptr);
 
 	if (m_hWnd == nullptr)
 	{
 		RETURN_FALSE;
 	}
 
-	ShowWindow (m_hWnd, SW_SHOW);
-	SetForegroundWindow (m_hWnd);
-	SetFocus (m_hWnd);
+	Show ();
 
 	return true;
 }
@@ -93,10 +91,8 @@ HINSTANCE WinManager::GetHInstance ()
 
 LRESULT CALLBACK WndProc (HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam)
 {
-	static int _iter = 0;
-
-	PAINTSTRUCT ps = { 0 };
-	HDC hdc = { 0 };
+	PAINTSTRUCT ps = {};
+	HDC hdc = {};
 
 	switch (Msg)
 	{
