@@ -3,7 +3,8 @@ SamplerState samLinear : register (s0);
 
 float4 VS (float4 pos : POSITION) : SV_POSITION
 {
-    return float4 (pos.y, pos.z, 0.5, 1);
+    return pos;
+    //return float4 (pos.y, pos.z, 0.5, 1);
 }
 
 float4 PS (float4 Pos : SV_POSITION) : SV_Target

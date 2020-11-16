@@ -8,7 +8,7 @@
 #include "AddFunc.h"
 #include "InputLayout.h"
 
-struct VertexPosTex : public InputLayout
+struct VertexPosTex
 {
 	XMFLOAT3 pos;
 	XMFLOAT2 tex;

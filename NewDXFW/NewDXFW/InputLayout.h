@@ -5,12 +5,12 @@
 class InputLayout
 {
 public:
-	virtual D3D11_INPUT_ELEMENT_DESC *GetLayout ()
+	D3D11_INPUT_ELEMENT_DESC *GetLayout ()
 	{
 		return nullptr;
 	};
 
-	virtual int GetNumElements ()
+	int GetNumElements ()
 	{
 		return -1;
 	}

@@ -12,7 +12,5 @@ int main ()
 
 	App->Run ();
 
-	//Sleep (2000);
-
 	DebugEndMain ();
 }
