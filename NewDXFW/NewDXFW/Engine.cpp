@@ -68,19 +68,17 @@ bool Engine::Initialize (HINSTANCE hInstance, HWND hWnd)
    
     // -----------
     
-    if (!CreateConstatntBufferMatrixes (m_device, &m_CBMatrixes))
-    {
-        RETURN_FALSE;
-    }
+    if (!CreateConstatntBufferMatrixes (m_device, &m_CBWVPMatrixes))   RETURN_FALSE;
 
     XMVECTOR Eye = XMVectorSet (0.0f, 1.0f, -5.0f, 0.0f);
     XMVECTOR At = XMVectorSet (0.0f, 1.0f, 0.0f, 0.0f);
     XMVECTOR Up = XMVectorSet (0.0f, 1.0f, 0.0f, 0.0f);
-    XMMATRIX mView = XMMatrixLookAtLH (Eye, At, Up);
+    m_WVPMatrixes.m_View = XMMatrixLookAtLH (Eye, At, Up);
 
-    XMMATRIX mProjection = XMMatrixPerspectiveFovLH (XM_PIDIV4, 16.0f / 9.0f, 0.01f, 100.0f);
+    m_WVPMatrixes.m_Projection = XMMatrixPerspectiveFovLH (XM_PIDIV4, 16.0f / 9.0f, 0.01f, 100.0f);
 
-    m_camera = new Camera (mView, mProjection, m_CBMatrixes);
+    m_camera = new Camera (m_WVPMatrixes.m_View, m_WVPMatrixes.m_Projection,
+                           &m_WVPMatrixes, m_CBWVPMatrixes);
 
     /*
     D3D11_BUFFER_DESC bd = {};
@@ -226,33 +224,16 @@ void Engine::Render ()
 
     XMMATRIX mWorld = XMMatrixRotationY (10 * dt);
 
-    //m_camera->Render (m_deviceContext);
+    m_camera->Render (m_deviceContext);
 
-    D3D11_MAPPED_SUBRESOURCE mappedResource = {};
-    HRESULT result = S_OK;
+    m_WVPMatrixes.m_World = mWorld;
 
-    result = m_deviceContext->Map (m_CBMatrixes, 0, D3D11_MAP_WRITE_DISCARD, 0 ,
-                                   &mappedResource);
-    if (FAILED (result))
-    {
-        DUMP_DEBUG_INFO;
-        DebugEndMain ();
-        throw std::runtime_error ("");
-    }
-
-    auto data = (ConstantBufferMatrixes *) mappedResource.pData;
-    data->m_World       = XMMatrixTranspose (mWorld);
-    data->m_View        = XMMatrixTranspose (m_camera->m_view);
-    data->m_Projection  = XMMatrixTranspose (m_camera->m_proj);
-
-    m_deviceContext->Unmap (m_CBMatrixes, 0);
-
-    //m_deviceContext->UpdateSubresource (m_CBMatrixes, 0, nullptr, &cb, 0, 0);
+    m_WVPMatrixes.UpdateSubresource (m_deviceContext, m_CBWVPMatrixes);
 
     m_graphics->BeginScene (0, 0, 0, 1);
 
     m_shader->Render (m_deviceContext);
-    m_deviceContext->VSSetConstantBuffers (0, 1, &m_CBMatrixes);
+    m_deviceContext->VSSetConstantBuffers (0, 1, &m_CBWVPMatrixes);
     m_texture->Render (m_deviceContext);
     m_vertexBuffer->Render (m_deviceContext);
 

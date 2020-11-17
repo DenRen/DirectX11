@@ -6,6 +6,7 @@
 #include "Texture.h"
 #include "Rectangle.h"
 #include "Camera.h"
+#include "Structure_Data.h"
 
 class Engine
 {
@@ -42,6 +43,8 @@ private:
 	VertexBuffer <VertexPosTex, char> *m_vertexBuffer;
 	RectTex *m_rect;
 
-	ID3D11Buffer *m_CBMatrixes;
 	Camera *m_camera;
+
+	WVPMatrixes m_WVPMatrixes;
+	ID3D11Buffer *m_CBWVPMatrixes;
 };

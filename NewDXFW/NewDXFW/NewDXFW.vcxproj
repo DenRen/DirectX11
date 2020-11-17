@@ -180,6 +180,9 @@
     <ClCompile Include="Texture.cpp" />
     <ClCompile Include="WinManager.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="Заметки.txt" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

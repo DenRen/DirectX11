@@ -11,14 +11,16 @@ class Camera
 {
 public:
 
-	Camera (XMMATRIX view, XMMATRIX projection, ID3D11Buffer *CBMatrixes);
+	Camera (XMMATRIX view, XMMATRIX proj, WVPMatrixes *WVPMatrixes, ID3D11Buffer *CBMatrixes);
 
 	void Render (ID3D11DeviceContext *deviceContext);
 
 public:
-	//ConstantBufferMatrixes m_matrix;
+	
 	XMMATRIX m_view;
 	XMMATRIX m_proj;
-	ID3D11Buffer *m_CBMatrixes;
+
+	WVPMatrixes *m_WVPMatrixes;
+	ID3D11Buffer *m_CBWVPMatrixes;
 };
 

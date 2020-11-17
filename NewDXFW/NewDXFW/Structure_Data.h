@@ -3,10 +3,13 @@
 #include <d3d11.h>
 #include <xnamath.h>
 
-struct ConstantBufferMatrixes
+struct WVPMatrixes
 {
-	ConstantBufferMatrixes () = default;
-	ConstantBufferMatrixes (XMMATRIX world, XMMATRIX view, XMMATRIX projection);
+	WVPMatrixes () = default;
+	WVPMatrixes (const WVPMatrixes &) = default;
+	WVPMatrixes (XMMATRIX world, XMMATRIX view, XMMATRIX projection);
+
+	void UpdateSubresource (ID3D11DeviceContext *deviceContext, ID3D11Buffer *CBWVPMatrixes);
 
 	XMMATRIX m_World;
 	XMMATRIX m_View;

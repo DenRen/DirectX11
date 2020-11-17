@@ -94,7 +94,7 @@ void Sprite <VertexT, IndexT>::SetCBMatrix ()
 		throw std::runtime_error ("");
 	}
 
-	auto dataPtr = (ConstantBufferMatrixes *) mappedResource.pData;
+	auto dataPtr = (WVPMatrixes *) mappedResource.pData;
 	dataPtr->m_World = m_worldMatrix;
 
 	deviceContext->Unmap (m_CBMatrixes, 0);
