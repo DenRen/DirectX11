@@ -4,15 +4,7 @@
 #include "Texture.h"
 #include "DXManager.h"
 #include "DebugFunc.h"
-
-struct ConstantBufferMatrixes
-{
-	ConstantBufferMatrixes (XMMATRIX world, XMMATRIX view, XMMATRIX projection);
-
-	XMMATRIX m_World;
-	XMMATRIX m_View;
-	XMMATRIX m_Projection;
-};
+#include "Structure_Data.h"
 
 template <typename VertexT, typename IndexT>
 class Sprite

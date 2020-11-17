@@ -7,40 +7,7 @@
 #include "DebugFunc.h"
 #include "AddFunc.h"
 #include "InputLayout.h"
-
-struct VertexPosTex
-{
-	XMFLOAT3 pos;
-	XMFLOAT2 tex;
-
-	VertexPosTex () :
-		VertexPosTex (0, 0)
-	{}
-
-	VertexPosTex (XMFLOAT3 pos, XMFLOAT2 tex) :
-		pos (pos),
-		tex (tex)
-	{}
-
-	static D3D11_INPUT_ELEMENT_DESC *GetLayout ()
-	{
-		int size = 0;
-		static D3D11_INPUT_ELEMENT_DESC layout[] =
-		{
-			{"POSITION", 0, DXGI_FORMAT_R32G32B32_FLOAT, 0, size,
-															D3D11_INPUT_PER_VERTEX_DATA, 0},
-			{"TEXCOORD", 0, DXGI_FORMAT_R32G32_FLOAT,	 0, size += sizeof (pos),
-															D3D11_INPUT_PER_VERTEX_DATA, 0}
-		};
-
-		return layout;
-	}
-
-	static int GetNumElements ()
-	{
-		return 2;
-	};
-};
+#include "Structure_Data.h"
 
 template <typename VertexT, typename IndexT>
 class VertexBuffer

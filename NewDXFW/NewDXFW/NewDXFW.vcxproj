@@ -88,7 +88,7 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_XM_NO_INTRINSICS_;WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
     </ClCompile>
     <Link>
@@ -144,6 +144,7 @@
   <ItemGroup>
     <ClInclude Include="AddFunc.h" />
     <ClInclude Include="AppMgr.h" />
+    <ClInclude Include="Camera.h" />
     <ClInclude Include="Config.h" />
     <ClInclude Include="DebugFunc.h" />
     <ClInclude Include="de_timer.h" />
@@ -155,6 +156,7 @@
     <ClInclude Include="Shader.h" />
     <ClInclude Include="Shaders.h" />
     <ClInclude Include="Sprite.h" />
+    <ClInclude Include="Structure_Data.h" />
     <ClInclude Include="Texture.h" />
     <ClInclude Include="VertexBuffer.h" />
     <ClInclude Include="WinManager.h" />
@@ -162,6 +164,7 @@
   <ItemGroup>
     <ClCompile Include="AddFunc.cpp" />
     <ClCompile Include="AppMgr.cpp" />
+    <ClCompile Include="Camera.cpp" />
     <ClCompile Include="Config.cpp" />
     <ClCompile Include="DebugFunc.cpp" />
     <ClCompile Include="de_timer.cpp" />
@@ -173,6 +176,7 @@
     <ClCompile Include="Shader.cpp" />
     <ClCompile Include="Shaders.cpp" />
     <ClCompile Include="Sprite.cpp" />
+    <ClCompile Include="Structure_Data.cpp" />
     <ClCompile Include="Texture.cpp" />
     <ClCompile Include="WinManager.cpp" />
   </ItemGroup>

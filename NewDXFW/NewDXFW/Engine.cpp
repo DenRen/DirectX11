@@ -3,7 +3,6 @@
 #include "Engine.h"
 #include "DebugFunc.h"
 
-
 deTimer *Engine::m_timer = new deTimer ();
 
 Engine::Engine () :
@@ -69,27 +68,19 @@ bool Engine::Initialize (HINSTANCE hInstance, HWND hWnd)
    
     // -----------
     
-    XMMATRIX mWorld = XMMatrixIdentity ();
+    if (!CreateConstatntBufferMatrixes (m_device, &m_CBMatrixes))
+    {
+        RETURN_FALSE;
+    }
 
     XMVECTOR Eye = XMVectorSet (0.0f, 1.0f, -5.0f, 0.0f);
-    XMVECTOR At  = XMVectorSet (0.0f, 1.0f,  0.0f,  0.0f);
-    XMVECTOR Up  = XMVectorSet (0.0f, 1.0f,  0.0f,  0.0f);
+    XMVECTOR At = XMVectorSet (0.0f, 1.0f, 0.0f, 0.0f);
+    XMVECTOR Up = XMVectorSet (0.0f, 1.0f, 0.0f, 0.0f);
     XMMATRIX mView = XMMatrixLookAtLH (Eye, At, Up);
 
     XMMATRIX mProjection = XMMatrixPerspectiveFovLH (XM_PIDIV4, 16.0f / 9.0f, 0.01f, 100.0f);
 
-    m_matrix = ConstantBuffer (mWorld, mView, mProjection);
-
-    D3D11_BUFFER_DESC bd = {};
-    bd.Usage = D3D11_USAGE_DEFAULT;
-    bd.ByteWidth = sizeof (ConstantBuffer);
-    bd.BindFlags = D3D11_BIND_CONSTANT_BUFFER;
-    bd.CPUAccessFlags = 0;
-    bd.MiscFlags = 0;
-    bd.StructureByteStride = 0;
-
-    result = m_device->CreateBuffer (&bd, nullptr, &m_CBMatrixes);
-    CHECK_FAILED (result);
+    m_camera = new Camera (mView, mProjection, m_CBMatrixes);
 
     /*
     D3D11_BUFFER_DESC bd = {};
@@ -230,14 +221,33 @@ void Engine::Update ()
 
 void Engine::Render ()
 {
-    float dt = m_timer->getTimeInterval ();
-    m_matrix.mWorld *= XMMatrixRotationY (10 * dt);
+    static float dt = 0;
+    dt += m_timer->getTimeInterval ();
 
-    ConstantBuffer cb = {};
-    cb.mWorld      = XMMatrixTranspose (m_matrix.mWorld);
-    cb.mView       = XMMatrixTranspose (m_matrix.mView);
-    cb.mProjection = XMMatrixTranspose (m_matrix.mProjection);
-    m_deviceContext->UpdateSubresource (m_CBMatrixes, 0, nullptr, &cb, 0, 0);
+    XMMATRIX mWorld = XMMatrixRotationY (10 * dt);
+
+    //m_camera->Render (m_deviceContext);
+
+    D3D11_MAPPED_SUBRESOURCE mappedResource = {};
+    HRESULT result = S_OK;
+
+    result = m_deviceContext->Map (m_CBMatrixes, 0, D3D11_MAP_WRITE_DISCARD, 0 ,
+                                   &mappedResource);
+    if (FAILED (result))
+    {
+        DUMP_DEBUG_INFO;
+        DebugEndMain ();
+        throw std::runtime_error ("");
+    }
+
+    auto data = (ConstantBufferMatrixes *) mappedResource.pData;
+    data->m_World       = XMMatrixTranspose (mWorld);
+    data->m_View        = XMMatrixTranspose (m_camera->m_view);
+    data->m_Projection  = XMMatrixTranspose (m_camera->m_proj);
+
+    m_deviceContext->Unmap (m_CBMatrixes, 0);
+
+    //m_deviceContext->UpdateSubresource (m_CBMatrixes, 0, nullptr, &cb, 0, 0);
 
     m_graphics->BeginScene (0, 0, 0, 1);
 
