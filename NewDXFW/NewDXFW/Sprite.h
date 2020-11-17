@@ -12,8 +12,8 @@ class Sprite
 public:
 	Sprite ();
 	Sprite (Shader *shader, Texture *texture,
-			ID3D11Buffer *CBMatrix, XMMATRIX World = XMMatrixIdentity ());
-	virtual ~Sprite ();
+			ID3D11Buffer *CBMatrix, WVPMatrixes *WVPMatrixes,
+			XMMATRIX world = XMMatrixIdentity ());
 
 	bool Initialize (Shader *shader, Texture *texture);
 
@@ -21,8 +21,8 @@ public:
 
 	void Move (float x, float y, float z);
 	void RotateX (float angle);
-	void RotateY (float angle);
 	void RotateZ (float angle);
+	void RotateY (float angle);
 	void ScaleUp (float ScaleUpX, float ScaleUpY, float ScaleUpZ);
 
 protected:
@@ -31,31 +31,28 @@ protected:
 	Shader  *m_shader;
 
 	XMMATRIX m_worldMatrix;
-	ID3D11Buffer *m_CBMatrixes;
+	WVPMatrixes *m_WVPMatrixes;
+	ID3D11Buffer *m_CBWVPMatrixes;
 
 private:
 	void SetCBMatrix ();
 };
 
 template <typename VertexT, typename IndexT>
-Sprite <VertexT, IndexT>::Sprite () :
-	Sprite (nullptr, nullptr, nullptr)
-{}
-
-template<typename VertexT, typename IndexT>
-inline Sprite<VertexT, IndexT>::Sprite (Shader *shader, Texture *texture,
-										ID3D11Buffer *CBMatrix, XMMATRIX World) :
-	m_shader (shader),
-	m_texture (texture),
-	m_CBMatrixes (CBMatrix),
-	m_worldMatrix (World)
+inline Sprite <VertexT, IndexT>::Sprite () :
+	Sprite (nullptr, nullptr, nullptr, nullptr, XMMatrixIdentity ())
 {}
 
 template <typename VertexT, typename IndexT>
-Sprite <VertexT, IndexT>::~Sprite ()
-{
-
-}
+inline Sprite <VertexT, IndexT>::Sprite (Shader *shader, Texture *texture,
+										 ID3D11Buffer *CBWVPMatrix, WVPMatrixes *WVPMatrixes,
+										 XMMATRIX world) :
+	m_shader (shader),
+	m_texture (texture),
+	m_CBWVPMatrixes (CBWVPMatrix),
+	m_WVPMatrixes (WVPMatrixes),
+	m_worldMatrix (world)
+{}
 
 template <typename VertexT, typename IndexT>
 bool Sprite <VertexT, IndexT>::Initialize (Shader *shader, Texture *texture)
@@ -76,7 +73,7 @@ void Sprite <VertexT, IndexT>::Render (ID3D11DeviceContext *deviceContext)
 	m_shader->Render (deviceContext);
 	m_vertexBuffer.Render (deviceContext);
 
-	//SetCBMatrix ();
+	SetCBMatrix ();
 }
 
 template <typename VertexT, typename IndexT>
@@ -84,22 +81,10 @@ void Sprite <VertexT, IndexT>::SetCBMatrix ()
 {
 	ID3D11DeviceContext *deviceContext = DXManager::GetDeviceContext ();
 
-	D3D11_MAPPED_SUBRESOURCE mappedResource = {};
-	HRESULT result = deviceContext->Map (m_CBMatrixes, 0, D3D11_MAP_WRITE_DISCARD,
-										 0, &mappedResource);
-	if (FAILED (result))
-	{
-		DUMP_DEBUG_INFO;
-		DebugEndMain ();
-		throw std::runtime_error ("");
-	}
+	m_WVPMatrixes->m_World = m_worldMatrix;
+	m_WVPMatrixes->UpdateSubresource (deviceContext, m_CBWVPMatrixes);
 
-	auto dataPtr = (WVPMatrixes *) mappedResource.pData;
-	dataPtr->m_World = m_worldMatrix;
-
-	deviceContext->Unmap (m_CBMatrixes, 0);
-
-	deviceContext->VSSetConstantBuffers (0, 1, &m_CBMatrixes);
+	deviceContext->VSSetConstantBuffers (0, 1, &m_CBWVPMatrixes);
 }
 
 template <typename VertexT, typename IndexT>

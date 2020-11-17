@@ -41,7 +41,7 @@ float4 PS (PS_INPUT input) : SV_Target
     finalColor.a = 1.0f;   
 
     //return finalColor;
-    return float4 (1,1,1,1);
+    return finalColor;
 }
 
 /*Texture2D txDiffuse : register (t0);  // Буфер текстуры

@@ -55,6 +55,7 @@ bool Engine::Initialize (HINSTANCE hInstance, HWND hWnd)
     m_texture = new Texture ();
     if (!m_texture->Initialize (m_device, "Texture\\Plazma.jpg"))     RETURN_FALSE;
 
+    /*
     VertexPosTex vert[4] = {{XMFLOAT3 (-0.5f,  0.5f, 0.5f), XMFLOAT2 (0.0f, 0.0f)},
                             {XMFLOAT3 ( 0.5f,  0.5f, 0.5f), XMFLOAT2 (1.0f, 0.0f)},
                             {XMFLOAT3 ( 0.5f, -0.5f, 0.5f), XMFLOAT2 (1.0f, 1.0f)},
@@ -65,7 +66,7 @@ bool Engine::Initialize (HINSTANCE hInstance, HWND hWnd)
 
     m_vertexBuffer = new VertexBuffer <VertexPosTex, char> ();
     m_vertexBuffer->Initialize (m_device, vert, 4, indeces, 6);
-   
+   */
     // -----------
     
     if (!CreateConstatntBufferMatrixes (m_device, &m_CBWVPMatrixes))   RETURN_FALSE;
@@ -80,6 +81,8 @@ bool Engine::Initialize (HINSTANCE hInstance, HWND hWnd)
     m_camera = new Camera (m_WVPMatrixes.m_View, m_WVPMatrixes.m_Projection,
                            &m_WVPMatrixes, m_CBWVPMatrixes);
 
+    m_rect = new RectTex (0.0f, 0.0f, 0.0f, 0.0f,
+                          m_shader, m_texture, m_CBWVPMatrixes, &m_WVPMatrixes);
     /*
     D3D11_BUFFER_DESC bd = {};
     bd.Usage = D3D11_USAGE_DEFAULT;
@@ -220,22 +223,24 @@ void Engine::Update ()
 void Engine::Render ()
 {
     static float dt = 0;
-    dt += m_timer->getTimeInterval ();
+    dt = m_timer->getTimeInterval ();
 
-    XMMATRIX mWorld = XMMatrixRotationY (10 * dt);
+    m_rect->RotateY (1 * dt);
+    m_rect->RotateX (1 * dt);
+    m_rect->RotateZ (1 * dt);
+    m_rect->ScaleUp (1, 1.00001, 1.001);
 
     m_camera->Render (m_deviceContext);
 
-    m_WVPMatrixes.m_World = mWorld;
-
-    m_WVPMatrixes.UpdateSubresource (m_deviceContext, m_CBWVPMatrixes);
+    //m_WVPMatrixes.UpdateSubresource (m_deviceContext, m_CBWVPMatrixes);
 
     m_graphics->BeginScene (0, 0, 0, 1);
 
-    m_shader->Render (m_deviceContext);
-    m_deviceContext->VSSetConstantBuffers (0, 1, &m_CBWVPMatrixes);
-    m_texture->Render (m_deviceContext);
-    m_vertexBuffer->Render (m_deviceContext);
+    m_rect->Draw ();
+    //m_shader->Render (m_deviceContext);
+    //m_deviceContext->VSSetConstantBuffers (0, 1, &m_CBWVPMatrixes);
+    //m_texture->Render (m_deviceContext);
+    //m_vertexBuffer->Render (m_deviceContext);
 
     /*
     auto devCont = DXManager::GetDeviceContext ();
