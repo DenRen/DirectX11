@@ -1,7 +1,8 @@
 #include <cassert>
-
+// _XM_NO_INTRINSICS_
 #include "Engine.h"
 #include "DebugFunc.h"
+#include "Config.h"
 
 deTimer *Engine::m_timer = new deTimer ();
 
@@ -21,7 +22,7 @@ Engine::~Engine ()
     delete m_rect;
 }
 
-bool Engine::InitializeGraphics (HWND hWnd)
+bool Engine::InitializeGraphics (HWND hWnd, HINSTANCE hInstance)
 {
     m_graphics = new Graphics ();
 
@@ -31,7 +32,10 @@ bool Engine::InitializeGraphics (HWND hWnd)
     }
     
     m_hWnd = hWnd;
+    m_hInstance = hInstance;
+
     m_graphics->SethWnd (hWnd);
+    
     m_device = m_graphics->GetDevice ();
     m_deviceContext = m_graphics->GetDeviceContext ();
 
@@ -41,6 +45,9 @@ bool Engine::InitializeGraphics (HWND hWnd)
 bool Engine::Initialize (HINSTANCE hInstance, HWND hWnd)
 {
     HRESULT result = S_OK;
+
+    m_input = new Input ();
+   // if (!m_input->Initialize (m_hInstance, m_hWnd, WndCnf::WIDTH, WndCnf::HEIGHT)) RETURN_FALSE;
 
     auto vertexShader = new VertexShader ();
     if (!vertexShader->Initialize (m_device, hWnd, "Shader\\texture.fx", "VS",
@@ -71,141 +78,20 @@ bool Engine::Initialize (HINSTANCE hInstance, HWND hWnd)
     
     if (!CreateConstatntBufferMatrixes (m_device, &m_CBWVPMatrixes))   RETURN_FALSE;
 
-    XMVECTOR Eye = XMVectorSet (0.0f, 1.0f, -5.0f, 0.0f);
-    XMVECTOR At = XMVectorSet (0.0f, 1.0f, 0.0f, 0.0f);
-    XMVECTOR Up = XMVectorSet (0.0f, 1.0f, 0.0f, 0.0f);
+    XMVECTOR Eye = XMVectorSet (0.0f, 0.0f, -2.0f, 0.0f);
+    XMVECTOR At  = XMVectorSet (0.0f, 0.0f,  1.0f, 0.0f);
+    XMVECTOR Up  = XMVectorSet (0.0f, 1.0f,  0.0f, 0.0f);
     m_WVPMatrixes.m_View = XMMatrixLookAtLH (Eye, At, Up);
 
     m_WVPMatrixes.m_Projection = XMMatrixPerspectiveFovLH (XM_PIDIV4, 16.0f / 9.0f, 0.01f, 100.0f);
 
     m_camera = new Camera (m_WVPMatrixes.m_View, m_WVPMatrixes.m_Projection,
                            &m_WVPMatrixes, m_CBWVPMatrixes);
-
-    m_rect = new RectTex (0.0f, 0.0f, 0.0f, 0.0f,
-                          m_shader, m_texture, m_CBWVPMatrixes, &m_WVPMatrixes);
-    /*
-    D3D11_BUFFER_DESC bd = {};
-    bd.Usage = D3D11_USAGE_DEFAULT;
-    bd.ByteWidth = sizeof (SimpleVertex) * 3;
-    bd.BindFlags = D3D11_BIND_VERTEX_BUFFER;
-    bd.CPUAccessFlags = 0;
-
-    D3D11_SUBRESOURCE_DATA InitData = {};
-    InitData.pSysMem = vert;
-
-    m_device->CreateBuffer (&bd, &InitData, &g_pVertexBuffer);
-
-    UINT stride = sizeof (SimpleVertex);
-    UINT offset = 0;
-    m_deviceContext->IASetVertexBuffers (0, 1, &g_pVertexBuffer, &stride, &offset);
-    m_deviceContext->IASetPrimitiveTopology (D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
-    */
-    /*
-    auto device = DXManager::GetDevice ();
-    auto deviceContext = DXManager::GetDeviceContext ();
-
-    auto vertexShader = new VertexShader ();
-    if (!vertexShader->Initialize (device, hWnd, "Shader\\texture.fx", "VS",
-                                   VertexPosTex::GetLayout (), VertexPosTex::GetNumElements ()))
-    {
-        RETURN_FALSE;
-    }
-
-    auto pixelShader = new PixelShader ();
-    if (!pixelShader->Initialize (device, hWnd, "Shader\\texture.fx", "PS"))
-    {
-        RETURN_FALSE;
-    }
-
-    m_shader = new Shader (vertexShader, pixelShader);
-
-    SimpleVertex vertices[3];
-
-    vertices[0].Pos.x =  0.0f;  vertices[0].Pos.y =  0.5f;  vertices[0].Pos.z = 0.5f;
-    vertices[1].Pos.x =  0.5f;  vertices[1].Pos.y = -0.5f;  vertices[1].Pos.z = 0.5f;
-    vertices[2].Pos.x = -0.5f;  vertices[2].Pos.y = -0.5f;  vertices[2].Pos.z = 0.5f;
-
-    D3D11_BUFFER_DESC bd;  // Структура, описывающая создаваемый буфер
-
-    ZeroMemory (&bd, sizeof (bd));                    // очищаем ее
-    bd.Usage = D3D11_USAGE_DEFAULT;
-    bd.ByteWidth = sizeof (SimpleVertex) * 3; // размер буфера = размер одной вершины * 3
-    bd.BindFlags = D3D11_BIND_VERTEX_BUFFER;          // тип буфера - буфер вершин
-    bd.CPUAccessFlags = 0;
-
-    D3D11_SUBRESOURCE_DATA InitData; // Структура, содержащая данные буфера
-    ZeroMemory (&InitData, sizeof (InitData)); // очищаем ее
-    InitData.pSysMem = vertices;               // указатель на наши 3 вершины
-
-    // Вызов метода g_pd3dDevice создаст объект буфера вершин ID3D11Buffer
-    device->CreateBuffer (&bd, &InitData, &m_pVertexBuffer);
-
-    UINT stride = sizeof (SimpleVertex);
-    UINT offset = 0;
-    deviceContext->IASetVertexBuffers (0, 1, &m_pVertexBuffer, &stride, &offset);
-    deviceContext->IASetPrimitiveTopology (D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST);*/
-    /*
-    // Init camera ---------------------------------------------------------------------------
     
-    XMMATRIX mWorld = XMMatrixIdentity ();
+    RectTex::SetDefaultValue (m_texture, m_shader, m_CBWVPMatrixes, &m_WVPMatrixes);
 
-    XMVECTOR Eye = XMVectorSet (0.0f, 0.0f, -5.0f, 0.0f);
-    XMVECTOR At  = XMVectorSet (0.0f, 0.0f,  1.0f, 0.0f);
-    XMVECTOR Up  = XMVectorSet (0.0f, 1.0f,  0.0f, 0.0f);
-    XMMATRIX mView = XMMatrixLookAtLH (Eye, At, Up);
+    m_rect = new RectTex (0.5, 0.3, 0.7, 0.2);
 
-    XMMATRIX mProjection = XMMatrixPerspectiveFovLH (XM_PIDIV4, 16.0f / 9.0f, 0.01f, 100.0f);
-
-    ConstantBufferMatrixes matrix (mWorld, mView, mProjection);
-
-    D3D11_BUFFER_DESC bd = {};
-    bd.Usage = D3D11_USAGE_DYNAMIC;
-    bd.ByteWidth = sizeof (ConstantBufferMatrixes);
-    bd.BindFlags = D3D11_BIND_CONSTANT_BUFFER;
-    bd.CPUAccessFlags = D3D11_CPU_ACCESS_WRITE;
-    bd.MiscFlags = 0;
-    bd.StructureByteStride = 0;
-    
-    D3D11_SUBRESOURCE_DATA initData = {};
-    initData.pSysMem = &matrix;
-    initData.SysMemPitch = 0;
-    initData.SysMemSlicePitch = 0;
-
-    HRESULT result = device->CreateBuffer (&bd, &initData, &m_CBMatrixes);
-    CHECK_FAILED (result);
-
-    deviceContext->VSSetConstantBuffers (0, 1, &m_CBMatrixes);
-    deviceContext->PSSetConstantBuffers (0, 1, &m_CBMatrixes);
-
-    //m_camera = new Camera (device, mWorld, mView, mProjection);
-    
-    // Init shaders and texture --------------------------------------------------------------
-
-    auto vertexShader = new VertexShader ();
-    if (!vertexShader->Initialize (device, hWnd, "Shader\\texture.fx", "VS",
-                                   VertexPosTex::GetLayout (), VertexPosTex::GetNumElements ()))
-    {
-        RETURN_FALSE;
-    }
-
-    auto pixelShader = new PixelShader ();
-    if (!pixelShader->Initialize (device, hWnd, "Shader\\texture.fx", "PS"))
-    {
-        RETURN_FALSE;
-    }
-
-    auto shader = new Shader (vertexShader, pixelShader);
-
-    auto texture = new Texture ();
-    if (!texture->Initialize (device, "Texture\\Plazma.jpg"))
-    {
-        RETURN_FALSE;
-    }
-
-    // Init rectangle ------------------------------------------------------------------------
-
-    m_rect = new RectTex (-1.0f, 0.0f, 1.0f, 1.0f, shader, texture, m_CBMatrixes);
-    */
     return true;
 }
 
@@ -216,19 +102,24 @@ void Engine::Run ()
 }
 
 void Engine::Update ()
-{
+{/*
+    if (!m_input->Update ())
+    {
+        DUMP_DEBUG_INFO;
+        DebugEndMain ();
+        throw std::runtime_error ("");
+    }*/
     m_timer->updateTimer ();
 }
 
 void Engine::Render ()
 {
+    int mouseX = 0, mouseY = 0;
+    //m_input->GetMousePosition (mouseX, mouseY);
+    //printf ("%d %d\n", mouseX, mouseY);
+
     static float dt = 0;
     dt = m_timer->getTimeInterval ();
-
-    m_rect->RotateY (1 * dt);
-    m_rect->RotateX (1 * dt);
-    m_rect->RotateZ (1 * dt);
-    m_rect->ScaleUp (1, 1.00001, 1.001);
 
     m_camera->Render (m_deviceContext);
 
@@ -236,7 +127,11 @@ void Engine::Render ()
 
     m_graphics->BeginScene (0, 0, 0, 1);
 
+    m_rect->RotateY (1 * dt);
+    m_rect->RotateX (2 * dt);
+    m_rect->RotateZ (3 * dt);
     m_rect->Draw ();
+
     //m_shader->Render (m_deviceContext);
     //m_deviceContext->VSSetConstantBuffers (0, 1, &m_CBWVPMatrixes);
     //m_texture->Render (m_deviceContext);

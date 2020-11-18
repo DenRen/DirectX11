@@ -114,6 +114,11 @@ LRESULT CALLBACK WndProc (HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam)
 			PostQuitMessage (0);
 			DestroyWindow (hWnd);
 		} break;
+	case WM_RBUTTONDOWN:
+	case WM_LBUTTONDOWN:
+		{
+			printf ("%d %d\n", LOWORD (lParam), HIWORD (lParam));
+		} break;
 	default:
 		{
 			return DefWindowProc (hWnd, Msg, wParam, lParam);

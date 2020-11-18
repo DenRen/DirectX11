@@ -7,6 +7,7 @@
 #include "Rectangle.h"
 #include "Camera.h"
 #include "Structure_Data.h"
+#include "Input.h"
 
 class Engine
 {
@@ -14,7 +15,7 @@ public:
 	Engine ();
 	~Engine ();
 
-	bool InitializeGraphics (HWND hWnd);
+	bool InitializeGraphics (HWND hWnd, HINSTANCE hInstance);
 	bool Initialize (HINSTANCE hInstance, HWND hWnd);
 	void Run ();
 
@@ -47,4 +48,6 @@ private:
 
 	WVPMatrixes m_WVPMatrixes;
 	ID3D11Buffer *m_CBWVPMatrixes;
+
+	Input *m_input;
 };

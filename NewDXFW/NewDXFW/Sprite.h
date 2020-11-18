@@ -12,8 +12,7 @@ class Sprite
 public:
 	Sprite ();
 	Sprite (Shader *shader, Texture *texture,
-			ID3D11Buffer *CBMatrix, WVPMatrixes *WVPMatrixes,
-			XMMATRIX world = XMMatrixIdentity ());
+			ID3D11Buffer *CBMatrix, WVPMatrixes *WVPMatrixes);
 
 	bool Initialize (Shader *shader, Texture *texture);
 
@@ -30,7 +29,8 @@ protected:
 	Texture *m_texture;
 	Shader  *m_shader;
 
-	XMMATRIX m_worldMatrix;
+	XMMATRIX m_orthoTransform;
+	XMMATRIX m_posTransform;
 	WVPMatrixes *m_WVPMatrixes;
 	ID3D11Buffer *m_CBWVPMatrixes;
 
@@ -45,13 +45,13 @@ inline Sprite <VertexT, IndexT>::Sprite () :
 
 template <typename VertexT, typename IndexT>
 inline Sprite <VertexT, IndexT>::Sprite (Shader *shader, Texture *texture,
-										 ID3D11Buffer *CBWVPMatrix, WVPMatrixes *WVPMatrixes,
-										 XMMATRIX world) :
+										 ID3D11Buffer *CBWVPMatrix, WVPMatrixes *WVPMatrixes) :
 	m_shader (shader),
 	m_texture (texture),
 	m_CBWVPMatrixes (CBWVPMatrix),
 	m_WVPMatrixes (WVPMatrixes),
-	m_worldMatrix (world)
+	m_orthoTransform (XMMatrixIdentity ()),
+	m_posTransform (XMMatrixIdentity ())
 {}
 
 template <typename VertexT, typename IndexT>
@@ -81,7 +81,8 @@ void Sprite <VertexT, IndexT>::SetCBMatrix ()
 {
 	ID3D11DeviceContext *deviceContext = DXManager::GetDeviceContext ();
 
-	m_WVPMatrixes->m_World = m_worldMatrix;
+	m_WVPMatrixes->m_World  = m_orthoTransform;
+	m_WVPMatrixes->m_World *= m_posTransform;
 	m_WVPMatrixes->UpdateSubresource (deviceContext, m_CBWVPMatrixes);
 
 	deviceContext->VSSetConstantBuffers (0, 1, &m_CBWVPMatrixes);
@@ -90,29 +91,29 @@ void Sprite <VertexT, IndexT>::SetCBMatrix ()
 template <typename VertexT, typename IndexT>
 void Sprite <VertexT, IndexT>::Move (float x, float y, float z)
 {
-	m_worldMatrix *= XMMatrixTranslation (x, y, z);
+	m_posTransform *= XMMatrixTranslation (x, y, z);
 }
 
-template<typename VertexT, typename IndexT>
+template <typename VertexT, typename IndexT>
 inline void Sprite<VertexT, IndexT>::RotateX (float angle)
 {
-	m_worldMatrix *= XMMatrixRotationX (angle);
+	m_orthoTransform *= XMMatrixRotationX (angle);
 }
 
-template<typename VertexT, typename IndexT>
-inline void Sprite<VertexT, IndexT>::RotateY (float angle)
+template <typename VertexT, typename IndexT>
+inline void Sprite <VertexT, IndexT>::RotateY (float angle)
 {
-	m_worldMatrix *= XMMatrixRotationY (angle);
+	m_orthoTransform *= XMMatrixRotationY (angle);
 }
 
-template<typename VertexT, typename IndexT>
+template <typename VertexT, typename IndexT>
 inline void Sprite<VertexT, IndexT>::RotateZ (float angle)
 {
-	m_worldMatrix *= XMMatrixRotationZ (angle);
+	m_orthoTransform *= XMMatrixRotationZ (angle);
 }
 
-template<typename VertexT, typename IndexT>
+template <typename VertexT, typename IndexT>
 inline void Sprite <VertexT, IndexT>::ScaleUp (float ScaleUpX, float ScaleUpY, float ScaleUpZ)
 {
-	m_worldMatrix *= XMMatrixScaling (ScaleUpX, ScaleUpY, ScaleUpZ);
+	m_orthoTransform *= XMMatrixScaling (ScaleUpX, ScaleUpY, ScaleUpZ);
 }

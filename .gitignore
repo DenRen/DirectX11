@@ -83,3 +83,6 @@ DirectX11/DirectX11.vcxproj.filters
 DirectX11/DirectX11.vcxproj.filters
 *.filters
 *.filters
+*.obj
+*.obj
+NewDXFW/NewDXFW/Debug/Camera.obj

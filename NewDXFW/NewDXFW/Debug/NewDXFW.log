@@ -105,6 +105,7 @@ C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\xnamath.h(2743,
 C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\xnamath.h(2754,73): warning C4838: Преобразование из "unsigned int" в "INT" требует сужающего преобразования.
 C:\Users\denre\source\repos\DirectX11\NewDXFW\NewDXFW\Structure_Data.h(38,52): warning C4838: Преобразование из "int" в "UINT" требует сужающего преобразования.
 C:\Users\denre\source\repos\DirectX11\NewDXFW\NewDXFW\Structure_Data.h(40,55): warning C4838: Преобразование из "int" в "UINT" требует сужающего преобразования.
-C:\Users\denre\source\repos\DirectX11\NewDXFW\NewDXFW\Engine.cpp(226,35): warning C4244: =: преобразование "double" в "float", возможна потеря данных
-C:\Users\denre\source\repos\DirectX11\NewDXFW\NewDXFW\Engine.cpp(231,39): warning C4305: аргумент: усечение из "double" в "float"
+  C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
+C:\Users\denre\source\repos\DirectX11\NewDXFW\NewDXFW\Engine.cpp(93,46): warning C4305: аргумент: усечение из "double" в "float"
+C:\Users\denre\source\repos\DirectX11\NewDXFW\NewDXFW\Engine.cpp(122,35): warning C4244: =: преобразование "double" в "float", возможна потеря данных
   NewDXFW.vcxproj -> C:\Users\denre\source\repos\DirectX11\NewDXFW\Debug\NewDXFW.exe

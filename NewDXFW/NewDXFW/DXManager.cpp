@@ -134,14 +134,14 @@ bool DXManager::Initilize (HWND hWnd, int Width, int Height, bool fullScreen, bo
                               numerator, denominator))                  RETURN_FALSE;
 
     if (!InitializeRenderTargetView ())         RETURN_FALSE;
-    //if (!InitializeDepthBuffer (Width, Height)) RETURN_FALSE;
-    //if (!InitializeDepthStencilBuffer ())       RETURN_FALSE;
-    //if (!InitializeStencilView ())              RETURN_FALSE;
+    if (!InitializeDepthBuffer (Width, Height)) RETURN_FALSE;
+    if (!InitializeDepthStencilBuffer ())       RETURN_FALSE;
+    if (!InitializeStencilView ())              RETURN_FALSE;
     m_deviceContext->OMSetRenderTargets (1, &m_renderTargetView, NULL);
-    //if (!InitializeRasterizerState ())  RETURN_FALSE;
+    if (!InitializeRasterizerState ())  RETURN_FALSE;
     InitializeViewport (Width, Height);
-    //if (!InitializeAlphaBlending ())    RETURN_FALSE;
-    //if (!InitializeZBuffer ())          RETURN_FALSE;
+    if (!InitializeAlphaBlending ())    RETURN_FALSE;
+    if (!InitializeZBuffer ())          RETURN_FALSE;
 
     return true;
 }

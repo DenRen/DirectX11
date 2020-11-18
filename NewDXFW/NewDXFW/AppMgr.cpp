@@ -17,11 +17,11 @@ AppMgr::~AppMgr ()
 bool AppMgr::Initialize ()
 {
 	
-	if (!InitializeWinManager ())						RETURN_FALSE;
+	if (!InitializeWinManager ())								RETURN_FALSE;
 
-	if (!m_engine->InitializeGraphics (m_hWnd))			RETURN_FALSE;
+	if (!m_engine->InitializeGraphics (m_hWnd, m_hInstance))	RETURN_FALSE;
 	
-	if (!m_engine->Initialize (m_hInstance, m_hWnd))	RETURN_FALSE;
+	if (!m_engine->Initialize (m_hInstance, m_hWnd))			RETURN_FALSE;
 
 	return true;
 }

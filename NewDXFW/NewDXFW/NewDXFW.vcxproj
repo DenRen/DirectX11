@@ -151,6 +151,7 @@
     <ClInclude Include="DXManager.h" />
     <ClInclude Include="Engine.h" />
     <ClInclude Include="Graphics.h" />
+    <ClInclude Include="Input.h" />
     <ClInclude Include="InputLayout.h" />
     <ClInclude Include="Rectangle.h" />
     <ClInclude Include="Shader.h" />
@@ -171,6 +172,7 @@
     <ClCompile Include="DXManager.cpp" />
     <ClCompile Include="Engine.cpp" />
     <ClCompile Include="Graphics.cpp" />
+    <ClCompile Include="Input.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Rectangle.cpp" />
     <ClCompile Include="Shader.cpp" />
