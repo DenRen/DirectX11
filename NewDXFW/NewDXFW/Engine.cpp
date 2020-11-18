@@ -70,9 +70,9 @@ bool Engine::Initialize (HINSTANCE hInstance, HWND hWnd)
 
     RectTex::SetDefaultValue (m_texture, m_shader, m_CBWVPMatrixes, &m_WVPMatrixes);
 
-    m_rect  = new RectTex ( 0.5, 9.0 / 16.0, 0.7, 0.2, "Texture\\Plazma.jpg");
+    m_rect  = new RectTex ( 0.0, 0.3 * 9.0 / 16.0, 0.7, 0.2, "Texture\\ninja.png");
 
-    m_rect1 = new RectTex (-0.5, 9.0 / 16.0, 0.7, 0.2, "Texture\\metall.dds");
+    m_rect1 = new RectTex (-0.5,       9.0 / 16.0, 0.7, 0.2, "Texture\\metall.dds");
 
     return true;
 }
@@ -94,7 +94,7 @@ void Engine::LoadResources ()
     resMgr->LoadPixelShader ("Shader\\texture.fx", "PS");
 
     resMgr->LoadTexture ("Texture\\metall.dds");
-    resMgr->LoadTexture ("Texture\\Plazma.jpg");
+    resMgr->LoadTexture ("Texture\\ninja.png");
 }
 
 bool Engine::InitializeCamera ()

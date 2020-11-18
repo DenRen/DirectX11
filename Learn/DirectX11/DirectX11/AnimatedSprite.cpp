@@ -13,9 +13,7 @@ AnimatedSprite::AnimatedSprite (float size, float framesPerSecond, float animati
 {}
 
 AnimatedSprite::~AnimatedSprite ()
-{
-
-}
+{}
 
 bool AnimatedSprite::Initialize (ID3D11Device *device, ID3D11DeviceContext *deviceContext,
 								 Shader *shader, LPCTSTR textureFileName)
