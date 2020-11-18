@@ -8,6 +8,7 @@
 #include "Camera.h"
 #include "Structure_Data.h"
 #include "Input.h"
+#include "ResourceManager.h"
 
 class Engine
 {
@@ -26,6 +27,7 @@ public:
 
 private:
 
+	void LoadResources ();
 	void Update ();
 	void Render ();
 

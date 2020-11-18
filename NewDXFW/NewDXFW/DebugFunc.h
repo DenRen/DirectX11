@@ -40,3 +40,10 @@ void DebugEndMain ();
     {                       \
         RETURN_FALSE;       \
     }
+
+#define RETURN_THROW                \
+{                                   \
+    DUMP_DEBUG_INFO;                \
+    DebugEndMain ();                \
+    throw std::runtime_error ("");  \
+} NOP ()

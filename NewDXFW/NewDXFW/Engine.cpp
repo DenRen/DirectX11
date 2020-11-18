@@ -46,39 +46,25 @@ bool Engine::Initialize (HINSTANCE hInstance, HWND hWnd)
 {
     HRESULT result = S_OK;
 
-    m_input = new Input ();
-   // if (!m_input->Initialize (m_hInstance, m_hWnd, WndCnf::WIDTH, WndCnf::HEIGHT)) RETURN_FALSE;
+    //m_input = new Input ();
+    // if (!m_input->Initialize (m_hInstance, m_hWnd, WndCnf::WIDTH, WndCnf::HEIGHT)) RETURN_FALSE;
 
-    auto vertexShader = new VertexShader ();
-    if (!vertexShader->Initialize (m_device, hWnd, "Shader\\texture.fx", "VS",
-                                   VertexPosTex::GetLayout (),
-                                   VertexPosTex::GetNumElements ()))            RETURN_FALSE;
+    auto resMgr = ResMgr::GetResMgr ();
 
-    auto pixelShader = new PixelShader ();
-    if (!pixelShader->Initialize (m_device, hWnd, "Shader\\texture.fx", "PS"))  RETURN_FALSE;
+    if (!resMgr->Initialize (m_device, m_hWnd)) RETURN_FALSE;
+   
+    LoadResources ();
+
+    auto vertexShader = resMgr->GetVertexShader ("Shader\\texture.fx", "VS");
+    auto pixelShader  = resMgr->GetPixelShader  ("Shader\\texture.fx", "PS");
 
     m_shader = new Shader (vertexShader, pixelShader);
-    
-    m_texture = new Texture ();
-    if (!m_texture->Initialize (m_device, "Texture\\Plazma.jpg"))     RETURN_FALSE;
 
-    /*
-    VertexPosTex vert[4] = {{XMFLOAT3 (-0.5f,  0.5f, 0.5f), XMFLOAT2 (0.0f, 0.0f)},
-                            {XMFLOAT3 ( 0.5f,  0.5f, 0.5f), XMFLOAT2 (1.0f, 0.0f)},
-                            {XMFLOAT3 ( 0.5f, -0.5f, 0.5f), XMFLOAT2 (1.0f, 1.0f)},
-                            {XMFLOAT3 (-0.5f, -0.5f, 0.5f), XMFLOAT2 (0.0f, 1.0f)}};
-    
-    char indeces[6] = {0, 1, 2,
-                       0, 2, 3};
+    m_texture = resMgr->GetTexture ("Texture\\metall.dds");
 
-    m_vertexBuffer = new VertexBuffer <VertexPosTex, char> ();
-    m_vertexBuffer->Initialize (m_device, vert, 4, indeces, 6);
-   */
-    // -----------
-    
-    if (!CreateConstatntBufferMatrixes (m_device, &m_CBWVPMatrixes))   RETURN_FALSE;
+    if (!CreateConstatntBufferMatrixes (m_device, &m_CBWVPMatrixes)) RETURN_FALSE;
 
-    XMVECTOR Eye = XMVectorSet (0.0f, 0.0f, -2.0f, 0.0f);
+    XMVECTOR Eye = XMVectorSet (0.0f, 0.0f, -2.0f / 1.5f, 0.0f);
     XMVECTOR At  = XMVectorSet (0.0f, 0.0f,  1.0f, 0.0f);
     XMVECTOR Up  = XMVectorSet (0.0f, 1.0f,  0.0f, 0.0f);
     m_WVPMatrixes.m_View = XMMatrixLookAtLH (Eye, At, Up);
@@ -90,7 +76,8 @@ bool Engine::Initialize (HINSTANCE hInstance, HWND hWnd)
     
     RectTex::SetDefaultValue (m_texture, m_shader, m_CBWVPMatrixes, &m_WVPMatrixes);
 
-    m_rect = new RectTex (0.5, 0.3, 0.7, 0.2);
+    m_rect = new RectTex (0.0, 9.0 / 16.0, 0.7, 0.2);
+    m_rect->RotateZ (0);
 
     return true;
 }
@@ -101,35 +88,35 @@ void Engine::Run ()
     Render ();
 }
 
+void Engine::LoadResources ()
+{
+    auto resMgr = ResMgr::GetResMgr ();
+
+    resMgr->LoadVertexShader ("Shader\\texture.fx", "VS",
+                              VertexPosTex::GetLayout (),
+                              VertexPosTex::GetNumElements ());
+
+    resMgr->LoadPixelShader ("Shader\\texture.fx", "PS");
+
+    resMgr->LoadTexture ("Texture\\metall.dds");
+}
+
 void Engine::Update ()
-{/*
-    if (!m_input->Update ())
-    {
-        DUMP_DEBUG_INFO;
-        DebugEndMain ();
-        throw std::runtime_error ("");
-    }*/
+{
     m_timer->updateTimer ();
 }
 
 void Engine::Render ()
 {
-    int mouseX = 0, mouseY = 0;
-    //m_input->GetMousePosition (mouseX, mouseY);
-    //printf ("%d %d\n", mouseX, mouseY);
 
     static float dt = 0;
     dt = m_timer->getTimeInterval ();
 
     m_camera->Render (m_deviceContext);
 
-    //m_WVPMatrixes.UpdateSubresource (m_deviceContext, m_CBWVPMatrixes);
 
     m_graphics->BeginScene (0, 0, 0, 1);
 
-    m_rect->RotateY (1 * dt);
-    m_rect->RotateX (2 * dt);
-    m_rect->RotateZ (3 * dt);
     m_rect->Draw ();
 
     //m_shader->Render (m_deviceContext);

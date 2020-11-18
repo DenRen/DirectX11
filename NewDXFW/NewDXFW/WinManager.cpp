@@ -116,6 +116,7 @@ LRESULT CALLBACK WndProc (HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam)
 		} break;
 	case WM_RBUTTONDOWN:
 	case WM_LBUTTONDOWN:
+	case WM_MOUSEMOVE:
 		{
 			printf ("%d %d\n", LOWORD (lParam), HIWORD (lParam));
 		} break;
