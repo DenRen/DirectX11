@@ -17,7 +17,7 @@ AppMgr::~AppMgr ()
 bool AppMgr::Initialize ()
 {
 	
-	if (!InitializeWinManager ())								RETURN_FALSE;
+	if (!InitializeWinAPIManager ())								RETURN_FALSE;
 
 	if (!m_engine->InitializeGraphics (m_hWnd, m_hInstance))	RETURN_FALSE;
 	
@@ -47,11 +47,11 @@ bool AppMgr::Run ()
 	return true;
 }
 
-bool AppMgr::InitializeWinManager ()
+bool AppMgr::InitializeWinAPIManager ()
 {
 	WndCnf::WindowDesc wd (0, 0);
 
-	m_winManager = new WinManager ();
+	m_winManager = new WinAPIManager ();
 	
 	if (!m_winManager->Initialize (wd.title,
 								   wd.width,      wd.height,

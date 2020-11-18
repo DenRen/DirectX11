@@ -47,3 +47,13 @@ void DebugEndMain ();
     DebugEndMain ();                \
     throw std::runtime_error ("");  \
 } NOP ()
+
+#define MYASSERT(val)               \
+{                                   \
+    if ((val) == false)             \
+    {                               \
+        /* TODO print msg func*/    \
+        printf ("%s\n", #val);      \
+        RETURN_THROW;               \
+    }                               \
+} NOP ()

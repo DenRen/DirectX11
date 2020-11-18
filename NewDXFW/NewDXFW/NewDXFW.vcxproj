@@ -144,6 +144,7 @@
   <ItemGroup>
     <ClInclude Include="AddFunc.h" />
     <ClInclude Include="AppMgr.h" />
+    <ClInclude Include="Button.h" />
     <ClInclude Include="Camera.h" />
     <ClInclude Include="Config.h" />
     <ClInclude Include="DebugFunc.h" />
@@ -153,7 +154,9 @@
     <ClInclude Include="Graphics.h" />
     <ClInclude Include="Input.h" />
     <ClInclude Include="InputLayout.h" />
+    <ClInclude Include="NewsQueue.h" />
     <ClInclude Include="Rectangle.h" />
+    <ClInclude Include="RectButton.h" />
     <ClInclude Include="ResourceManager.h" />
     <ClInclude Include="Shader.h" />
     <ClInclude Include="Shaders.h" />
@@ -161,11 +164,13 @@
     <ClInclude Include="Structure_Data.h" />
     <ClInclude Include="Texture.h" />
     <ClInclude Include="VertexBuffer.h" />
-    <ClInclude Include="WinManager.h" />
+    <ClInclude Include="Widget.h" />
+    <ClInclude Include="WinAPIManager.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AddFunc.cpp" />
     <ClCompile Include="AppMgr.cpp" />
+    <ClCompile Include="Button.cpp" />
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="Config.cpp" />
     <ClCompile Include="DebugFunc.cpp" />
@@ -175,14 +180,17 @@
     <ClCompile Include="Graphics.cpp" />
     <ClCompile Include="Input.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="NewsQueue.cpp" />
     <ClCompile Include="Rectangle.cpp" />
+    <ClCompile Include="RectButton.cpp" />
     <ClCompile Include="ResourceManager.cpp" />
     <ClCompile Include="Shader.cpp" />
     <ClCompile Include="Shaders.cpp" />
     <ClCompile Include="Sprite.cpp" />
     <ClCompile Include="Structure_Data.cpp" />
     <ClCompile Include="Texture.cpp" />
-    <ClCompile Include="WinManager.cpp" />
+    <ClCompile Include="Widget.cpp" />
+    <ClCompile Include="WinAPIManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="Вопросы.txt" />

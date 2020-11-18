@@ -3,7 +3,7 @@
 #include <windows.h>
 #include <string>
 
-#include "WinManager.h"
+#include "WinAPIManager.h"
 #include "Engine.h"
 #include "Config.h"
 
@@ -17,13 +17,13 @@ public:
 	bool Run ();
 
 private:
-	bool InitializeWinManager ();
+	bool InitializeWinAPIManager ();
 
 	std::string m_appTitle;
 	HWND m_hWnd;
 	HINSTANCE m_hInstance;
 
-	WinManager *m_winManager;
+	WinAPIManager *m_winManager;
 	Engine *m_engine;
 };
 
