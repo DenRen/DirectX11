@@ -1,5 +1,6 @@
 #include "Rectangle.h"
 #include "DXManager.h"
+#include "ResourceManager.h"
 
 Texture		 *RectTex::defTexture	  = nullptr;
 Shader		 *RectTex::defShader	  = nullptr;
@@ -9,6 +10,13 @@ WVPMatrixes  *RectTex::defWVPMatrixes = nullptr;
 RectTex::RectTex (float coorX, float coorY, float width, float height) :
 	RectTex (coorX, coorY, width, height,
 			 defTexture, defShader,
+			 defCBMatrixes, defWVPMatrixes)
+{}
+
+RectTex::RectTex (float coorX, float coorY, float width, float height,
+				  const char *pathTexture) :
+	RectTex (coorX, coorY, width, height,
+			 ResMgr::GetResMgr ()->GetTexture (pathTexture), defShader,
 			 defCBMatrixes, defWVPMatrixes)
 {}
 

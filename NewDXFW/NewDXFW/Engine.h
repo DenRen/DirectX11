@@ -28,6 +28,8 @@ public:
 private:
 
 	void LoadResources ();
+	bool InitializeCamera ();
+
 	void Update ();
 	void Render ();
 
@@ -45,6 +47,7 @@ private:
 
 	VertexBuffer <VertexPosTex, char> *m_vertexBuffer;
 	RectTex *m_rect;
+	RectTex *m_rect1;
 
 	Camera *m_camera;
 

@@ -52,7 +52,13 @@ inline Sprite <VertexT, IndexT>::Sprite (Shader *shader, Texture *texture,
 	m_WVPMatrixes (WVPMatrixes),
 	m_orthoTransform (XMMatrixIdentity ()),
 	m_posTransform (XMMatrixIdentity ())
-{}
+{
+	if (m_shader		== nullptr || m_texture		== nullptr ||
+		m_CBWVPMatrixes == nullptr || m_WVPMatrixes == nullptr)
+	{
+		RETURN_THROW;
+	}
+}
 
 template <typename VertexT, typename IndexT>
 bool Sprite <VertexT, IndexT>::Initialize (Shader *shader, Texture *texture)

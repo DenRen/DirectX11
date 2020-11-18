@@ -187,6 +187,7 @@
   <ItemGroup>
     <Text Include="Вопросы.txt" />
     <Text Include="Заметки.txt" />
+    <Text Include="Лягушки.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

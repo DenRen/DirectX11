@@ -55,6 +55,12 @@ bool Engine::Initialize (HINSTANCE hInstance, HWND hWnd)
    
     LoadResources ();
 
+    if (!CreateConstatntBufferMatrixes (m_device, &m_CBWVPMatrixes)) RETURN_FALSE;
+
+    if (!InitializeCamera ())                                        RETURN_FALSE;
+    
+    // Initialize default values -------------------------------------------------------------
+
     auto vertexShader = resMgr->GetVertexShader ("Shader\\texture.fx", "VS");
     auto pixelShader  = resMgr->GetPixelShader  ("Shader\\texture.fx", "PS");
 
@@ -62,22 +68,11 @@ bool Engine::Initialize (HINSTANCE hInstance, HWND hWnd)
 
     m_texture = resMgr->GetTexture ("Texture\\metall.dds");
 
-    if (!CreateConstatntBufferMatrixes (m_device, &m_CBWVPMatrixes)) RETURN_FALSE;
-
-    XMVECTOR Eye = XMVectorSet (0.0f, 0.0f, -2.0f / 1.5f, 0.0f);
-    XMVECTOR At  = XMVectorSet (0.0f, 0.0f,  1.0f, 0.0f);
-    XMVECTOR Up  = XMVectorSet (0.0f, 1.0f,  0.0f, 0.0f);
-    m_WVPMatrixes.m_View = XMMatrixLookAtLH (Eye, At, Up);
-
-    m_WVPMatrixes.m_Projection = XMMatrixPerspectiveFovLH (XM_PIDIV4, 16.0f / 9.0f, 0.01f, 100.0f);
-
-    m_camera = new Camera (m_WVPMatrixes.m_View, m_WVPMatrixes.m_Projection,
-                           &m_WVPMatrixes, m_CBWVPMatrixes);
-    
     RectTex::SetDefaultValue (m_texture, m_shader, m_CBWVPMatrixes, &m_WVPMatrixes);
 
-    m_rect = new RectTex (0.0, 9.0 / 16.0, 0.7, 0.2);
-    m_rect->RotateZ (0);
+    m_rect  = new RectTex ( 0.5, 9.0 / 16.0, 0.7, 0.2, "Texture\\Plazma.jpg");
+
+    m_rect1 = new RectTex (-0.5, 9.0 / 16.0, 0.7, 0.2, "Texture\\metall.dds");
 
     return true;
 }
@@ -99,6 +94,22 @@ void Engine::LoadResources ()
     resMgr->LoadPixelShader ("Shader\\texture.fx", "PS");
 
     resMgr->LoadTexture ("Texture\\metall.dds");
+    resMgr->LoadTexture ("Texture\\Plazma.jpg");
+}
+
+bool Engine::InitializeCamera ()
+{
+    XMVECTOR Eye = XMVectorSet (0.0f, 0.0f, -2.0f / 1.5f, 0.0f);
+    XMVECTOR At  = XMVectorSet (0.0f, 0.0f, 1.0f,         0.0f);
+    XMVECTOR Up  = XMVectorSet (0.0f, 1.0f, 0.0f,         0.0f);
+    m_WVPMatrixes.m_View = XMMatrixLookAtLH (Eye, At, Up);
+
+    m_WVPMatrixes.m_Projection = XMMatrixPerspectiveFovLH (XM_PIDIV4, 16.0f / 9.0f, 0.01f, 100.0f);
+
+    m_camera = new Camera (m_WVPMatrixes.m_View, m_WVPMatrixes.m_Projection,
+                           &m_WVPMatrixes, m_CBWVPMatrixes);
+
+    return true;
 }
 
 void Engine::Update ()
@@ -114,42 +125,10 @@ void Engine::Render ()
 
     m_camera->Render (m_deviceContext);
 
-
     m_graphics->BeginScene (0, 0, 0, 1);
 
     m_rect->Draw ();
-
-    //m_shader->Render (m_deviceContext);
-    //m_deviceContext->VSSetConstantBuffers (0, 1, &m_CBWVPMatrixes);
-    //m_texture->Render (m_deviceContext);
-    //m_vertexBuffer->Render (m_deviceContext);
-
-    /*
-    auto devCont = DXManager::GetDeviceContext ();
-
-    float ClearColor[4] = { 0.0f, 0.0f, 1.0f, 1.0f }; // красный, зеленый, синий, альфа-канал
-    devCont->ClearRenderTargetView (DXManager::m_renderTargetView, ClearColor);
-
-    devCont->VSSetShader (m_shader->m_vertexShader->GetVertexShader (), NULL, 0);
-    devCont->PSSetShader (m_shader->m_pixelShader->GetPixelShader (),   NULL, 0);
-    
-    devCont->Draw (3, 0);
-    //m_rect->Draw ();
-    
-    m_graphics->EndScene ();
-    */
-    /*
-    m_sprite->Render (m_graphics->GetDeviceContext (), worldMatrix, viewMatrix, projectionMatrix);
-
-    m_graphics->EnableAlphaBlending (true);
-
-    m_graphics->EnableAlphaBlending (true);
-
-    shader->SetShaderParameters (m_graphics->GetDeviceContext (), texture->GetTexture ());
-    shader->SetShaderParameters (m_graphics->GetDeviceContext (), worldMatrix, viewMatrix, projectionMatrix);
-
-    vertexBuffer->Render (m_graphics->GetDeviceContext ());
-    */
+    m_rect1->Draw ();
 
     m_graphics->EndScene ();
 }
