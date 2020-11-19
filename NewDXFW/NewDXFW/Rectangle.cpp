@@ -57,3 +57,15 @@ void RectTex::InitializeVB (float coorX, float coorY, float width, float height)
 
 	m_vertexBuffer.Initialize (DXManager::GetDevice (), vert, 4, indeces, 6);
 }
+
+void RectFigure::Scale (float scaleX, float scaleY)
+{
+	m_width  *= scaleX;
+	m_height *= scaleY;
+}
+
+void RectFigure::Move (float deltaX, float deltaY)
+{
+	m_coorX += deltaX;
+	m_coorY += deltaY;
+}

@@ -24,6 +24,8 @@ public:
 	void RotateY (float angle);
 	void ScaleUp (float ScaleUpX, float ScaleUpY, float ScaleUpZ);
 
+	void SetTexture (Texture *texture);
+
 protected:
 	VertexBuffer <VertexT, IndexT> m_vertexBuffer;
 	Texture *m_texture;
@@ -53,11 +55,13 @@ inline Sprite <VertexT, IndexT>::Sprite (Shader *shader, Texture *texture,
 	m_orthoTransform (XMMatrixIdentity ()),
 	m_posTransform (XMMatrixIdentity ())
 {
+	/*
 	if (m_shader		== nullptr || m_texture		== nullptr ||
 		m_CBWVPMatrixes == nullptr || m_WVPMatrixes == nullptr)
 	{
 		RETURN_THROW;
 	}
+	*/
 }
 
 template <typename VertexT, typename IndexT>
@@ -121,4 +125,10 @@ template <typename VertexT, typename IndexT>
 inline void Sprite <VertexT, IndexT>::ScaleUp (float ScaleUpX, float ScaleUpY, float ScaleUpZ)
 {
 	m_orthoTransform *= XMMatrixScaling (ScaleUpX, ScaleUpY, ScaleUpZ);
+}
+
+template <typename VertexT, typename IndexT>
+inline void Sprite <VertexT, IndexT>::SetTexture (Texture *texture)
+{
+	m_texture = texture;
 }

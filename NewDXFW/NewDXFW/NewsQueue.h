@@ -1,11 +1,19 @@
 #pragma once
 
 #include <cstdint>
+#include <windows.h>
+
+enum class NEWS;
 
 struct News
 {
-	uint16_t m_id;
-	uint32_t m_event;
+	News ();
+	News (uint16_t idSender);
+	News (uint16_t idSender, NEWS news);
+	News (uint16_t idSender, NEWS news, void *args);
+
+	uint16_t m_idSender;
+	NEWS m_news;
 	void *m_args;
 };
 
@@ -16,6 +24,7 @@ public:
 	static void SetCapacity (int capacity);
 	static NewsQueue *GetNewsQueue ();
 
+	void GetWinAPINews (UINT msg, WPARAM wParam, LPARAM lParam);
 	void AddNews (const News &news);
 	News GetNews ();
 
@@ -34,4 +43,27 @@ private:
 
 	void Release ();
 	void SetReadyForAdd ();
+};
+
+enum class SENDER_NEWS
+{
+	WINAPIWNDPROC,
+	SIZE
+};
+
+enum class NEWS
+{
+	// Mouse >--------------------------->begin
+	MOUSEFIRST,
+	MOUSEMOVE,
+
+	LBUTTONDOWN, LBUTTONUP, LBUTTONDBLCLK,
+	RBUTTONDOWN, RBUTTONUP, RBUTTONDBLCLK,
+
+	MBUTTONDOWN, MBUTTONUP, MBUTTONDBLCLK,
+	XBUTTONDOWN, XBUTTONUP, XBUTTONDBLCLK,
+
+	MOUSEHWHEEL,
+	MOUSELAST
+	// Mouse >----------------------------->end
 };

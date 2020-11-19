@@ -9,6 +9,7 @@
 #include "Structure_Data.h"
 #include "Input.h"
 #include "ResourceManager.h"
+#include "WindowManager.h"
 
 class Engine
 {
@@ -16,6 +17,7 @@ public:
 	Engine ();
 	~Engine ();
 
+	bool IntializePrelaunchParams ();
 	bool InitializeGraphics (HWND hWnd, HINSTANCE hInstance);
 	bool Initialize (HINSTANCE hInstance, HWND hWnd);
 	void Run ();
@@ -55,4 +57,6 @@ private:
 	ID3D11Buffer *m_CBWVPMatrixes;
 
 	Input *m_input;
+
+	WindowManager *m_windowManager;
 };

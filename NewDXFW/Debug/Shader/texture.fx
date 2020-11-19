@@ -37,8 +37,8 @@ PS_INPUT VS (VS_INPUT input)
 
 float4 PS (PS_INPUT input) : SV_Target
 {
-    float4 finalColor = txDiffuse.Sample (samLinear, input.Tex);
-    finalColor.a = 1.0f;   
+    finalColor = float4 (0.0f, 0.0f, 0.0f, 0.0f);
+    float4 finalColor += txDiffuse.Sample (samLinear, input.Tex);  
 
     //return finalColor;
     return finalColor;

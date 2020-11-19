@@ -16,8 +16,9 @@ AppMgr::~AppMgr ()
 
 bool AppMgr::Initialize ()
 {
-	
-	if (!InitializeWinAPIManager ())								RETURN_FALSE;
+	if (!m_engine->IntializePrelaunchParams ())					RETURN_FALSE;
+
+	if (!InitializeWinAPIManager ())							RETURN_FALSE;
 
 	if (!m_engine->InitializeGraphics (m_hWnd, m_hInstance))	RETURN_FALSE;
 	

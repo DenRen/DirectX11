@@ -2,6 +2,7 @@
 #include "Config.h"
 #include "DebugFunc.h"
 #include "AddFunc.h"
+#include "NewsQueue.h"
 
 bool WinAPIManager::Initialize (const char *title, unsigned width, unsigned height,
 							    int locateX, int locateY, bool fullScreen, bool vSync)
@@ -94,6 +95,8 @@ LRESULT CALLBACK WndProc (HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam)
 	PAINTSTRUCT ps = {};
 	HDC hdc = {};
 
+	NewsQueue::GetNewsQueue ()->GetWinAPINews (Msg, wParam, lParam);
+
 	switch (Msg)
 	{
 	case WM_KEYDOWN:
@@ -118,7 +121,10 @@ LRESULT CALLBACK WndProc (HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam)
 	case WM_LBUTTONDOWN:
 	case WM_MOUSEMOVE:
 		{
-			printf ("%d %d\n", LOWORD (lParam), HIWORD (lParam));
+			//printf ("%d %d\n", LOWORD (lParam), HIWORD (lParam));
+			float x, y;
+			WndCnf::ConvertMouseCoor (lParam, x, y);
+			printf ("%f %f\n", x, y);
 		} break;
 	default:
 		{

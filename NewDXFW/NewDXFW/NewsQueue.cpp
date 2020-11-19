@@ -9,14 +9,10 @@ int NewsQueue::m_capacity = 0;
 
 NewsQueue::NewsQueue (int capacity)
 {
-	printf ("NewsQ constr start!\n");
-
 	if (!Initialize (capacity))
 	{
 		RETURN_THROW;
 	}
-
-	printf ("NewsQ constr finish!\n");
 }
 
 NewsQueue::~NewsQueue ()
@@ -35,6 +31,51 @@ NewsQueue *NewsQueue::GetNewsQueue ()
 	
 	return &newsQueue;
 }
+
+void NewsQueue::GetWinAPINews (UINT msg, WPARAM wParam, LPARAM lParam)
+{ 
+	#define ADDNEWS(msg)			\
+	case WM_##msg:					\
+	{								\
+		news.m_news = NEWS::msg;	\
+		AddNews (news);				\
+	} break
+
+	if (m_capacity == 0)
+	{
+		return;
+	}
+
+	News news ((uint16_t) SENDER_NEWS::WINAPIWNDPROC);
+	news.m_args = (void *) lParam;
+
+	if (msg >= WM_MOUSEFIRST && msg <= WM_MOUSELAST)
+	{
+		switch (msg) {
+			ADDNEWS (MOUSEMOVE);
+
+			ADDNEWS (LBUTTONDOWN);
+			ADDNEWS (LBUTTONUP);
+			ADDNEWS (LBUTTONDBLCLK);
+			ADDNEWS (RBUTTONDOWN);
+			ADDNEWS (RBUTTONUP);
+			ADDNEWS (RBUTTONDBLCLK);
+
+			ADDNEWS (MBUTTONDOWN);
+			ADDNEWS (MBUTTONUP);
+			ADDNEWS (MBUTTONDBLCLK);
+
+			ADDNEWS (XBUTTONDOWN);
+			ADDNEWS (XBUTTONUP);
+			ADDNEWS (XBUTTONDBLCLK);
+
+			ADDNEWS (MOUSEHWHEEL);
+		}
+	}
+
+	#undef ADDNEWS
+}
+
 
 void NewsQueue::AddNews (const News &news)
 {
@@ -119,3 +160,21 @@ void NewsQueue::SetReadyForAdd ()
 		}
 	}
 }
+
+News::News () :
+	News (0, (NEWS) 0, nullptr)
+{}
+
+News::News (uint16_t idSender) :
+	News (idSender, (NEWS) 0, nullptr)
+{}
+
+News::News (uint16_t idSender, NEWS news) :
+	News (idSender, news, nullptr)
+{}
+
+News::News (uint16_t idSender, NEWS news, void *args) :
+	m_idSender (idSender),
+	m_news (news),
+	m_args (args)
+{}

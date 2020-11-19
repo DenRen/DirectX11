@@ -138,10 +138,10 @@ bool DXManager::Initilize (HWND hWnd, int Width, int Height, bool fullScreen, bo
     if (!InitializeDepthStencilBuffer ())       RETURN_FALSE;
     if (!InitializeStencilView ())              RETURN_FALSE;
     m_deviceContext->OMSetRenderTargets (1, &m_renderTargetView, NULL);
-    if (!InitializeRasterizerState ())  RETURN_FALSE;
+    //if (!InitializeRasterizerState ())  RETURN_FALSE;
     InitializeViewport (Width, Height);
-    if (!InitializeAlphaBlending ())    RETURN_FALSE;
-    if (!InitializeZBuffer ())          RETURN_FALSE;
+    //if (!InitializeAlphaBlending ())    RETURN_FALSE;
+    //if (!InitializeZBuffer ())          RETURN_FALSE;
 
     return true;
 }
@@ -162,19 +162,17 @@ void DXManager::EndScene ()
 {
     if (m_vsync_enabled)
     {
-        // Lock to screen refresh rate
         m_swapChain->Present (1, 0);
     }
     else
     {
-        // Present as fast as possible
         m_swapChain->Present (0, 0);
     }
 }
 
 void DXManager::EnableAplhaBlending (bool enable)
 {
-    float blendFactor[4] = { 0.0f, 0.0f, 0.0f, 0.0f };
+    float blendFactor[4] = {0.0f, 0.0f, 0.0f, 0.0f};
 
     if (enable)
     {
@@ -399,13 +397,13 @@ bool DXManager::InitializeAlphaBlending ()
     D3D11_BLEND_DESC blendStateDesc = { 0 };
     SET_IN_ZERO (blendStateDesc);
 
-    blendStateDesc.RenderTarget[0].BlendEnable = TRUE;
-    blendStateDesc.RenderTarget[0].SrcBlend = D3D11_BLEND_SRC_ALPHA;
-    blendStateDesc.RenderTarget[0].DestBlend = D3D11_BLEND_INV_SRC_ALPHA;
-    blendStateDesc.RenderTarget[0].BlendOp = D3D11_BLEND_OP_ADD;
-    blendStateDesc.RenderTarget[0].SrcBlendAlpha = D3D11_BLEND_ONE;
-    blendStateDesc.RenderTarget[0].DestBlendAlpha = D3D11_BLEND_ZERO;
-    blendStateDesc.RenderTarget[0].BlendOpAlpha = D3D11_BLEND_OP_ADD;
+    blendStateDesc.RenderTarget[0].BlendEnable      = TRUE;
+    blendStateDesc.RenderTarget[0].SrcBlend         = D3D11_BLEND_SRC_ALPHA;
+    blendStateDesc.RenderTarget[0].DestBlend        = D3D11_BLEND_INV_SRC_ALPHA;
+    blendStateDesc.RenderTarget[0].BlendOp          = D3D11_BLEND_OP_ADD;
+    blendStateDesc.RenderTarget[0].SrcBlendAlpha    = D3D11_BLEND_ONE;
+    blendStateDesc.RenderTarget[0].DestBlendAlpha   = D3D11_BLEND_ZERO;
+    blendStateDesc.RenderTarget[0].BlendOpAlpha     = D3D11_BLEND_OP_ADD;
     blendStateDesc.RenderTarget[0].RenderTargetWriteMask = 0x0f;
 
     HRESULT result = S_OK;

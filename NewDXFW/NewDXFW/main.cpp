@@ -1,11 +1,11 @@
 #include <cstdio>
-//#include "AppMgr.h"
+#include "AppMgr.h"
 #include "DebugFunc.h"
 #include "NewsQueue.h"
+#include "WindowManager.h"
 
 int main ()
 {
-	/*
 	auto App = new AppMgr ();
 	if (!App->Initialize ())
 	{
@@ -13,8 +13,8 @@ int main ()
 	}
 
 	App->Run ();
-	*/
-
+	
+	/*
 	NewsQueue::SetCapacity (1024);
 	NewsQueue &newsQueue = *NewsQueue::GetNewsQueue ();
 
@@ -38,7 +38,7 @@ int main ()
 		news[0] = newsQueue.GetNews ();
 
 	newsQueue += news[1];
-
+	*/
 
 	DebugEndMain ();
 }
