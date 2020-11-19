@@ -65,8 +65,6 @@ bool Engine::Initialize (HINSTANCE hInstance, HWND hWnd)
     if (!CreateConstatntBufferMatrixes (m_device, &m_CBWVPMatrixes)) RETURN_FALSE;
 
     if (!InitializeCamera ())                                        RETURN_FALSE;
-    
-    NewsQueue::SetCapacity (1024);
 
     // Initialize default values -------------------------------------------------------------
 
@@ -112,10 +110,17 @@ void Engine::LoadResources ()
     resMgr->LoadTexture ("Texture\\WidgetScrollerArrowLeft_Focused.png");
     resMgr->LoadTexture ("Texture\\WidgetScrollerArrowLeft_Clicked.png");
 
+    resMgr->LoadTexture ("Texture\\WidgetScrollerArrowRight_Wait.png");
+    resMgr->LoadTexture ("Texture\\WidgetScrollerArrowRight_Focused.png");
+    resMgr->LoadTexture ("Texture\\WidgetScrollerArrowRight_Clicked.png");
+
     resMgr->LoadTexture ("Texture\\WidgetScrollerSlider_Wait.png");
     resMgr->LoadTexture ("Texture\\WidgetScrollerSlider_Focused.png");
     resMgr->LoadTexture ("Texture\\WidgetScrollerSlider_Clicked.png");
 
+    resMgr->LoadTexture ("Texture\\WidgetDarkTheme_Wait.png");
+    resMgr->LoadTexture ("Texture\\WidgetDarkTheme_Focused.png");
+    resMgr->LoadTexture ("Texture\\WidgetDarkTheme_Clicked.png");
 }
 
 bool Engine::InitializeCamera ()

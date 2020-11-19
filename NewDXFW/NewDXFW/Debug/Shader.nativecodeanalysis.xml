@@ -263,12 +263,12 @@
       <COLUMN>4</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "D3DXVECTOR2::y" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "D3DXVECTOR2::x" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>D3DXVECTOR2::{ctor}</FUNCTION>
     <DECORATED>??0D3DXVECTOR2@@QAE@XZ</DECORATED>
     <FUNCLINE>124</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>D3DXVECTOR2::y</targetSymbol>
+      <targetSymbol>D3DXVECTOR2::x</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>
@@ -280,12 +280,12 @@
       <COLUMN>4</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "D3DXVECTOR2::x" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "D3DXVECTOR2::y" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>D3DXVECTOR2::{ctor}</FUNCTION>
     <DECORATED>??0D3DXVECTOR2@@QAE@XZ</DECORATED>
     <FUNCLINE>124</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>D3DXVECTOR2::x</targetSymbol>
+      <targetSymbol>D3DXVECTOR2::y</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>
@@ -433,12 +433,12 @@
       <COLUMN>4</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "D3DXPLANE::a" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "D3DXPLANE::b" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>D3DXPLANE::{ctor}</FUNCTION>
     <DECORATED>??0D3DXPLANE@@QAE@XZ</DECORATED>
     <FUNCLINE>508</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>D3DXPLANE::a</targetSymbol>
+      <targetSymbol>D3DXPLANE::b</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>
@@ -467,12 +467,12 @@
       <COLUMN>4</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "D3DXPLANE::b" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "D3DXPLANE::a" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>D3DXPLANE::{ctor}</FUNCTION>
     <DECORATED>??0D3DXPLANE@@QAE@XZ</DECORATED>
     <FUNCLINE>508</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>D3DXPLANE::b</targetSymbol>
+      <targetSymbol>D3DXPLANE::a</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>
@@ -705,12 +705,12 @@
       <COLUMN>11</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "D3DXPLANE::c" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "D3DXPLANE::b" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>D3DXPLANE::{ctor}</FUNCTION>
     <DECORATED>??0D3DXPLANE@@QAE@PBUD3DXFLOAT16@@@Z</DECORATED>
     <FUNCLINE>1254</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>D3DXPLANE::c</targetSymbol>
+      <targetSymbol>D3DXPLANE::b</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>
@@ -722,12 +722,12 @@
       <COLUMN>11</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "D3DXPLANE::b" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "D3DXPLANE::c" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>D3DXPLANE::{ctor}</FUNCTION>
     <DECORATED>??0D3DXPLANE@@QAE@PBUD3DXFLOAT16@@@Z</DECORATED>
     <FUNCLINE>1254</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>D3DXPLANE::b</targetSymbol>
+      <targetSymbol>D3DXPLANE::c</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>

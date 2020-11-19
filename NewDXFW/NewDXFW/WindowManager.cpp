@@ -2,6 +2,7 @@
 #include "RectTexButton.h"
 #include "Config.h"
 #include "InputCoorMouse.h"
+#include "ScrollerHorizontal.h"
 
 WindowManager::WindowManager () :
 	WinMgr (this),
@@ -18,9 +19,34 @@ bool WindowManager::Initialize ()
 	m_backGround = new RectTex (WndCnf::minX, WndCnf::maxY, WndCnf::lenX, WndCnf::lenY,
 								"Texture\\Desktop.png");
 
-	auto buttonOK = new RectTexButton (-0.5, 0.5, 0.3, 0.1);
+	/*
+	auto buttonDarkTheme = new RectTexButton (0.7, 0.7 * WndCnf::maxY, 0.1, 0.1,
+											  "Texture\\WidgetDarkTheme_Wait.png",
+											  "Texture\\WidgetDarkTheme_Focused.png",
+											  "Texture\\WidgetDarkTheme_Clicked.png");
 
-	AddChildWidget (buttonOK);
+	WinMgr::AddChildWidget (buttonDarkTheme);
+	*/
+
+	ScrollerHorizontal::InitDefTex_SurfaceButton	 ("Texture\\WidgetWait.png",
+													  "Texture\\WidgetFocused.png",
+													  "Texture\\WidgetClicked.png");
+
+	ScrollerHorizontal::InitDefTex_FirstButtonArrow  ("Texture\\WidgetScrollerArrowLeft_Wait.png",
+													  "Texture\\WidgetScrollerArrowLeft_Focused.png",
+													  "Texture\\WidgetScrollerArrowLeft_Clicked.png");
+
+	ScrollerHorizontal::InitDefTex_SecondButtonArrow ("Texture\\WidgetScrollerArrowRight_Wait.png",
+													  "Texture\\WidgetScrollerArrowRight_Focused.png",
+													  "Texture\\WidgetScrollerArrowRight_Clicked.png");
+
+	ScrollerHorizontal::InitDefTex_ScrollSlider		 ("Texture\\WidgetScrollerSlider_Wait.png",
+													  "Texture\\WidgetScrollerSlider_Focused.png",
+													  "Texture\\WidgetScrollerSlider_Clicked.png");
+	
+	auto scroller = new ScrollerHorizontal (-0.75, -0.4, 1.5f, 0.1, 0.15);
+
+	WinMgr::AddChildWidget (scroller);
 
 	return true;
 }

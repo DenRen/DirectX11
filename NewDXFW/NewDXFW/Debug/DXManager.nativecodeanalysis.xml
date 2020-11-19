@@ -472,14 +472,14 @@
     <SFA>
       <FILEPATH>C:\Users\denre\source\repos\DirectX11\NewDXFW\NewDXFW\</FILEPATH>
       <FILENAME>DXManager.cpp</FILENAME>
-      <LINE>255</LINE>
+      <LINE>253</LINE>
       <COLUMN>9</COLUMN>
     </SFA>
     <DEFECTCODE>26812</DEFECTCODE>
     <DESCRIPTION>Тип перечисления "D3D_FEATURE_LEVEL" не входит в область. Старайтесь использовать "enum class" вместо "enum" (Enum.3).</DESCRIPTION>
     <FUNCTION>DXManager::InitializeSwapChain</FUNCTION>
     <DECORATED>?InitializeSwapChain@DXManager@@AAE_NPAUHWND__@@_NHHII@Z</DECORATED>
-    <FUNCLINE>217</FUNCLINE>
+    <FUNCLINE>215</FUNCLINE>
     <PATH></PATH>
   </DEFECT>
 </DEFECTS>

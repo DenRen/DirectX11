@@ -155,6 +155,9 @@
     <ClInclude Include="InputCoorMouse.h" />
     <ClInclude Include="InputDX.h" />
     <ClInclude Include="InputLayout.h" />
+    <ClInclude Include="Scroller.h" />
+    <ClInclude Include="ScrollerHorizontal.h" />
+    <ClInclude Include="ScrollerVertical.h" />
     <ClInclude Include="WindowManager.h" />
     <ClInclude Include="NewsQueue.h" />
     <ClInclude Include="Rectangle.h" />
@@ -184,6 +187,9 @@
     <ClCompile Include="InputCoorMouse.cpp" />
     <ClCompile Include="InputDX.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Scroller.cpp" />
+    <ClCompile Include="ScrollerHorizontal.cpp" />
+    <ClCompile Include="ScrollerVertical.cpp" />
     <ClCompile Include="WindowManager.cpp" />
     <ClCompile Include="NewsQueue.cpp" />
     <ClCompile Include="Rectangle.cpp" />

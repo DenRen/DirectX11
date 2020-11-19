@@ -275,12 +275,12 @@
       <COLUMN>4</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "D3DXQUATERNION::x" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "D3DXQUATERNION::w" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>D3DXQUATERNION::{ctor}</FUNCTION>
     <DECORATED>??0D3DXQUATERNION@@QAE@XZ</DECORATED>
     <FUNCLINE>462</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>D3DXQUATERNION::x</targetSymbol>
+      <targetSymbol>D3DXQUATERNION::w</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT><DEFECT>
@@ -355,12 +355,12 @@
       <COLUMN>13</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "D3DXVECTOR4::z" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "D3DXVECTOR4::w" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>D3DXVECTOR4::{ctor}</FUNCTION>
     <DECORATED>??0D3DXVECTOR4@@QAE@PBUD3DXFLOAT16@@@Z</DECORATED>
     <FUNCLINE>532</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>D3DXVECTOR4::z</targetSymbol>
+      <targetSymbol>D3DXVECTOR4::w</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT><DEFECT>
@@ -371,12 +371,12 @@
       <COLUMN>16</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "D3DXQUATERNION::y" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "D3DXQUATERNION::w" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>D3DXQUATERNION::{ctor}</FUNCTION>
     <DECORATED>??0D3DXQUATERNION@@QAE@PBUD3DXFLOAT16@@@Z</DECORATED>
     <FUNCLINE>1081</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>D3DXQUATERNION::y</targetSymbol>
+      <targetSymbol>D3DXQUATERNION::w</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT><DEFECT>
@@ -419,12 +419,12 @@
       <COLUMN>4</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMMATRIX::&lt;unnamed-tag&gt;::r" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "_XMMATRIX::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::_34" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMMATRIX::{ctor}</FUNCTION>
     <DECORATED>??0_XMMATRIX@@QAE@XZ</DECORATED>
     <FUNCLINE>352</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>_XMMATRIX::&lt;unnamed-tag&gt;::r</targetSymbol>
+      <targetSymbol>_XMMATRIX::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::_34</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT><DEFECT>
@@ -451,12 +451,12 @@
       <COLUMN>4</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMHALF2::y" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "_XMHALF2::x" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMHALF2::{ctor}</FUNCTION>
     <DECORATED>??0_XMHALF2@@QAE@XZ</DECORATED>
     <FUNCLINE>428</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>_XMHALF2::y</targetSymbol>
+      <targetSymbol>_XMHALF2::x</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT><DEFECT>
@@ -467,12 +467,12 @@
       <COLUMN>4</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMSHORTN2::x" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "_XMSHORTN2::y" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMSHORTN2::{ctor}</FUNCTION>
     <DECORATED>??0_XMSHORTN2@@QAE@XZ</DECORATED>
     <FUNCLINE>448</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>_XMSHORTN2::x</targetSymbol>
+      <targetSymbol>_XMSHORTN2::y</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT><DEFECT>
@@ -547,12 +547,12 @@
       <COLUMN>4</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMHENDN3::&lt;unnamed-tag&gt;::v" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "_XMHENDN3::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::x" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMHENDN3::{ctor}</FUNCTION>
     <DECORATED>??0_XMHENDN3@@QAE@XZ</DECORATED>
     <FUNCLINE>574</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>_XMHENDN3::&lt;unnamed-tag&gt;::v</targetSymbol>
+      <targetSymbol>_XMHENDN3::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::x</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT><DEFECT>
@@ -627,12 +627,12 @@
       <COLUMN>4</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMDHEN3::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "_XMDHEN3::&lt;unnamed-tag&gt;::v" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMDHEN3::{ctor}</FUNCTION>
     <DECORATED>??0_XMDHEN3@@QAE@XZ</DECORATED>
     <FUNCLINE>749</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>_XMDHEN3::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z</targetSymbol>
+      <targetSymbol>_XMDHEN3::&lt;unnamed-tag&gt;::v</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT><DEFECT>
@@ -643,12 +643,12 @@
       <COLUMN>4</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMUDHENN3::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::y" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "_XMUDHENN3::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMUDHENN3::{ctor}</FUNCTION>
     <DECORATED>??0_XMUDHENN3@@QAE@XZ</DECORATED>
     <FUNCLINE>784</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>_XMUDHENN3::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::y</targetSymbol>
+      <targetSymbol>_XMUDHENN3::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT><DEFECT>
@@ -707,12 +707,12 @@
       <COLUMN>4</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMFLOAT3SE::&lt;unnamed-tag&gt;::v" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "_XMFLOAT3SE::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::ym" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMFLOAT3SE::{ctor}</FUNCTION>
     <DECORATED>??0_XMFLOAT3SE@@QAE@XZ</DECORATED>
     <FUNCLINE>928</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>_XMFLOAT3SE::&lt;unnamed-tag&gt;::v</targetSymbol>
+      <targetSymbol>_XMFLOAT3SE::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::ym</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT><DEFECT>
@@ -723,12 +723,12 @@
       <COLUMN>4</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMFLOAT4::y" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "_XMFLOAT4::z" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMFLOAT4::{ctor}</FUNCTION>
     <DECORATED>??0_XMFLOAT4@@QAE@XZ</DECORATED>
     <FUNCLINE>952</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>_XMFLOAT4::y</targetSymbol>
+      <targetSymbol>_XMFLOAT4::z</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT><DEFECT>
@@ -771,12 +771,12 @@
       <COLUMN>4</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMSHORT4::w" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "_XMSHORT4::x" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMSHORT4::{ctor}</FUNCTION>
     <DECORATED>??0_XMSHORT4@@QAE@XZ</DECORATED>
     <FUNCLINE>1030</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>_XMSHORT4::w</targetSymbol>
+      <targetSymbol>_XMSHORT4::x</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT><DEFECT>
@@ -787,12 +787,12 @@
       <COLUMN>4</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMUSHORTN4::x" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "_XMUSHORTN4::w" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMUSHORTN4::{ctor}</FUNCTION>
     <DECORATED>??0_XMUSHORTN4@@QAE@XZ</DECORATED>
     <FUNCLINE>1052</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>_XMUSHORTN4::x</targetSymbol>
+      <targetSymbol>_XMUSHORTN4::w</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT><DEFECT>
@@ -851,12 +851,12 @@
       <COLUMN>4</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMDECN4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "_XMDECN4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::w" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMDECN4::{ctor}</FUNCTION>
     <DECORATED>??0_XMDECN4@@QAE@XZ</DECORATED>
     <FUNCLINE>1180</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>_XMDECN4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z</targetSymbol>
+      <targetSymbol>_XMDECN4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::w</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT><DEFECT>
@@ -867,12 +867,12 @@
       <COLUMN>4</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMDEC4::&lt;unnamed-tag&gt;::v" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "_XMDEC4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::x" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMDEC4::{ctor}</FUNCTION>
     <DECORATED>??0_XMDEC4@@QAE@XZ</DECORATED>
     <FUNCLINE>1216</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>_XMDEC4::&lt;unnamed-tag&gt;::v</targetSymbol>
+      <targetSymbol>_XMDEC4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::x</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT><DEFECT>
@@ -883,12 +883,12 @@
       <COLUMN>4</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMUDECN4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::y" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "_XMUDECN4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMUDECN4::{ctor}</FUNCTION>
     <DECORATED>??0_XMUDECN4@@QAE@XZ</DECORATED>
     <FUNCLINE>1252</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>_XMUDECN4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::y</targetSymbol>
+      <targetSymbol>_XMUDECN4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT><DEFECT>
@@ -947,12 +947,12 @@
       <COLUMN>4</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMICON4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "_XMICON4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::y" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMICON4::{ctor}</FUNCTION>
     <DECORATED>??0_XMICON4@@QAE@XZ</DECORATED>
     <FUNCLINE>1396</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>_XMICON4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z</targetSymbol>
+      <targetSymbol>_XMICON4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::y</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT><DEFECT>
@@ -963,12 +963,12 @@
       <COLUMN>4</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMICO4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::y" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "_XMICO4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMICO4::{ctor}</FUNCTION>
     <DECORATED>??0_XMICO4@@QAE@XZ</DECORATED>
     <FUNCLINE>1432</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>_XMICO4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::y</targetSymbol>
+      <targetSymbol>_XMICO4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT><DEFECT>
@@ -1027,12 +1027,12 @@
       <COLUMN>4</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMBYTEN4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "_XMBYTEN4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::y" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMBYTEN4::{ctor}</FUNCTION>
     <DECORATED>??0_XMBYTEN4@@QAE@XZ</DECORATED>
     <FUNCLINE>1571</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>_XMBYTEN4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z</targetSymbol>
+      <targetSymbol>_XMBYTEN4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::y</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT><DEFECT>
@@ -1091,12 +1091,12 @@
       <COLUMN>4</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMUNIBBLE4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::y" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "_XMUNIBBLE4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::x" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMUNIBBLE4::{ctor}</FUNCTION>
     <DECORATED>??0_XMUNIBBLE4@@QAE@XZ</DECORATED>
     <FUNCLINE>1691</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>_XMUNIBBLE4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::y</targetSymbol>
+      <targetSymbol>_XMUNIBBLE4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::x</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT><DEFECT>
@@ -1107,12 +1107,12 @@
       <COLUMN>4</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMU555::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::w" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "_XMU555::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMU555::{ctor}</FUNCTION>
     <DECORATED>??0_XMU555@@QAE@XZ</DECORATED>
     <FUNCLINE>1724</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>_XMU555::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::w</targetSymbol>
+      <targetSymbol>_XMU555::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT><DEFECT>
@@ -1123,12 +1123,12 @@
       <COLUMN>4</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMFLOAT3X3::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::_22" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "_XMFLOAT3X3::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::_32" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMFLOAT3X3::{ctor}</FUNCTION>
     <DECORATED>??0_XMFLOAT3X3@@QAE@XZ</DECORATED>
     <FUNCLINE>1756</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>_XMFLOAT3X3::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::_22</targetSymbol>
+      <targetSymbol>_XMFLOAT3X3::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::_32</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT><DEFECT>
@@ -1139,12 +1139,12 @@
       <COLUMN>4</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMFLOAT4X3::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::_23" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "_XMFLOAT4X3::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::_12" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMFLOAT4X3::{ctor}</FUNCTION>
     <DECORATED>??0_XMFLOAT4X3@@QAE@XZ</DECORATED>
     <FUNCLINE>1788</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>_XMFLOAT4X3::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::_23</targetSymbol>
+      <targetSymbol>_XMFLOAT4X3::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::_12</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT><DEFECT>
@@ -1155,12 +1155,12 @@
       <COLUMN>4</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMFLOAT4X4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::_44" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "_XMFLOAT4X4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::_23" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMFLOAT4X4::{ctor}</FUNCTION>
     <DECORATED>??0_XMFLOAT4X4@@QAE@XZ</DECORATED>
     <FUNCLINE>1842</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>_XMFLOAT4X4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::_44</targetSymbol>
+      <targetSymbol>_XMFLOAT4X4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::_23</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT><DEFECT>
@@ -4883,12 +4883,12 @@
       <COLUMN>22</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMSHORTN2::x" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "_XMSHORTN2::y" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMSHORTN2::{ctor}</FUNCTION>
     <DECORATED>??0_XMSHORTN2@@QAE@MM@Z</DECORATED>
     <FUNCLINE>11162</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>_XMSHORTN2::x</targetSymbol>
+      <targetSymbol>_XMSHORTN2::y</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT><DEFECT>
@@ -4899,12 +4899,12 @@
       <COLUMN>22</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMSHORTN2::x" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "_XMSHORTN2::y" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMSHORTN2::{ctor}</FUNCTION>
     <DECORATED>??0_XMSHORTN2@@QAE@PBM@Z</DECORATED>
     <FUNCLINE>11173</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>_XMSHORTN2::x</targetSymbol>
+      <targetSymbol>_XMSHORTN2::y</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT><DEFECT>
@@ -5011,12 +5011,12 @@
       <COLUMN>21</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMHENDN3::&lt;unnamed-tag&gt;::v" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "_XMHENDN3::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::x" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMHENDN3::{ctor}</FUNCTION>
     <DECORATED>??0_XMHENDN3@@QAE@MMM@Z</DECORATED>
     <FUNCLINE>11395</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>_XMHENDN3::&lt;unnamed-tag&gt;::v</targetSymbol>
+      <targetSymbol>_XMHENDN3::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::x</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT><DEFECT>
@@ -5027,12 +5027,12 @@
       <COLUMN>21</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMHENDN3::&lt;unnamed-tag&gt;::v" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "_XMHENDN3::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::x" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMHENDN3::{ctor}</FUNCTION>
     <DECORATED>??0_XMHENDN3@@QAE@PBM@Z</DECORATED>
     <FUNCLINE>11407</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>_XMHENDN3::&lt;unnamed-tag&gt;::v</targetSymbol>
+      <targetSymbol>_XMHENDN3::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::x</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT><DEFECT>
@@ -5171,12 +5171,12 @@
       <COLUMN>20</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMDHEN3::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "_XMDHEN3::&lt;unnamed-tag&gt;::v" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMDHEN3::{ctor}</FUNCTION>
     <DECORATED>??0_XMDHEN3@@QAE@MMM@Z</DECORATED>
     <FUNCLINE>11645</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>_XMDHEN3::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z</targetSymbol>
+      <targetSymbol>_XMDHEN3::&lt;unnamed-tag&gt;::v</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT><DEFECT>
@@ -5187,12 +5187,12 @@
       <COLUMN>20</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMDHEN3::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "_XMDHEN3::&lt;unnamed-tag&gt;::v" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMDHEN3::{ctor}</FUNCTION>
     <DECORATED>??0_XMDHEN3@@QAE@PBM@Z</DECORATED>
     <FUNCLINE>11657</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>_XMDHEN3::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z</targetSymbol>
+      <targetSymbol>_XMDHEN3::&lt;unnamed-tag&gt;::v</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT><DEFECT>
@@ -5203,12 +5203,12 @@
       <COLUMN>22</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMUDHENN3::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::y" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "_XMUDHENN3::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMUDHENN3::{ctor}</FUNCTION>
     <DECORATED>??0_XMUDHENN3@@QAE@MMM@Z</DECORATED>
     <FUNCLINE>11695</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>_XMUDHENN3::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::y</targetSymbol>
+      <targetSymbol>_XMUDHENN3::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT><DEFECT>
@@ -5219,12 +5219,12 @@
       <COLUMN>22</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMUDHENN3::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::y" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "_XMUDHENN3::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMUDHENN3::{ctor}</FUNCTION>
     <DECORATED>??0_XMUDHENN3@@QAE@PBM@Z</DECORATED>
     <FUNCLINE>11707</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>_XMUDHENN3::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::y</targetSymbol>
+      <targetSymbol>_XMUDHENN3::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT><DEFECT>
@@ -5331,12 +5331,12 @@
       <COLUMN>23</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMFLOAT3SE::&lt;unnamed-tag&gt;::v" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "_XMFLOAT3SE::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::ym" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMFLOAT3SE::{ctor}</FUNCTION>
     <DECORATED>??0_XMFLOAT3SE@@QAE@MMM@Z</DECORATED>
     <FUNCLINE>11887</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>_XMFLOAT3SE::&lt;unnamed-tag&gt;::v</targetSymbol>
+      <targetSymbol>_XMFLOAT3SE::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::ym</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT><DEFECT>
@@ -5347,12 +5347,12 @@
       <COLUMN>23</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMFLOAT3SE::&lt;unnamed-tag&gt;::v" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "_XMFLOAT3SE::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::ym" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMFLOAT3SE::{ctor}</FUNCTION>
     <DECORATED>??0_XMFLOAT3SE@@QAE@PBM@Z</DECORATED>
     <FUNCLINE>11897</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>_XMFLOAT3SE::&lt;unnamed-tag&gt;::v</targetSymbol>
+      <targetSymbol>_XMFLOAT3SE::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::ym</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT><DEFECT>
@@ -5411,12 +5411,12 @@
       <COLUMN>21</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMSHORT4::w" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "_XMSHORT4::x" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMSHORT4::{ctor}</FUNCTION>
     <DECORATED>??0_XMSHORT4@@QAE@MMMM@Z</DECORATED>
     <FUNCLINE>12106</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>_XMSHORT4::w</targetSymbol>
+      <targetSymbol>_XMSHORT4::x</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT><DEFECT>
@@ -5427,12 +5427,12 @@
       <COLUMN>21</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMSHORT4::w" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "_XMSHORT4::x" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMSHORT4::{ctor}</FUNCTION>
     <DECORATED>??0_XMSHORT4@@QAE@PBM@Z</DECORATED>
     <FUNCLINE>12119</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>_XMSHORT4::w</targetSymbol>
+      <targetSymbol>_XMSHORT4::x</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT><DEFECT>
@@ -5443,12 +5443,12 @@
       <COLUMN>23</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMUSHORTN4::x" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "_XMUSHORTN4::w" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMUSHORTN4::{ctor}</FUNCTION>
     <DECORATED>??0_XMUSHORTN4@@QAE@MMMM@Z</DECORATED>
     <FUNCLINE>12162</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>_XMUSHORTN4::x</targetSymbol>
+      <targetSymbol>_XMUSHORTN4::w</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT><DEFECT>
@@ -5459,12 +5459,12 @@
       <COLUMN>23</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMUSHORTN4::x" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "_XMUSHORTN4::w" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMUSHORTN4::{ctor}</FUNCTION>
     <DECORATED>??0_XMUSHORTN4@@QAE@PBM@Z</DECORATED>
     <FUNCLINE>12175</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>_XMUSHORTN4::x</targetSymbol>
+      <targetSymbol>_XMUSHORTN4::w</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT><DEFECT>
@@ -5571,12 +5571,12 @@
       <COLUMN>20</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMDECN4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "_XMDECN4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::w" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMDECN4::{ctor}</FUNCTION>
     <DECORATED>??0_XMDECN4@@QAE@MMMM@Z</DECORATED>
     <FUNCLINE>12363</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>_XMDECN4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z</targetSymbol>
+      <targetSymbol>_XMDECN4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::w</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT><DEFECT>
@@ -5587,12 +5587,12 @@
       <COLUMN>20</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMDECN4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "_XMDECN4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::w" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMDECN4::{ctor}</FUNCTION>
     <DECORATED>??0_XMDECN4@@QAE@PBM@Z</DECORATED>
     <FUNCLINE>12376</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>_XMDECN4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z</targetSymbol>
+      <targetSymbol>_XMDECN4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::w</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT><DEFECT>
@@ -5603,12 +5603,12 @@
       <COLUMN>19</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMDEC4::&lt;unnamed-tag&gt;::v" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "_XMDEC4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::x" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMDEC4::{ctor}</FUNCTION>
     <DECORATED>??0_XMDEC4@@QAE@MMMM@Z</DECORATED>
     <FUNCLINE>12414</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>_XMDEC4::&lt;unnamed-tag&gt;::v</targetSymbol>
+      <targetSymbol>_XMDEC4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::x</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT><DEFECT>
@@ -5619,12 +5619,12 @@
       <COLUMN>19</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMDEC4::&lt;unnamed-tag&gt;::v" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "_XMDEC4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::x" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMDEC4::{ctor}</FUNCTION>
     <DECORATED>??0_XMDEC4@@QAE@PBM@Z</DECORATED>
     <FUNCLINE>12427</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>_XMDEC4::&lt;unnamed-tag&gt;::v</targetSymbol>
+      <targetSymbol>_XMDEC4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::x</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT><DEFECT>
@@ -5635,12 +5635,12 @@
       <COLUMN>21</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMUDECN4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::y" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "_XMUDECN4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMUDECN4::{ctor}</FUNCTION>
     <DECORATED>??0_XMUDECN4@@QAE@MMMM@Z</DECORATED>
     <FUNCLINE>12465</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>_XMUDECN4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::y</targetSymbol>
+      <targetSymbol>_XMUDECN4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT><DEFECT>
@@ -5651,12 +5651,12 @@
       <COLUMN>21</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMUDECN4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::y" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "_XMUDECN4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMUDECN4::{ctor}</FUNCTION>
     <DECORATED>??0_XMUDECN4@@QAE@PBM@Z</DECORATED>
     <FUNCLINE>12478</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>_XMUDECN4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::y</targetSymbol>
+      <targetSymbol>_XMUDECN4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT><DEFECT>
@@ -5763,12 +5763,12 @@
       <COLUMN>20</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMICON4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "_XMICON4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::y" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMICON4::{ctor}</FUNCTION>
     <DECORATED>??0_XMICON4@@QAE@MMMM@Z</DECORATED>
     <FUNCLINE>12669</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>_XMICON4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z</targetSymbol>
+      <targetSymbol>_XMICON4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::y</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT><DEFECT>
@@ -5779,12 +5779,12 @@
       <COLUMN>20</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMICON4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "_XMICON4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::y" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMICON4::{ctor}</FUNCTION>
     <DECORATED>??0_XMICON4@@QAE@PBM@Z</DECORATED>
     <FUNCLINE>12682</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>_XMICON4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z</targetSymbol>
+      <targetSymbol>_XMICON4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::y</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT><DEFECT>
@@ -5795,12 +5795,12 @@
       <COLUMN>19</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMICO4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::y" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "_XMICO4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMICO4::{ctor}</FUNCTION>
     <DECORATED>??0_XMICO4@@QAE@MMMM@Z</DECORATED>
     <FUNCLINE>12720</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>_XMICO4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::y</targetSymbol>
+      <targetSymbol>_XMICO4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT><DEFECT>
@@ -5811,12 +5811,12 @@
       <COLUMN>19</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMICO4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::y" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "_XMICO4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMICO4::{ctor}</FUNCTION>
     <DECORATED>??0_XMICO4@@QAE@PBM@Z</DECORATED>
     <FUNCLINE>12733</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>_XMICO4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::y</targetSymbol>
+      <targetSymbol>_XMICO4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT><DEFECT>
@@ -5923,12 +5923,12 @@
       <COLUMN>21</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMBYTEN4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "_XMBYTEN4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::y" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMBYTEN4::{ctor}</FUNCTION>
     <DECORATED>??0_XMBYTEN4@@QAE@MMMM@Z</DECORATED>
     <FUNCLINE>12937</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>_XMBYTEN4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z</targetSymbol>
+      <targetSymbol>_XMBYTEN4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::y</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT><DEFECT>
@@ -5939,12 +5939,12 @@
       <COLUMN>21</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMBYTEN4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "_XMBYTEN4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::y" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMBYTEN4::{ctor}</FUNCTION>
     <DECORATED>??0_XMBYTEN4@@QAE@PBM@Z</DECORATED>
     <FUNCLINE>12950</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>_XMBYTEN4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z</targetSymbol>
+      <targetSymbol>_XMBYTEN4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::y</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT><DEFECT>
@@ -6051,12 +6051,12 @@
       <COLUMN>23</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMUNIBBLE4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::y" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "_XMUNIBBLE4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::x" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMUNIBBLE4::{ctor}</FUNCTION>
     <DECORATED>??0_XMUNIBBLE4@@QAE@MMMM@Z</DECORATED>
     <FUNCLINE>13161</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>_XMUNIBBLE4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::y</targetSymbol>
+      <targetSymbol>_XMUNIBBLE4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::x</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT><DEFECT>
@@ -6067,12 +6067,12 @@
       <COLUMN>23</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMUNIBBLE4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::y" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "_XMUNIBBLE4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::x" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMUNIBBLE4::{ctor}</FUNCTION>
     <DECORATED>??0_XMUNIBBLE4@@QAE@PBM@Z</DECORATED>
     <FUNCLINE>13174</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>_XMUNIBBLE4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::y</targetSymbol>
+      <targetSymbol>_XMUNIBBLE4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::x</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT><DEFECT>
@@ -6083,12 +6083,12 @@
       <COLUMN>19</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMU555::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::w" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "_XMU555::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMU555::{ctor}</FUNCTION>
     <DECORATED>??0_XMU555@@QAE@MMMH@Z</DECORATED>
     <FUNCLINE>13226</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>_XMU555::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::w</targetSymbol>
+      <targetSymbol>_XMU555::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT><DEFECT>
@@ -6099,12 +6099,12 @@
       <COLUMN>19</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMU555::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::w" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "_XMU555::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMU555::{ctor}</FUNCTION>
     <DECORATED>??0_XMU555@@QAE@PBMH@Z</DECORATED>
     <FUNCLINE>13239</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>_XMU555::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::w</targetSymbol>
+      <targetSymbol>_XMU555::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT><DEFECT>
@@ -6473,6 +6473,19 @@
     <PATH></PATH>
   </DEFECT><DEFECT>
     <SFA>
+      <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
+      <FILENAME>dinput.h</FILENAME>
+      <LINE>4321</LINE>
+      <COLUMN>25</COLUMN>
+    </SFA>
+    <DEFECTCODE>28251</DEFECTCODE>
+    <DESCRIPTION>Несогласованная аннотация для "joyConfigChanged": данный экземпляр содержит нет аннотаций. См. c:\program files (x86)\windows kits\10\include\10.0.18362.0\um\joystickapi.h(431). </DESCRIPTION>
+    <FUNCTION>joyConfigChanged</FUNCTION>
+    <DECORATED>joyConfigChanged@4</DECORATED>
+    <FUNCLINE>4321</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT><DEFECT>
+    <SFA>
       <FILEPATH>C:\Users\denre\source\repos\DirectX11\NewDXFW\NewDXFW\</FILEPATH>
       <FILENAME>DXManager.cpp</FILENAME>
       <LINE>82</LINE>
@@ -6704,29 +6717,77 @@
     <SFA>
       <FILEPATH>C:\Users\denre\source\repos\DirectX11\NewDXFW\NewDXFW\</FILEPATH>
       <FILENAME>DXManager.cpp</FILENAME>
-      <LINE>255</LINE>
+      <LINE>253</LINE>
       <COLUMN>9</COLUMN>
     </SFA>
     <DEFECTCODE>26812</DEFECTCODE>
     <DESCRIPTION>Тип перечисления "D3D_FEATURE_LEVEL" не входит в область. Старайтесь использовать "enum class" вместо "enum" (Enum.3).</DESCRIPTION>
     <FUNCTION>DXManager::InitializeSwapChain</FUNCTION>
     <DECORATED>?InitializeSwapChain@DXManager@@AAE_NPAUHWND__@@_NHHII@Z</DECORATED>
-    <FUNCLINE>217</FUNCLINE>
+    <FUNCLINE>215</FUNCLINE>
     <PATH></PATH>
   </DEFECT><DEFECT>
     <SFA>
       <FILEPATH>C:\Users\denre\source\repos\DirectX11\NewDXFW\NewDXFW\</FILEPATH>
       <FILENAME>Engine.cpp</FILENAME>
-      <LINE>8</LINE>
+      <LINE>10</LINE>
       <COLUMN>8</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "Engine::m_hInstance" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "Engine::m_hWnd" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>Engine::{ctor}</FUNCTION>
     <DECORATED>??0Engine@@QAE@XZ</DECORATED>
-    <FUNCLINE>8</FUNCLINE>
+    <FUNCLINE>10</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>Engine::m_hInstance</targetSymbol>
+      <targetSymbol>Engine::m_hWnd</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT><DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\denre\source\repos\DirectX11\NewDXFW\NewDXFW\</FILEPATH>
+      <FILENAME>NewsQueue.cpp</FILENAME>
+      <LINE>187</LINE>
+      <COLUMN>6</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Переменная "News::&lt;unnamed-tag&gt;::m_mousePos" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <FUNCTION>News::{ctor}</FUNCTION>
+    <DECORATED>??0News@@QAE@GW4NEWS@@PAX@Z</DECORATED>
+    <FUNCLINE>187</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>News::&lt;unnamed-tag&gt;::m_mousePos</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT><DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\denre\source\repos\DirectX11\NewDXFW\NewDXFW\</FILEPATH>
+      <FILENAME>RectTexButton.cpp</FILENAME>
+      <LINE>25</LINE>
+      <COLUMN>15</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Переменная "RectTexButton::coorX" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <FUNCTION>RectTexButton::{ctor}</FUNCTION>
+    <DECORATED>??0RectTexButton@@QAE@MMMMUTextureButton@@@Z</DECORATED>
+    <FUNCLINE>25</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>RectTexButton::coorX</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT><DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\denre\source\repos\DirectX11\NewDXFW\NewDXFW\</FILEPATH>
+      <FILENAME>Button.h</FILENAME>
+      <LINE>21</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Переменная "Button::m_state" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <FUNCTION>Button::{ctor}</FUNCTION>
+    <DECORATED>??0Button@@QAE@XZ</DECORATED>
+    <FUNCLINE>21</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>Button::m_state</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT></DEFECTS>

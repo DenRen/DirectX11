@@ -1,29 +1,15 @@
 #include "RectTexButton.h"
 #include "ResourceManager.h"
 
-Texture *RectTexButton::m_defTextureWait	= nullptr;
-Texture *RectTexButton::m_defTextureFocused	= nullptr;
-Texture *RectTexButton::m_defTextureClicked = nullptr;
+TextureButton RectTexButton::def_textureButton (nullptr, nullptr, nullptr);
 
 void RectTexButton::InitializeDefValues (const char *pathTextureWait,
 										 const char *pathTextureFocus,
 										 const char *pathTextureClicked)
 {
-	m_defTextureWait	= ResMgr::GetResMgr ()->GetTexture (pathTextureWait);
-	m_defTextureFocused = ResMgr::GetResMgr ()->GetTexture (pathTextureFocus);
-	m_defTextureClicked = ResMgr::GetResMgr ()->GetTexture (pathTextureClicked);
-}
-
-RectTexButton::RectTexButton (float coorX, float coorY, float width, float height,
-							  Texture *textureWait,
-							  Texture *textureFocus,
-							  Texture *textureClicked) :
-	RectTex (coorX, coorY, width, height),
-	m_textureWait	 (textureWait),
-	m_textureFocused   (textureFocus),
-	m_textureClicked (textureClicked)
-{
-	m_texture = m_textureWait;
+	def_textureButton.m_wait	= ResMgr::GetResMgr ()->GetTexture (pathTextureWait);
+	def_textureButton.m_focused = ResMgr::GetResMgr ()->GetTexture (pathTextureFocus);
+	def_textureButton.m_clicked = ResMgr::GetResMgr ()->GetTexture (pathTextureClicked);
 }
 
 RectTexButton::RectTexButton (float coorX, float coorY, float width, float height,
@@ -31,10 +17,18 @@ RectTexButton::RectTexButton (float coorX, float coorY, float width, float heigh
 							  const char *pathTextureFocus,
 							  const char *pathTextureClicked) :
 	RectTexButton (coorX, coorY, width, height,
-				   ResMgr::GetResMgr ()->GetTexture (pathTextureWait),
-				   ResMgr::GetResMgr ()->GetTexture (pathTextureFocus),
-				   ResMgr::GetResMgr ()->GetTexture (pathTextureClicked))
+				   TextureButton (ResMgr::GetResMgr ()->GetTexture (pathTextureWait),
+								  ResMgr::GetResMgr ()->GetTexture (pathTextureFocus),
+								  ResMgr::GetResMgr ()->GetTexture (pathTextureClicked)))
 {}
+
+RectTexButton::RectTexButton (float coorX, float coorY, float width, float height,
+							  TextureButton textureButton) :
+	RectTex (coorX, coorY, width, height),
+	m_textureButton (textureButton)
+{
+	m_texture = textureButton.m_wait;
+}
 
 void RectTexButton::Draw ()
 {
@@ -46,13 +40,13 @@ void RectTexButton::Update ()
 	switch (Button::GetCurrentState ())
 	{
 	case BUTTONSTATE::WAIT:
-		Sprite::SetTexture (m_textureWait);
+		Sprite::SetTexture (m_textureButton.m_wait);
 		break;
 	case BUTTONSTATE::FOCUSED:
-		Sprite::SetTexture (m_textureFocused);
+		Sprite::SetTexture (m_textureButton.m_focused);
 		break;
 	case BUTTONSTATE::CLICKED:
-		Sprite::SetTexture (m_textureClicked);
+		Sprite::SetTexture (m_textureButton.m_clicked);
 		break;
 	}
 }
@@ -76,6 +70,7 @@ void RectTexButton::HandleNews (News news)
 					CheckContainCursor (news.m_mousePos);
 				} break;
 			case NEWS::LBUTTONDOWN:
+			case NEWS::LBUTTONDBLCLK:
 				{
 					CheckContainCursor (news.m_mousePos);
 					if (Button::GetCurrentState () == BUTTONSTATE::FOCUSED)
@@ -95,3 +90,15 @@ void RectTexButton::CheckContainCursor (MousePosition mousePosition)
 		Button::SetStateFocused ();
 	}
 }
+
+TextureButton::TextureButton () :
+	TextureButton (nullptr, nullptr, nullptr)
+{}
+
+TextureButton::TextureButton (Texture *textureWait,
+							  Texture *textureFocused,
+							  Texture *textureClicked) :
+	m_wait (textureWait),
+	m_focused (textureFocused),
+	m_clicked (textureClicked)
+{}

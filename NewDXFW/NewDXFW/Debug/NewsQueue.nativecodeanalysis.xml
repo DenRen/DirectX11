@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DEFECTS>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\denre\source\repos\DirectX11\NewDXFW\NewDXFW\</FILEPATH>
+      <FILENAME>NewsQueue.cpp</FILENAME>
+      <LINE>187</LINE>
+      <COLUMN>6</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Переменная "News::&lt;unnamed-tag&gt;::m_mousePos" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <FUNCTION>News::{ctor}</FUNCTION>
+    <DECORATED>??0News@@QAE@GW4NEWS@@PAX@Z</DECORATED>
+    <FUNCLINE>187</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>News::&lt;unnamed-tag&gt;::m_mousePos</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+</DEFECTS>

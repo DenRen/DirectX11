@@ -314,12 +314,12 @@
       <COLUMN>4</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "D3DXVECTOR4::z" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "D3DXVECTOR4::w" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>D3DXVECTOR4::{ctor}</FUNCTION>
     <DECORATED>??0D3DXVECTOR4@@QAE@XZ</DECORATED>
     <FUNCLINE>273</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>D3DXVECTOR4::z</targetSymbol>
+      <targetSymbol>D3DXVECTOR4::w</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>
@@ -348,12 +348,12 @@
       <COLUMN>4</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "D3DXVECTOR4::w" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "D3DXVECTOR4::z" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>D3DXVECTOR4::{ctor}</FUNCTION>
     <DECORATED>??0D3DXVECTOR4@@QAE@XZ</DECORATED>
     <FUNCLINE>273</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>D3DXVECTOR4::w</targetSymbol>
+      <targetSymbol>D3DXVECTOR4::z</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>
@@ -365,12 +365,12 @@
       <COLUMN>4</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "D3DXQUATERNION::x" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "D3DXQUATERNION::w" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>D3DXQUATERNION::{ctor}</FUNCTION>
     <DECORATED>??0D3DXQUATERNION@@QAE@XZ</DECORATED>
     <FUNCLINE>462</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>D3DXQUATERNION::x</targetSymbol>
+      <targetSymbol>D3DXQUATERNION::w</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>
@@ -416,12 +416,12 @@
       <COLUMN>4</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "D3DXQUATERNION::w" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "D3DXQUATERNION::x" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>D3DXQUATERNION::{ctor}</FUNCTION>
     <DECORATED>??0D3DXQUATERNION@@QAE@XZ</DECORATED>
     <FUNCLINE>462</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>D3DXQUATERNION::w</targetSymbol>
+      <targetSymbol>D3DXQUATERNION::x</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>
@@ -603,12 +603,12 @@
       <COLUMN>13</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "D3DXVECTOR4::z" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "D3DXVECTOR4::w" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>D3DXVECTOR4::{ctor}</FUNCTION>
     <DECORATED>??0D3DXVECTOR4@@QAE@PBUD3DXFLOAT16@@@Z</DECORATED>
     <FUNCLINE>532</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>D3DXVECTOR4::z</targetSymbol>
+      <targetSymbol>D3DXVECTOR4::w</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>
@@ -637,12 +637,29 @@
       <COLUMN>13</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "D3DXVECTOR4::w" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "D3DXVECTOR4::z" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>D3DXVECTOR4::{ctor}</FUNCTION>
     <DECORATED>??0D3DXVECTOR4@@QAE@PBUD3DXFLOAT16@@@Z</DECORATED>
     <FUNCLINE>532</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>D3DXVECTOR4::w</targetSymbol>
+      <targetSymbol>D3DXVECTOR4::z</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
+      <FILENAME>D3DX10math.inl</FILENAME>
+      <LINE>1081</LINE>
+      <COLUMN>16</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Переменная "D3DXQUATERNION::w" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <FUNCTION>D3DXQUATERNION::{ctor}</FUNCTION>
+    <DECORATED>??0D3DXQUATERNION@@QAE@PBUD3DXFLOAT16@@@Z</DECORATED>
+    <FUNCLINE>1081</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>D3DXQUATERNION::w</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>
@@ -677,23 +694,6 @@
     <FUNCLINE>1081</FUNCLINE>
     <ADDITIONALINFO>
       <targetSymbol>D3DXQUATERNION::z</targetSymbol>
-    </ADDITIONALINFO>
-    <PATH></PATH>
-  </DEFECT>
-  <DEFECT>
-    <SFA>
-      <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
-      <FILENAME>D3DX10math.inl</FILENAME>
-      <LINE>1081</LINE>
-      <COLUMN>16</COLUMN>
-    </SFA>
-    <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "D3DXQUATERNION::w" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
-    <FUNCTION>D3DXQUATERNION::{ctor}</FUNCTION>
-    <DECORATED>??0D3DXQUATERNION@@QAE@PBUD3DXFLOAT16@@@Z</DECORATED>
-    <FUNCLINE>1081</FUNCLINE>
-    <ADDITIONALINFO>
-      <targetSymbol>D3DXQUATERNION::w</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>
@@ -807,216 +807,29 @@
       <COLUMN>4</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMMATRIX::&lt;unnamed-tag&gt;::r" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
-    <FUNCTION>_XMMATRIX::{ctor}</FUNCTION>
-    <DECORATED>??0_XMMATRIX@@QAE@XZ</DECORATED>
-    <FUNCLINE>352</FUNCLINE>
-    <ADDITIONALINFO>
-      <targetSymbol>_XMMATRIX::&lt;unnamed-tag&gt;::r</targetSymbol>
-    </ADDITIONALINFO>
-    <PATH></PATH>
-  </DEFECT>
-  <DEFECT>
-    <SFA>
-      <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
-      <FILENAME>xnamath.h</FILENAME>
-      <LINE>352</LINE>
-      <COLUMN>4</COLUMN>
-    </SFA>
-    <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMMATRIX::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::_12" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
-    <FUNCTION>_XMMATRIX::{ctor}</FUNCTION>
-    <DECORATED>??0_XMMATRIX@@QAE@XZ</DECORATED>
-    <FUNCLINE>352</FUNCLINE>
-    <ADDITIONALINFO>
-      <targetSymbol>_XMMATRIX::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::_12</targetSymbol>
-    </ADDITIONALINFO>
-    <PATH></PATH>
-  </DEFECT>
-  <DEFECT>
-    <SFA>
-      <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
-      <FILENAME>xnamath.h</FILENAME>
-      <LINE>352</LINE>
-      <COLUMN>4</COLUMN>
-    </SFA>
-    <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMMATRIX::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::_11" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
-    <FUNCTION>_XMMATRIX::{ctor}</FUNCTION>
-    <DECORATED>??0_XMMATRIX@@QAE@XZ</DECORATED>
-    <FUNCLINE>352</FUNCLINE>
-    <ADDITIONALINFO>
-      <targetSymbol>_XMMATRIX::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::_11</targetSymbol>
-    </ADDITIONALINFO>
-    <PATH></PATH>
-  </DEFECT>
-  <DEFECT>
-    <SFA>
-      <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
-      <FILENAME>xnamath.h</FILENAME>
-      <LINE>352</LINE>
-      <COLUMN>4</COLUMN>
-    </SFA>
-    <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMMATRIX::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::_13" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
-    <FUNCTION>_XMMATRIX::{ctor}</FUNCTION>
-    <DECORATED>??0_XMMATRIX@@QAE@XZ</DECORATED>
-    <FUNCLINE>352</FUNCLINE>
-    <ADDITIONALINFO>
-      <targetSymbol>_XMMATRIX::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::_13</targetSymbol>
-    </ADDITIONALINFO>
-    <PATH></PATH>
-  </DEFECT>
-  <DEFECT>
-    <SFA>
-      <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
-      <FILENAME>xnamath.h</FILENAME>
-      <LINE>352</LINE>
-      <COLUMN>4</COLUMN>
-    </SFA>
-    <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMMATRIX::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::_14" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
-    <FUNCTION>_XMMATRIX::{ctor}</FUNCTION>
-    <DECORATED>??0_XMMATRIX@@QAE@XZ</DECORATED>
-    <FUNCLINE>352</FUNCLINE>
-    <ADDITIONALINFO>
-      <targetSymbol>_XMMATRIX::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::_14</targetSymbol>
-    </ADDITIONALINFO>
-    <PATH></PATH>
-  </DEFECT>
-  <DEFECT>
-    <SFA>
-      <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
-      <FILENAME>xnamath.h</FILENAME>
-      <LINE>352</LINE>
-      <COLUMN>4</COLUMN>
-    </SFA>
-    <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMMATRIX::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::_22" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
-    <FUNCTION>_XMMATRIX::{ctor}</FUNCTION>
-    <DECORATED>??0_XMMATRIX@@QAE@XZ</DECORATED>
-    <FUNCLINE>352</FUNCLINE>
-    <ADDITIONALINFO>
-      <targetSymbol>_XMMATRIX::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::_22</targetSymbol>
-    </ADDITIONALINFO>
-    <PATH></PATH>
-  </DEFECT>
-  <DEFECT>
-    <SFA>
-      <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
-      <FILENAME>xnamath.h</FILENAME>
-      <LINE>352</LINE>
-      <COLUMN>4</COLUMN>
-    </SFA>
-    <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMMATRIX::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::_21" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
-    <FUNCTION>_XMMATRIX::{ctor}</FUNCTION>
-    <DECORATED>??0_XMMATRIX@@QAE@XZ</DECORATED>
-    <FUNCLINE>352</FUNCLINE>
-    <ADDITIONALINFO>
-      <targetSymbol>_XMMATRIX::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::_21</targetSymbol>
-    </ADDITIONALINFO>
-    <PATH></PATH>
-  </DEFECT>
-  <DEFECT>
-    <SFA>
-      <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
-      <FILENAME>xnamath.h</FILENAME>
-      <LINE>352</LINE>
-      <COLUMN>4</COLUMN>
-    </SFA>
-    <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMMATRIX::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::_23" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
-    <FUNCTION>_XMMATRIX::{ctor}</FUNCTION>
-    <DECORATED>??0_XMMATRIX@@QAE@XZ</DECORATED>
-    <FUNCLINE>352</FUNCLINE>
-    <ADDITIONALINFO>
-      <targetSymbol>_XMMATRIX::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::_23</targetSymbol>
-    </ADDITIONALINFO>
-    <PATH></PATH>
-  </DEFECT>
-  <DEFECT>
-    <SFA>
-      <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
-      <FILENAME>xnamath.h</FILENAME>
-      <LINE>352</LINE>
-      <COLUMN>4</COLUMN>
-    </SFA>
-    <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMMATRIX::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::_24" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
-    <FUNCTION>_XMMATRIX::{ctor}</FUNCTION>
-    <DECORATED>??0_XMMATRIX@@QAE@XZ</DECORATED>
-    <FUNCLINE>352</FUNCLINE>
-    <ADDITIONALINFO>
-      <targetSymbol>_XMMATRIX::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::_24</targetSymbol>
-    </ADDITIONALINFO>
-    <PATH></PATH>
-  </DEFECT>
-  <DEFECT>
-    <SFA>
-      <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
-      <FILENAME>xnamath.h</FILENAME>
-      <LINE>352</LINE>
-      <COLUMN>4</COLUMN>
-    </SFA>
-    <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMMATRIX::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::_31" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
-    <FUNCTION>_XMMATRIX::{ctor}</FUNCTION>
-    <DECORATED>??0_XMMATRIX@@QAE@XZ</DECORATED>
-    <FUNCLINE>352</FUNCLINE>
-    <ADDITIONALINFO>
-      <targetSymbol>_XMMATRIX::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::_31</targetSymbol>
-    </ADDITIONALINFO>
-    <PATH></PATH>
-  </DEFECT>
-  <DEFECT>
-    <SFA>
-      <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
-      <FILENAME>xnamath.h</FILENAME>
-      <LINE>352</LINE>
-      <COLUMN>4</COLUMN>
-    </SFA>
-    <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMMATRIX::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::_32" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
-    <FUNCTION>_XMMATRIX::{ctor}</FUNCTION>
-    <DECORATED>??0_XMMATRIX@@QAE@XZ</DECORATED>
-    <FUNCLINE>352</FUNCLINE>
-    <ADDITIONALINFO>
-      <targetSymbol>_XMMATRIX::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::_32</targetSymbol>
-    </ADDITIONALINFO>
-    <PATH></PATH>
-  </DEFECT>
-  <DEFECT>
-    <SFA>
-      <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
-      <FILENAME>xnamath.h</FILENAME>
-      <LINE>352</LINE>
-      <COLUMN>4</COLUMN>
-    </SFA>
-    <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMMATRIX::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::_33" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
-    <FUNCTION>_XMMATRIX::{ctor}</FUNCTION>
-    <DECORATED>??0_XMMATRIX@@QAE@XZ</DECORATED>
-    <FUNCLINE>352</FUNCLINE>
-    <ADDITIONALINFO>
-      <targetSymbol>_XMMATRIX::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::_33</targetSymbol>
-    </ADDITIONALINFO>
-    <PATH></PATH>
-  </DEFECT>
-  <DEFECT>
-    <SFA>
-      <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
-      <FILENAME>xnamath.h</FILENAME>
-      <LINE>352</LINE>
-      <COLUMN>4</COLUMN>
-    </SFA>
-    <DEFECTCODE>26495</DEFECTCODE>
     <DESCRIPTION>Переменная "_XMMATRIX::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::_34" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMMATRIX::{ctor}</FUNCTION>
     <DECORATED>??0_XMMATRIX@@QAE@XZ</DECORATED>
     <FUNCLINE>352</FUNCLINE>
     <ADDITIONALINFO>
       <targetSymbol>_XMMATRIX::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::_34</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
+      <FILENAME>xnamath.h</FILENAME>
+      <LINE>352</LINE>
+      <COLUMN>4</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Переменная "_XMMATRIX::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::_43" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <FUNCTION>_XMMATRIX::{ctor}</FUNCTION>
+    <DECORATED>??0_XMMATRIX@@QAE@XZ</DECORATED>
+    <FUNCLINE>352</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>_XMMATRIX::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::_43</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>
@@ -1062,12 +875,131 @@
       <COLUMN>4</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMMATRIX::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::_43" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "_XMMATRIX::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::_24" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMMATRIX::{ctor}</FUNCTION>
     <DECORATED>??0_XMMATRIX@@QAE@XZ</DECORATED>
     <FUNCLINE>352</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>_XMMATRIX::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::_43</targetSymbol>
+      <targetSymbol>_XMMATRIX::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::_24</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
+      <FILENAME>xnamath.h</FILENAME>
+      <LINE>352</LINE>
+      <COLUMN>4</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Переменная "_XMMATRIX::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::_33" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <FUNCTION>_XMMATRIX::{ctor}</FUNCTION>
+    <DECORATED>??0_XMMATRIX@@QAE@XZ</DECORATED>
+    <FUNCLINE>352</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>_XMMATRIX::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::_33</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
+      <FILENAME>xnamath.h</FILENAME>
+      <LINE>352</LINE>
+      <COLUMN>4</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Переменная "_XMMATRIX::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::_32" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <FUNCTION>_XMMATRIX::{ctor}</FUNCTION>
+    <DECORATED>??0_XMMATRIX@@QAE@XZ</DECORATED>
+    <FUNCLINE>352</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>_XMMATRIX::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::_32</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
+      <FILENAME>xnamath.h</FILENAME>
+      <LINE>352</LINE>
+      <COLUMN>4</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Переменная "_XMMATRIX::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::_13" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <FUNCTION>_XMMATRIX::{ctor}</FUNCTION>
+    <DECORATED>??0_XMMATRIX@@QAE@XZ</DECORATED>
+    <FUNCLINE>352</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>_XMMATRIX::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::_13</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
+      <FILENAME>xnamath.h</FILENAME>
+      <LINE>352</LINE>
+      <COLUMN>4</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Переменная "_XMMATRIX::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::_11" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <FUNCTION>_XMMATRIX::{ctor}</FUNCTION>
+    <DECORATED>??0_XMMATRIX@@QAE@XZ</DECORATED>
+    <FUNCLINE>352</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>_XMMATRIX::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::_11</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
+      <FILENAME>xnamath.h</FILENAME>
+      <LINE>352</LINE>
+      <COLUMN>4</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Переменная "_XMMATRIX::&lt;unnamed-tag&gt;::r" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <FUNCTION>_XMMATRIX::{ctor}</FUNCTION>
+    <DECORATED>??0_XMMATRIX@@QAE@XZ</DECORATED>
+    <FUNCLINE>352</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>_XMMATRIX::&lt;unnamed-tag&gt;::r</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
+      <FILENAME>xnamath.h</FILENAME>
+      <LINE>352</LINE>
+      <COLUMN>4</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Переменная "_XMMATRIX::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::_12" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <FUNCTION>_XMMATRIX::{ctor}</FUNCTION>
+    <DECORATED>??0_XMMATRIX@@QAE@XZ</DECORATED>
+    <FUNCLINE>352</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>_XMMATRIX::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::_12</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
+      <FILENAME>xnamath.h</FILENAME>
+      <LINE>352</LINE>
+      <COLUMN>4</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Переменная "_XMMATRIX::&lt;unnamed-tag&gt;::m" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <FUNCTION>_XMMATRIX::{ctor}</FUNCTION>
+    <DECORATED>??0_XMMATRIX@@QAE@XZ</DECORATED>
+    <FUNCLINE>352</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>_XMMATRIX::&lt;unnamed-tag&gt;::m</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>
@@ -1096,12 +1028,80 @@
       <COLUMN>4</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMMATRIX::&lt;unnamed-tag&gt;::m" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "_XMMATRIX::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::_22" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMMATRIX::{ctor}</FUNCTION>
     <DECORATED>??0_XMMATRIX@@QAE@XZ</DECORATED>
     <FUNCLINE>352</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>_XMMATRIX::&lt;unnamed-tag&gt;::m</targetSymbol>
+      <targetSymbol>_XMMATRIX::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::_22</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
+      <FILENAME>xnamath.h</FILENAME>
+      <LINE>352</LINE>
+      <COLUMN>4</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Переменная "_XMMATRIX::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::_21" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <FUNCTION>_XMMATRIX::{ctor}</FUNCTION>
+    <DECORATED>??0_XMMATRIX@@QAE@XZ</DECORATED>
+    <FUNCLINE>352</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>_XMMATRIX::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::_21</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
+      <FILENAME>xnamath.h</FILENAME>
+      <LINE>352</LINE>
+      <COLUMN>4</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Переменная "_XMMATRIX::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::_14" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <FUNCTION>_XMMATRIX::{ctor}</FUNCTION>
+    <DECORATED>??0_XMMATRIX@@QAE@XZ</DECORATED>
+    <FUNCLINE>352</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>_XMMATRIX::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::_14</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
+      <FILENAME>xnamath.h</FILENAME>
+      <LINE>352</LINE>
+      <COLUMN>4</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Переменная "_XMMATRIX::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::_23" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <FUNCTION>_XMMATRIX::{ctor}</FUNCTION>
+    <DECORATED>??0_XMMATRIX@@QAE@XZ</DECORATED>
+    <FUNCLINE>352</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>_XMMATRIX::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::_23</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
+      <FILENAME>xnamath.h</FILENAME>
+      <LINE>352</LINE>
+      <COLUMN>4</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Переменная "_XMMATRIX::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::_31" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <FUNCTION>_XMMATRIX::{ctor}</FUNCTION>
+    <DECORATED>??0_XMMATRIX@@QAE@XZ</DECORATED>
+    <FUNCLINE>352</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>_XMMATRIX::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::_31</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>
@@ -1147,23 +1147,6 @@
       <COLUMN>4</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMHALF2::y" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
-    <FUNCTION>_XMHALF2::{ctor}</FUNCTION>
-    <DECORATED>??0_XMHALF2@@QAE@XZ</DECORATED>
-    <FUNCLINE>428</FUNCLINE>
-    <ADDITIONALINFO>
-      <targetSymbol>_XMHALF2::y</targetSymbol>
-    </ADDITIONALINFO>
-    <PATH></PATH>
-  </DEFECT>
-  <DEFECT>
-    <SFA>
-      <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
-      <FILENAME>xnamath.h</FILENAME>
-      <LINE>428</LINE>
-      <COLUMN>4</COLUMN>
-    </SFA>
-    <DEFECTCODE>26495</DEFECTCODE>
     <DESCRIPTION>Переменная "_XMHALF2::x" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMHALF2::{ctor}</FUNCTION>
     <DECORATED>??0_XMHALF2@@QAE@XZ</DECORATED>
@@ -1177,16 +1160,16 @@
     <SFA>
       <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
       <FILENAME>xnamath.h</FILENAME>
-      <LINE>448</LINE>
+      <LINE>428</LINE>
       <COLUMN>4</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMSHORTN2::x" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
-    <FUNCTION>_XMSHORTN2::{ctor}</FUNCTION>
-    <DECORATED>??0_XMSHORTN2@@QAE@XZ</DECORATED>
-    <FUNCLINE>448</FUNCLINE>
+    <DESCRIPTION>Переменная "_XMHALF2::y" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <FUNCTION>_XMHALF2::{ctor}</FUNCTION>
+    <DECORATED>??0_XMHALF2@@QAE@XZ</DECORATED>
+    <FUNCLINE>428</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>_XMSHORTN2::x</targetSymbol>
+      <targetSymbol>_XMHALF2::y</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>
@@ -1204,6 +1187,23 @@
     <FUNCLINE>448</FUNCLINE>
     <ADDITIONALINFO>
       <targetSymbol>_XMSHORTN2::y</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
+      <FILENAME>xnamath.h</FILENAME>
+      <LINE>448</LINE>
+      <COLUMN>4</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Переменная "_XMSHORTN2::x" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <FUNCTION>_XMSHORTN2::{ctor}</FUNCTION>
+    <DECORATED>??0_XMSHORTN2@@QAE@XZ</DECORATED>
+    <FUNCLINE>448</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>_XMSHORTN2::x</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>
@@ -1368,12 +1368,12 @@
       <COLUMN>4</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMHENDN3::&lt;unnamed-tag&gt;::v" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "_XMHENDN3::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::x" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMHENDN3::{ctor}</FUNCTION>
     <DECORATED>??0_XMHENDN3@@QAE@XZ</DECORATED>
     <FUNCLINE>574</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>_XMHENDN3::&lt;unnamed-tag&gt;::v</targetSymbol>
+      <targetSymbol>_XMHENDN3::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::x</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>
@@ -1419,12 +1419,12 @@
       <COLUMN>4</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMHENDN3::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::x" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "_XMHENDN3::&lt;unnamed-tag&gt;::v" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMHENDN3::{ctor}</FUNCTION>
     <DECORATED>??0_XMHENDN3@@QAE@XZ</DECORATED>
     <FUNCLINE>574</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>_XMHENDN3::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::x</targetSymbol>
+      <targetSymbol>_XMHENDN3::&lt;unnamed-tag&gt;::v</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>
@@ -1442,23 +1442,6 @@
     <FUNCLINE>609</FUNCLINE>
     <ADDITIONALINFO>
       <targetSymbol>_XMHEND3::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z</targetSymbol>
-    </ADDITIONALINFO>
-    <PATH></PATH>
-  </DEFECT>
-  <DEFECT>
-    <SFA>
-      <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
-      <FILENAME>xnamath.h</FILENAME>
-      <LINE>609</LINE>
-      <COLUMN>4</COLUMN>
-    </SFA>
-    <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMHEND3::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::x" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
-    <FUNCTION>_XMHEND3::{ctor}</FUNCTION>
-    <DECORATED>??0_XMHEND3@@QAE@XZ</DECORATED>
-    <FUNCLINE>609</FUNCLINE>
-    <ADDITIONALINFO>
-      <targetSymbol>_XMHEND3::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::x</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>
@@ -1493,6 +1476,23 @@
     <FUNCLINE>609</FUNCLINE>
     <ADDITIONALINFO>
       <targetSymbol>_XMHEND3::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::y</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
+      <FILENAME>xnamath.h</FILENAME>
+      <LINE>609</LINE>
+      <COLUMN>4</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Переменная "_XMHEND3::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::x" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <FUNCTION>_XMHEND3::{ctor}</FUNCTION>
+    <DECORATED>??0_XMHEND3@@QAE@XZ</DECORATED>
+    <FUNCLINE>609</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>_XMHEND3::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::x</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>
@@ -1708,23 +1708,6 @@
       <COLUMN>4</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMDHEN3::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
-    <FUNCTION>_XMDHEN3::{ctor}</FUNCTION>
-    <DECORATED>??0_XMDHEN3@@QAE@XZ</DECORATED>
-    <FUNCLINE>749</FUNCLINE>
-    <ADDITIONALINFO>
-      <targetSymbol>_XMDHEN3::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z</targetSymbol>
-    </ADDITIONALINFO>
-    <PATH></PATH>
-  </DEFECT>
-  <DEFECT>
-    <SFA>
-      <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
-      <FILENAME>xnamath.h</FILENAME>
-      <LINE>749</LINE>
-      <COLUMN>4</COLUMN>
-    </SFA>
-    <DEFECTCODE>26495</DEFECTCODE>
     <DESCRIPTION>Переменная "_XMDHEN3::&lt;unnamed-tag&gt;::v" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMDHEN3::{ctor}</FUNCTION>
     <DECORATED>??0_XMDHEN3@@QAE@XZ</DECORATED>
@@ -1772,16 +1755,16 @@
     <SFA>
       <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
       <FILENAME>xnamath.h</FILENAME>
-      <LINE>784</LINE>
+      <LINE>749</LINE>
       <COLUMN>4</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMUDHENN3::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::y" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
-    <FUNCTION>_XMUDHENN3::{ctor}</FUNCTION>
-    <DECORATED>??0_XMUDHENN3@@QAE@XZ</DECORATED>
-    <FUNCLINE>784</FUNCLINE>
+    <DESCRIPTION>Переменная "_XMDHEN3::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <FUNCTION>_XMDHEN3::{ctor}</FUNCTION>
+    <DECORATED>??0_XMDHEN3@@QAE@XZ</DECORATED>
+    <FUNCLINE>749</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>_XMUDHENN3::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::y</targetSymbol>
+      <targetSymbol>_XMDHEN3::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>
@@ -1793,12 +1776,12 @@
       <COLUMN>4</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMUDHENN3::&lt;unnamed-tag&gt;::v" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "_XMUDHENN3::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMUDHENN3::{ctor}</FUNCTION>
     <DECORATED>??0_XMUDHENN3@@QAE@XZ</DECORATED>
     <FUNCLINE>784</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>_XMUDHENN3::&lt;unnamed-tag&gt;::v</targetSymbol>
+      <targetSymbol>_XMUDHENN3::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>
@@ -1827,12 +1810,29 @@
       <COLUMN>4</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMUDHENN3::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "_XMUDHENN3::&lt;unnamed-tag&gt;::v" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMUDHENN3::{ctor}</FUNCTION>
     <DECORATED>??0_XMUDHENN3@@QAE@XZ</DECORATED>
     <FUNCLINE>784</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>_XMUDHENN3::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z</targetSymbol>
+      <targetSymbol>_XMUDHENN3::&lt;unnamed-tag&gt;::v</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
+      <FILENAME>xnamath.h</FILENAME>
+      <LINE>784</LINE>
+      <COLUMN>4</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Переменная "_XMUDHENN3::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::y" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <FUNCTION>_XMUDHENN3::{ctor}</FUNCTION>
+    <DECORATED>??0_XMUDHENN3@@QAE@XZ</DECORATED>
+    <FUNCLINE>784</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>_XMUDHENN3::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::y</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>
@@ -2099,12 +2099,12 @@
       <COLUMN>4</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMFLOAT3SE::&lt;unnamed-tag&gt;::v" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "_XMFLOAT3SE::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::ym" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMFLOAT3SE::{ctor}</FUNCTION>
     <DECORATED>??0_XMFLOAT3SE@@QAE@XZ</DECORATED>
     <FUNCLINE>928</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>_XMFLOAT3SE::&lt;unnamed-tag&gt;::v</targetSymbol>
+      <targetSymbol>_XMFLOAT3SE::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::ym</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>
@@ -2167,46 +2167,12 @@
       <COLUMN>4</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMFLOAT3SE::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::ym" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "_XMFLOAT3SE::&lt;unnamed-tag&gt;::v" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMFLOAT3SE::{ctor}</FUNCTION>
     <DECORATED>??0_XMFLOAT3SE@@QAE@XZ</DECORATED>
     <FUNCLINE>928</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>_XMFLOAT3SE::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::ym</targetSymbol>
-    </ADDITIONALINFO>
-    <PATH></PATH>
-  </DEFECT>
-  <DEFECT>
-    <SFA>
-      <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
-      <FILENAME>xnamath.h</FILENAME>
-      <LINE>952</LINE>
-      <COLUMN>4</COLUMN>
-    </SFA>
-    <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMFLOAT4::y" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
-    <FUNCTION>_XMFLOAT4::{ctor}</FUNCTION>
-    <DECORATED>??0_XMFLOAT4@@QAE@XZ</DECORATED>
-    <FUNCLINE>952</FUNCLINE>
-    <ADDITIONALINFO>
-      <targetSymbol>_XMFLOAT4::y</targetSymbol>
-    </ADDITIONALINFO>
-    <PATH></PATH>
-  </DEFECT>
-  <DEFECT>
-    <SFA>
-      <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
-      <FILENAME>xnamath.h</FILENAME>
-      <LINE>952</LINE>
-      <COLUMN>4</COLUMN>
-    </SFA>
-    <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMFLOAT4::w" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
-    <FUNCTION>_XMFLOAT4::{ctor}</FUNCTION>
-    <DECORATED>??0_XMFLOAT4@@QAE@XZ</DECORATED>
-    <FUNCLINE>952</FUNCLINE>
-    <ADDITIONALINFO>
-      <targetSymbol>_XMFLOAT4::w</targetSymbol>
+      <targetSymbol>_XMFLOAT3SE::&lt;unnamed-tag&gt;::v</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>
@@ -2241,6 +2207,40 @@
     <FUNCLINE>952</FUNCLINE>
     <ADDITIONALINFO>
       <targetSymbol>_XMFLOAT4::x</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
+      <FILENAME>xnamath.h</FILENAME>
+      <LINE>952</LINE>
+      <COLUMN>4</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Переменная "_XMFLOAT4::w" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <FUNCTION>_XMFLOAT4::{ctor}</FUNCTION>
+    <DECORATED>??0_XMFLOAT4@@QAE@XZ</DECORATED>
+    <FUNCLINE>952</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>_XMFLOAT4::w</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
+      <FILENAME>xnamath.h</FILENAME>
+      <LINE>952</LINE>
+      <COLUMN>4</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Переменная "_XMFLOAT4::y" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <FUNCTION>_XMFLOAT4::{ctor}</FUNCTION>
+    <DECORATED>??0_XMFLOAT4@@QAE@XZ</DECORATED>
+    <FUNCLINE>952</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>_XMFLOAT4::y</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>
@@ -2388,29 +2388,12 @@
       <COLUMN>4</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMSHORT4::w" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "_XMSHORT4::x" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMSHORT4::{ctor}</FUNCTION>
     <DECORATED>??0_XMSHORT4@@QAE@XZ</DECORATED>
     <FUNCLINE>1030</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>_XMSHORT4::w</targetSymbol>
-    </ADDITIONALINFO>
-    <PATH></PATH>
-  </DEFECT>
-  <DEFECT>
-    <SFA>
-      <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
-      <FILENAME>xnamath.h</FILENAME>
-      <LINE>1030</LINE>
-      <COLUMN>4</COLUMN>
-    </SFA>
-    <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMSHORT4::y" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
-    <FUNCTION>_XMSHORT4::{ctor}</FUNCTION>
-    <DECORATED>??0_XMSHORT4@@QAE@XZ</DECORATED>
-    <FUNCLINE>1030</FUNCLINE>
-    <ADDITIONALINFO>
-      <targetSymbol>_XMSHORT4::y</targetSymbol>
+      <targetSymbol>_XMSHORT4::x</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>
@@ -2439,12 +2422,29 @@
       <COLUMN>4</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMSHORT4::x" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "_XMSHORT4::y" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMSHORT4::{ctor}</FUNCTION>
     <DECORATED>??0_XMSHORT4@@QAE@XZ</DECORATED>
     <FUNCLINE>1030</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>_XMSHORT4::x</targetSymbol>
+      <targetSymbol>_XMSHORT4::y</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
+      <FILENAME>xnamath.h</FILENAME>
+      <LINE>1030</LINE>
+      <COLUMN>4</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Переменная "_XMSHORT4::w" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <FUNCTION>_XMSHORT4::{ctor}</FUNCTION>
+    <DECORATED>??0_XMSHORT4@@QAE@XZ</DECORATED>
+    <FUNCLINE>1030</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>_XMSHORT4::w</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>
@@ -2456,29 +2456,12 @@
       <COLUMN>4</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMUSHORTN4::x" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "_XMUSHORTN4::w" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMUSHORTN4::{ctor}</FUNCTION>
     <DECORATED>??0_XMUSHORTN4@@QAE@XZ</DECORATED>
     <FUNCLINE>1052</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>_XMUSHORTN4::x</targetSymbol>
-    </ADDITIONALINFO>
-    <PATH></PATH>
-  </DEFECT>
-  <DEFECT>
-    <SFA>
-      <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
-      <FILENAME>xnamath.h</FILENAME>
-      <LINE>1052</LINE>
-      <COLUMN>4</COLUMN>
-    </SFA>
-    <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMUSHORTN4::z" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
-    <FUNCTION>_XMUSHORTN4::{ctor}</FUNCTION>
-    <DECORATED>??0_XMUSHORTN4@@QAE@XZ</DECORATED>
-    <FUNCLINE>1052</FUNCLINE>
-    <ADDITIONALINFO>
-      <targetSymbol>_XMUSHORTN4::z</targetSymbol>
+      <targetSymbol>_XMUSHORTN4::w</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>
@@ -2507,12 +2490,29 @@
       <COLUMN>4</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMUSHORTN4::w" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "_XMUSHORTN4::z" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMUSHORTN4::{ctor}</FUNCTION>
     <DECORATED>??0_XMUSHORTN4@@QAE@XZ</DECORATED>
     <FUNCLINE>1052</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>_XMUSHORTN4::w</targetSymbol>
+      <targetSymbol>_XMUSHORTN4::z</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
+      <FILENAME>xnamath.h</FILENAME>
+      <LINE>1052</LINE>
+      <COLUMN>4</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Переменная "_XMUSHORTN4::x" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <FUNCTION>_XMUSHORTN4::{ctor}</FUNCTION>
+    <DECORATED>??0_XMUSHORTN4@@QAE@XZ</DECORATED>
+    <FUNCLINE>1052</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>_XMUSHORTN4::x</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>
@@ -2762,40 +2762,6 @@
       <COLUMN>4</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMDECN4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
-    <FUNCTION>_XMDECN4::{ctor}</FUNCTION>
-    <DECORATED>??0_XMDECN4@@QAE@XZ</DECORATED>
-    <FUNCLINE>1180</FUNCLINE>
-    <ADDITIONALINFO>
-      <targetSymbol>_XMDECN4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z</targetSymbol>
-    </ADDITIONALINFO>
-    <PATH></PATH>
-  </DEFECT>
-  <DEFECT>
-    <SFA>
-      <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
-      <FILENAME>xnamath.h</FILENAME>
-      <LINE>1180</LINE>
-      <COLUMN>4</COLUMN>
-    </SFA>
-    <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMDECN4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::x" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
-    <FUNCTION>_XMDECN4::{ctor}</FUNCTION>
-    <DECORATED>??0_XMDECN4@@QAE@XZ</DECORATED>
-    <FUNCLINE>1180</FUNCLINE>
-    <ADDITIONALINFO>
-      <targetSymbol>_XMDECN4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::x</targetSymbol>
-    </ADDITIONALINFO>
-    <PATH></PATH>
-  </DEFECT>
-  <DEFECT>
-    <SFA>
-      <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
-      <FILENAME>xnamath.h</FILENAME>
-      <LINE>1180</LINE>
-      <COLUMN>4</COLUMN>
-    </SFA>
-    <DEFECTCODE>26495</DEFECTCODE>
     <DESCRIPTION>Переменная "_XMDECN4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::w" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMDECN4::{ctor}</FUNCTION>
     <DECORATED>??0_XMDECN4@@QAE@XZ</DECORATED>
@@ -2843,16 +2809,67 @@
     <SFA>
       <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
       <FILENAME>xnamath.h</FILENAME>
+      <LINE>1180</LINE>
+      <COLUMN>4</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Переменная "_XMDECN4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::x" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <FUNCTION>_XMDECN4::{ctor}</FUNCTION>
+    <DECORATED>??0_XMDECN4@@QAE@XZ</DECORATED>
+    <FUNCLINE>1180</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>_XMDECN4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::x</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
+      <FILENAME>xnamath.h</FILENAME>
+      <LINE>1180</LINE>
+      <COLUMN>4</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Переменная "_XMDECN4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <FUNCTION>_XMDECN4::{ctor}</FUNCTION>
+    <DECORATED>??0_XMDECN4@@QAE@XZ</DECORATED>
+    <FUNCLINE>1180</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>_XMDECN4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
+      <FILENAME>xnamath.h</FILENAME>
       <LINE>1216</LINE>
       <COLUMN>4</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMDEC4::&lt;unnamed-tag&gt;::v" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "_XMDEC4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::x" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMDEC4::{ctor}</FUNCTION>
     <DECORATED>??0_XMDEC4@@QAE@XZ</DECORATED>
     <FUNCLINE>1216</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>_XMDEC4::&lt;unnamed-tag&gt;::v</targetSymbol>
+      <targetSymbol>_XMDEC4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::x</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
+      <FILENAME>xnamath.h</FILENAME>
+      <LINE>1216</LINE>
+      <COLUMN>4</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Переменная "_XMDEC4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <FUNCTION>_XMDEC4::{ctor}</FUNCTION>
+    <DECORATED>??0_XMDEC4@@QAE@XZ</DECORATED>
+    <FUNCLINE>1216</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>_XMDEC4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>
@@ -2898,29 +2915,12 @@
       <COLUMN>4</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMDEC4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::x" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "_XMDEC4::&lt;unnamed-tag&gt;::v" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMDEC4::{ctor}</FUNCTION>
     <DECORATED>??0_XMDEC4@@QAE@XZ</DECORATED>
     <FUNCLINE>1216</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>_XMDEC4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::x</targetSymbol>
-    </ADDITIONALINFO>
-    <PATH></PATH>
-  </DEFECT>
-  <DEFECT>
-    <SFA>
-      <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
-      <FILENAME>xnamath.h</FILENAME>
-      <LINE>1216</LINE>
-      <COLUMN>4</COLUMN>
-    </SFA>
-    <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMDEC4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
-    <FUNCTION>_XMDEC4::{ctor}</FUNCTION>
-    <DECORATED>??0_XMDEC4@@QAE@XZ</DECORATED>
-    <FUNCLINE>1216</FUNCLINE>
-    <ADDITIONALINFO>
-      <targetSymbol>_XMDEC4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z</targetSymbol>
+      <targetSymbol>_XMDEC4::&lt;unnamed-tag&gt;::v</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>
@@ -2932,29 +2932,12 @@
       <COLUMN>4</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMUDECN4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::y" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "_XMUDECN4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMUDECN4::{ctor}</FUNCTION>
     <DECORATED>??0_XMUDECN4@@QAE@XZ</DECORATED>
     <FUNCLINE>1252</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>_XMUDECN4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::y</targetSymbol>
-    </ADDITIONALINFO>
-    <PATH></PATH>
-  </DEFECT>
-  <DEFECT>
-    <SFA>
-      <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
-      <FILENAME>xnamath.h</FILENAME>
-      <LINE>1252</LINE>
-      <COLUMN>4</COLUMN>
-    </SFA>
-    <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMUDECN4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::w" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
-    <FUNCTION>_XMUDECN4::{ctor}</FUNCTION>
-    <DECORATED>??0_XMUDECN4@@QAE@XZ</DECORATED>
-    <FUNCLINE>1252</FUNCLINE>
-    <ADDITIONALINFO>
-      <targetSymbol>_XMUDECN4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::w</targetSymbol>
+      <targetSymbol>_XMUDECN4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>
@@ -2983,12 +2966,29 @@
       <COLUMN>4</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMUDECN4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "_XMUDECN4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::w" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMUDECN4::{ctor}</FUNCTION>
     <DECORATED>??0_XMUDECN4@@QAE@XZ</DECORATED>
     <FUNCLINE>1252</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>_XMUDECN4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z</targetSymbol>
+      <targetSymbol>_XMUDECN4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::w</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
+      <FILENAME>xnamath.h</FILENAME>
+      <LINE>1252</LINE>
+      <COLUMN>4</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Переменная "_XMUDECN4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::y" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <FUNCTION>_XMUDECN4::{ctor}</FUNCTION>
+    <DECORATED>??0_XMUDECN4@@QAE@XZ</DECORATED>
+    <FUNCLINE>1252</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>_XMUDECN4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::y</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>
@@ -3272,29 +3272,12 @@
       <COLUMN>4</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMICON4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "_XMICON4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::y" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMICON4::{ctor}</FUNCTION>
     <DECORATED>??0_XMICON4@@QAE@XZ</DECORATED>
     <FUNCLINE>1396</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>_XMICON4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z</targetSymbol>
-    </ADDITIONALINFO>
-    <PATH></PATH>
-  </DEFECT>
-  <DEFECT>
-    <SFA>
-      <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
-      <FILENAME>xnamath.h</FILENAME>
-      <LINE>1396</LINE>
-      <COLUMN>4</COLUMN>
-    </SFA>
-    <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMICON4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::x" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
-    <FUNCTION>_XMICON4::{ctor}</FUNCTION>
-    <DECORATED>??0_XMICON4@@QAE@XZ</DECORATED>
-    <FUNCLINE>1396</FUNCLINE>
-    <ADDITIONALINFO>
-      <targetSymbol>_XMICON4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::x</targetSymbol>
+      <targetSymbol>_XMICON4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::y</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>
@@ -3323,12 +3306,29 @@
       <COLUMN>4</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMICON4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::y" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "_XMICON4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::x" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMICON4::{ctor}</FUNCTION>
     <DECORATED>??0_XMICON4@@QAE@XZ</DECORATED>
     <FUNCLINE>1396</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>_XMICON4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::y</targetSymbol>
+      <targetSymbol>_XMICON4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::x</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
+      <FILENAME>xnamath.h</FILENAME>
+      <LINE>1396</LINE>
+      <COLUMN>4</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Переменная "_XMICON4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <FUNCTION>_XMICON4::{ctor}</FUNCTION>
+    <DECORATED>??0_XMICON4@@QAE@XZ</DECORATED>
+    <FUNCLINE>1396</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>_XMICON4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>
@@ -3357,29 +3357,12 @@
       <COLUMN>4</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMICO4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::y" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "_XMICO4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMICO4::{ctor}</FUNCTION>
     <DECORATED>??0_XMICO4@@QAE@XZ</DECORATED>
     <FUNCLINE>1432</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>_XMICO4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::y</targetSymbol>
-    </ADDITIONALINFO>
-    <PATH></PATH>
-  </DEFECT>
-  <DEFECT>
-    <SFA>
-      <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
-      <FILENAME>xnamath.h</FILENAME>
-      <LINE>1432</LINE>
-      <COLUMN>4</COLUMN>
-    </SFA>
-    <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMICO4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::w" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
-    <FUNCTION>_XMICO4::{ctor}</FUNCTION>
-    <DECORATED>??0_XMICO4@@QAE@XZ</DECORATED>
-    <FUNCLINE>1432</FUNCLINE>
-    <ADDITIONALINFO>
-      <targetSymbol>_XMICO4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::w</targetSymbol>
+      <targetSymbol>_XMICO4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>
@@ -3408,12 +3391,29 @@
       <COLUMN>4</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMICO4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "_XMICO4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::w" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMICO4::{ctor}</FUNCTION>
     <DECORATED>??0_XMICO4@@QAE@XZ</DECORATED>
     <FUNCLINE>1432</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>_XMICO4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z</targetSymbol>
+      <targetSymbol>_XMICO4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::w</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
+      <FILENAME>xnamath.h</FILENAME>
+      <LINE>1432</LINE>
+      <COLUMN>4</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Переменная "_XMICO4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::y" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <FUNCTION>_XMICO4::{ctor}</FUNCTION>
+    <DECORATED>??0_XMICO4@@QAE@XZ</DECORATED>
+    <FUNCLINE>1432</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>_XMICO4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::y</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>
@@ -3697,29 +3697,12 @@
       <COLUMN>4</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMBYTEN4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "_XMBYTEN4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::y" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMBYTEN4::{ctor}</FUNCTION>
     <DECORATED>??0_XMBYTEN4@@QAE@XZ</DECORATED>
     <FUNCLINE>1571</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>_XMBYTEN4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z</targetSymbol>
-    </ADDITIONALINFO>
-    <PATH></PATH>
-  </DEFECT>
-  <DEFECT>
-    <SFA>
-      <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
-      <FILENAME>xnamath.h</FILENAME>
-      <LINE>1571</LINE>
-      <COLUMN>4</COLUMN>
-    </SFA>
-    <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMBYTEN4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::x" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
-    <FUNCTION>_XMBYTEN4::{ctor}</FUNCTION>
-    <DECORATED>??0_XMBYTEN4@@QAE@XZ</DECORATED>
-    <FUNCLINE>1571</FUNCLINE>
-    <ADDITIONALINFO>
-      <targetSymbol>_XMBYTEN4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::x</targetSymbol>
+      <targetSymbol>_XMBYTEN4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::y</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>
@@ -3748,12 +3731,29 @@
       <COLUMN>4</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMBYTEN4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::y" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "_XMBYTEN4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::x" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMBYTEN4::{ctor}</FUNCTION>
     <DECORATED>??0_XMBYTEN4@@QAE@XZ</DECORATED>
     <FUNCLINE>1571</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>_XMBYTEN4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::y</targetSymbol>
+      <targetSymbol>_XMBYTEN4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::x</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
+      <FILENAME>xnamath.h</FILENAME>
+      <LINE>1571</LINE>
+      <COLUMN>4</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Переменная "_XMBYTEN4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <FUNCTION>_XMBYTEN4::{ctor}</FUNCTION>
+    <DECORATED>??0_XMBYTEN4@@QAE@XZ</DECORATED>
+    <FUNCLINE>1571</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>_XMBYTEN4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>
@@ -4037,6 +4037,57 @@
       <COLUMN>4</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Переменная "_XMUNIBBLE4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::x" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <FUNCTION>_XMUNIBBLE4::{ctor}</FUNCTION>
+    <DECORATED>??0_XMUNIBBLE4@@QAE@XZ</DECORATED>
+    <FUNCLINE>1691</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>_XMUNIBBLE4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::x</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
+      <FILENAME>xnamath.h</FILENAME>
+      <LINE>1691</LINE>
+      <COLUMN>4</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Переменная "_XMUNIBBLE4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <FUNCTION>_XMUNIBBLE4::{ctor}</FUNCTION>
+    <DECORATED>??0_XMUNIBBLE4@@QAE@XZ</DECORATED>
+    <FUNCLINE>1691</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>_XMUNIBBLE4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
+      <FILENAME>xnamath.h</FILENAME>
+      <LINE>1691</LINE>
+      <COLUMN>4</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Переменная "_XMUNIBBLE4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::w" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <FUNCTION>_XMUNIBBLE4::{ctor}</FUNCTION>
+    <DECORATED>??0_XMUNIBBLE4@@QAE@XZ</DECORATED>
+    <FUNCLINE>1691</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>_XMUNIBBLE4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::w</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
+      <FILENAME>xnamath.h</FILENAME>
+      <LINE>1691</LINE>
+      <COLUMN>4</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
     <DESCRIPTION>Переменная "_XMUNIBBLE4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::y" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMUNIBBLE4::{ctor}</FUNCTION>
     <DECORATED>??0_XMUNIBBLE4@@QAE@XZ</DECORATED>
@@ -4067,16 +4118,16 @@
     <SFA>
       <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
       <FILENAME>xnamath.h</FILENAME>
-      <LINE>1691</LINE>
+      <LINE>1724</LINE>
       <COLUMN>4</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMUNIBBLE4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::w" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
-    <FUNCTION>_XMUNIBBLE4::{ctor}</FUNCTION>
-    <DECORATED>??0_XMUNIBBLE4@@QAE@XZ</DECORATED>
-    <FUNCLINE>1691</FUNCLINE>
+    <DESCRIPTION>Переменная "_XMU555::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <FUNCTION>_XMU555::{ctor}</FUNCTION>
+    <DECORATED>??0_XMU555@@QAE@XZ</DECORATED>
+    <FUNCLINE>1724</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>_XMUNIBBLE4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::w</targetSymbol>
+      <targetSymbol>_XMU555::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>
@@ -4084,16 +4135,16 @@
     <SFA>
       <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
       <FILENAME>xnamath.h</FILENAME>
-      <LINE>1691</LINE>
+      <LINE>1724</LINE>
       <COLUMN>4</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMUNIBBLE4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
-    <FUNCTION>_XMUNIBBLE4::{ctor}</FUNCTION>
-    <DECORATED>??0_XMUNIBBLE4@@QAE@XZ</DECORATED>
-    <FUNCLINE>1691</FUNCLINE>
+    <DESCRIPTION>Переменная "_XMU555::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::x" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <FUNCTION>_XMU555::{ctor}</FUNCTION>
+    <DECORATED>??0_XMU555@@QAE@XZ</DECORATED>
+    <FUNCLINE>1724</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>_XMUNIBBLE4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z</targetSymbol>
+      <targetSymbol>_XMU555::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::x</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>
@@ -4101,16 +4152,16 @@
     <SFA>
       <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
       <FILENAME>xnamath.h</FILENAME>
-      <LINE>1691</LINE>
+      <LINE>1724</LINE>
       <COLUMN>4</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMUNIBBLE4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::x" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
-    <FUNCTION>_XMUNIBBLE4::{ctor}</FUNCTION>
-    <DECORATED>??0_XMUNIBBLE4@@QAE@XZ</DECORATED>
-    <FUNCLINE>1691</FUNCLINE>
+    <DESCRIPTION>Переменная "_XMU555::&lt;unnamed-tag&gt;::v" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <FUNCTION>_XMU555::{ctor}</FUNCTION>
+    <DECORATED>??0_XMU555@@QAE@XZ</DECORATED>
+    <FUNCLINE>1724</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>_XMUNIBBLE4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::x</targetSymbol>
+      <targetSymbol>_XMU555::&lt;unnamed-tag&gt;::v</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>
@@ -4152,67 +4203,16 @@
     <SFA>
       <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
       <FILENAME>xnamath.h</FILENAME>
-      <LINE>1724</LINE>
-      <COLUMN>4</COLUMN>
-    </SFA>
-    <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMU555::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::x" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
-    <FUNCTION>_XMU555::{ctor}</FUNCTION>
-    <DECORATED>??0_XMU555@@QAE@XZ</DECORATED>
-    <FUNCLINE>1724</FUNCLINE>
-    <ADDITIONALINFO>
-      <targetSymbol>_XMU555::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::x</targetSymbol>
-    </ADDITIONALINFO>
-    <PATH></PATH>
-  </DEFECT>
-  <DEFECT>
-    <SFA>
-      <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
-      <FILENAME>xnamath.h</FILENAME>
-      <LINE>1724</LINE>
-      <COLUMN>4</COLUMN>
-    </SFA>
-    <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMU555::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
-    <FUNCTION>_XMU555::{ctor}</FUNCTION>
-    <DECORATED>??0_XMU555@@QAE@XZ</DECORATED>
-    <FUNCLINE>1724</FUNCLINE>
-    <ADDITIONALINFO>
-      <targetSymbol>_XMU555::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z</targetSymbol>
-    </ADDITIONALINFO>
-    <PATH></PATH>
-  </DEFECT>
-  <DEFECT>
-    <SFA>
-      <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
-      <FILENAME>xnamath.h</FILENAME>
-      <LINE>1724</LINE>
-      <COLUMN>4</COLUMN>
-    </SFA>
-    <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMU555::&lt;unnamed-tag&gt;::v" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
-    <FUNCTION>_XMU555::{ctor}</FUNCTION>
-    <DECORATED>??0_XMU555@@QAE@XZ</DECORATED>
-    <FUNCLINE>1724</FUNCLINE>
-    <ADDITIONALINFO>
-      <targetSymbol>_XMU555::&lt;unnamed-tag&gt;::v</targetSymbol>
-    </ADDITIONALINFO>
-    <PATH></PATH>
-  </DEFECT>
-  <DEFECT>
-    <SFA>
-      <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
-      <FILENAME>xnamath.h</FILENAME>
       <LINE>1756</LINE>
       <COLUMN>4</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMFLOAT3X3::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::_22" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "_XMFLOAT3X3::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::_32" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMFLOAT3X3::{ctor}</FUNCTION>
     <DECORATED>??0_XMFLOAT3X3@@QAE@XZ</DECORATED>
     <FUNCLINE>1756</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>_XMFLOAT3X3::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::_22</targetSymbol>
+      <targetSymbol>_XMFLOAT3X3::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::_32</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>
@@ -4241,12 +4241,12 @@
       <COLUMN>4</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMFLOAT3X3::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::_32" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "_XMFLOAT3X3::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::_22" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMFLOAT3X3::{ctor}</FUNCTION>
     <DECORATED>??0_XMFLOAT3X3@@QAE@XZ</DECORATED>
     <FUNCLINE>1756</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>_XMFLOAT3X3::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::_32</targetSymbol>
+      <targetSymbol>_XMFLOAT3X3::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::_22</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>
@@ -4366,6 +4366,40 @@
     <FUNCLINE>1756</FUNCLINE>
     <ADDITIONALINFO>
       <targetSymbol>_XMFLOAT3X3::&lt;unnamed-tag&gt;::m</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
+      <FILENAME>xnamath.h</FILENAME>
+      <LINE>1788</LINE>
+      <COLUMN>4</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Переменная "_XMFLOAT4X3::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::_12" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <FUNCTION>_XMFLOAT4X3::{ctor}</FUNCTION>
+    <DECORATED>??0_XMFLOAT4X3@@QAE@XZ</DECORATED>
+    <FUNCLINE>1788</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>_XMFLOAT4X3::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::_12</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
+      <FILENAME>xnamath.h</FILENAME>
+      <LINE>1788</LINE>
+      <COLUMN>4</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Переменная "_XMFLOAT4X3::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::_22" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <FUNCTION>_XMFLOAT4X3::{ctor}</FUNCTION>
+    <DECORATED>??0_XMFLOAT4X3@@QAE@XZ</DECORATED>
+    <FUNCLINE>1788</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>_XMFLOAT4X3::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::_22</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>
@@ -4560,57 +4594,6 @@
     <SFA>
       <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
       <FILENAME>xnamath.h</FILENAME>
-      <LINE>1788</LINE>
-      <COLUMN>4</COLUMN>
-    </SFA>
-    <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMFLOAT4X3::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::_12" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
-    <FUNCTION>_XMFLOAT4X3::{ctor}</FUNCTION>
-    <DECORATED>??0_XMFLOAT4X3@@QAE@XZ</DECORATED>
-    <FUNCLINE>1788</FUNCLINE>
-    <ADDITIONALINFO>
-      <targetSymbol>_XMFLOAT4X3::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::_12</targetSymbol>
-    </ADDITIONALINFO>
-    <PATH></PATH>
-  </DEFECT>
-  <DEFECT>
-    <SFA>
-      <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
-      <FILENAME>xnamath.h</FILENAME>
-      <LINE>1788</LINE>
-      <COLUMN>4</COLUMN>
-    </SFA>
-    <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMFLOAT4X3::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::_22" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
-    <FUNCTION>_XMFLOAT4X3::{ctor}</FUNCTION>
-    <DECORATED>??0_XMFLOAT4X3@@QAE@XZ</DECORATED>
-    <FUNCLINE>1788</FUNCLINE>
-    <ADDITIONALINFO>
-      <targetSymbol>_XMFLOAT4X3::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::_22</targetSymbol>
-    </ADDITIONALINFO>
-    <PATH></PATH>
-  </DEFECT>
-  <DEFECT>
-    <SFA>
-      <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
-      <FILENAME>xnamath.h</FILENAME>
-      <LINE>1842</LINE>
-      <COLUMN>4</COLUMN>
-    </SFA>
-    <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMFLOAT4X4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::_44" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
-    <FUNCTION>_XMFLOAT4X4::{ctor}</FUNCTION>
-    <DECORATED>??0_XMFLOAT4X4@@QAE@XZ</DECORATED>
-    <FUNCLINE>1842</FUNCLINE>
-    <ADDITIONALINFO>
-      <targetSymbol>_XMFLOAT4X4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::_44</targetSymbol>
-    </ADDITIONALINFO>
-    <PATH></PATH>
-  </DEFECT>
-  <DEFECT>
-    <SFA>
-      <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
-      <FILENAME>xnamath.h</FILENAME>
       <LINE>1842</LINE>
       <COLUMN>4</COLUMN>
     </SFA>
@@ -4666,80 +4649,12 @@
       <COLUMN>4</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMFLOAT4X4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::_31" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
-    <FUNCTION>_XMFLOAT4X4::{ctor}</FUNCTION>
-    <DECORATED>??0_XMFLOAT4X4@@QAE@XZ</DECORATED>
-    <FUNCLINE>1842</FUNCLINE>
-    <ADDITIONALINFO>
-      <targetSymbol>_XMFLOAT4X4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::_31</targetSymbol>
-    </ADDITIONALINFO>
-    <PATH></PATH>
-  </DEFECT>
-  <DEFECT>
-    <SFA>
-      <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
-      <FILENAME>xnamath.h</FILENAME>
-      <LINE>1842</LINE>
-      <COLUMN>4</COLUMN>
-    </SFA>
-    <DEFECTCODE>26495</DEFECTCODE>
     <DESCRIPTION>Переменная "_XMFLOAT4X4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::_13" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMFLOAT4X4::{ctor}</FUNCTION>
     <DECORATED>??0_XMFLOAT4X4@@QAE@XZ</DECORATED>
     <FUNCLINE>1842</FUNCLINE>
     <ADDITIONALINFO>
       <targetSymbol>_XMFLOAT4X4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::_13</targetSymbol>
-    </ADDITIONALINFO>
-    <PATH></PATH>
-  </DEFECT>
-  <DEFECT>
-    <SFA>
-      <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
-      <FILENAME>xnamath.h</FILENAME>
-      <LINE>1842</LINE>
-      <COLUMN>4</COLUMN>
-    </SFA>
-    <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMFLOAT4X4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::_34" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
-    <FUNCTION>_XMFLOAT4X4::{ctor}</FUNCTION>
-    <DECORATED>??0_XMFLOAT4X4@@QAE@XZ</DECORATED>
-    <FUNCLINE>1842</FUNCLINE>
-    <ADDITIONALINFO>
-      <targetSymbol>_XMFLOAT4X4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::_34</targetSymbol>
-    </ADDITIONALINFO>
-    <PATH></PATH>
-  </DEFECT>
-  <DEFECT>
-    <SFA>
-      <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
-      <FILENAME>xnamath.h</FILENAME>
-      <LINE>1842</LINE>
-      <COLUMN>4</COLUMN>
-    </SFA>
-    <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMFLOAT4X4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::_33" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
-    <FUNCTION>_XMFLOAT4X4::{ctor}</FUNCTION>
-    <DECORATED>??0_XMFLOAT4X4@@QAE@XZ</DECORATED>
-    <FUNCLINE>1842</FUNCLINE>
-    <ADDITIONALINFO>
-      <targetSymbol>_XMFLOAT4X4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::_33</targetSymbol>
-    </ADDITIONALINFO>
-    <PATH></PATH>
-  </DEFECT>
-  <DEFECT>
-    <SFA>
-      <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
-      <FILENAME>xnamath.h</FILENAME>
-      <LINE>1842</LINE>
-      <COLUMN>4</COLUMN>
-    </SFA>
-    <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMFLOAT4X4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::_22" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
-    <FUNCTION>_XMFLOAT4X4::{ctor}</FUNCTION>
-    <DECORATED>??0_XMFLOAT4X4@@QAE@XZ</DECORATED>
-    <FUNCLINE>1842</FUNCLINE>
-    <ADDITIONALINFO>
-      <targetSymbol>_XMFLOAT4X4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::_22</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>
@@ -4768,80 +4683,12 @@
       <COLUMN>4</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMFLOAT4X4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::_21" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "_XMFLOAT4X4::&lt;unnamed-tag&gt;::m" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMFLOAT4X4::{ctor}</FUNCTION>
     <DECORATED>??0_XMFLOAT4X4@@QAE@XZ</DECORATED>
     <FUNCLINE>1842</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>_XMFLOAT4X4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::_21</targetSymbol>
-    </ADDITIONALINFO>
-    <PATH></PATH>
-  </DEFECT>
-  <DEFECT>
-    <SFA>
-      <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
-      <FILENAME>xnamath.h</FILENAME>
-      <LINE>1842</LINE>
-      <COLUMN>4</COLUMN>
-    </SFA>
-    <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMFLOAT4X4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::_12" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
-    <FUNCTION>_XMFLOAT4X4::{ctor}</FUNCTION>
-    <DECORATED>??0_XMFLOAT4X4@@QAE@XZ</DECORATED>
-    <FUNCLINE>1842</FUNCLINE>
-    <ADDITIONALINFO>
-      <targetSymbol>_XMFLOAT4X4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::_12</targetSymbol>
-    </ADDITIONALINFO>
-    <PATH></PATH>
-  </DEFECT>
-  <DEFECT>
-    <SFA>
-      <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
-      <FILENAME>xnamath.h</FILENAME>
-      <LINE>1842</LINE>
-      <COLUMN>4</COLUMN>
-    </SFA>
-    <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMFLOAT4X4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::_14" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
-    <FUNCTION>_XMFLOAT4X4::{ctor}</FUNCTION>
-    <DECORATED>??0_XMFLOAT4X4@@QAE@XZ</DECORATED>
-    <FUNCLINE>1842</FUNCLINE>
-    <ADDITIONALINFO>
-      <targetSymbol>_XMFLOAT4X4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::_14</targetSymbol>
-    </ADDITIONALINFO>
-    <PATH></PATH>
-  </DEFECT>
-  <DEFECT>
-    <SFA>
-      <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
-      <FILENAME>xnamath.h</FILENAME>
-      <LINE>1842</LINE>
-      <COLUMN>4</COLUMN>
-    </SFA>
-    <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMFLOAT4X4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::_11" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
-    <FUNCTION>_XMFLOAT4X4::{ctor}</FUNCTION>
-    <DECORATED>??0_XMFLOAT4X4@@QAE@XZ</DECORATED>
-    <FUNCLINE>1842</FUNCLINE>
-    <ADDITIONALINFO>
-      <targetSymbol>_XMFLOAT4X4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::_11</targetSymbol>
-    </ADDITIONALINFO>
-    <PATH></PATH>
-  </DEFECT>
-  <DEFECT>
-    <SFA>
-      <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
-      <FILENAME>xnamath.h</FILENAME>
-      <LINE>1842</LINE>
-      <COLUMN>4</COLUMN>
-    </SFA>
-    <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMFLOAT4X4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::_43" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
-    <FUNCTION>_XMFLOAT4X4::{ctor}</FUNCTION>
-    <DECORATED>??0_XMFLOAT4X4@@QAE@XZ</DECORATED>
-    <FUNCLINE>1842</FUNCLINE>
-    <ADDITIONALINFO>
-      <targetSymbol>_XMFLOAT4X4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::_43</targetSymbol>
+      <targetSymbol>_XMFLOAT4X4::&lt;unnamed-tag&gt;::m</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>
@@ -4870,12 +4717,165 @@
       <COLUMN>4</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMFLOAT4X4::&lt;unnamed-tag&gt;::m" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "_XMFLOAT4X4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::_31" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMFLOAT4X4::{ctor}</FUNCTION>
     <DECORATED>??0_XMFLOAT4X4@@QAE@XZ</DECORATED>
     <FUNCLINE>1842</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>_XMFLOAT4X4::&lt;unnamed-tag&gt;::m</targetSymbol>
+      <targetSymbol>_XMFLOAT4X4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::_31</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
+      <FILENAME>xnamath.h</FILENAME>
+      <LINE>1842</LINE>
+      <COLUMN>4</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Переменная "_XMFLOAT4X4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::_34" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <FUNCTION>_XMFLOAT4X4::{ctor}</FUNCTION>
+    <DECORATED>??0_XMFLOAT4X4@@QAE@XZ</DECORATED>
+    <FUNCLINE>1842</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>_XMFLOAT4X4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::_34</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
+      <FILENAME>xnamath.h</FILENAME>
+      <LINE>1842</LINE>
+      <COLUMN>4</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Переменная "_XMFLOAT4X4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::_43" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <FUNCTION>_XMFLOAT4X4::{ctor}</FUNCTION>
+    <DECORATED>??0_XMFLOAT4X4@@QAE@XZ</DECORATED>
+    <FUNCLINE>1842</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>_XMFLOAT4X4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::_43</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
+      <FILENAME>xnamath.h</FILENAME>
+      <LINE>1842</LINE>
+      <COLUMN>4</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Переменная "_XMFLOAT4X4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::_33" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <FUNCTION>_XMFLOAT4X4::{ctor}</FUNCTION>
+    <DECORATED>??0_XMFLOAT4X4@@QAE@XZ</DECORATED>
+    <FUNCLINE>1842</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>_XMFLOAT4X4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::_33</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
+      <FILENAME>xnamath.h</FILENAME>
+      <LINE>1842</LINE>
+      <COLUMN>4</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Переменная "_XMFLOAT4X4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::_11" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <FUNCTION>_XMFLOAT4X4::{ctor}</FUNCTION>
+    <DECORATED>??0_XMFLOAT4X4@@QAE@XZ</DECORATED>
+    <FUNCLINE>1842</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>_XMFLOAT4X4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::_11</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
+      <FILENAME>xnamath.h</FILENAME>
+      <LINE>1842</LINE>
+      <COLUMN>4</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Переменная "_XMFLOAT4X4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::_22" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <FUNCTION>_XMFLOAT4X4::{ctor}</FUNCTION>
+    <DECORATED>??0_XMFLOAT4X4@@QAE@XZ</DECORATED>
+    <FUNCLINE>1842</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>_XMFLOAT4X4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::_22</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
+      <FILENAME>xnamath.h</FILENAME>
+      <LINE>1842</LINE>
+      <COLUMN>4</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Переменная "_XMFLOAT4X4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::_21" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <FUNCTION>_XMFLOAT4X4::{ctor}</FUNCTION>
+    <DECORATED>??0_XMFLOAT4X4@@QAE@XZ</DECORATED>
+    <FUNCLINE>1842</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>_XMFLOAT4X4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::_21</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
+      <FILENAME>xnamath.h</FILENAME>
+      <LINE>1842</LINE>
+      <COLUMN>4</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Переменная "_XMFLOAT4X4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::_14" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <FUNCTION>_XMFLOAT4X4::{ctor}</FUNCTION>
+    <DECORATED>??0_XMFLOAT4X4@@QAE@XZ</DECORATED>
+    <FUNCLINE>1842</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>_XMFLOAT4X4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::_14</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
+      <FILENAME>xnamath.h</FILENAME>
+      <LINE>1842</LINE>
+      <COLUMN>4</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Переменная "_XMFLOAT4X4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::_12" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <FUNCTION>_XMFLOAT4X4::{ctor}</FUNCTION>
+    <DECORATED>??0_XMFLOAT4X4@@QAE@XZ</DECORATED>
+    <FUNCLINE>1842</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>_XMFLOAT4X4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::_12</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
+      <FILENAME>xnamath.h</FILENAME>
+      <LINE>1842</LINE>
+      <COLUMN>4</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Переменная "_XMFLOAT4X4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::_44" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <FUNCTION>_XMFLOAT4X4::{ctor}</FUNCTION>
+    <DECORATED>??0_XMFLOAT4X4@@QAE@XZ</DECORATED>
+    <FUNCLINE>1842</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>_XMFLOAT4X4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::_44</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>
@@ -8777,12 +8777,12 @@
       <COLUMN>22</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMSHORTN2::x" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "_XMSHORTN2::y" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMSHORTN2::{ctor}</FUNCTION>
     <DECORATED>??0_XMSHORTN2@@QAE@MM@Z</DECORATED>
     <FUNCLINE>11162</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>_XMSHORTN2::x</targetSymbol>
+      <targetSymbol>_XMSHORTN2::y</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>
@@ -8794,27 +8794,10 @@
       <COLUMN>22</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMSHORTN2::y" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "_XMSHORTN2::x" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMSHORTN2::{ctor}</FUNCTION>
     <DECORATED>??0_XMSHORTN2@@QAE@MM@Z</DECORATED>
     <FUNCLINE>11162</FUNCLINE>
-    <ADDITIONALINFO>
-      <targetSymbol>_XMSHORTN2::y</targetSymbol>
-    </ADDITIONALINFO>
-    <PATH></PATH>
-  </DEFECT>
-  <DEFECT>
-    <SFA>
-      <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
-      <FILENAME>xnamathvector.inl</FILENAME>
-      <LINE>11173</LINE>
-      <COLUMN>22</COLUMN>
-    </SFA>
-    <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMSHORTN2::x" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
-    <FUNCTION>_XMSHORTN2::{ctor}</FUNCTION>
-    <DECORATED>??0_XMSHORTN2@@QAE@PBM@Z</DECORATED>
-    <FUNCLINE>11173</FUNCLINE>
     <ADDITIONALINFO>
       <targetSymbol>_XMSHORTN2::x</targetSymbol>
     </ADDITIONALINFO>
@@ -8841,6 +8824,23 @@
     <SFA>
       <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
       <FILENAME>xnamathvector.inl</FILENAME>
+      <LINE>11173</LINE>
+      <COLUMN>22</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Переменная "_XMSHORTN2::x" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <FUNCTION>_XMSHORTN2::{ctor}</FUNCTION>
+    <DECORATED>??0_XMSHORTN2@@QAE@PBM@Z</DECORATED>
+    <FUNCLINE>11173</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>_XMSHORTN2::x</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
+      <FILENAME>xnamathvector.inl</FILENAME>
       <LINE>11212</LINE>
       <COLUMN>21</COLUMN>
     </SFA>
@@ -9049,12 +9049,12 @@
       <COLUMN>21</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMHENDN3::&lt;unnamed-tag&gt;::v" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "_XMHENDN3::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::x" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMHENDN3::{ctor}</FUNCTION>
     <DECORATED>??0_XMHENDN3@@QAE@MMM@Z</DECORATED>
     <FUNCLINE>11395</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>_XMHENDN3::&lt;unnamed-tag&gt;::v</targetSymbol>
+      <targetSymbol>_XMHENDN3::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::x</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>
@@ -9100,12 +9100,12 @@
       <COLUMN>21</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMHENDN3::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::x" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "_XMHENDN3::&lt;unnamed-tag&gt;::v" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMHENDN3::{ctor}</FUNCTION>
     <DECORATED>??0_XMHENDN3@@QAE@MMM@Z</DECORATED>
     <FUNCLINE>11395</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>_XMHENDN3::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::x</targetSymbol>
+      <targetSymbol>_XMHENDN3::&lt;unnamed-tag&gt;::v</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>
@@ -9117,12 +9117,12 @@
       <COLUMN>21</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMHENDN3::&lt;unnamed-tag&gt;::v" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "_XMHENDN3::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::x" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMHENDN3::{ctor}</FUNCTION>
     <DECORATED>??0_XMHENDN3@@QAE@PBM@Z</DECORATED>
     <FUNCLINE>11407</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>_XMHENDN3::&lt;unnamed-tag&gt;::v</targetSymbol>
+      <targetSymbol>_XMHENDN3::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::x</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>
@@ -9168,12 +9168,12 @@
       <COLUMN>21</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMHENDN3::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::x" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "_XMHENDN3::&lt;unnamed-tag&gt;::v" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMHENDN3::{ctor}</FUNCTION>
     <DECORATED>??0_XMHENDN3@@QAE@PBM@Z</DECORATED>
     <FUNCLINE>11407</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>_XMHENDN3::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::x</targetSymbol>
+      <targetSymbol>_XMHENDN3::&lt;unnamed-tag&gt;::v</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>
@@ -9191,23 +9191,6 @@
     <FUNCLINE>11445</FUNCLINE>
     <ADDITIONALINFO>
       <targetSymbol>_XMHEND3::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z</targetSymbol>
-    </ADDITIONALINFO>
-    <PATH></PATH>
-  </DEFECT>
-  <DEFECT>
-    <SFA>
-      <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
-      <FILENAME>xnamathvector.inl</FILENAME>
-      <LINE>11445</LINE>
-      <COLUMN>20</COLUMN>
-    </SFA>
-    <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMHEND3::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::x" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
-    <FUNCTION>_XMHEND3::{ctor}</FUNCTION>
-    <DECORATED>??0_XMHEND3@@QAE@MMM@Z</DECORATED>
-    <FUNCLINE>11445</FUNCLINE>
-    <ADDITIONALINFO>
-      <targetSymbol>_XMHEND3::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::x</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>
@@ -9249,16 +9232,16 @@
     <SFA>
       <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
       <FILENAME>xnamathvector.inl</FILENAME>
-      <LINE>11457</LINE>
+      <LINE>11445</LINE>
       <COLUMN>20</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMHEND3::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "_XMHEND3::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::x" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMHEND3::{ctor}</FUNCTION>
-    <DECORATED>??0_XMHEND3@@QAE@PBM@Z</DECORATED>
-    <FUNCLINE>11457</FUNCLINE>
+    <DECORATED>??0_XMHEND3@@QAE@MMM@Z</DECORATED>
+    <FUNCLINE>11445</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>_XMHEND3::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z</targetSymbol>
+      <targetSymbol>_XMHEND3::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::x</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>
@@ -9270,12 +9253,12 @@
       <COLUMN>20</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMHEND3::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::x" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "_XMHEND3::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMHEND3::{ctor}</FUNCTION>
     <DECORATED>??0_XMHEND3@@QAE@PBM@Z</DECORATED>
     <FUNCLINE>11457</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>_XMHEND3::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::x</targetSymbol>
+      <targetSymbol>_XMHEND3::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>
@@ -9310,6 +9293,23 @@
     <FUNCLINE>11457</FUNCLINE>
     <ADDITIONALINFO>
       <targetSymbol>_XMHEND3::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::y</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
+      <FILENAME>xnamathvector.inl</FILENAME>
+      <LINE>11457</LINE>
+      <COLUMN>20</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Переменная "_XMHEND3::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::x" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <FUNCTION>_XMHEND3::{ctor}</FUNCTION>
+    <DECORATED>??0_XMHEND3@@QAE@PBM@Z</DECORATED>
+    <FUNCLINE>11457</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>_XMHEND3::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::x</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>
@@ -9729,23 +9729,6 @@
       <COLUMN>20</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMDHEN3::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
-    <FUNCTION>_XMDHEN3::{ctor}</FUNCTION>
-    <DECORATED>??0_XMDHEN3@@QAE@MMM@Z</DECORATED>
-    <FUNCLINE>11645</FUNCLINE>
-    <ADDITIONALINFO>
-      <targetSymbol>_XMDHEN3::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z</targetSymbol>
-    </ADDITIONALINFO>
-    <PATH></PATH>
-  </DEFECT>
-  <DEFECT>
-    <SFA>
-      <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
-      <FILENAME>xnamathvector.inl</FILENAME>
-      <LINE>11645</LINE>
-      <COLUMN>20</COLUMN>
-    </SFA>
-    <DEFECTCODE>26495</DEFECTCODE>
     <DESCRIPTION>Переменная "_XMDHEN3::&lt;unnamed-tag&gt;::v" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMDHEN3::{ctor}</FUNCTION>
     <DECORATED>??0_XMDHEN3@@QAE@MMM@Z</DECORATED>
@@ -9793,14 +9776,14 @@
     <SFA>
       <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
       <FILENAME>xnamathvector.inl</FILENAME>
-      <LINE>11657</LINE>
+      <LINE>11645</LINE>
       <COLUMN>20</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
     <DESCRIPTION>Переменная "_XMDHEN3::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMDHEN3::{ctor}</FUNCTION>
-    <DECORATED>??0_XMDHEN3@@QAE@PBM@Z</DECORATED>
-    <FUNCLINE>11657</FUNCLINE>
+    <DECORATED>??0_XMDHEN3@@QAE@MMM@Z</DECORATED>
+    <FUNCLINE>11645</FUNCLINE>
     <ADDITIONALINFO>
       <targetSymbol>_XMDHEN3::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z</targetSymbol>
     </ADDITIONALINFO>
@@ -9861,16 +9844,16 @@
     <SFA>
       <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
       <FILENAME>xnamathvector.inl</FILENAME>
-      <LINE>11695</LINE>
-      <COLUMN>22</COLUMN>
+      <LINE>11657</LINE>
+      <COLUMN>20</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMUDHENN3::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::y" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
-    <FUNCTION>_XMUDHENN3::{ctor}</FUNCTION>
-    <DECORATED>??0_XMUDHENN3@@QAE@MMM@Z</DECORATED>
-    <FUNCLINE>11695</FUNCLINE>
+    <DESCRIPTION>Переменная "_XMDHEN3::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <FUNCTION>_XMDHEN3::{ctor}</FUNCTION>
+    <DECORATED>??0_XMDHEN3@@QAE@PBM@Z</DECORATED>
+    <FUNCLINE>11657</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>_XMUDHENN3::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::y</targetSymbol>
+      <targetSymbol>_XMDHEN3::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>
@@ -9882,12 +9865,12 @@
       <COLUMN>22</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMUDHENN3::&lt;unnamed-tag&gt;::v" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "_XMUDHENN3::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMUDHENN3::{ctor}</FUNCTION>
     <DECORATED>??0_XMUDHENN3@@QAE@MMM@Z</DECORATED>
     <FUNCLINE>11695</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>_XMUDHENN3::&lt;unnamed-tag&gt;::v</targetSymbol>
+      <targetSymbol>_XMUDHENN3::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>
@@ -9916,12 +9899,12 @@
       <COLUMN>22</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMUDHENN3::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "_XMUDHENN3::&lt;unnamed-tag&gt;::v" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMUDHENN3::{ctor}</FUNCTION>
     <DECORATED>??0_XMUDHENN3@@QAE@MMM@Z</DECORATED>
     <FUNCLINE>11695</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>_XMUDHENN3::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z</targetSymbol>
+      <targetSymbol>_XMUDHENN3::&lt;unnamed-tag&gt;::v</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>
@@ -9929,14 +9912,14 @@
     <SFA>
       <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
       <FILENAME>xnamathvector.inl</FILENAME>
-      <LINE>11707</LINE>
+      <LINE>11695</LINE>
       <COLUMN>22</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
     <DESCRIPTION>Переменная "_XMUDHENN3::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::y" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMUDHENN3::{ctor}</FUNCTION>
-    <DECORATED>??0_XMUDHENN3@@QAE@PBM@Z</DECORATED>
-    <FUNCLINE>11707</FUNCLINE>
+    <DECORATED>??0_XMUDHENN3@@QAE@MMM@Z</DECORATED>
+    <FUNCLINE>11695</FUNCLINE>
     <ADDITIONALINFO>
       <targetSymbol>_XMUDHENN3::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::y</targetSymbol>
     </ADDITIONALINFO>
@@ -9950,12 +9933,12 @@
       <COLUMN>22</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMUDHENN3::&lt;unnamed-tag&gt;::v" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "_XMUDHENN3::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMUDHENN3::{ctor}</FUNCTION>
     <DECORATED>??0_XMUDHENN3@@QAE@PBM@Z</DECORATED>
     <FUNCLINE>11707</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>_XMUDHENN3::&lt;unnamed-tag&gt;::v</targetSymbol>
+      <targetSymbol>_XMUDHENN3::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>
@@ -9984,12 +9967,29 @@
       <COLUMN>22</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMUDHENN3::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "_XMUDHENN3::&lt;unnamed-tag&gt;::v" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMUDHENN3::{ctor}</FUNCTION>
     <DECORATED>??0_XMUDHENN3@@QAE@PBM@Z</DECORATED>
     <FUNCLINE>11707</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>_XMUDHENN3::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z</targetSymbol>
+      <targetSymbol>_XMUDHENN3::&lt;unnamed-tag&gt;::v</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
+      <FILENAME>xnamathvector.inl</FILENAME>
+      <LINE>11707</LINE>
+      <COLUMN>22</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Переменная "_XMUDHENN3::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::y" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <FUNCTION>_XMUDHENN3::{ctor}</FUNCTION>
+    <DECORATED>??0_XMUDHENN3@@QAE@PBM@Z</DECORATED>
+    <FUNCLINE>11707</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>_XMUDHENN3::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::y</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>
@@ -10511,12 +10511,12 @@
       <COLUMN>23</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMFLOAT3SE::&lt;unnamed-tag&gt;::v" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "_XMFLOAT3SE::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::ym" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMFLOAT3SE::{ctor}</FUNCTION>
     <DECORATED>??0_XMFLOAT3SE@@QAE@MMM@Z</DECORATED>
     <FUNCLINE>11887</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>_XMFLOAT3SE::&lt;unnamed-tag&gt;::v</targetSymbol>
+      <targetSymbol>_XMFLOAT3SE::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::ym</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>
@@ -10579,12 +10579,12 @@
       <COLUMN>23</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMFLOAT3SE::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::ym" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "_XMFLOAT3SE::&lt;unnamed-tag&gt;::v" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMFLOAT3SE::{ctor}</FUNCTION>
     <DECORATED>??0_XMFLOAT3SE@@QAE@MMM@Z</DECORATED>
     <FUNCLINE>11887</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>_XMFLOAT3SE::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::ym</targetSymbol>
+      <targetSymbol>_XMFLOAT3SE::&lt;unnamed-tag&gt;::v</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>
@@ -10596,12 +10596,12 @@
       <COLUMN>23</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMFLOAT3SE::&lt;unnamed-tag&gt;::v" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "_XMFLOAT3SE::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::ym" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMFLOAT3SE::{ctor}</FUNCTION>
     <DECORATED>??0_XMFLOAT3SE@@QAE@PBM@Z</DECORATED>
     <FUNCLINE>11897</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>_XMFLOAT3SE::&lt;unnamed-tag&gt;::v</targetSymbol>
+      <targetSymbol>_XMFLOAT3SE::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::ym</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>
@@ -10664,12 +10664,12 @@
       <COLUMN>23</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMFLOAT3SE::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::ym" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "_XMFLOAT3SE::&lt;unnamed-tag&gt;::v" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMFLOAT3SE::{ctor}</FUNCTION>
     <DECORATED>??0_XMFLOAT3SE@@QAE@PBM@Z</DECORATED>
     <FUNCLINE>11897</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>_XMFLOAT3SE::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::ym</targetSymbol>
+      <targetSymbol>_XMFLOAT3SE::&lt;unnamed-tag&gt;::v</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>
@@ -10868,29 +10868,12 @@
       <COLUMN>21</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMSHORT4::w" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "_XMSHORT4::x" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMSHORT4::{ctor}</FUNCTION>
     <DECORATED>??0_XMSHORT4@@QAE@MMMM@Z</DECORATED>
     <FUNCLINE>12106</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>_XMSHORT4::w</targetSymbol>
-    </ADDITIONALINFO>
-    <PATH></PATH>
-  </DEFECT>
-  <DEFECT>
-    <SFA>
-      <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
-      <FILENAME>xnamathvector.inl</FILENAME>
-      <LINE>12106</LINE>
-      <COLUMN>21</COLUMN>
-    </SFA>
-    <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMSHORT4::y" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
-    <FUNCTION>_XMSHORT4::{ctor}</FUNCTION>
-    <DECORATED>??0_XMSHORT4@@QAE@MMMM@Z</DECORATED>
-    <FUNCLINE>12106</FUNCLINE>
-    <ADDITIONALINFO>
-      <targetSymbol>_XMSHORT4::y</targetSymbol>
+      <targetSymbol>_XMSHORT4::x</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>
@@ -10919,12 +10902,12 @@
       <COLUMN>21</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMSHORT4::x" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "_XMSHORT4::y" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMSHORT4::{ctor}</FUNCTION>
     <DECORATED>??0_XMSHORT4@@QAE@MMMM@Z</DECORATED>
     <FUNCLINE>12106</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>_XMSHORT4::x</targetSymbol>
+      <targetSymbol>_XMSHORT4::y</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>
@@ -10932,14 +10915,14 @@
     <SFA>
       <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
       <FILENAME>xnamathvector.inl</FILENAME>
-      <LINE>12119</LINE>
+      <LINE>12106</LINE>
       <COLUMN>21</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
     <DESCRIPTION>Переменная "_XMSHORT4::w" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMSHORT4::{ctor}</FUNCTION>
-    <DECORATED>??0_XMSHORT4@@QAE@PBM@Z</DECORATED>
-    <FUNCLINE>12119</FUNCLINE>
+    <DECORATED>??0_XMSHORT4@@QAE@MMMM@Z</DECORATED>
+    <FUNCLINE>12106</FUNCLINE>
     <ADDITIONALINFO>
       <targetSymbol>_XMSHORT4::w</targetSymbol>
     </ADDITIONALINFO>
@@ -10953,12 +10936,12 @@
       <COLUMN>21</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMSHORT4::y" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "_XMSHORT4::x" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMSHORT4::{ctor}</FUNCTION>
     <DECORATED>??0_XMSHORT4@@QAE@PBM@Z</DECORATED>
     <FUNCLINE>12119</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>_XMSHORT4::y</targetSymbol>
+      <targetSymbol>_XMSHORT4::x</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>
@@ -10987,12 +10970,29 @@
       <COLUMN>21</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMSHORT4::x" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "_XMSHORT4::y" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMSHORT4::{ctor}</FUNCTION>
     <DECORATED>??0_XMSHORT4@@QAE@PBM@Z</DECORATED>
     <FUNCLINE>12119</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>_XMSHORT4::x</targetSymbol>
+      <targetSymbol>_XMSHORT4::y</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
+      <FILENAME>xnamathvector.inl</FILENAME>
+      <LINE>12119</LINE>
+      <COLUMN>21</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Переменная "_XMSHORT4::w" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <FUNCTION>_XMSHORT4::{ctor}</FUNCTION>
+    <DECORATED>??0_XMSHORT4@@QAE@PBM@Z</DECORATED>
+    <FUNCLINE>12119</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>_XMSHORT4::w</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>
@@ -11004,29 +11004,12 @@
       <COLUMN>23</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMUSHORTN4::x" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "_XMUSHORTN4::w" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMUSHORTN4::{ctor}</FUNCTION>
     <DECORATED>??0_XMUSHORTN4@@QAE@MMMM@Z</DECORATED>
     <FUNCLINE>12162</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>_XMUSHORTN4::x</targetSymbol>
-    </ADDITIONALINFO>
-    <PATH></PATH>
-  </DEFECT>
-  <DEFECT>
-    <SFA>
-      <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
-      <FILENAME>xnamathvector.inl</FILENAME>
-      <LINE>12162</LINE>
-      <COLUMN>23</COLUMN>
-    </SFA>
-    <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMUSHORTN4::z" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
-    <FUNCTION>_XMUSHORTN4::{ctor}</FUNCTION>
-    <DECORATED>??0_XMUSHORTN4@@QAE@MMMM@Z</DECORATED>
-    <FUNCLINE>12162</FUNCLINE>
-    <ADDITIONALINFO>
-      <targetSymbol>_XMUSHORTN4::z</targetSymbol>
+      <targetSymbol>_XMUSHORTN4::w</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>
@@ -11055,12 +11038,12 @@
       <COLUMN>23</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMUSHORTN4::w" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "_XMUSHORTN4::z" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMUSHORTN4::{ctor}</FUNCTION>
     <DECORATED>??0_XMUSHORTN4@@QAE@MMMM@Z</DECORATED>
     <FUNCLINE>12162</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>_XMUSHORTN4::w</targetSymbol>
+      <targetSymbol>_XMUSHORTN4::z</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>
@@ -11068,14 +11051,14 @@
     <SFA>
       <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
       <FILENAME>xnamathvector.inl</FILENAME>
-      <LINE>12175</LINE>
+      <LINE>12162</LINE>
       <COLUMN>23</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
     <DESCRIPTION>Переменная "_XMUSHORTN4::x" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMUSHORTN4::{ctor}</FUNCTION>
-    <DECORATED>??0_XMUSHORTN4@@QAE@PBM@Z</DECORATED>
-    <FUNCLINE>12175</FUNCLINE>
+    <DECORATED>??0_XMUSHORTN4@@QAE@MMMM@Z</DECORATED>
+    <FUNCLINE>12162</FUNCLINE>
     <ADDITIONALINFO>
       <targetSymbol>_XMUSHORTN4::x</targetSymbol>
     </ADDITIONALINFO>
@@ -11089,12 +11072,12 @@
       <COLUMN>23</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMUSHORTN4::z" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "_XMUSHORTN4::w" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMUSHORTN4::{ctor}</FUNCTION>
     <DECORATED>??0_XMUSHORTN4@@QAE@PBM@Z</DECORATED>
     <FUNCLINE>12175</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>_XMUSHORTN4::z</targetSymbol>
+      <targetSymbol>_XMUSHORTN4::w</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>
@@ -11123,12 +11106,29 @@
       <COLUMN>23</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMUSHORTN4::w" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "_XMUSHORTN4::z" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMUSHORTN4::{ctor}</FUNCTION>
     <DECORATED>??0_XMUSHORTN4@@QAE@PBM@Z</DECORATED>
     <FUNCLINE>12175</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>_XMUSHORTN4::w</targetSymbol>
+      <targetSymbol>_XMUSHORTN4::z</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
+      <FILENAME>xnamathvector.inl</FILENAME>
+      <LINE>12175</LINE>
+      <COLUMN>23</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Переменная "_XMUSHORTN4::x" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <FUNCTION>_XMUSHORTN4::{ctor}</FUNCTION>
+    <DECORATED>??0_XMUSHORTN4@@QAE@PBM@Z</DECORATED>
+    <FUNCLINE>12175</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>_XMUSHORTN4::x</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>
@@ -11616,40 +11616,6 @@
       <COLUMN>20</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMDECN4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
-    <FUNCTION>_XMDECN4::{ctor}</FUNCTION>
-    <DECORATED>??0_XMDECN4@@QAE@MMMM@Z</DECORATED>
-    <FUNCLINE>12363</FUNCLINE>
-    <ADDITIONALINFO>
-      <targetSymbol>_XMDECN4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z</targetSymbol>
-    </ADDITIONALINFO>
-    <PATH></PATH>
-  </DEFECT>
-  <DEFECT>
-    <SFA>
-      <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
-      <FILENAME>xnamathvector.inl</FILENAME>
-      <LINE>12363</LINE>
-      <COLUMN>20</COLUMN>
-    </SFA>
-    <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMDECN4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::x" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
-    <FUNCTION>_XMDECN4::{ctor}</FUNCTION>
-    <DECORATED>??0_XMDECN4@@QAE@MMMM@Z</DECORATED>
-    <FUNCLINE>12363</FUNCLINE>
-    <ADDITIONALINFO>
-      <targetSymbol>_XMDECN4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::x</targetSymbol>
-    </ADDITIONALINFO>
-    <PATH></PATH>
-  </DEFECT>
-  <DEFECT>
-    <SFA>
-      <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
-      <FILENAME>xnamathvector.inl</FILENAME>
-      <LINE>12363</LINE>
-      <COLUMN>20</COLUMN>
-    </SFA>
-    <DEFECTCODE>26495</DEFECTCODE>
     <DESCRIPTION>Переменная "_XMDECN4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::w" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMDECN4::{ctor}</FUNCTION>
     <DECORATED>??0_XMDECN4@@QAE@MMMM@Z</DECORATED>
@@ -11697,16 +11663,16 @@
     <SFA>
       <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
       <FILENAME>xnamathvector.inl</FILENAME>
-      <LINE>12376</LINE>
+      <LINE>12363</LINE>
       <COLUMN>20</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMDECN4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "_XMDECN4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::x" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMDECN4::{ctor}</FUNCTION>
-    <DECORATED>??0_XMDECN4@@QAE@PBM@Z</DECORATED>
-    <FUNCLINE>12376</FUNCLINE>
+    <DECORATED>??0_XMDECN4@@QAE@MMMM@Z</DECORATED>
+    <FUNCLINE>12363</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>_XMDECN4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z</targetSymbol>
+      <targetSymbol>_XMDECN4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::x</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>
@@ -11714,16 +11680,16 @@
     <SFA>
       <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
       <FILENAME>xnamathvector.inl</FILENAME>
-      <LINE>12376</LINE>
+      <LINE>12363</LINE>
       <COLUMN>20</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMDECN4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::x" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "_XMDECN4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMDECN4::{ctor}</FUNCTION>
-    <DECORATED>??0_XMDECN4@@QAE@PBM@Z</DECORATED>
-    <FUNCLINE>12376</FUNCLINE>
+    <DECORATED>??0_XMDECN4@@QAE@MMMM@Z</DECORATED>
+    <FUNCLINE>12363</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>_XMDECN4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::x</targetSymbol>
+      <targetSymbol>_XMDECN4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>
@@ -11782,16 +11748,67 @@
     <SFA>
       <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
       <FILENAME>xnamathvector.inl</FILENAME>
+      <LINE>12376</LINE>
+      <COLUMN>20</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Переменная "_XMDECN4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::x" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <FUNCTION>_XMDECN4::{ctor}</FUNCTION>
+    <DECORATED>??0_XMDECN4@@QAE@PBM@Z</DECORATED>
+    <FUNCLINE>12376</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>_XMDECN4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::x</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
+      <FILENAME>xnamathvector.inl</FILENAME>
+      <LINE>12376</LINE>
+      <COLUMN>20</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Переменная "_XMDECN4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <FUNCTION>_XMDECN4::{ctor}</FUNCTION>
+    <DECORATED>??0_XMDECN4@@QAE@PBM@Z</DECORATED>
+    <FUNCLINE>12376</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>_XMDECN4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
+      <FILENAME>xnamathvector.inl</FILENAME>
       <LINE>12414</LINE>
       <COLUMN>19</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMDEC4::&lt;unnamed-tag&gt;::v" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "_XMDEC4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::x" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMDEC4::{ctor}</FUNCTION>
     <DECORATED>??0_XMDEC4@@QAE@MMMM@Z</DECORATED>
     <FUNCLINE>12414</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>_XMDEC4::&lt;unnamed-tag&gt;::v</targetSymbol>
+      <targetSymbol>_XMDEC4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::x</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
+      <FILENAME>xnamathvector.inl</FILENAME>
+      <LINE>12414</LINE>
+      <COLUMN>19</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Переменная "_XMDEC4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <FUNCTION>_XMDEC4::{ctor}</FUNCTION>
+    <DECORATED>??0_XMDEC4@@QAE@MMMM@Z</DECORATED>
+    <FUNCLINE>12414</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>_XMDEC4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>
@@ -11837,29 +11854,12 @@
       <COLUMN>19</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMDEC4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::x" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "_XMDEC4::&lt;unnamed-tag&gt;::v" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMDEC4::{ctor}</FUNCTION>
     <DECORATED>??0_XMDEC4@@QAE@MMMM@Z</DECORATED>
     <FUNCLINE>12414</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>_XMDEC4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::x</targetSymbol>
-    </ADDITIONALINFO>
-    <PATH></PATH>
-  </DEFECT>
-  <DEFECT>
-    <SFA>
-      <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
-      <FILENAME>xnamathvector.inl</FILENAME>
-      <LINE>12414</LINE>
-      <COLUMN>19</COLUMN>
-    </SFA>
-    <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMDEC4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
-    <FUNCTION>_XMDEC4::{ctor}</FUNCTION>
-    <DECORATED>??0_XMDEC4@@QAE@MMMM@Z</DECORATED>
-    <FUNCLINE>12414</FUNCLINE>
-    <ADDITIONALINFO>
-      <targetSymbol>_XMDEC4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z</targetSymbol>
+      <targetSymbol>_XMDEC4::&lt;unnamed-tag&gt;::v</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>
@@ -11871,12 +11871,29 @@
       <COLUMN>19</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMDEC4::&lt;unnamed-tag&gt;::v" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "_XMDEC4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::x" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMDEC4::{ctor}</FUNCTION>
     <DECORATED>??0_XMDEC4@@QAE@PBM@Z</DECORATED>
     <FUNCLINE>12427</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>_XMDEC4::&lt;unnamed-tag&gt;::v</targetSymbol>
+      <targetSymbol>_XMDEC4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::x</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
+      <FILENAME>xnamathvector.inl</FILENAME>
+      <LINE>12427</LINE>
+      <COLUMN>19</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Переменная "_XMDEC4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <FUNCTION>_XMDEC4::{ctor}</FUNCTION>
+    <DECORATED>??0_XMDEC4@@QAE@PBM@Z</DECORATED>
+    <FUNCLINE>12427</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>_XMDEC4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>
@@ -11922,29 +11939,12 @@
       <COLUMN>19</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMDEC4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::x" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "_XMDEC4::&lt;unnamed-tag&gt;::v" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMDEC4::{ctor}</FUNCTION>
     <DECORATED>??0_XMDEC4@@QAE@PBM@Z</DECORATED>
     <FUNCLINE>12427</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>_XMDEC4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::x</targetSymbol>
-    </ADDITIONALINFO>
-    <PATH></PATH>
-  </DEFECT>
-  <DEFECT>
-    <SFA>
-      <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
-      <FILENAME>xnamathvector.inl</FILENAME>
-      <LINE>12427</LINE>
-      <COLUMN>19</COLUMN>
-    </SFA>
-    <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMDEC4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
-    <FUNCTION>_XMDEC4::{ctor}</FUNCTION>
-    <DECORATED>??0_XMDEC4@@QAE@PBM@Z</DECORATED>
-    <FUNCLINE>12427</FUNCLINE>
-    <ADDITIONALINFO>
-      <targetSymbol>_XMDEC4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z</targetSymbol>
+      <targetSymbol>_XMDEC4::&lt;unnamed-tag&gt;::v</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>
@@ -11956,29 +11956,12 @@
       <COLUMN>21</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMUDECN4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::y" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "_XMUDECN4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMUDECN4::{ctor}</FUNCTION>
     <DECORATED>??0_XMUDECN4@@QAE@MMMM@Z</DECORATED>
     <FUNCLINE>12465</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>_XMUDECN4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::y</targetSymbol>
-    </ADDITIONALINFO>
-    <PATH></PATH>
-  </DEFECT>
-  <DEFECT>
-    <SFA>
-      <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
-      <FILENAME>xnamathvector.inl</FILENAME>
-      <LINE>12465</LINE>
-      <COLUMN>21</COLUMN>
-    </SFA>
-    <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMUDECN4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::w" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
-    <FUNCTION>_XMUDECN4::{ctor}</FUNCTION>
-    <DECORATED>??0_XMUDECN4@@QAE@MMMM@Z</DECORATED>
-    <FUNCLINE>12465</FUNCLINE>
-    <ADDITIONALINFO>
-      <targetSymbol>_XMUDECN4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::w</targetSymbol>
+      <targetSymbol>_XMUDECN4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>
@@ -12007,12 +11990,29 @@
       <COLUMN>21</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMUDECN4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "_XMUDECN4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::w" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMUDECN4::{ctor}</FUNCTION>
     <DECORATED>??0_XMUDECN4@@QAE@MMMM@Z</DECORATED>
     <FUNCLINE>12465</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>_XMUDECN4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z</targetSymbol>
+      <targetSymbol>_XMUDECN4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::w</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
+      <FILENAME>xnamathvector.inl</FILENAME>
+      <LINE>12465</LINE>
+      <COLUMN>21</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Переменная "_XMUDECN4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::y" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <FUNCTION>_XMUDECN4::{ctor}</FUNCTION>
+    <DECORATED>??0_XMUDECN4@@QAE@MMMM@Z</DECORATED>
+    <FUNCLINE>12465</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>_XMUDECN4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::y</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>
@@ -12041,29 +12041,12 @@
       <COLUMN>21</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMUDECN4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::y" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "_XMUDECN4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMUDECN4::{ctor}</FUNCTION>
     <DECORATED>??0_XMUDECN4@@QAE@PBM@Z</DECORATED>
     <FUNCLINE>12478</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>_XMUDECN4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::y</targetSymbol>
-    </ADDITIONALINFO>
-    <PATH></PATH>
-  </DEFECT>
-  <DEFECT>
-    <SFA>
-      <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
-      <FILENAME>xnamathvector.inl</FILENAME>
-      <LINE>12478</LINE>
-      <COLUMN>21</COLUMN>
-    </SFA>
-    <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMUDECN4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::w" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
-    <FUNCTION>_XMUDECN4::{ctor}</FUNCTION>
-    <DECORATED>??0_XMUDECN4@@QAE@PBM@Z</DECORATED>
-    <FUNCLINE>12478</FUNCLINE>
-    <ADDITIONALINFO>
-      <targetSymbol>_XMUDECN4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::w</targetSymbol>
+      <targetSymbol>_XMUDECN4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>
@@ -12092,12 +12075,29 @@
       <COLUMN>21</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMUDECN4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "_XMUDECN4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::w" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMUDECN4::{ctor}</FUNCTION>
     <DECORATED>??0_XMUDECN4@@QAE@PBM@Z</DECORATED>
     <FUNCLINE>12478</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>_XMUDECN4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z</targetSymbol>
+      <targetSymbol>_XMUDECN4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::w</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
+      <FILENAME>xnamathvector.inl</FILENAME>
+      <LINE>12478</LINE>
+      <COLUMN>21</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Переменная "_XMUDECN4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::y" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <FUNCTION>_XMUDECN4::{ctor}</FUNCTION>
+    <DECORATED>??0_XMUDECN4@@QAE@PBM@Z</DECORATED>
+    <FUNCLINE>12478</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>_XMUDECN4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::y</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>
@@ -12636,29 +12636,12 @@
       <COLUMN>20</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMICON4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "_XMICON4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::y" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMICON4::{ctor}</FUNCTION>
     <DECORATED>??0_XMICON4@@QAE@MMMM@Z</DECORATED>
     <FUNCLINE>12669</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>_XMICON4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z</targetSymbol>
-    </ADDITIONALINFO>
-    <PATH></PATH>
-  </DEFECT>
-  <DEFECT>
-    <SFA>
-      <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
-      <FILENAME>xnamathvector.inl</FILENAME>
-      <LINE>12669</LINE>
-      <COLUMN>20</COLUMN>
-    </SFA>
-    <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMICON4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::x" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
-    <FUNCTION>_XMICON4::{ctor}</FUNCTION>
-    <DECORATED>??0_XMICON4@@QAE@MMMM@Z</DECORATED>
-    <FUNCLINE>12669</FUNCLINE>
-    <ADDITIONALINFO>
-      <targetSymbol>_XMICON4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::x</targetSymbol>
+      <targetSymbol>_XMICON4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::y</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>
@@ -12687,12 +12670,29 @@
       <COLUMN>20</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMICON4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::y" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "_XMICON4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::x" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMICON4::{ctor}</FUNCTION>
     <DECORATED>??0_XMICON4@@QAE@MMMM@Z</DECORATED>
     <FUNCLINE>12669</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>_XMICON4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::y</targetSymbol>
+      <targetSymbol>_XMICON4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::x</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
+      <FILENAME>xnamathvector.inl</FILENAME>
+      <LINE>12669</LINE>
+      <COLUMN>20</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Переменная "_XMICON4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <FUNCTION>_XMICON4::{ctor}</FUNCTION>
+    <DECORATED>??0_XMICON4@@QAE@MMMM@Z</DECORATED>
+    <FUNCLINE>12669</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>_XMICON4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>
@@ -12721,29 +12721,12 @@
       <COLUMN>20</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMICON4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "_XMICON4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::y" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMICON4::{ctor}</FUNCTION>
     <DECORATED>??0_XMICON4@@QAE@PBM@Z</DECORATED>
     <FUNCLINE>12682</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>_XMICON4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z</targetSymbol>
-    </ADDITIONALINFO>
-    <PATH></PATH>
-  </DEFECT>
-  <DEFECT>
-    <SFA>
-      <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
-      <FILENAME>xnamathvector.inl</FILENAME>
-      <LINE>12682</LINE>
-      <COLUMN>20</COLUMN>
-    </SFA>
-    <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMICON4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::x" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
-    <FUNCTION>_XMICON4::{ctor}</FUNCTION>
-    <DECORATED>??0_XMICON4@@QAE@PBM@Z</DECORATED>
-    <FUNCLINE>12682</FUNCLINE>
-    <ADDITIONALINFO>
-      <targetSymbol>_XMICON4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::x</targetSymbol>
+      <targetSymbol>_XMICON4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::y</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>
@@ -12772,12 +12755,29 @@
       <COLUMN>20</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMICON4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::y" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "_XMICON4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::x" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMICON4::{ctor}</FUNCTION>
     <DECORATED>??0_XMICON4@@QAE@PBM@Z</DECORATED>
     <FUNCLINE>12682</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>_XMICON4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::y</targetSymbol>
+      <targetSymbol>_XMICON4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::x</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
+      <FILENAME>xnamathvector.inl</FILENAME>
+      <LINE>12682</LINE>
+      <COLUMN>20</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Переменная "_XMICON4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <FUNCTION>_XMICON4::{ctor}</FUNCTION>
+    <DECORATED>??0_XMICON4@@QAE@PBM@Z</DECORATED>
+    <FUNCLINE>12682</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>_XMICON4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>
@@ -12806,29 +12806,12 @@
       <COLUMN>19</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMICO4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::y" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "_XMICO4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMICO4::{ctor}</FUNCTION>
     <DECORATED>??0_XMICO4@@QAE@MMMM@Z</DECORATED>
     <FUNCLINE>12720</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>_XMICO4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::y</targetSymbol>
-    </ADDITIONALINFO>
-    <PATH></PATH>
-  </DEFECT>
-  <DEFECT>
-    <SFA>
-      <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
-      <FILENAME>xnamathvector.inl</FILENAME>
-      <LINE>12720</LINE>
-      <COLUMN>19</COLUMN>
-    </SFA>
-    <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMICO4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::w" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
-    <FUNCTION>_XMICO4::{ctor}</FUNCTION>
-    <DECORATED>??0_XMICO4@@QAE@MMMM@Z</DECORATED>
-    <FUNCLINE>12720</FUNCLINE>
-    <ADDITIONALINFO>
-      <targetSymbol>_XMICO4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::w</targetSymbol>
+      <targetSymbol>_XMICO4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>
@@ -12857,12 +12840,29 @@
       <COLUMN>19</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMICO4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "_XMICO4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::w" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMICO4::{ctor}</FUNCTION>
     <DECORATED>??0_XMICO4@@QAE@MMMM@Z</DECORATED>
     <FUNCLINE>12720</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>_XMICO4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z</targetSymbol>
+      <targetSymbol>_XMICO4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::w</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
+      <FILENAME>xnamathvector.inl</FILENAME>
+      <LINE>12720</LINE>
+      <COLUMN>19</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Переменная "_XMICO4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::y" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <FUNCTION>_XMICO4::{ctor}</FUNCTION>
+    <DECORATED>??0_XMICO4@@QAE@MMMM@Z</DECORATED>
+    <FUNCLINE>12720</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>_XMICO4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::y</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>
@@ -12891,29 +12891,12 @@
       <COLUMN>19</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMICO4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::y" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "_XMICO4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMICO4::{ctor}</FUNCTION>
     <DECORATED>??0_XMICO4@@QAE@PBM@Z</DECORATED>
     <FUNCLINE>12733</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>_XMICO4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::y</targetSymbol>
-    </ADDITIONALINFO>
-    <PATH></PATH>
-  </DEFECT>
-  <DEFECT>
-    <SFA>
-      <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
-      <FILENAME>xnamathvector.inl</FILENAME>
-      <LINE>12733</LINE>
-      <COLUMN>19</COLUMN>
-    </SFA>
-    <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMICO4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::w" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
-    <FUNCTION>_XMICO4::{ctor}</FUNCTION>
-    <DECORATED>??0_XMICO4@@QAE@PBM@Z</DECORATED>
-    <FUNCLINE>12733</FUNCLINE>
-    <ADDITIONALINFO>
-      <targetSymbol>_XMICO4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::w</targetSymbol>
+      <targetSymbol>_XMICO4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>
@@ -12942,12 +12925,29 @@
       <COLUMN>19</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMICO4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "_XMICO4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::w" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMICO4::{ctor}</FUNCTION>
     <DECORATED>??0_XMICO4@@QAE@PBM@Z</DECORATED>
     <FUNCLINE>12733</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>_XMICO4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z</targetSymbol>
+      <targetSymbol>_XMICO4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::w</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
+      <FILENAME>xnamathvector.inl</FILENAME>
+      <LINE>12733</LINE>
+      <COLUMN>19</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Переменная "_XMICO4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::y" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <FUNCTION>_XMICO4::{ctor}</FUNCTION>
+    <DECORATED>??0_XMICO4@@QAE@PBM@Z</DECORATED>
+    <FUNCLINE>12733</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>_XMICO4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::y</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>
@@ -13486,29 +13486,12 @@
       <COLUMN>21</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMBYTEN4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "_XMBYTEN4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::y" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMBYTEN4::{ctor}</FUNCTION>
     <DECORATED>??0_XMBYTEN4@@QAE@MMMM@Z</DECORATED>
     <FUNCLINE>12937</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>_XMBYTEN4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z</targetSymbol>
-    </ADDITIONALINFO>
-    <PATH></PATH>
-  </DEFECT>
-  <DEFECT>
-    <SFA>
-      <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
-      <FILENAME>xnamathvector.inl</FILENAME>
-      <LINE>12937</LINE>
-      <COLUMN>21</COLUMN>
-    </SFA>
-    <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMBYTEN4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::x" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
-    <FUNCTION>_XMBYTEN4::{ctor}</FUNCTION>
-    <DECORATED>??0_XMBYTEN4@@QAE@MMMM@Z</DECORATED>
-    <FUNCLINE>12937</FUNCLINE>
-    <ADDITIONALINFO>
-      <targetSymbol>_XMBYTEN4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::x</targetSymbol>
+      <targetSymbol>_XMBYTEN4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::y</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>
@@ -13537,12 +13520,29 @@
       <COLUMN>21</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMBYTEN4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::y" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "_XMBYTEN4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::x" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMBYTEN4::{ctor}</FUNCTION>
     <DECORATED>??0_XMBYTEN4@@QAE@MMMM@Z</DECORATED>
     <FUNCLINE>12937</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>_XMBYTEN4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::y</targetSymbol>
+      <targetSymbol>_XMBYTEN4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::x</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
+      <FILENAME>xnamathvector.inl</FILENAME>
+      <LINE>12937</LINE>
+      <COLUMN>21</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Переменная "_XMBYTEN4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <FUNCTION>_XMBYTEN4::{ctor}</FUNCTION>
+    <DECORATED>??0_XMBYTEN4@@QAE@MMMM@Z</DECORATED>
+    <FUNCLINE>12937</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>_XMBYTEN4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>
@@ -13571,29 +13571,12 @@
       <COLUMN>21</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMBYTEN4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "_XMBYTEN4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::y" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMBYTEN4::{ctor}</FUNCTION>
     <DECORATED>??0_XMBYTEN4@@QAE@PBM@Z</DECORATED>
     <FUNCLINE>12950</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>_XMBYTEN4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z</targetSymbol>
-    </ADDITIONALINFO>
-    <PATH></PATH>
-  </DEFECT>
-  <DEFECT>
-    <SFA>
-      <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
-      <FILENAME>xnamathvector.inl</FILENAME>
-      <LINE>12950</LINE>
-      <COLUMN>21</COLUMN>
-    </SFA>
-    <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMBYTEN4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::x" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
-    <FUNCTION>_XMBYTEN4::{ctor}</FUNCTION>
-    <DECORATED>??0_XMBYTEN4@@QAE@PBM@Z</DECORATED>
-    <FUNCLINE>12950</FUNCLINE>
-    <ADDITIONALINFO>
-      <targetSymbol>_XMBYTEN4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::x</targetSymbol>
+      <targetSymbol>_XMBYTEN4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::y</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>
@@ -13622,12 +13605,29 @@
       <COLUMN>21</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMBYTEN4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::y" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "_XMBYTEN4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::x" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMBYTEN4::{ctor}</FUNCTION>
     <DECORATED>??0_XMBYTEN4@@QAE@PBM@Z</DECORATED>
     <FUNCLINE>12950</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>_XMBYTEN4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::y</targetSymbol>
+      <targetSymbol>_XMBYTEN4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::x</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
+      <FILENAME>xnamathvector.inl</FILENAME>
+      <LINE>12950</LINE>
+      <COLUMN>21</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Переменная "_XMBYTEN4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <FUNCTION>_XMBYTEN4::{ctor}</FUNCTION>
+    <DECORATED>??0_XMBYTEN4@@QAE@PBM@Z</DECORATED>
+    <FUNCLINE>12950</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>_XMBYTEN4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>
@@ -14166,6 +14166,57 @@
       <COLUMN>23</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Переменная "_XMUNIBBLE4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::x" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <FUNCTION>_XMUNIBBLE4::{ctor}</FUNCTION>
+    <DECORATED>??0_XMUNIBBLE4@@QAE@MMMM@Z</DECORATED>
+    <FUNCLINE>13161</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>_XMUNIBBLE4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::x</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
+      <FILENAME>xnamathvector.inl</FILENAME>
+      <LINE>13161</LINE>
+      <COLUMN>23</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Переменная "_XMUNIBBLE4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <FUNCTION>_XMUNIBBLE4::{ctor}</FUNCTION>
+    <DECORATED>??0_XMUNIBBLE4@@QAE@MMMM@Z</DECORATED>
+    <FUNCLINE>13161</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>_XMUNIBBLE4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
+      <FILENAME>xnamathvector.inl</FILENAME>
+      <LINE>13161</LINE>
+      <COLUMN>23</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Переменная "_XMUNIBBLE4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::w" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <FUNCTION>_XMUNIBBLE4::{ctor}</FUNCTION>
+    <DECORATED>??0_XMUNIBBLE4@@QAE@MMMM@Z</DECORATED>
+    <FUNCLINE>13161</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>_XMUNIBBLE4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::w</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
+      <FILENAME>xnamathvector.inl</FILENAME>
+      <LINE>13161</LINE>
+      <COLUMN>23</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
     <DESCRIPTION>Переменная "_XMUNIBBLE4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::y" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMUNIBBLE4::{ctor}</FUNCTION>
     <DECORATED>??0_XMUNIBBLE4@@QAE@MMMM@Z</DECORATED>
@@ -14196,16 +14247,16 @@
     <SFA>
       <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
       <FILENAME>xnamathvector.inl</FILENAME>
-      <LINE>13161</LINE>
+      <LINE>13174</LINE>
       <COLUMN>23</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMUNIBBLE4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::w" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "_XMUNIBBLE4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::x" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMUNIBBLE4::{ctor}</FUNCTION>
-    <DECORATED>??0_XMUNIBBLE4@@QAE@MMMM@Z</DECORATED>
-    <FUNCLINE>13161</FUNCLINE>
+    <DECORATED>??0_XMUNIBBLE4@@QAE@PBM@Z</DECORATED>
+    <FUNCLINE>13174</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>_XMUNIBBLE4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::w</targetSymbol>
+      <targetSymbol>_XMUNIBBLE4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::x</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>
@@ -14213,14 +14264,14 @@
     <SFA>
       <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
       <FILENAME>xnamathvector.inl</FILENAME>
-      <LINE>13161</LINE>
+      <LINE>13174</LINE>
       <COLUMN>23</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
     <DESCRIPTION>Переменная "_XMUNIBBLE4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMUNIBBLE4::{ctor}</FUNCTION>
-    <DECORATED>??0_XMUNIBBLE4@@QAE@MMMM@Z</DECORATED>
-    <FUNCLINE>13161</FUNCLINE>
+    <DECORATED>??0_XMUNIBBLE4@@QAE@PBM@Z</DECORATED>
+    <FUNCLINE>13174</FUNCLINE>
     <ADDITIONALINFO>
       <targetSymbol>_XMUNIBBLE4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z</targetSymbol>
     </ADDITIONALINFO>
@@ -14230,16 +14281,16 @@
     <SFA>
       <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
       <FILENAME>xnamathvector.inl</FILENAME>
-      <LINE>13161</LINE>
+      <LINE>13174</LINE>
       <COLUMN>23</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMUNIBBLE4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::x" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "_XMUNIBBLE4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::w" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMUNIBBLE4::{ctor}</FUNCTION>
-    <DECORATED>??0_XMUNIBBLE4@@QAE@MMMM@Z</DECORATED>
-    <FUNCLINE>13161</FUNCLINE>
+    <DECORATED>??0_XMUNIBBLE4@@QAE@PBM@Z</DECORATED>
+    <FUNCLINE>13174</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>_XMUNIBBLE4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::x</targetSymbol>
+      <targetSymbol>_XMUNIBBLE4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::w</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>
@@ -14281,16 +14332,16 @@
     <SFA>
       <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
       <FILENAME>xnamathvector.inl</FILENAME>
-      <LINE>13174</LINE>
-      <COLUMN>23</COLUMN>
+      <LINE>13226</LINE>
+      <COLUMN>19</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMUNIBBLE4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::w" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
-    <FUNCTION>_XMUNIBBLE4::{ctor}</FUNCTION>
-    <DECORATED>??0_XMUNIBBLE4@@QAE@PBM@Z</DECORATED>
-    <FUNCLINE>13174</FUNCLINE>
+    <DESCRIPTION>Переменная "_XMU555::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <FUNCTION>_XMU555::{ctor}</FUNCTION>
+    <DECORATED>??0_XMU555@@QAE@MMMH@Z</DECORATED>
+    <FUNCLINE>13226</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>_XMUNIBBLE4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::w</targetSymbol>
+      <targetSymbol>_XMU555::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>
@@ -14298,16 +14349,16 @@
     <SFA>
       <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
       <FILENAME>xnamathvector.inl</FILENAME>
-      <LINE>13174</LINE>
-      <COLUMN>23</COLUMN>
+      <LINE>13226</LINE>
+      <COLUMN>19</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMUNIBBLE4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
-    <FUNCTION>_XMUNIBBLE4::{ctor}</FUNCTION>
-    <DECORATED>??0_XMUNIBBLE4@@QAE@PBM@Z</DECORATED>
-    <FUNCLINE>13174</FUNCLINE>
+    <DESCRIPTION>Переменная "_XMU555::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::x" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <FUNCTION>_XMU555::{ctor}</FUNCTION>
+    <DECORATED>??0_XMU555@@QAE@MMMH@Z</DECORATED>
+    <FUNCLINE>13226</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>_XMUNIBBLE4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z</targetSymbol>
+      <targetSymbol>_XMU555::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::x</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>
@@ -14315,16 +14366,16 @@
     <SFA>
       <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
       <FILENAME>xnamathvector.inl</FILENAME>
-      <LINE>13174</LINE>
-      <COLUMN>23</COLUMN>
+      <LINE>13226</LINE>
+      <COLUMN>19</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMUNIBBLE4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::x" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
-    <FUNCTION>_XMUNIBBLE4::{ctor}</FUNCTION>
-    <DECORATED>??0_XMUNIBBLE4@@QAE@PBM@Z</DECORATED>
-    <FUNCLINE>13174</FUNCLINE>
+    <DESCRIPTION>Переменная "_XMU555::&lt;unnamed-tag&gt;::v" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <FUNCTION>_XMU555::{ctor}</FUNCTION>
+    <DECORATED>??0_XMU555@@QAE@MMMH@Z</DECORATED>
+    <FUNCLINE>13226</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>_XMUNIBBLE4::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::x</targetSymbol>
+      <targetSymbol>_XMU555::&lt;unnamed-tag&gt;::v</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>
@@ -14366,31 +14417,14 @@
     <SFA>
       <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
       <FILENAME>xnamathvector.inl</FILENAME>
-      <LINE>13226</LINE>
-      <COLUMN>19</COLUMN>
-    </SFA>
-    <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMU555::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::x" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
-    <FUNCTION>_XMU555::{ctor}</FUNCTION>
-    <DECORATED>??0_XMU555@@QAE@MMMH@Z</DECORATED>
-    <FUNCLINE>13226</FUNCLINE>
-    <ADDITIONALINFO>
-      <targetSymbol>_XMU555::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::x</targetSymbol>
-    </ADDITIONALINFO>
-    <PATH></PATH>
-  </DEFECT>
-  <DEFECT>
-    <SFA>
-      <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
-      <FILENAME>xnamathvector.inl</FILENAME>
-      <LINE>13226</LINE>
+      <LINE>13239</LINE>
       <COLUMN>19</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
     <DESCRIPTION>Переменная "_XMU555::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMU555::{ctor}</FUNCTION>
-    <DECORATED>??0_XMU555@@QAE@MMMH@Z</DECORATED>
-    <FUNCLINE>13226</FUNCLINE>
+    <DECORATED>??0_XMU555@@QAE@PBMH@Z</DECORATED>
+    <FUNCLINE>13239</FUNCLINE>
     <ADDITIONALINFO>
       <targetSymbol>_XMU555::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z</targetSymbol>
     </ADDITIONALINFO>
@@ -14400,14 +14434,31 @@
     <SFA>
       <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
       <FILENAME>xnamathvector.inl</FILENAME>
-      <LINE>13226</LINE>
+      <LINE>13239</LINE>
+      <COLUMN>19</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Переменная "_XMU555::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::x" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <FUNCTION>_XMU555::{ctor}</FUNCTION>
+    <DECORATED>??0_XMU555@@QAE@PBMH@Z</DECORATED>
+    <FUNCLINE>13239</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>_XMU555::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::x</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
+      <FILENAME>xnamathvector.inl</FILENAME>
+      <LINE>13239</LINE>
       <COLUMN>19</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
     <DESCRIPTION>Переменная "_XMU555::&lt;unnamed-tag&gt;::v" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMU555::{ctor}</FUNCTION>
-    <DECORATED>??0_XMU555@@QAE@MMMH@Z</DECORATED>
-    <FUNCLINE>13226</FUNCLINE>
+    <DECORATED>??0_XMU555@@QAE@PBMH@Z</DECORATED>
+    <FUNCLINE>13239</FUNCLINE>
     <ADDITIONALINFO>
       <targetSymbol>_XMU555::&lt;unnamed-tag&gt;::v</targetSymbol>
     </ADDITIONALINFO>
@@ -14444,57 +14495,6 @@
     <FUNCLINE>13239</FUNCLINE>
     <ADDITIONALINFO>
       <targetSymbol>_XMU555::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::y</targetSymbol>
-    </ADDITIONALINFO>
-    <PATH></PATH>
-  </DEFECT>
-  <DEFECT>
-    <SFA>
-      <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
-      <FILENAME>xnamathvector.inl</FILENAME>
-      <LINE>13239</LINE>
-      <COLUMN>19</COLUMN>
-    </SFA>
-    <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMU555::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::x" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
-    <FUNCTION>_XMU555::{ctor}</FUNCTION>
-    <DECORATED>??0_XMU555@@QAE@PBMH@Z</DECORATED>
-    <FUNCLINE>13239</FUNCLINE>
-    <ADDITIONALINFO>
-      <targetSymbol>_XMU555::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::x</targetSymbol>
-    </ADDITIONALINFO>
-    <PATH></PATH>
-  </DEFECT>
-  <DEFECT>
-    <SFA>
-      <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
-      <FILENAME>xnamathvector.inl</FILENAME>
-      <LINE>13239</LINE>
-      <COLUMN>19</COLUMN>
-    </SFA>
-    <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMU555::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
-    <FUNCTION>_XMU555::{ctor}</FUNCTION>
-    <DECORATED>??0_XMU555@@QAE@PBMH@Z</DECORATED>
-    <FUNCLINE>13239</FUNCLINE>
-    <ADDITIONALINFO>
-      <targetSymbol>_XMU555::&lt;unnamed-tag&gt;::&lt;unnamed-tag&gt;::z</targetSymbol>
-    </ADDITIONALINFO>
-    <PATH></PATH>
-  </DEFECT>
-  <DEFECT>
-    <SFA>
-      <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
-      <FILENAME>xnamathvector.inl</FILENAME>
-      <LINE>13239</LINE>
-      <COLUMN>19</COLUMN>
-    </SFA>
-    <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMU555::&lt;unnamed-tag&gt;::v" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
-    <FUNCTION>_XMU555::{ctor}</FUNCTION>
-    <DECORATED>??0_XMU555@@QAE@PBMH@Z</DECORATED>
-    <FUNCLINE>13239</FUNCLINE>
-    <ADDITIONALINFO>
-      <targetSymbol>_XMU555::&lt;unnamed-tag&gt;::v</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>
@@ -14870,6 +14870,20 @@
     <FUNCTION>XMScalarSinCosEst</FUNCTION>
     <DECORATED>?XMScalarSinCosEst@@YAXPAM0M@Z</DECORATED>
     <FUNCLINE>2319</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
+      <FILENAME>dinput.h</FILENAME>
+      <LINE>4321</LINE>
+      <COLUMN>25</COLUMN>
+    </SFA>
+    <DEFECTCODE>28251</DEFECTCODE>
+    <DESCRIPTION>Несогласованная аннотация для "joyConfigChanged": данный экземпляр содержит нет аннотаций. См. c:\program files (x86)\windows kits\10\include\10.0.18362.0\um\joystickapi.h(431). </DESCRIPTION>
+    <FUNCTION>joyConfigChanged</FUNCTION>
+    <DECORATED>joyConfigChanged@4</DECORATED>
+    <FUNCLINE>4321</FUNCLINE>
     <PATH></PATH>
   </DEFECT>
 </DEFECTS>

@@ -807,12 +807,12 @@
       <COLUMN>4</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMMATRIX::&lt;unnamed-tag&gt;::r" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "_XMMATRIX::&lt;unnamed-tag&gt;::m" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMMATRIX::{ctor}</FUNCTION>
     <DECORATED>??0_XMMATRIX@@QAE@XZ</DECORATED>
     <FUNCLINE>352</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>_XMMATRIX::&lt;unnamed-tag&gt;::r</targetSymbol>
+      <targetSymbol>_XMMATRIX::&lt;unnamed-tag&gt;::m</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>
@@ -824,12 +824,12 @@
       <COLUMN>4</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "_XMMATRIX::&lt;unnamed-tag&gt;::m" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "_XMMATRIX::&lt;unnamed-tag&gt;::r" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>_XMMATRIX::{ctor}</FUNCTION>
     <DECORATED>??0_XMMATRIX@@QAE@XZ</DECORATED>
     <FUNCLINE>352</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>_XMMATRIX::&lt;unnamed-tag&gt;::m</targetSymbol>
+      <targetSymbol>_XMMATRIX::&lt;unnamed-tag&gt;::r</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>
@@ -14874,33 +14874,30 @@
   </DEFECT>
   <DEFECT>
     <SFA>
-      <FILEPATH>C:\Users\denre\source\repos\DirectX11\NewDXFW\NewDXFW\</FILEPATH>
-      <FILENAME>Engine.cpp</FILENAME>
-      <LINE>8</LINE>
-      <COLUMN>8</COLUMN>
+      <FILEPATH>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\</FILEPATH>
+      <FILENAME>dinput.h</FILENAME>
+      <LINE>4321</LINE>
+      <COLUMN>25</COLUMN>
     </SFA>
-    <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "Engine::m_hInstance" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
-    <FUNCTION>Engine::{ctor}</FUNCTION>
-    <DECORATED>??0Engine@@QAE@XZ</DECORATED>
-    <FUNCLINE>8</FUNCLINE>
-    <ADDITIONALINFO>
-      <targetSymbol>Engine::m_hInstance</targetSymbol>
-    </ADDITIONALINFO>
+    <DEFECTCODE>28251</DEFECTCODE>
+    <DESCRIPTION>Несогласованная аннотация для "joyConfigChanged": данный экземпляр содержит нет аннотаций. См. c:\program files (x86)\windows kits\10\include\10.0.18362.0\um\joystickapi.h(431). </DESCRIPTION>
+    <FUNCTION>joyConfigChanged</FUNCTION>
+    <DECORATED>joyConfigChanged@4</DECORATED>
+    <FUNCLINE>4321</FUNCLINE>
     <PATH></PATH>
   </DEFECT>
   <DEFECT>
     <SFA>
       <FILEPATH>C:\Users\denre\source\repos\DirectX11\NewDXFW\NewDXFW\</FILEPATH>
       <FILENAME>Engine.cpp</FILENAME>
-      <LINE>8</LINE>
+      <LINE>10</LINE>
       <COLUMN>8</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
     <DESCRIPTION>Переменная "Engine::m_hWnd" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>Engine::{ctor}</FUNCTION>
     <DECORATED>??0Engine@@QAE@XZ</DECORATED>
-    <FUNCLINE>8</FUNCLINE>
+    <FUNCLINE>10</FUNCLINE>
     <ADDITIONALINFO>
       <targetSymbol>Engine::m_hWnd</targetSymbol>
     </ADDITIONALINFO>
@@ -14910,14 +14907,31 @@
     <SFA>
       <FILEPATH>C:\Users\denre\source\repos\DirectX11\NewDXFW\NewDXFW\</FILEPATH>
       <FILENAME>Engine.cpp</FILENAME>
-      <LINE>8</LINE>
+      <LINE>10</LINE>
+      <COLUMN>8</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Переменная "Engine::m_hInstance" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <FUNCTION>Engine::{ctor}</FUNCTION>
+    <DECORATED>??0Engine@@QAE@XZ</DECORATED>
+    <FUNCLINE>10</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>Engine::m_hInstance</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\denre\source\repos\DirectX11\NewDXFW\NewDXFW\</FILEPATH>
+      <FILENAME>Engine.cpp</FILENAME>
+      <LINE>10</LINE>
       <COLUMN>8</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
     <DESCRIPTION>Переменная "Engine::m_device" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>Engine::{ctor}</FUNCTION>
     <DECORATED>??0Engine@@QAE@XZ</DECORATED>
-    <FUNCLINE>8</FUNCLINE>
+    <FUNCLINE>10</FUNCLINE>
     <ADDITIONALINFO>
       <targetSymbol>Engine::m_device</targetSymbol>
     </ADDITIONALINFO>
@@ -14927,14 +14941,14 @@
     <SFA>
       <FILEPATH>C:\Users\denre\source\repos\DirectX11\NewDXFW\NewDXFW\</FILEPATH>
       <FILENAME>Engine.cpp</FILENAME>
-      <LINE>8</LINE>
+      <LINE>10</LINE>
       <COLUMN>8</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
     <DESCRIPTION>Переменная "Engine::m_deviceContext" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>Engine::{ctor}</FUNCTION>
     <DECORATED>??0Engine@@QAE@XZ</DECORATED>
-    <FUNCLINE>8</FUNCLINE>
+    <FUNCLINE>10</FUNCLINE>
     <ADDITIONALINFO>
       <targetSymbol>Engine::m_deviceContext</targetSymbol>
     </ADDITIONALINFO>
@@ -14944,14 +14958,14 @@
     <SFA>
       <FILEPATH>C:\Users\denre\source\repos\DirectX11\NewDXFW\NewDXFW\</FILEPATH>
       <FILENAME>Engine.cpp</FILENAME>
-      <LINE>8</LINE>
+      <LINE>10</LINE>
       <COLUMN>8</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
     <DESCRIPTION>Переменная "Engine::m_vertexBuffer" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>Engine::{ctor}</FUNCTION>
     <DECORATED>??0Engine@@QAE@XZ</DECORATED>
-    <FUNCLINE>8</FUNCLINE>
+    <FUNCLINE>10</FUNCLINE>
     <ADDITIONALINFO>
       <targetSymbol>Engine::m_vertexBuffer</targetSymbol>
     </ADDITIONALINFO>
@@ -14961,16 +14975,16 @@
     <SFA>
       <FILEPATH>C:\Users\denre\source\repos\DirectX11\NewDXFW\NewDXFW\</FILEPATH>
       <FILENAME>Engine.cpp</FILENAME>
-      <LINE>8</LINE>
+      <LINE>10</LINE>
       <COLUMN>8</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Переменная "Engine::m_CBMatrixes" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <DESCRIPTION>Переменная "Engine::m_rect1" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>Engine::{ctor}</FUNCTION>
     <DECORATED>??0Engine@@QAE@XZ</DECORATED>
-    <FUNCLINE>8</FUNCLINE>
+    <FUNCLINE>10</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>Engine::m_CBMatrixes</targetSymbol>
+      <targetSymbol>Engine::m_rect1</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>
@@ -14978,16 +14992,67 @@
     <SFA>
       <FILEPATH>C:\Users\denre\source\repos\DirectX11\NewDXFW\NewDXFW\</FILEPATH>
       <FILENAME>Engine.cpp</FILENAME>
-      <LINE>8</LINE>
+      <LINE>10</LINE>
       <COLUMN>8</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
     <DESCRIPTION>Переменная "Engine::m_camera" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
     <FUNCTION>Engine::{ctor}</FUNCTION>
     <DECORATED>??0Engine@@QAE@XZ</DECORATED>
-    <FUNCLINE>8</FUNCLINE>
+    <FUNCLINE>10</FUNCLINE>
     <ADDITIONALINFO>
       <targetSymbol>Engine::m_camera</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\denre\source\repos\DirectX11\NewDXFW\NewDXFW\</FILEPATH>
+      <FILENAME>Engine.cpp</FILENAME>
+      <LINE>10</LINE>
+      <COLUMN>8</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Переменная "Engine::m_CBWVPMatrixes" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <FUNCTION>Engine::{ctor}</FUNCTION>
+    <DECORATED>??0Engine@@QAE@XZ</DECORATED>
+    <FUNCLINE>10</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>Engine::m_CBWVPMatrixes</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\denre\source\repos\DirectX11\NewDXFW\NewDXFW\</FILEPATH>
+      <FILENAME>Engine.cpp</FILENAME>
+      <LINE>10</LINE>
+      <COLUMN>8</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Переменная "Engine::m_input" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <FUNCTION>Engine::{ctor}</FUNCTION>
+    <DECORATED>??0Engine@@QAE@XZ</DECORATED>
+    <FUNCLINE>10</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>Engine::m_input</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\denre\source\repos\DirectX11\NewDXFW\NewDXFW\</FILEPATH>
+      <FILENAME>Engine.cpp</FILENAME>
+      <LINE>10</LINE>
+      <COLUMN>8</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Переменная "Engine::m_windowManager" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <FUNCTION>Engine::{ctor}</FUNCTION>
+    <DECORATED>??0Engine@@QAE@XZ</DECORATED>
+    <FUNCLINE>10</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>Engine::m_windowManager</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>

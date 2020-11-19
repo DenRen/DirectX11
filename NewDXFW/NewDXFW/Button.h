@@ -10,12 +10,15 @@ class Button : public Widget
 {
 public:
 
-protected:
 	void SetStateWait ();
 	void SetStateFocused ();
 	void SetStateClicked ();
 	BUTTONSTATE GetCurrentState ();
 
+	bool HaveSingleClick ();
+
 private:
+	bool m_clickSend = false;
+
 	BUTTONSTATE m_state;
 };

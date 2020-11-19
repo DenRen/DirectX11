@@ -2,6 +2,17 @@
 #include "Button.h"
 #include "Rectangle.h"
 
+struct TextureButton
+{
+	TextureButton ();
+	TextureButton (const TextureButton &) = default;
+	TextureButton (Texture *m_textureWait, Texture *m_textureFocused, Texture *m_textureClicked);
+
+	Texture *m_wait;
+	Texture *m_focused;
+	Texture *m_clicked;
+};
+
 class RectTexButton : public Button, public RectTex
 {
 public:
@@ -10,9 +21,7 @@ public:
 									 const char *pathTextureClicked);
 
 	RectTexButton (float coorX, float coorY, float width, float height,
-				   Texture *textureWait    = m_defTextureWait,
-				   Texture *textureFocus   = m_defTextureFocused,
-				   Texture *textureClicked = m_defTextureClicked);
+				   TextureButton textureButton = def_textureButton);
 
 	RectTexButton (float coorX, float coorY, float width, float height,
 				   const char *pathTextureWait,
@@ -24,18 +33,11 @@ public:
 	void HandleNews (News news);
 
 private:
-	
-	float coorX;
-	float coorY;
 
 	void CheckContainCursor (MousePosition mousePosition);
 
-	Texture *m_textureWait;
-	Texture *m_textureFocused;
-	Texture *m_textureClicked;
+	TextureButton m_textureButton;
 
-	static Texture *m_defTextureWait;
-	static Texture *m_defTextureFocused;
-	static Texture *m_defTextureClicked;
+	static TextureButton def_textureButton;
 };
 
