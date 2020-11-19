@@ -7,7 +7,10 @@ void Button::SetStateWait ()
 
 void Button::SetStateFocused ()
 {
-	m_state = BUTTONSTATE::FOCUSED;
+	if (m_state != BUTTONSTATE::CLICKED)
+	{
+		m_state = BUTTONSTATE::FOCUSED;
+	}
 }
 
 void Button::SetStateClicked ()

@@ -11,9 +11,9 @@ class Button : public Widget
 public:
 
 protected:
-	virtual void SetStateWait ();
-	virtual void SetStateFocused ();
-	virtual void SetStateClicked ();
+	void SetStateWait ();
+	void SetStateFocused ();
+	void SetStateClicked ();
 	BUTTONSTATE GetCurrentState ();
 
 private:

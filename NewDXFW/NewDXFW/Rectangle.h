@@ -2,17 +2,17 @@
 
 #include "Sprite.h"
 #include "VertexBuffer.h"
+#include "NewsQueue.h"
 
 struct RectFigure
 {
-	RectFigure () :
-		RectFigure (0, 0, 0, 0)
-	{}
-	RectFigure (float coorX, float coorY, float width, float height) :
-		m_coorX (coorX), m_coorY (coorY), m_width (width), m_height (height)
-	{}
+	RectFigure ();
+	RectFigure (float coorX, float coorY, float width, float height);
 
-	void Scale (float scaleX, float scaleY);
+	bool IsContain (MousePosition mousePosition);
+	bool IsContain (float coorX, float coorY);
+
+	void ScaleUp (float scaleX, float scaleY);
 	void Move (float deltaX, float deltaY);
 
 	float m_coorX;
@@ -35,8 +35,15 @@ public:
 	static void SetDefaultValue (Texture *texture, Shader *shader,
 								 ID3D11Buffer *CBMatrixes, WVPMatrixes *WVPMatrixes);
 
+	void ScaleUp (float ScaleUpX, float ScaleUpY, float ScaleUpZ);
+	void Move (float x, float y, float z);
+
+	bool CheckContainCursor (float coorX, float coorY);
+
 private:
 	void InitializeVB (float coorX, float coorY, float width, float height);
+
+	RectFigure m_rectFigure;
 
 	static Texture		*defTexture;
 	static Shader		*defShader;

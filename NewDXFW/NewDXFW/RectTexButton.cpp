@@ -43,7 +43,18 @@ void RectTexButton::Draw ()
 
 void RectTexButton::Update ()
 {
-
+	switch (Button::GetCurrentState ())
+	{
+	case BUTTONSTATE::WAIT:
+		Sprite::SetTexture (m_textureWait);
+		break;
+	case BUTTONSTATE::FOCUSED:
+		Sprite::SetTexture (m_textureFocused);
+		break;
+	case BUTTONSTATE::CLICKED:
+		Sprite::SetTexture (m_textureClicked);
+		break;
+	}
 }
 
 void RectTexButton::HandleNews (News news)
@@ -53,23 +64,35 @@ void RectTexButton::HandleNews (News news)
 	// Затем в Update () эти флаги и данные обрабатываем. Именно там отправляем новые news
 	// и устанавливаем новые текстуры, например. Но это обобщение для для общих методов.
 
-
+	if (news.m_idSender == (uint16_t) SENDER_NEWS::WINAPIWNDPROC)
+	{
+		printf ("%f %f\n", news.m_mousePos.x, news.m_mousePos.y);
+		if (news.m_news >= NEWS::MOUSEFIRST && news.m_news <= NEWS::MOUSELAST)
+		{
+			Button::SetStateWait ();
+			switch (news.m_news)
+			{
+			case NEWS::MOUSEMOVE:
+				{
+					CheckContainCursor (news.m_mousePos);
+				} break;
+			case NEWS::LBUTTONDOWN:
+				{
+					CheckContainCursor (news.m_mousePos);
+					if (Button::GetCurrentState () == BUTTONSTATE::FOCUSED)
+					{
+						Button::SetStateClicked ();
+					}
+				}
+			}
+		}
+	}
 }
 
-void RectTexButton::SetStateWait ()
+void RectTexButton::CheckContainCursor (MousePosition mousePosition)
 {
-	Button::SetStateWait ();
-	Sprite::SetTexture (m_textureWait);
-}
-
-void RectTexButton::SetStateFocused ()
-{
-	Button::SetStateFocused ();
-	Sprite::SetTexture (m_textureFocused);
-}
-
-void RectTexButton::SetStateClicked ()
-{
-	Button::SetStateClicked ();
-	Sprite::SetTexture (m_textureClicked);
+	if (RectTex::CheckContainCursor (mousePosition.x, mousePosition.y))
+	{
+		Button::SetStateFocused ();
+	}
 }

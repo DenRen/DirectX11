@@ -2,7 +2,7 @@
 #include "Button.h"
 #include "Rectangle.h"
 
-class RectTexButton : public Button, public RectTex 
+class RectTexButton : public Button, public RectTex
 {
 public:
 	static void InitializeDefValues (const char *pathTextureWait,
@@ -28,10 +28,7 @@ private:
 	float coorX;
 	float coorY;
 
-	
-	void SetStateWait ();
-	void SetStateFocused ();
-	void SetStateClicked ();
+	void CheckContainCursor (MousePosition mousePosition);
 
 	Texture *m_textureWait;
 	Texture *m_textureFocused;

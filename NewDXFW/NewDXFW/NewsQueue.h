@@ -3,6 +3,12 @@
 #include <cstdint>
 #include <windows.h>
 
+struct MousePosition
+{
+	float x;
+	float y;
+};
+
 enum class NEWS;
 
 struct News
@@ -14,7 +20,10 @@ struct News
 
 	uint16_t m_idSender;
 	NEWS m_news;
-	void *m_args;
+	union {
+		void *m_args;
+		MousePosition m_mousePos;
+	};
 };
 
 class NewsQueue
@@ -23,6 +32,8 @@ public:
 
 	static void SetCapacity (int capacity);
 	static NewsQueue *GetNewsQueue ();
+
+	int GetSize ();
 
 	void GetWinAPINews (UINT msg, WPARAM wParam, LPARAM lParam);
 	void AddNews (const News &news);

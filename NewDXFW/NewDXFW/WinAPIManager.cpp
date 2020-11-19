@@ -122,9 +122,9 @@ LRESULT CALLBACK WndProc (HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam)
 	case WM_MOUSEMOVE:
 		{
 			//printf ("%d %d\n", LOWORD (lParam), HIWORD (lParam));
-			float x, y;
-			WndCnf::ConvertMouseCoor (lParam, x, y);
-			printf ("%f %f\n", x, y);
+			//float x, y;
+			// WndCnf::ConvertMouseCoor (lParam, x, y);
+			//printf ("%f %f\n", x, y);
 		} break;
 	default:
 		{

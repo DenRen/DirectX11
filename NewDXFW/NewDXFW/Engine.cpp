@@ -54,7 +54,7 @@ bool Engine::Initialize (HINSTANCE hInstance, HWND hWnd)
 {
     HRESULT result = S_OK;
 
-    //m_input = new Input ();
+    //m_input = new InputDX ();
     // if (!m_input->Initialize (m_hInstance, m_hWnd, WndCnf::WIDTH, WndCnf::HEIGHT)) RETURN_FALSE;
 
     auto resMgr = ResMgr::GetResMgr ();
@@ -87,7 +87,7 @@ bool Engine::Initialize (HINSTANCE hInstance, HWND hWnd)
 
 void Engine::Run ()
 {
-    Update ();  // timer
+    Update ();
     Render ();
 }
 
@@ -128,6 +128,7 @@ bool Engine::InitializeCamera ()
 void Engine::Update ()
 {
     m_timer->updateTimer ();
+    m_windowManager->Update ();
 }
 
 void Engine::Render ()

@@ -152,7 +152,8 @@
     <ClInclude Include="DXManager.h" />
     <ClInclude Include="Engine.h" />
     <ClInclude Include="Graphics.h" />
-    <ClInclude Include="Input.h" />
+    <ClInclude Include="InputCoorMouse.h" />
+    <ClInclude Include="InputDX.h" />
     <ClInclude Include="InputLayout.h" />
     <ClInclude Include="WindowManager.h" />
     <ClInclude Include="NewsQueue.h" />
@@ -180,7 +181,8 @@
     <ClCompile Include="DXManager.cpp" />
     <ClCompile Include="Engine.cpp" />
     <ClCompile Include="Graphics.cpp" />
-    <ClCompile Include="Input.cpp" />
+    <ClCompile Include="InputCoorMouse.cpp" />
+    <ClCompile Include="InputDX.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="WindowManager.cpp" />
     <ClCompile Include="NewsQueue.cpp" />

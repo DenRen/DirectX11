@@ -7,7 +7,7 @@
 #include "Rectangle.h"
 #include "Camera.h"
 #include "Structure_Data.h"
-#include "Input.h"
+#include "InputDX.h"
 #include "ResourceManager.h"
 #include "WindowManager.h"
 
@@ -56,7 +56,7 @@ private:
 	WVPMatrixes m_WVPMatrixes;
 	ID3D11Buffer *m_CBWVPMatrixes;
 
-	Input *m_input;
+	InputDX *m_input;
 
 	WindowManager *m_windowManager;
 };

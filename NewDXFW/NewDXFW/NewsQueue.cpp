@@ -4,6 +4,7 @@
 #include <cstdlib>
 
 #include "DebugFunc.h"
+#include "InputCoorMouse.h"
 
 int NewsQueue::m_capacity = 0;
 
@@ -32,6 +33,11 @@ NewsQueue *NewsQueue::GetNewsQueue ()
 	return &newsQueue;
 }
 
+int NewsQueue::GetSize ()
+{
+	return m_tail - m_begin;
+}
+
 void NewsQueue::GetWinAPINews (UINT msg, WPARAM wParam, LPARAM lParam)
 { 
 	#define ADDNEWS(msg)			\
@@ -46,13 +52,18 @@ void NewsQueue::GetWinAPINews (UINT msg, WPARAM wParam, LPARAM lParam)
 		return;
 	}
 
-	News news ((uint16_t) SENDER_NEWS::WINAPIWNDPROC);
-	news.m_args = (void *) lParam;
+	News news = {};
+	news.m_idSender = (uint16_t) SENDER_NEWS::WINAPIWNDPROC;
 
 	if (msg >= WM_MOUSEFIRST && msg <= WM_MOUSELAST)
 	{
+		WndCnf::ConvertMouseCoor (lParam, news.m_mousePos.x, news.m_mousePos.y);
+
 		switch (msg) {
-			ADDNEWS (MOUSEMOVE);
+			case WM_MOUSEMOVE:
+			{
+				InputCoorMouse::SetPosition (news.m_mousePos);
+			} break;
 
 			ADDNEWS (LBUTTONDOWN);
 			ADDNEWS (LBUTTONUP);
