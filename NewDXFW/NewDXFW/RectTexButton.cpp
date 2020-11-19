@@ -66,7 +66,6 @@ void RectTexButton::HandleNews (News news)
 
 	if (news.m_idSender == (uint16_t) SENDER_NEWS::WINAPIWNDPROC)
 	{
-		printf ("%f %f\n", news.m_mousePos.x, news.m_mousePos.y);
 		if (news.m_news >= NEWS::MOUSEFIRST && news.m_news <= NEWS::MOUSELAST)
 		{
 			Button::SetStateWait ();

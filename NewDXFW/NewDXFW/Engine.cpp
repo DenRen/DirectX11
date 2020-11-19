@@ -103,11 +103,19 @@ void Engine::LoadResources ()
     resMgr->LoadPixelShader ("Shader\\texture.fx", "PS");
 
     resMgr->LoadTexture ("Texture\\Desktop.png");
+
     resMgr->LoadTexture ("Texture\\WidgetWait.png");
     resMgr->LoadTexture ("Texture\\WidgetFocused.png");
     resMgr->LoadTexture ("Texture\\WidgetClicked.png");
-    resMgr->LoadTexture ("Texture\\metall.dds");
-    resMgr->LoadTexture ("Texture\\ninja.png");
+
+    resMgr->LoadTexture ("Texture\\WidgetScrollerArrowLeft_Wait.png");
+    resMgr->LoadTexture ("Texture\\WidgetScrollerArrowLeft_Focused.png");
+    resMgr->LoadTexture ("Texture\\WidgetScrollerArrowLeft_Clicked.png");
+
+    resMgr->LoadTexture ("Texture\\WidgetScrollerSlider_Wait.png");
+    resMgr->LoadTexture ("Texture\\WidgetScrollerSlider_Focused.png");
+    resMgr->LoadTexture ("Texture\\WidgetScrollerSlider_Clicked.png");
+
 }
 
 bool Engine::InitializeCamera ()
