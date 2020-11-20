@@ -13,6 +13,8 @@ struct VertexFont
 	XMFLOAT2 tex;
 };
 
+wchar_t *CharToWChar (char *mbString);
+
 class BitmapFont
 {
 private:
@@ -40,7 +42,7 @@ private:
 public:
 	BitmapFont ();
 
-	bool Init (const char *fontFilename);
+	bool Init (const char *fontFilename, const char *fontTexFile);
 	void Render (unsigned int index, float r, float g, float b, float x, float y);
 	void BuildVertexArray (VertexFont *vertices, const wchar_t *sentence, int screenWidth, int screenHeight);
 	void Close ();

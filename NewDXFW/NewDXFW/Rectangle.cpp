@@ -62,6 +62,11 @@ bool RectTex::CheckContainCursor (float coorX, float coorY)
 	return m_rectFigure.IsContain (coorX, coorY);
 }
 
+RectFigure RectTex::GetRectFigure ()
+{
+	return m_rectFigure;
+}
+
 void RectTex::InitializeVB (float coorX, float coorY, float width, float height)
 {
 	VertexPosTex vert[4] = {{XMFLOAT3 (-0.5f, -0.5f, 0.0f), XMFLOAT2 (0.0f, 1.0f)},

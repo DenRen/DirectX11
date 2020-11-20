@@ -69,7 +69,7 @@ bool Text::m_InitBuffers (const std::wstring &text, int screenWidth, int screenH
 void Text::Render (float r, float g, float b, float x, float y)
 {
 	m_RenderBuffers ();
-	m_font->Render (m_numindex, r, g, b, x, y);
+	m_font->Render (m_numindex, r, g, b, x, -y);
 }
 
 void Text::Close ()

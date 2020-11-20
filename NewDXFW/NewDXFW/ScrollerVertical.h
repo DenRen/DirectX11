@@ -5,7 +5,8 @@ class ScrollerVertical : public Scroller
 {
 public:
 
-	ScrollerVertical (float coorX, float coorY, float width, float height, float relHeightScroll);
+	ScrollerVertical (float coorX, float coorY, float width, float height,
+					  float relHeightScroll);
 
 	static void InitDefTex_FirstButtonArrow (const char *wait, const char *focused, const char *clicked);
 	static void InitDefTex_SecondButtonArrow (const char *wait, const char *focused, const char *clicked);

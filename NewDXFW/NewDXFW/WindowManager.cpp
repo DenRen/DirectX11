@@ -4,6 +4,7 @@
 #include "InputCoorMouse.h"
 #include "ScrollerHorizontal.h"
 #include "ScrollerVertical.h"
+#include "RectTexButtonText.h"
 
 WindowManager::WindowManager () :
 	WinMgr (this),
@@ -13,9 +14,9 @@ WindowManager::WindowManager () :
 
 bool WindowManager::Initialize ()
 {
-	RectTexButton::InitializeDefValues ("Texture\\WidgetWait.png",
-										"Texture\\WidgetFocused.png",
-										"Texture\\WidgetClicked.png");
+	RectTexButton::InitializeDefValues ("Texture\\H\\WidgetWait.png",
+										"Texture\\H\\WidgetFocused.png",
+										"Texture\\H\\WidgetClicked.png");
 
 	m_backGround = new RectTex (WndCnf::minX, WndCnf::maxY, WndCnf::lenX, WndCnf::lenY,
 								"Texture\\Desktop.png");
@@ -67,11 +68,18 @@ bool WindowManager::Initialize ()
 
 	// -------------------------------------------------------------------------------------------------
 
+	RectTexButtonText::InitDefFont ("Font\\font.fnt", "Font\\font_0.png");
+
+	// -------------------------------------------------------------------------------------------------
+
+	auto button = new RectTexButtonText (0.0, +0.5, 0.3, 0.05, "Hello");
+
 	auto scrollerV = new ScrollerVertical   ( 0.75, +0.4, 0.5, 0.1, 0.3);
 	auto scrollerH = new ScrollerHorizontal (-0.75, -0.4, 1.5, 0.1, 0.15);
 
 	WinMgr::AddChildWidget (scrollerH);
 	WinMgr::AddChildWidget (scrollerV);
+	WinMgr::AddChildWidget (button);
 
 	return true;
 }

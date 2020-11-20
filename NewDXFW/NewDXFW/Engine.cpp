@@ -57,17 +57,17 @@ bool Engine::InitializeGraphics (HWND hWnd, HINSTANCE hInstance)
 bool Engine::Initialize (HINSTANCE hInstance, HWND hWnd)
 {
     m_font = new BitmapFont ();
-    if (!m_font->Init ("font.fnt"))
+    if (!m_font->Init ("Font\\font.fnt", "Font\\font_0.png"))
         RETURN_FALSE;
 
     text1 = new Text (m_font);
-    text1->Init (L"Desktop\nMy computer", 800, 600);
+    text1->Init (L"Desktop\nMy computer");
 
     text2 = new Text (m_font);
-    text2->Init (L"World", 800, 600);
+    text2->Init (L"World");
 
     text3 = new Text (m_font);
-    text3->Init (L"Привет Мир", 800, 600);
+    text3->Init (L"Привет Мир");
 
     // ---------------------------------------------------------------------------------------
 
@@ -199,9 +199,9 @@ void Engine::Render ()
 
     m_graphics->EnableAlphaBlending (true);
 
-    text1->Render (1.0, 1.0, 0.0, 100, 400);
-    text2->Render (1.0, 0.0, 1.0, 290, 100);
-    text3->Render (0.0, 1.0, 1.0, 100, 180);
+    //text1->Render (1.0, 1.0, 0.0, 0, 0);
+    //text2->Render (1.0, 0.0, 1.0, 0.3, 0.4);
+    //text3->Render (0.0, 1.0, 1.0, 100, 180);
 
     m_graphics->EndScene ();
 }

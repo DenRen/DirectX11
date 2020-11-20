@@ -7,8 +7,9 @@
 #include "DebugFunc.h"
 #include "DXManager.h"
 #include "Shaders.h"
+#include "Config.h"
 
-inline wchar_t *CharToWChar (char *mbString)
+wchar_t *CharToWChar (char *mbString)
 {
 	int len = 0;
 	len = (int) strlen (mbString) + 1;
@@ -30,13 +31,13 @@ BitmapFont::BitmapFont ()
 	m_HeightTex = 0;
 }
 
-bool BitmapFont::Init (const char *fontFilename)
+bool BitmapFont::Init (const char *fontFilename, const char *fontTexFile)
 {
 	if (!m_parse (fontFilename))
 		RETURN_FALSE;
 
 	HRESULT hr = D3DX11CreateShaderResourceViewFromFile (DXManager::GetDevice (),
-														 "font_0.png",NULL, NULL,
+														 fontTexFile, NULL, NULL,
 														 &m_texture, NULL);
 	CHECK_FAILED (hr);
 
@@ -237,8 +238,8 @@ void BitmapFont::BuildVertexArray (VertexFont *vertices, const wchar_t *sentence
 {
 	int numLetters = (int) wcslen (sentence);
 
-	float drawX0 = (float) -screenWidth / 2;
-	float drawY0 = (float) screenHeight / 2;
+	float drawX0 = 0.0f;
+	float drawY0 = 1.0 * m_Chars['A'].srcH / 2;
 
 	float drawX = drawX0, drawY = drawY0;
 
@@ -260,7 +261,6 @@ void BitmapFont::BuildVertexArray (VertexFont *vertices, const wchar_t *sentence
 		float Height = m_Chars[sentence[i]].srcH;
 		float OffsetX = m_Chars[sentence[i]].xOff;
 		float OffsetY = m_Chars[sentence[i]].yOff + offsetY;
-
 
 		float left = drawX + OffsetX;
 		float right = left + Width;
@@ -302,15 +302,11 @@ void BitmapFont::Render (unsigned int index, float r, float g, float b, float x,
 
 void BitmapFont::m_SetShaderParameters (float r, float g, float b, float x, float y)
 {
-	XMVECTOR Eye = XMVectorSet (0.0f, 0.0f, -2.0f / 1.5f, 0.0f);
-	XMVECTOR At = XMVectorSet (0.0f, 0.0f, 1.0f, 0.0f);
-	XMVECTOR Up = XMVectorSet (0.0f, 1.0f, 0.0f, 0.0f);
-	XMMATRIX m_View = XMMatrixLookAtLH (Eye, At, Up);
+	x *= WndCnf::WIDTH  / WndCnf::lenX;
+	y *= WndCnf::HEIGHT / WndCnf::lenY;
 
-	XMMATRIX m_Projection = XMMatrixPerspectiveFovLH (XM_PIDIV4, 16.0f / 9.0f, 0.01f, 100.0f);
-
-	XMMATRIX objmatrix = XMMatrixTranslation (x, -y, 0);//
-	XMMATRIX wvp = objmatrix * XMMatrixOrthographicLH (800.0f, 600.0f, 0.0f, 1000.0f);
+	XMMATRIX objmatrix = XMMatrixScaling (1.0f, 1, 1) * XMMatrixTranslation (x, -y, 0);
+	XMMATRIX wvp = objmatrix * XMMatrixOrthographicLH (WndCnf::WIDTH, WndCnf::HEIGHT, 0.0f, 100.0f);
 	ConstantBuffer cb;
 	cb.WVP = XMMatrixTranspose (wvp);
 

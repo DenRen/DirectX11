@@ -9,7 +9,7 @@ class Text
 public:
 	Text (BitmapFont *font);
 
-	bool Init (const std::wstring &text, int scrW, int scrH);
+	bool Init (const std::wstring &text, int scrW = 1280, int scrH = 720);
 	void Render (float r, float g, float b, float x, float y);
 	void Close ();
 

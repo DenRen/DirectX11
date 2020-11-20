@@ -119,9 +119,6 @@ void ScrollerHorizontal::Draw ()
 
 void ScrollerHorizontal::Update ()
 {
-
-	printf ("%f\n", GetStateSlider ());
-
 	const float m_deltaX = 0.1;
 
 	if (m_scrollSlider->HaveSingleClick ())

@@ -117,15 +117,15 @@ LRESULT CALLBACK WndProc (HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam)
 			PostQuitMessage (0);
 			DestroyWindow (hWnd);
 		} break;
-	/*case WM_RBUTTONDOWN:
+	case WM_RBUTTONDOWN:
 	case WM_LBUTTONDOWN:
 	case WM_MOUSEMOVE:
 		{
 			//printf ("%d %d\n", LOWORD (lParam), HIWORD (lParam));
-			//float x, y;
-			// WndCnf::ConvertMouseCoor (lParam, x, y);
-			//printf ("%f %f\n", x, y);
-		} break;*/
+			float x, y;
+			WndCnf::ConvertMouseCoor (lParam, x, y);
+			printf ("%f %f\n", x, y);
+		} break;
 	default:
 		{
 			return DefWindowProc (hWnd, Msg, wParam, lParam);

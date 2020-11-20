@@ -120,9 +120,6 @@ void ScrollerVertical::Draw ()
 
 void ScrollerVertical::Update ()
 {
-
-	printf ("%f\n", GetStateSlider ());
-
 	const float m_deltaX = 0.1;
 
 	if (m_scrollSlider->HaveSingleClick ())
@@ -131,9 +128,9 @@ void ScrollerVertical::Update ()
 		MoveSlider (m_deltaMousePosition.x);
 	}
 
-	if (m_firstButtonArrow->HaveSingleClick ()) SetSlider (m_stateSlider - m_deltaX);
-	if (m_secondButtonArrow->HaveSingleClick ()) SetSlider (m_stateSlider + m_deltaX);
-	if (m_firstSurfaceButton->HaveSingleClick ()) SetSlider (m_stateSlider - m_deltaX);
+	if (m_firstButtonArrow->HaveSingleClick ())    SetSlider (m_stateSlider - m_deltaX);
+	if (m_secondButtonArrow->HaveSingleClick ())   SetSlider (m_stateSlider + m_deltaX);
+	if (m_firstSurfaceButton->HaveSingleClick ())  SetSlider (m_stateSlider - m_deltaX);
 	if (m_secondSurfaceButton->HaveSingleClick ()) SetSlider (m_stateSlider + m_deltaX);
 
 	m_prevScrollClicked = m_scrollSlider->GetCurrentState () == BUTTONSTATE::CLICKED;
