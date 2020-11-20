@@ -6,6 +6,8 @@
 #include "ScrollerVertical.h"
 #include "RectTexButtonText.h"
 
+#include "ScrollBarMgr.h"
+
 WindowManager::WindowManager () :
 	WinMgr (this),
 	m_newsQueue (NewsQueue::GetNewsQueue ()),
@@ -72,14 +74,19 @@ bool WindowManager::Initialize ()
 
 	// -------------------------------------------------------------------------------------------------
 
-	auto button = new RectTexButtonText (0.0, +0.5, 0.3, 0.05, "Hello");
+	auto scrollBarMgr = new ScrollBarMgr (-0.4, 0.5, 0.8, 1.0,
+										   0.1, 0.3, 10, fs::current_path ());
 
-	auto scrollerV = new ScrollerVertical   ( 0.75, +0.4, 0.5, 0.1, 0.3);
-	auto scrollerH = new ScrollerHorizontal (-0.75, -0.4, 1.5, 0.1, 0.15);
+	WinMgr::AddChildWidget (scrollBarMgr);
 
-	WinMgr::AddChildWidget (scrollerH);
-	WinMgr::AddChildWidget (scrollerV);
-	WinMgr::AddChildWidget (button);
+	//auto button = new RectTexButtonText (0.0, +0.5, 0.3, 0.05, "Hello");
+
+	//auto scrollerV = new ScrollerVertical   ( 0.75, +0.4, 0.5, 0.1, 0.3);
+	//auto scrollerH = new ScrollerHorizontal (-0.75, -0.4, 1.5, 0.1, 0.15);
+
+	//WinMgr::AddChildWidget (scrollerH);
+	//WinMgr::AddChildWidget (scrollerV);
+	//WinMgr::AddChildWidget (button);
 
 	return true;
 }

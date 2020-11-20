@@ -23,7 +23,6 @@ public:
 
 private:
 
-
 	static TextureButton def_texFirstButtonArrow;
 	static TextureButton def_texSecondButtonArrow;
 	static TextureButton def_texScrollSlider;

@@ -115,16 +115,26 @@ LRESULT CALLBACK WndProc (HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam)
 	case WM_CLOSE:
 		{
 			PostQuitMessage (0);
-			DestroyWindow (hWnd);
+			return DefWindowProc (hWnd, Msg, wParam, lParam);
 		} break;
-	case WM_RBUTTONDOWN:
-	case WM_LBUTTONDOWN:
-	case WM_MOUSEMOVE:
+	//case WM_RBUTTONDOWN:
+	//case WM_LBUTTONDOWN:
+	//case WM_MOUSEMOVE:
+	case WM_LBUTTONUP:
 		{
 			//printf ("%d %d\n", LOWORD (lParam), HIWORD (lParam));
-			float x, y;
-			WndCnf::ConvertMouseCoor (lParam, x, y);
-			printf ("%f %f\n", x, y);
+			//float x, y;
+			//WndCnf::ConvertMouseCoor (lParam, x, y);
+			//printf ("%f %f\n", x, y);
+			printf ("BUTTON UP\n");
+		} break;
+	case WM_LBUTTONDOWN:
+		{
+			//printf ("%d %d\n", LOWORD (lParam), HIWORD (lParam));
+			//float x, y;
+			//WndCnf::ConvertMouseCoor (lParam, x, y);
+			//printf ("%f %f\n", x, y);
+			printf ("BUTTON DWON\n");
 		} break;
 	default:
 		{
@@ -136,9 +146,9 @@ LRESULT CALLBACK WndProc (HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam)
 }
 
 WinAPIManager::WinAPIManager () :
-	m_hWnd (nullptr),
+	m_hWnd		(nullptr),
 	m_hInstance (nullptr),
-	m_appName (nullptr)
+	m_appName	(nullptr)
 {}
 
 WinAPIManager::~WinAPIManager ()

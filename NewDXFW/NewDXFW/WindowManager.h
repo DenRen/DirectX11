@@ -15,4 +15,3 @@ private:
 	NewsQueue *m_newsQueue;
 	RectTex *m_backGround;
 };
-

@@ -57,3 +57,5 @@ void DebugEndMain ();
         RETURN_THROW;               \
     }                               \
 } NOP ()
+
+#define CHECK_THIS() MYASSERT (this != nullptr)

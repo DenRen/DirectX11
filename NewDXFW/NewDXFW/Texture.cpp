@@ -79,6 +79,8 @@ ID3D11ShaderResourceView *Texture::GetTexture ()
 
 void Texture::Render (ID3D11DeviceContext *deviceContext)
 {
+	CHECK_THIS ();
+
 	deviceContext->PSSetShaderResources (m_startSlot, 1, &m_texture);
 	deviceContext->PSSetSamplers (m_startSlot, 1, &m_sampler);
 }

@@ -7,6 +7,11 @@ Widget::Widget () :
 	m_id (Widget::counterID++)
 {}
 
+Widget::~Widget ()
+{
+
+}
+
 int Widget::GetID ()
 {
 	return m_id;

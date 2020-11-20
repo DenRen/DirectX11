@@ -3,7 +3,6 @@
 #include "DebugFunc.h"
 #include "NewsQueue.h"
 #include "WindowManager.h"
-#include <d2d1.h>
 
 int main ()
 {
@@ -42,4 +41,18 @@ int main ()
 	*/
 
 	DebugEndMain ();
+
+	/*
+	fs::path workdir = fs::current_path ();
+
+	fs::directory_iterator begin (workdir);
+	fs::directory_iterator end;
+
+	std::vector <fs::path> childdirs;
+
+	for (; begin != end; begin++)
+		if (fs::is_directory (begin->path ()))
+			cout << begin->path ().filename () << endl;
+
+	*/
 }

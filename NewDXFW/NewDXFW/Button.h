@@ -16,6 +16,8 @@ public:
 
 	BUTTONSTATE GetCurrentState ();
 
+	void Update ();
+
 	void SetPassed ();
 	void SetReleased ();
 

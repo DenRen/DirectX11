@@ -86,3 +86,6 @@ DirectX11/DirectX11.vcxproj.filters
 *.obj
 *.obj
 NewDXFW/NewDXFW/Debug/Camera.obj
+*.ipch
+*.ipch
+*.ipch

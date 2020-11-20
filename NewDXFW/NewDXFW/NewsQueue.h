@@ -3,6 +3,8 @@
 #include <cstdint>
 #include <windows.h>
 
+#define SENDNEWS(news) NewsQueue::GetNewsQueue ()->AddNews (news)
+
 struct MousePosition
 {
 	float x;
@@ -68,6 +70,7 @@ enum class NEWS
 	MOUSEFIRST,
 	MOUSEMOVE,
 	
+	LBUTTONCLICKED,
 	LBUTTONDOWN, LBUTTONUP, LBUTTONDBLCLK,
 	RBUTTONDOWN, RBUTTONUP, RBUTTONDBLCLK,
 
@@ -75,6 +78,8 @@ enum class NEWS
 	XBUTTONDOWN, XBUTTONUP, XBUTTONDBLCLK,
 
 	MOUSEHWHEEL,
-	MOUSELAST
+	MOUSELAST,
 	// Mouse >----------------------------->end
+
+	SELECT_ITEM_BAR
 };

@@ -79,6 +79,8 @@ bool Sprite <VertexT, IndexT>::Initialize (Shader *shader, Texture *texture)
 template <typename VertexT, typename IndexT>
 void Sprite <VertexT, IndexT>::Render (ID3D11DeviceContext *deviceContext)
 {
+	CHECK_THIS ();
+
 	m_texture->Render (deviceContext);
 	m_shader->Render (deviceContext);
 	SetCBMatrix ();

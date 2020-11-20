@@ -1,7 +1,9 @@
 #include "WinMgr.h"
 
-WinMgr::WinMgr (WinMgr *parent) :
-	m_parent (parent)
+WinMgr::WinMgr (WinMgr *parent, float startCoorX, float startCoorY) :
+	m_parent (parent),
+	m_startCoorX (startCoorX),
+	m_startCoorY (startCoorY)
 {}
 
 WinMgr::~WinMgr ()
@@ -47,9 +49,15 @@ void WinMgr::HandleNews (News news)
 		auto child = m_childWidgets[size];
 		if (child != nullptr)
 		{
-			child->HandleNews(news);
+			child->HandleNews (news);
 		}
 	}
+}
+
+void WinMgr::InitStartCoord (float x, float y)
+{
+	m_startCoorX = x;
+	m_startCoorY = y;
 }
 
 void WinMgr::AddChildWidget (Widget *childWidget)
@@ -57,10 +65,19 @@ void WinMgr::AddChildWidget (Widget *childWidget)
 	m_childWidgets.push_back (childWidget);
 }
 
-void WinMgr::GetStartCoord (int *x, int *y)
+void WinMgr::DeleteAllChilds ()
 {
-	*x = m_coorStartX;
-	*y = m_coorStartY;
+	int size = m_childWidgets.size ();
+	while (size--)
+	{
+		delete m_childWidgets[size];
+	}
+}
+
+void WinMgr::GetStartCoord (float *x, float *y)
+{
+	*x = m_startCoorX;
+	*y = m_startCoorY;
 }
 
 WinMgr &WinMgr::operator+=(Widget *childWidget)

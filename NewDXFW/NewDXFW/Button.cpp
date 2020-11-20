@@ -27,6 +27,17 @@ BUTTONSTATE Button::GetCurrentState ()
 	return m_state;
 }
 
+void Button::Update ()
+{
+	if (m_state == BUTTONSTATE::CLICKED)
+	{
+		News news (this->GetID ());
+		news.m_news = NEWS::LBUTTONCLICKED;
+
+		SENDNEWS (news);
+	}
+}
+
 void Button::SetPassed ()
 {
 	m_passed = true;

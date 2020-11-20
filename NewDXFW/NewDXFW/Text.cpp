@@ -48,8 +48,7 @@ bool Text::m_InitBuffers (const std::wstring &text, int screenWidth, int screenH
 	Data.SysMemSlicePitch = 0;
 
 	result = DXManager::GetDevice ()->CreateBuffer (&BufferDesc, &Data, &m_vertexBuffer);
-	if (FAILED (result))
-		return false;
+	CHECK_FAILED (result);
 
 	BufferDesc.ByteWidth = sizeof (unsigned long) * m_numindex;
 	BufferDesc.BindFlags = D3D11_BIND_INDEX_BUFFER;

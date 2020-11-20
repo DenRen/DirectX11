@@ -56,19 +56,7 @@ bool Engine::InitializeGraphics (HWND hWnd, HINSTANCE hInstance)
 
 bool Engine::Initialize (HINSTANCE hInstance, HWND hWnd)
 {
-    m_font = new BitmapFont ();
-    if (!m_font->Init ("Font\\font.fnt", "Font\\font_0.png"))
-        RETURN_FALSE;
-
-    text1 = new Text (m_font);
-    text1->Init (L"Desktop\nMy computer");
-
-    text2 = new Text (m_font);
-    text2->Init (L"World");
-
-    text3 = new Text (m_font);
-    text3->Init (L"Привет Мир");
-
+ 
     // ---------------------------------------------------------------------------------------
 
     HRESULT result = S_OK;
@@ -87,12 +75,13 @@ bool Engine::Initialize (HINSTANCE hInstance, HWND hWnd)
 
     // Initialize default values -------------------------------------------------------------
 
+    auto textureWidget = resMgr->GetTexture ("Texture\\H\\WidgetWait.png");
     auto vertexShader = resMgr->GetVertexShader ("Shader\\texture.fx", "VS");
     auto pixelShader  = resMgr->GetPixelShader  ("Shader\\texture.fx", "PS");
 
     m_shader = new Shader (vertexShader, pixelShader);
 
-    RectTex::SetDefaultValue (nullptr, m_shader, m_CBWVPMatrixes, &m_WVPMatrixes);
+    RectTex::SetDefaultValue (textureWidget, m_shader, m_CBWVPMatrixes, &m_WVPMatrixes);
 
     // Initialize scene objects --------------------------------------------------------------
 
