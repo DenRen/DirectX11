@@ -82,7 +82,7 @@ void ScrollerHorizontal::SetSlider (float state)
 		state = 1.0f;
 	}
 
-	if (state <= m_relWidthSlider / 2)     state = m_relWidthSlider / 2;
+	if (state <=     m_relWidthSlider / 2) state =        m_relWidthSlider / 2;
 	if (state >= 1 - m_relWidthSlider / 2) state = 1.0f - m_relWidthSlider / 2;
 
 	//state = m_relWidthSlider / 2 + (1 - m_relWidthSlider) * state;
@@ -114,16 +114,38 @@ void ScrollerHorizontal::Update ()
 {
 	const float m_deltaX = 0.1;
 
+	if (m_scrollSlider->IsPassed ())
+	{
+		printf ("------------------------------\n");
+		MoveSlider (m_deltaMousePosition.x);
+	}
+
 	if (m_firstButtonArrow->HaveSingleClick ()   ) SetSlider (m_stateSlider - m_deltaX);
 	if (m_secondButtonArrow->HaveSingleClick ()  ) SetSlider (m_stateSlider + m_deltaX);
 	if (m_firstSurfaceButton->HaveSingleClick () ) SetSlider (m_stateSlider - m_deltaX);
 	if (m_secondSurfaceButton->HaveSingleClick ()) SetSlider (m_stateSlider + m_deltaX);
+	
+	m_prevScrollClicked = m_scrollSlider->GetCurrentState () == BUTTONSTATE::CLICKED;
 
 	WinMgr::Update ();
 }
 
 void ScrollerHorizontal::HandleNews (News news)
 {
+	if (news.m_idSender == (uint16_t) SENDER_NEWS::WINAPIWNDPROC)
+	{
+		if (news.m_news == NEWS::MOUSEMOVE)
+		{
+			m_deltaMousePosition.x = m_prevMousePosition.x - news.m_mousePos.x;
+			m_deltaMousePosition.y = m_prevMousePosition.y - news.m_mousePos.y;
+			
+			printf ("%f %f\n", m_deltaMousePosition.x, m_deltaMousePosition.y);
+
+			m_prevMousePosition.x = news.m_mousePos.x;
+			m_prevMousePosition.y = news.m_mousePos.y;
+		}
+	}
+
 	m_firstButtonArrow->HandleNews (news);
 	m_secondButtonArrow->HandleNews (news);
 	m_scrollSlider->HandleNews (news);

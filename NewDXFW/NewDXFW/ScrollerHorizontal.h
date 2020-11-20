@@ -20,7 +20,7 @@ public:
 	void HandleNews (News news);
 
 private:
-
+	
 	BUTTONSTATE m_firstArrow;
 	BUTTONSTATE m_secondArrow;
 	BUTTONSTATE m_firstSurface;
@@ -30,5 +30,10 @@ private:
 	static TextureButton def_texSecondButtonArrow;
 	static TextureButton def_texScrollSlider;
 	static TextureButton def_texSurfaceButton;
+
+	bool m_prevScrollClicked = false;
+	bool m_mousePosUpdated = false;
+	MousePosition m_prevMousePosition  = {0, 0};
+	MousePosition m_deltaMousePosition = {0, 0};
 };
 

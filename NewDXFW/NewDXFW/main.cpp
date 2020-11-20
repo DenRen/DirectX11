@@ -3,6 +3,7 @@
 #include "DebugFunc.h"
 #include "NewsQueue.h"
 #include "WindowManager.h"
+#include <d2d1.h>
 
 int main ()
 {

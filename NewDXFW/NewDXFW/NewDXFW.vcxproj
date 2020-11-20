@@ -88,13 +88,13 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_XM_NO_INTRINSICS_;WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;_XM_NO_INTRINSICS_;WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>dxgi.lib;d3d11.lib;d3dx11.lib;d3dx10.lib;dinput8.lib;dxguid.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>D2d1.lib;dxgi.lib;d3d11.lib;d3dx11.lib;d3dx10.lib;dinput8.lib;dxguid.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -144,6 +144,7 @@
   <ItemGroup>
     <ClInclude Include="AddFunc.h" />
     <ClInclude Include="AppMgr.h" />
+    <ClInclude Include="BitmapFont.h" />
     <ClInclude Include="Button.h" />
     <ClInclude Include="Camera.h" />
     <ClInclude Include="Config.h" />
@@ -158,6 +159,7 @@
     <ClInclude Include="Scroller.h" />
     <ClInclude Include="ScrollerHorizontal.h" />
     <ClInclude Include="ScrollerVertical.h" />
+    <ClInclude Include="Text.h" />
     <ClInclude Include="WindowManager.h" />
     <ClInclude Include="NewsQueue.h" />
     <ClInclude Include="Rectangle.h" />
@@ -176,6 +178,7 @@
   <ItemGroup>
     <ClCompile Include="AddFunc.cpp" />
     <ClCompile Include="AppMgr.cpp" />
+    <ClCompile Include="BitmapFont.cpp" />
     <ClCompile Include="Button.cpp" />
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="Config.cpp" />
@@ -190,6 +193,7 @@
     <ClCompile Include="Scroller.cpp" />
     <ClCompile Include="ScrollerHorizontal.cpp" />
     <ClCompile Include="ScrollerVertical.cpp" />
+    <ClCompile Include="Text.cpp" />
     <ClCompile Include="WindowManager.cpp" />
     <ClCompile Include="NewsQueue.cpp" />
     <ClCompile Include="Rectangle.cpp" />
@@ -208,6 +212,9 @@
     <Text Include="Вопросы.txt" />
     <Text Include="Заметки.txt" />
     <Text Include="Лягушки.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="myfile.spritefont" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

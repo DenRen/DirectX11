@@ -10,7 +10,7 @@ public:
 	InputDX ();
 	~InputDX ();
 
-	bool Initialize (HINSTANCE hInstance, HWND hWnd, int screenWidth, int screenHeight);
+	bool Initialize (HINSTANCE hInstance, HWND hWnd);
 	bool Update ();
 
 	bool IsKeyDown (unsigned int key);
@@ -35,8 +35,6 @@ private:
 	bool InitializeMouse ();
 	bool InitializeKeyboard ();
 
-	int m_screenWidth;
-	int m_screenHeight;
 	int m_mouseX;
 	int m_mouseY;
 

@@ -70,13 +70,19 @@ void RectTexButton::HandleNews (News news)
 					CheckContainCursor (news.m_mousePos);
 				} break;
 			case NEWS::LBUTTONDOWN:
-			case NEWS::LBUTTONDBLCLK:
+			//case NEWS::LBUTTONDBLCLK:
 				{
 					CheckContainCursor (news.m_mousePos);
 					if (Button::GetCurrentState () == BUTTONSTATE::FOCUSED)
 					{
+						Button::SetPassed ();
 						Button::SetStateClicked ();
 					}
+				}
+			case NEWS::LBUTTONDBLCLK:
+				{
+					printf ("LUP\n");
+					Button::SetReleased ();
 				}
 			}
 		}

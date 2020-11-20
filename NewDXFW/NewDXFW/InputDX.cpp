@@ -7,8 +7,6 @@ InputDX::InputDX () :
 	m_keyboard (nullptr),
 	m_mouse (nullptr),
 	m_hWnd (nullptr),
-	m_screenWidth (0),
-	m_screenHeight (0),
 	m_mouseX (0),
 	m_mouseY (0)
 {
@@ -36,18 +34,15 @@ InputDX::~InputDX ()
 	}
 }
 
-bool InputDX::Initialize (HINSTANCE hInstance, HWND hWnd, int screenWidth, int screenHeight)
+bool InputDX::Initialize (HINSTANCE hInstance, HWND hWnd)
 {
 	m_hWnd = hWnd;
 
 	HRESULT result = S_OK;
 
-	m_screenWidth = screenWidth;
-	m_screenHeight = screenHeight;
-
 	m_mouseX = 0;
 	m_mouseY = 0;
-
+	
 	result = DirectInput8Create (hInstance, DIRECTINPUT_VERSION, IID_IDirectInput8,
 								 (void **) &m_directInput, nullptr);
 	CHECK_FAILED (result);

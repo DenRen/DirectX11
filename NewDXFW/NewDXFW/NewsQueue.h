@@ -67,7 +67,7 @@ enum class NEWS
 	// Mouse >--------------------------->begin
 	MOUSEFIRST,
 	MOUSEMOVE,
-
+	
 	LBUTTONDOWN, LBUTTONUP, LBUTTONDBLCLK,
 	RBUTTONDOWN, RBUTTONUP, RBUTTONDBLCLK,
 

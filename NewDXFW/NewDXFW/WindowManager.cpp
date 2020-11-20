@@ -65,7 +65,7 @@ void WindowManager::Update ()
 		newsMouseCoor.m_news = NEWS::MOUSEMOVE;
 		newsMouseCoor.m_mousePos = InputCoorMouse::GetPosition ();
 
-		printf ("%f %f\n", newsMouseCoor.m_mousePos.x, newsMouseCoor.m_mousePos.y);
+		//printf ("%f %f\n", newsMouseCoor.m_mousePos.x, newsMouseCoor.m_mousePos.y);
 		WinMgr::HandleNews (newsMouseCoor);
 	}
 	

@@ -10,13 +10,14 @@
 #include "InputDX.h"
 #include "ResourceManager.h"
 #include "WindowManager.h"
+#include "Text.h"
 
 class Engine
 {
 public:
 	Engine ();
 	~Engine ();
-
+	
 	bool IntializePrelaunchParams ();
 	bool InitializeGraphics (HWND hWnd, HINSTANCE hInstance);
 	bool Initialize (HINSTANCE hInstance, HWND hWnd);
@@ -26,7 +27,7 @@ public:
 	static double GetDeltaTime ();
 
 	Graphics *GetGraphics ();
-
+	
 private:
 
 	void LoadResources ();
@@ -59,4 +60,11 @@ private:
 	InputDX *m_input;
 
 	WindowManager *m_windowManager;
+	
+	//-------------------------------------
+
+	BitmapFont *m_font;
+	Text *text1;
+	Text *text2;
+	Text *text3;
 };

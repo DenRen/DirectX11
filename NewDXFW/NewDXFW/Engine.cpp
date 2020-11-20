@@ -11,7 +11,11 @@ Engine::Engine () :
     m_graphics          (nullptr),
     m_shader            (nullptr),
     m_texture           (nullptr),
-    m_rect              (nullptr)
+    m_rect              (nullptr),
+    m_font              (nullptr),
+    text1               (nullptr),
+    text2               (nullptr),
+    text3               (nullptr)
     //m_camera            (nullptr)
 {}
 
@@ -52,6 +56,21 @@ bool Engine::InitializeGraphics (HWND hWnd, HINSTANCE hInstance)
 
 bool Engine::Initialize (HINSTANCE hInstance, HWND hWnd)
 {
+    m_font = new BitmapFont ();
+    if (!m_font->Init ("font.fnt"))
+        RETURN_FALSE;
+
+    text1 = new Text (m_font);
+    text1->Init (L"Hello", 800, 600);
+
+    text2 = new Text (m_font);
+    text2->Init (L"World", 800, 600);
+
+    text3 = new Text (m_font);
+    text3->Init (L"Привет Мир", 800, 600);
+
+    // ---------------------------------------------------------------------------------------
+
     HRESULT result = S_OK;
 
     //m_input = new InputDX ();
@@ -154,6 +173,12 @@ void Engine::Render ()
     m_graphics->BeginScene (0, 0, 0, 1);
 
     m_windowManager->Draw ();
+
+    m_graphics->EnableAlphaBlending (true);
+
+    text1->Render (1.0, 1.0, 0.0, 100, 100);
+    text2->Render (1.0, 0.0, 1.0, 290, 100);
+    text3->Render (0.0, 1.0, 1.0, 100, 180);
 
     m_graphics->EndScene ();
 }
