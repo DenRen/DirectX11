@@ -115,3 +115,9 @@ void RectFigure::Move (float deltaX, float deltaY)
 	m_coorX += deltaX;
 	m_coorY += deltaY;
 }
+
+void RectFigure::Transpose ()
+{
+	std::swap (m_coorX, m_coorY);
+	std::swap (m_height, m_width);
+}

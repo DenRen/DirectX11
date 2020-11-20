@@ -14,17 +14,13 @@ public:
 
 	void SetSlider (float state);
 	void MoveSlider (float deltaState);	// In coord
+	float GetStateSlider ();
 
 	void Draw ();
 	void Update ();
 	void HandleNews (News news);
 
 private:
-	
-	BUTTONSTATE m_firstArrow;
-	BUTTONSTATE m_secondArrow;
-	BUTTONSTATE m_firstSurface;
-	BUTTONSTATE m_secondSurface;
 
 	static TextureButton def_texFirstButtonArrow;
 	static TextureButton def_texSecondButtonArrow;

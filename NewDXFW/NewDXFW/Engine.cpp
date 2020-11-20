@@ -61,7 +61,7 @@ bool Engine::Initialize (HINSTANCE hInstance, HWND hWnd)
         RETURN_FALSE;
 
     text1 = new Text (m_font);
-    text1->Init (L"Hello", 800, 600);
+    text1->Init (L"Desktop\nMy computer", 800, 600);
 
     text2 = new Text (m_font);
     text2->Init (L"World", 800, 600);
@@ -121,21 +121,44 @@ void Engine::LoadResources ()
 
     resMgr->LoadTexture ("Texture\\Desktop.png");
 
-    resMgr->LoadTexture ("Texture\\WidgetWait.png");
-    resMgr->LoadTexture ("Texture\\WidgetFocused.png");
-    resMgr->LoadTexture ("Texture\\WidgetClicked.png");
 
-    resMgr->LoadTexture ("Texture\\WidgetScrollerArrowLeft_Wait.png");
-    resMgr->LoadTexture ("Texture\\WidgetScrollerArrowLeft_Focused.png");
-    resMgr->LoadTexture ("Texture\\WidgetScrollerArrowLeft_Clicked.png");
+    // ----------------------------------------------------------------------
 
-    resMgr->LoadTexture ("Texture\\WidgetScrollerArrowRight_Wait.png");
-    resMgr->LoadTexture ("Texture\\WidgetScrollerArrowRight_Focused.png");
-    resMgr->LoadTexture ("Texture\\WidgetScrollerArrowRight_Clicked.png");
+    resMgr->LoadTexture ("Texture\\H\\WidgetWait.png");
+    resMgr->LoadTexture ("Texture\\H\\WidgetFocused.png");
+    resMgr->LoadTexture ("Texture\\H\\WidgetClicked.png");
 
-    resMgr->LoadTexture ("Texture\\WidgetScrollerSlider_Wait.png");
-    resMgr->LoadTexture ("Texture\\WidgetScrollerSlider_Focused.png");
-    resMgr->LoadTexture ("Texture\\WidgetScrollerSlider_Clicked.png");
+    resMgr->LoadTexture ("Texture\\H\\WidgetScrollerArrowLeft_Wait.png");
+    resMgr->LoadTexture ("Texture\\H\\WidgetScrollerArrowLeft_Focused.png");
+    resMgr->LoadTexture ("Texture\\H\\WidgetScrollerArrowLeft_Clicked.png");
+
+    resMgr->LoadTexture ("Texture\\H\\WidgetScrollerArrowRight_Wait.png");
+    resMgr->LoadTexture ("Texture\\H\\WidgetScrollerArrowRight_Focused.png");
+    resMgr->LoadTexture ("Texture\\H\\WidgetScrollerArrowRight_Clicked.png");
+
+    resMgr->LoadTexture ("Texture\\H\\WidgetScrollerSlider_Wait.png");
+    resMgr->LoadTexture ("Texture\\H\\WidgetScrollerSlider_Focused.png");
+    resMgr->LoadTexture ("Texture\\H\\WidgetScrollerSlider_Clicked.png");
+
+    // ----------------------------------------------------------------------
+
+    resMgr->LoadTexture ("Texture\\V\\WidgetWait.png");
+    resMgr->LoadTexture ("Texture\\V\\WidgetFocused.png");
+    resMgr->LoadTexture ("Texture\\V\\WidgetClicked.png");
+
+    resMgr->LoadTexture ("Texture\\V\\WidgetScrollerArrowLeft_Wait.png");
+    resMgr->LoadTexture ("Texture\\V\\WidgetScrollerArrowLeft_Focused.png");
+    resMgr->LoadTexture ("Texture\\V\\WidgetScrollerArrowLeft_Clicked.png");
+
+    resMgr->LoadTexture ("Texture\\V\\WidgetScrollerArrowRight_Wait.png");
+    resMgr->LoadTexture ("Texture\\V\\WidgetScrollerArrowRight_Focused.png");
+    resMgr->LoadTexture ("Texture\\V\\WidgetScrollerArrowRight_Clicked.png");
+
+    resMgr->LoadTexture ("Texture\\V\\WidgetScrollerSlider_Wait.png");
+    resMgr->LoadTexture ("Texture\\V\\WidgetScrollerSlider_Focused.png");
+    resMgr->LoadTexture ("Texture\\V\\WidgetScrollerSlider_Clicked.png");
+
+    // ----------------------------------------------------------------------
 
     resMgr->LoadTexture ("Texture\\WidgetDarkTheme_Wait.png");
     resMgr->LoadTexture ("Texture\\WidgetDarkTheme_Focused.png");
@@ -176,7 +199,7 @@ void Engine::Render ()
 
     m_graphics->EnableAlphaBlending (true);
 
-    text1->Render (1.0, 1.0, 0.0, 100, 100);
+    text1->Render (1.0, 1.0, 0.0, 100, 400);
     text2->Render (1.0, 0.0, 1.0, 290, 100);
     text3->Render (0.0, 1.0, 1.0, 100, 180);
 

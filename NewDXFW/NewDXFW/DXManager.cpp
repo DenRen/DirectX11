@@ -141,7 +141,7 @@ bool DXManager::Initilize (HWND hWnd, int Width, int Height, bool fullScreen, bo
     if (!InitializeRasterizerState ())  RETURN_FALSE;
     InitializeViewport (Width, Height);
     if (!InitializeAlphaBlending ())    RETURN_FALSE;
-    if (!InitializeZBuffer ())          RETURN_FALSE;
+    //if (!InitializeZBuffer ())          RETURN_FALSE;
 
     return true;
 }

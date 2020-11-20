@@ -11,25 +11,25 @@ ScrollerHorizontal::ScrollerHorizontal (float coorX, float coorY, float width, f
 {
 	MYASSERT (relWidthScroll <= 1.0f);
 
-	m_stateSlider = relWidthScroll / 2;
-	m_widthSurface = width - 2 * height;
-	m_relWidthSlider = relWidthScroll;
+	m_stateSlider = 0;
+	m_heightSurface = width - 2 * height;
+	m_relHeightSlider = relWidthScroll;
 
 	m_firstButtonArrow   = new RectTexButton (coorX,				coorY, height,	height,
 											  def_texFirstButtonArrow);
 	coorX += height;
 
-	m_secondButtonArrow  = new RectTexButton (coorX + m_widthSurface, coorY, height,	height,
+	m_secondButtonArrow  = new RectTexButton (coorX + m_heightSurface, coorY, height,	height,
 											  def_texSecondButtonArrow);
 
 
-	m_scrollSlider		 = new RectTexButton (coorX, coorY, m_widthSurface * relWidthScroll, height,
+	m_scrollSlider		 = new RectTexButton (coorX, coorY, m_heightSurface * relWidthScroll, height,
 											  def_texScrollSlider);
 
-	m_firstSurfaceButton = new RectTexButton (coorX, coorY, m_widthSurface * relWidthScroll / 2,   height,
+	m_firstSurfaceButton = new RectTexButton (coorX, coorY, m_heightSurface * relWidthScroll / 2,   height,
 											  def_texSurfaceButton);
 
-	m_secondSurfaceButton = new RectTexButton (coorX + m_widthSurface * relWidthScroll / 2, coorY, m_widthSurface * (1 - relWidthScroll / 2), height,
+	m_secondSurfaceButton = new RectTexButton (coorX + m_heightSurface * relWidthScroll / 2, coorY, m_heightSurface * (1 - relWidthScroll / 2), height,
 											   def_texSurfaceButton);
 
 	WinMgr::AddChildWidget (m_scrollSlider);
@@ -82,27 +82,34 @@ void ScrollerHorizontal::SetSlider (float state)
 		state = 1.0f;
 	}
 
-	if (state <=     m_relWidthSlider / 2) state =        m_relWidthSlider / 2;
-	if (state >= 1 - m_relWidthSlider / 2) state = 1.0f - m_relWidthSlider / 2;
+	//if (state <=     m_relHeightSlider / 2) state =        m_relHeightSlider / 2;
+	//if (state >= 1 - m_relHeightSlider / 2) state = 1.0f - m_relHeightSlider / 2;
 
-	//state = m_relWidthSlider / 2 + (1 - m_relWidthSlider) * state;
+	float saveState = state;
+	state		   = m_relHeightSlider / 2 + (1 - m_relHeightSlider) * state;
+	float stateOld = m_relHeightSlider / 2 + (1 - m_relHeightSlider) * m_stateSlider;
 
-	float deltaX = 0.5 * m_widthSurface * ((double) state - m_stateSlider);
+	float deltaX = 0.5 * m_heightSurface * ((double) state - stateOld);
 
-	m_firstSurfaceButton->ScaleUp (state / m_stateSlider, 1.0f, 1.0f);
+	m_firstSurfaceButton->ScaleUp (state / stateOld, 1.0f, 1.0f);
 	m_firstSurfaceButton->Move (deltaX, 0.0f, 0.0f);
 
-	m_secondSurfaceButton->ScaleUp (1/ ((1.0f - m_stateSlider) / (1.0f - state)), 1.0f, 1.0f);
+	m_secondSurfaceButton->ScaleUp (1 / ((1.0f - stateOld) / (1.0f - state)), 1.0f, 1.0f);
 	m_secondSurfaceButton->Move (deltaX, 0.0f, 0.0f);
 
 	m_scrollSlider->Move (2 * deltaX, 0.0f, 0.0f);
 
-	m_stateSlider = state;
+	m_stateSlider = saveState;
 }
 
 void ScrollerHorizontal::MoveSlider (float deltaState)
 {
-	SetSlider (m_stateSlider + deltaState / (m_widthSurface * (1 - m_relWidthSlider)));
+	SetSlider (m_stateSlider + deltaState / (m_heightSurface * (1 - m_relHeightSlider)));
+}
+
+float ScrollerHorizontal::GetStateSlider ()
+{
+	return m_stateSlider;
 }
 
 void ScrollerHorizontal::Draw ()
@@ -112,9 +119,12 @@ void ScrollerHorizontal::Draw ()
 
 void ScrollerHorizontal::Update ()
 {
+
+	printf ("%f\n", GetStateSlider ());
+
 	const float m_deltaX = 0.1;
 
-	if (m_scrollSlider->IsPassed ())
+	if (m_scrollSlider->HaveSingleClick ())
 	{
 		printf ("------------------------------\n");
 		MoveSlider (m_deltaMousePosition.x);
@@ -139,7 +149,8 @@ void ScrollerHorizontal::HandleNews (News news)
 			m_deltaMousePosition.x = m_prevMousePosition.x - news.m_mousePos.x;
 			m_deltaMousePosition.y = m_prevMousePosition.y - news.m_mousePos.y;
 			
-			printf ("%f %f\n", m_deltaMousePosition.x, m_deltaMousePosition.y);
+			//if (fabs (m_deltaMousePosition.x) > 0.001 && fabs (m_deltaMousePosition.x) > 0.001)
+				//printf ("%f %f\n", m_deltaMousePosition.x, m_deltaMousePosition.y);
 
 			m_prevMousePosition.x = news.m_mousePos.x;
 			m_prevMousePosition.y = news.m_mousePos.y;

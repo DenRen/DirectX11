@@ -235,20 +235,32 @@ bool BitmapFont::m_InitShader (const char *vsFilename, const char *psFilename)
 void BitmapFont::BuildVertexArray (VertexFont *vertices, const wchar_t *sentence,
 								   int screenWidth, int screenHeight)
 {
-	int numLetters = (int)wcslen (sentence);
+	int numLetters = (int) wcslen (sentence);
 
-	float drawX = (float)-screenWidth / 2;
-	float drawY = (float)screenHeight / 2;
+	float drawX0 = (float) -screenWidth / 2;
+	float drawY0 = (float) screenHeight / 2;
+
+	float drawX = drawX0, drawY = drawY0;
+
+	float offsetY = 0;
+	float offsetX = 0;
 
 	int index = 0;
 	for (int i = 0; i < numLetters; i++)
 	{
+		if (sentence[i] == '\n')
+		{
+			offsetY += m_Chars['A'].srcH;
+			drawX = drawX0;
+		}
+
 		float CharX = m_Chars[sentence[i]].srcX;
 		float CharY = m_Chars[sentence[i]].srcY;
 		float Width = m_Chars[sentence[i]].srcW;
 		float Height = m_Chars[sentence[i]].srcH;
 		float OffsetX = m_Chars[sentence[i]].xOff;
-		float OffsetY = m_Chars[sentence[i]].yOff;
+		float OffsetY = m_Chars[sentence[i]].yOff + offsetY;
+
 
 		float left = drawX + OffsetX;
 		float right = left + Width;

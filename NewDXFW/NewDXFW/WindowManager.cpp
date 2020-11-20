@@ -3,6 +3,7 @@
 #include "Config.h"
 #include "InputCoorMouse.h"
 #include "ScrollerHorizontal.h"
+#include "ScrollerVertical.h"
 
 WindowManager::WindowManager () :
 	WinMgr (this),
@@ -28,25 +29,49 @@ bool WindowManager::Initialize ()
 	WinMgr::AddChildWidget (buttonDarkTheme);
 	*/
 
-	ScrollerHorizontal::InitDefTex_SurfaceButton	 ("Texture\\WidgetWait.png",
-													  "Texture\\WidgetFocused.png",
-													  "Texture\\WidgetClicked.png");
+	// Horizontal default values --------------------------------------------------------------------------
 
-	ScrollerHorizontal::InitDefTex_FirstButtonArrow  ("Texture\\WidgetScrollerArrowLeft_Wait.png",
-													  "Texture\\WidgetScrollerArrowLeft_Focused.png",
-													  "Texture\\WidgetScrollerArrowLeft_Clicked.png");
+	ScrollerHorizontal::InitDefTex_SurfaceButton	 ("Texture\\H\\WidgetWait.png",
+													  "Texture\\H\\WidgetFocused.png",
+													  "Texture\\H\\WidgetClicked.png");
 
-	ScrollerHorizontal::InitDefTex_SecondButtonArrow ("Texture\\WidgetScrollerArrowRight_Wait.png",
-													  "Texture\\WidgetScrollerArrowRight_Focused.png",
-													  "Texture\\WidgetScrollerArrowRight_Clicked.png");
+	ScrollerHorizontal::InitDefTex_FirstButtonArrow  ("Texture\\H\\WidgetScrollerArrowLeft_Wait.png",
+													  "Texture\\H\\WidgetScrollerArrowLeft_Focused.png",
+													  "Texture\\H\\WidgetScrollerArrowLeft_Clicked.png");
 
-	ScrollerHorizontal::InitDefTex_ScrollSlider		 ("Texture\\WidgetScrollerSlider_Wait.png",
-													  "Texture\\WidgetScrollerSlider_Focused.png",
-													  "Texture\\WidgetScrollerSlider_Clicked.png");
+	ScrollerHorizontal::InitDefTex_SecondButtonArrow ("Texture\\H\\WidgetScrollerArrowRight_Wait.png",
+													  "Texture\\H\\WidgetScrollerArrowRight_Focused.png",
+													  "Texture\\H\\WidgetScrollerArrowRight_Clicked.png");
+
+	ScrollerHorizontal::InitDefTex_ScrollSlider		 ("Texture\\H\\WidgetScrollerSlider_Wait.png",
+													  "Texture\\H\\WidgetScrollerSlider_Focused.png",
+													  "Texture\\H\\WidgetScrollerSlider_Clicked.png");
 	
-	auto scroller = new ScrollerHorizontal (-0.75, -0.4, 1.5f, 0.1, 0.15);
+	// Vertical default values ----------------------------------------------------------------------------
 
-	WinMgr::AddChildWidget (scroller);
+	ScrollerVertical::InitDefTex_SurfaceButton     ("Texture\\V\\WidgetWait.png",
+												    "Texture\\V\\WidgetFocused.png",
+												    "Texture\\V\\WidgetClicked.png");
+
+	ScrollerVertical::InitDefTex_FirstButtonArrow  ("Texture\\V\\WidgetScrollerArrowLeft_Wait.png",
+												    "Texture\\V\\WidgetScrollerArrowLeft_Focused.png",
+												    "Texture\\V\\WidgetScrollerArrowLeft_Clicked.png");
+
+	ScrollerVertical::InitDefTex_SecondButtonArrow ("Texture\\V\\WidgetScrollerArrowRight_Wait.png",
+													"Texture\\V\\WidgetScrollerArrowRight_Focused.png",
+													"Texture\\V\\WidgetScrollerArrowRight_Clicked.png");
+
+	ScrollerVertical::InitDefTex_ScrollSlider	   ("Texture\\V\\WidgetScrollerSlider_Wait.png",
+												    "Texture\\V\\WidgetScrollerSlider_Focused.png",
+												    "Texture\\V\\WidgetScrollerSlider_Clicked.png");
+
+	// -------------------------------------------------------------------------------------------------
+
+	auto scrollerV = new ScrollerVertical   ( 0.75, +0.4, 0.5, 0.1, 0.3);
+	auto scrollerH = new ScrollerHorizontal (-0.75, -0.4, 1.5, 0.1, 0.15);
+
+	WinMgr::AddChildWidget (scrollerH);
+	WinMgr::AddChildWidget (scrollerV);
 
 	return true;
 }

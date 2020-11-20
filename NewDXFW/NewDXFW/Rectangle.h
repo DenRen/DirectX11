@@ -15,6 +15,8 @@ struct RectFigure
 	void ScaleUp (float scaleX, float scaleY);
 	void Move (float deltaX, float deltaY);
 
+	void Transpose ();
+
 	float m_coorX;
 	float m_coorY;
 	float m_width;

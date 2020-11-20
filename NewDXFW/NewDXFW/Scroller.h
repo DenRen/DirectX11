@@ -11,8 +11,8 @@ public:
 
 protected:
 	float m_stateSlider;
-	float m_widthSurface;
-	float m_relWidthSlider;
+	float m_heightSurface;
+	float m_relHeightSlider;
 
 	RectTexButton *m_firstButtonArrow;
 	RectTexButton *m_secondButtonArrow;

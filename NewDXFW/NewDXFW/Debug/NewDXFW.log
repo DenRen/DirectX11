@@ -1,4 +1,4 @@
-﻿  Engine.cpp
+﻿  ScrollerVertical.cpp
 C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\dxgitype.h(12,1): warning C4005: DXGI_STATUS_OCCLUDED: изменение макроопределения
 C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\winerror.h(55840): message : см. предыдущее определение "DXGI_STATUS_OCCLUDED"
 C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\dxgitype.h(13,1): warning C4005: DXGI_STATUS_CLIPPED: изменение макроопределения
@@ -105,6 +105,6 @@ C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\xnamath.h(2743,
 C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\xnamath.h(2754,73): warning C4838: Преобразование из "unsigned int" в "INT" требует сужающего преобразования.
 C:\Users\denre\source\repos\DirectX11\NewDXFW\NewDXFW\Structure_Data.h(38,52): warning C4838: Преобразование из "int" в "UINT" требует сужающего преобразования.
 C:\Users\denre\source\repos\DirectX11\NewDXFW\NewDXFW\Structure_Data.h(40,55): warning C4838: Преобразование из "int" в "UINT" требует сужающего преобразования.
-  C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
-C:\Users\denre\source\repos\DirectX11\NewDXFW\NewDXFW\Engine.cpp(169,35): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+C:\Users\denre\source\repos\DirectX11\NewDXFW\NewDXFW\ScrollerVertical.cpp(93,15): warning C4244: инициализация: преобразование "double" в "float", возможна потеря данных
+C:\Users\denre\source\repos\DirectX11\NewDXFW\NewDXFW\ScrollerVertical.cpp(126,28): warning C4305: инициализация: усечение из "double" в "float"
   NewDXFW.vcxproj -> C:\Users\denre\source\repos\DirectX11\NewDXFW\Debug\NewDXFW.exe
