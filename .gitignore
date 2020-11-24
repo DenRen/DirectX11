@@ -1,0 +1,13 @@
+
+Learn/DirectX11/.vs/DirectX11/v16/.suo
+*.ipch
+Learn/DirectX11/.vs/DirectX11/v16/Browse.VC.db
+*.pdb
+*.tlog
+*.obj
+*.log
+*.xml
+NewDXFW/NewDXFW/Debug/*
+*.recipe
+*.idb
+Learn/DirectX11/DirectX11/Debug/*

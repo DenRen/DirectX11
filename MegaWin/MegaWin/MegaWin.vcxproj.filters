@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Исходные файлы">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Файлы заголовков">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Файлы ресурсов">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Исходные файлы\Resources">
+      <UniqueIdentifier>{ccff4288-ede0-4261-833f-f21908aea415}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Resources">
+      <UniqueIdentifier>{4776130c-b072-452d-88dd-66212ed75b28}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Engine">
+      <UniqueIdentifier>{75dbbbe3-08b2-40ea-912b-bf63fea20648}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Engine">
+      <UniqueIdentifier>{92443d0f-f7da-403e-8d55-782392a39eb2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Other">
+      <UniqueIdentifier>{300ec193-7428-4b64-84af-c41dc6d352bf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Other">
+      <UniqueIdentifier>{b7dad62e-6df9-4e4a-a257-8cb91d2aa209}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Texture.cpp">
+      <Filter>Исходные файлы\Resources</Filter>
+    </ClCompile>
+    <ClCompile Include="Shader.cpp">
+      <Filter>Исходные файлы\Resources</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine.cpp">
+      <Filter>Исходные файлы\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphics.cpp">
+      <Filter>Исходные файлы\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="DXManager.cpp">
+      <Filter>Исходные файлы\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="AddFunc.cpp">
+      <Filter>Исходные файлы\Other</Filter>
+    </ClCompile>
+    <ClCompile Include="AppMgr.cpp">
+      <Filter>Исходные файлы\Other</Filter>
+    </ClCompile>
+    <ClCompile Include="Config.cpp">
+      <Filter>Исходные файлы\Other</Filter>
+    </ClCompile>
+    <ClCompile Include="de_timer.cpp">
+      <Filter>Исходные файлы\Other</Filter>
+    </ClCompile>
+    <ClCompile Include="DebugFuncs.cpp">
+      <Filter>Исходные файлы\Other</Filter>
+    </ClCompile>
+    <ClCompile Include="Timer.cpp">
+      <Filter>Исходные файлы\Other</Filter>
+    </ClCompile>
+    <ClCompile Include="WinManager.cpp">
+      <Filter>Исходные файлы\Other</Filter>
+    </ClCompile>
+    <ClCompile Include="Shaders.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="Rectangle.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="VertexBuffer.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="Camera.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="Widget.cpp">
+      <Filter>Исходные файлы\Other</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="VertexBuffer.h">
+      <Filter>Файлы заголовков\Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="TextureShader.h">
+      <Filter>Файлы заголовков\Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="Texture.h">
+      <Filter>Файлы заголовков\Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="Sprite.h">
+      <Filter>Файлы заголовков\Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="Shader.h">
+      <Filter>Файлы заголовков\Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine.h">
+      <Filter>Файлы заголовков\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="DXManager.h">
+      <Filter>Файлы заголовков\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphics.h">
+      <Filter>Файлы заголовков\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="AddFunc.h">
+      <Filter>Файлы заголовков\Other</Filter>
+    </ClInclude>
+    <ClInclude Include="AppMgr.h">
+      <Filter>Файлы заголовков\Other</Filter>
+    </ClInclude>
+    <ClInclude Include="Config.h">
+      <Filter>Файлы заголовков\Other</Filter>
+    </ClInclude>
+    <ClInclude Include="de_timer.h">
+      <Filter>Файлы заголовков\Other</Filter>
+    </ClInclude>
+    <ClInclude Include="DebugFuncs.h">
+      <Filter>Файлы заголовков\Other</Filter>
+    </ClInclude>
+    <ClInclude Include="SystemDefs.h">
+      <Filter>Файлы заголовков\Other</Filter>
+    </ClInclude>
+    <ClInclude Include="Timer.h">
+      <Filter>Файлы заголовков\Other</Filter>
+    </ClInclude>
+    <ClInclude Include="WinManager.h">
+      <Filter>Файлы заголовков\Other</Filter>
+    </ClInclude>
+    <ClInclude Include="Shaders.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="Rectangle.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="GameConstants.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="Widget.h">
+      <Filter>Файлы заголовков\Other</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

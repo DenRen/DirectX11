@@ -1,0 +1,296 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Исходные файлы">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Файлы заголовков">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Файлы ресурсов">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Исходные файлы\DXFW">
+      <UniqueIdentifier>{13a9b15f-8a56-4733-8ca4-efc59e8be6f2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\DXFW\Resources">
+      <UniqueIdentifier>{0ef0f9f1-95e0-4e6c-a797-63f921ea3c06}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\DXFW\Engine">
+      <UniqueIdentifier>{c2df7ea9-0c6b-4ca8-8690-1012234cc4a0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\DXFW\Debug">
+      <UniqueIdentifier>{3f0eece9-466a-46ba-bf1f-3fc7fe93190a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\DXFW">
+      <UniqueIdentifier>{8332553d-8a2a-463f-b31c-767ee8029199}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\DXFW\Debug">
+      <UniqueIdentifier>{cdae5631-f983-4dff-8818-6d9d7c19fed3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\DXFW\Engine">
+      <UniqueIdentifier>{e8079116-cc65-440c-9e77-d90333b36a9d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\DXFW\Resources">
+      <UniqueIdentifier>{b066d178-d52f-4cbc-9ef3-3208d4208ee1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\DXFW\Scene Objects">
+      <UniqueIdentifier>{6c648353-5205-4cd5-b326-bda2e786b75f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\DXFW\Scene Objects">
+      <UniqueIdentifier>{20487599-0ba2-4da8-8a90-cfe8a1394b84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\WinMgr">
+      <UniqueIdentifier>{afbd95e6-d69f-47dd-b051-3cf5bb4095ca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\WinMgr">
+      <UniqueIdentifier>{740bbf6d-ca50-4ea2-8e61-7ad34800d149}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Text">
+      <UniqueIdentifier>{9a16fae2-7e48-47b4-9c5c-cb2ddd010e53}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Text">
+      <UniqueIdentifier>{796a96fd-6e99-4af3-b463-bce9a5193331}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\WinMgr\GraphObj">
+      <UniqueIdentifier>{0d32e59d-de1d-4eac-b882-b5409be6235a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\WinMgr\GraphObj">
+      <UniqueIdentifier>{bb26ec07-2e9f-422f-a7a6-39c1626ad079}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\WinMgr\Mgrs">
+      <UniqueIdentifier>{6008eb5d-5ced-4277-b830-c847def1f902}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\WinMgr\Mgrs">
+      <UniqueIdentifier>{06e6cc08-be86-4981-929f-edd9506c5e0a}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AddFunc.h">
+      <Filter>Файлы заголовков\DXFW\Debug</Filter>
+    </ClInclude>
+    <ClInclude Include="Config.h">
+      <Filter>Файлы заголовков\DXFW\Debug</Filter>
+    </ClInclude>
+    <ClInclude Include="DebugFunc.h">
+      <Filter>Файлы заголовков\DXFW\Debug</Filter>
+    </ClInclude>
+    <ClInclude Include="AppMgr.h">
+      <Filter>Файлы заголовков\DXFW\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="DXManager.h">
+      <Filter>Файлы заголовков\DXFW\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine.h">
+      <Filter>Файлы заголовков\DXFW\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphics.h">
+      <Filter>Файлы заголовков\DXFW\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="de_timer.h">
+      <Filter>Файлы заголовков\DXFW\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Shaders.h">
+      <Filter>Файлы заголовков\DXFW\Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="Texture.h">
+      <Filter>Файлы заголовков\DXFW\Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="Shader.h">
+      <Filter>Файлы заголовков\DXFW\Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="VertexBuffer.h">
+      <Filter>Файлы заголовков\DXFW\Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="Sprite.h">
+      <Filter>Файлы заголовков\DXFW\Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="InputLayout.h">
+      <Filter>Файлы заголовков\DXFW\Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="Structure_Data.h">
+      <Filter>Файлы заголовков\DXFW\Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera.h">
+      <Filter>Файлы заголовков\DXFW\Scene Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Rectangle.h">
+      <Filter>Файлы заголовков\DXFW\Scene Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="ResourceManager.h">
+      <Filter>Файлы заголовков\DXFW\Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="WinAPIManager.h">
+      <Filter>Файлы заголовков\DXFW\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="InputDX.h">
+      <Filter>Файлы заголовков\DXFW\Scene Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="BitmapFont.h">
+      <Filter>Файлы заголовков\Text</Filter>
+    </ClInclude>
+    <ClInclude Include="Text.h">
+      <Filter>Файлы заголовков\Text</Filter>
+    </ClInclude>
+    <ClInclude Include="Button.h">
+      <Filter>Файлы заголовков\WinMgr\GraphObj</Filter>
+    </ClInclude>
+    <ClInclude Include="RectTexButton.h">
+      <Filter>Файлы заголовков\WinMgr\GraphObj</Filter>
+    </ClInclude>
+    <ClInclude Include="ScrollerHorizontal.h">
+      <Filter>Файлы заголовков\WinMgr\GraphObj</Filter>
+    </ClInclude>
+    <ClInclude Include="Scroller.h">
+      <Filter>Файлы заголовков\WinMgr\GraphObj</Filter>
+    </ClInclude>
+    <ClInclude Include="ScrollerVertical.h">
+      <Filter>Файлы заголовков\WinMgr\GraphObj</Filter>
+    </ClInclude>
+    <ClInclude Include="Widget.h">
+      <Filter>Файлы заголовков\WinMgr\GraphObj</Filter>
+    </ClInclude>
+    <ClInclude Include="InputCoorMouse.h">
+      <Filter>Файлы заголовков\WinMgr\Mgrs</Filter>
+    </ClInclude>
+    <ClInclude Include="NewsQueue.h">
+      <Filter>Файлы заголовков\WinMgr\Mgrs</Filter>
+    </ClInclude>
+    <ClInclude Include="WindowManager.h">
+      <Filter>Файлы заголовков\WinMgr\Mgrs</Filter>
+    </ClInclude>
+    <ClInclude Include="WinMgr.h">
+      <Filter>Файлы заголовков\WinMgr\Mgrs</Filter>
+    </ClInclude>
+    <ClInclude Include="RectTexButtonText.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="ScrollBar.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="ScrollBarMgr.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="AddFunc.cpp">
+      <Filter>Исходные файлы\DXFW\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="Config.cpp">
+      <Filter>Исходные файлы\DXFW\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="DebugFunc.cpp">
+      <Filter>Исходные файлы\DXFW\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="AppMgr.cpp">
+      <Filter>Исходные файлы\DXFW\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="DXManager.cpp">
+      <Filter>Исходные файлы\DXFW\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine.cpp">
+      <Filter>Исходные файлы\DXFW\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphics.cpp">
+      <Filter>Исходные файлы\DXFW\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="de_timer.cpp">
+      <Filter>Исходные файлы\DXFW\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Shaders.cpp">
+      <Filter>Исходные файлы\DXFW\Resources</Filter>
+    </ClCompile>
+    <ClCompile Include="Texture.cpp">
+      <Filter>Исходные файлы\DXFW\Resources</Filter>
+    </ClCompile>
+    <ClCompile Include="Shader.cpp">
+      <Filter>Исходные файлы\DXFW\Resources</Filter>
+    </ClCompile>
+    <ClCompile Include="Sprite.cpp">
+      <Filter>Исходные файлы\DXFW\Resources</Filter>
+    </ClCompile>
+    <ClCompile Include="Structure_Data.cpp">
+      <Filter>Исходные файлы\DXFW\Resources</Filter>
+    </ClCompile>
+    <ClCompile Include="Rectangle.cpp">
+      <Filter>Исходные файлы\DXFW\Scene Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Camera.cpp">
+      <Filter>Исходные файлы\DXFW\Scene Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="ResourceManager.cpp">
+      <Filter>Исходные файлы\DXFW\Resources</Filter>
+    </ClCompile>
+    <ClCompile Include="WinAPIManager.cpp">
+      <Filter>Исходные файлы\DXFW\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="InputDX.cpp">
+      <Filter>Исходные файлы\DXFW\Scene Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="BitmapFont.cpp">
+      <Filter>Исходные файлы\Text</Filter>
+    </ClCompile>
+    <ClCompile Include="Text.cpp">
+      <Filter>Исходные файлы\Text</Filter>
+    </ClCompile>
+    <ClCompile Include="Button.cpp">
+      <Filter>Исходные файлы\WinMgr\GraphObj</Filter>
+    </ClCompile>
+    <ClCompile Include="RectTexButton.cpp">
+      <Filter>Исходные файлы\WinMgr\GraphObj</Filter>
+    </ClCompile>
+    <ClCompile Include="Scroller.cpp">
+      <Filter>Исходные файлы\WinMgr\GraphObj</Filter>
+    </ClCompile>
+    <ClCompile Include="ScrollerHorizontal.cpp">
+      <Filter>Исходные файлы\WinMgr\GraphObj</Filter>
+    </ClCompile>
+    <ClCompile Include="ScrollerVertical.cpp">
+      <Filter>Исходные файлы\WinMgr\GraphObj</Filter>
+    </ClCompile>
+    <ClCompile Include="Widget.cpp">
+      <Filter>Исходные файлы\WinMgr\GraphObj</Filter>
+    </ClCompile>
+    <ClCompile Include="InputCoorMouse.cpp">
+      <Filter>Исходные файлы\WinMgr\Mgrs</Filter>
+    </ClCompile>
+    <ClCompile Include="NewsQueue.cpp">
+      <Filter>Исходные файлы\WinMgr\Mgrs</Filter>
+    </ClCompile>
+    <ClCompile Include="WindowManager.cpp">
+      <Filter>Исходные файлы\WinMgr\Mgrs</Filter>
+    </ClCompile>
+    <ClCompile Include="WinMgr.cpp">
+      <Filter>Исходные файлы\WinMgr\Mgrs</Filter>
+    </ClCompile>
+    <ClCompile Include="RectTexButtonText.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="ScrollBar.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="ScrollBarMgr.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Заметки.txt">
+      <Filter>Исходные файлы</Filter>
+    </Text>
+    <Text Include="Вопросы.txt">
+      <Filter>Исходные файлы</Filter>
+    </Text>
+    <Text Include="Лягушки.txt">
+      <Filter>Исходные файлы</Filter>
+    </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="myfile.spritefont" />
+  </ItemGroup>
+</Project>
